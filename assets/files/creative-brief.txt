@@ -1,0 +1,7 @@
+BRUTAL. Studio — Creative brief (demo)
+
+Proyek: Website studio
+Tujuan: Menampilkan karya dan memperkenalkan tim kreatif.
+Output: Homepage, halaman portfolio, dan halaman kontak.
+Palet: Lilac, mint, butter yellow, dan charcoal.
+Catatan: Dokumen contoh lokal untuk demo lampiran email.

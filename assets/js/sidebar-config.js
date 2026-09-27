@@ -1,0 +1,65 @@
+/* Single source for navigation and page search. Keep the assigned array valid JSON.
+ * Add only implemented pages. Nested items may themselves contain children.
+ */
+window.BRUTAL_SIDEBAR = [
+  {"group":"WORKSPACE","items":[
+    {"page":"index","label":"Dashboard","icon":"grid"},
+    {"page":"projects","label":"Proyek","icon":"folder"},
+    {"page":"calendar","label":"Kalender","icon":"calendar"},
+    {"id":"widgetsMenu","label":"Widgets","icon":"chart","children":[
+      {"page":"widget-chart","label":"Chart Widgets"},
+      {"page":"widget-data","label":"Data Widgets"}
+    ]},
+    {"id":"appsMenu","label":"Apps","icon":"grid","children":[
+      {"page":"chat","label":"Chat"},
+      {"page":"portfolio","label":"Portfolio"},
+      {"page":"blog","label":"Blog"}
+    ]},
+    {"id":"emailMenu","label":"Email","icon":"mail","children":[
+      {"page":"email-inbox","label":"Inbox"},
+      {"page":"email-compose","label":"Compose"},
+      {"page":"email-read","label":"Baca Email"}
+    ]}
+  ]},
+  {"group":"BUILDING BLOCKS","items":[
+    {"id":"uiComponentsMenu","label":"Komponen UI","icon":"layers","children":[
+      {"page":"components","label":"Semua komponen"},
+      {"page":"alert","label":"Alert"},
+      {"page":"badge","label":"Badge"},
+      {"page":"breadcrumb","label":"Breadcrumb"},
+      {"page":"buttons","label":"Buttons"},
+      {"page":"collapse","label":"Collapse"},
+      {"page":"dropdown","label":"Dropdown"},
+      {"page":"checkbox-and-radio","label":"Checkbox & Radios"},
+      {"page":"list-group","label":"List Group"},
+      {"page":"media-object","label":"Media Object"},
+      {"page":"navbar","label":"Navbar"},
+      {"page":"pagination","label":"Pagination"},
+      {"page":"popover","label":"Popover"},
+      {"page":"progress","label":"Progress"},
+      {"page":"tooltip","label":"Tooltip"},
+      {"page":"flags","label":"Flag"},
+      {"page":"typography","label":"Typography"}
+    ]},
+    {"page":"forms","label":"Form & validasi","icon":"form"},
+    {"page":"tables","label":"Tabel data","icon":"table"},
+    {"page":"charts","label":"Grafik & widget","icon":"chart"}
+  ]},
+  {"group":"HALAMAN","items":[
+    {"page":"profile","label":"Profil & pengaturan","icon":"user"},
+    {"page":"invoice","label":"Invoice","icon":"file"},
+    {"page":"pricing","label":"Paket harga","icon":"bolt"},
+    {"id":"authMenu","label":"Autentikasi","icon":"lock","children":[
+      {"page":"auth-login","label":"Login"},
+      {"page":"auth-register","label":"Daftar"},
+      {"page":"auth-forgot-password","label":"Lupa Password"}
+    ]},
+    {"id":"errorsMenu","label":"Errors","icon":"file","children":[
+      {"page":"errors-404","label":"404"}
+    ]}
+  ]},
+  {"group":"MULAI MEMBANGUN","items":[
+    {"page":"blank","label":"Halaman kosong","icon":"code"},
+    {"page":"docs","label":"Dokumentasi","icon":"book"}
+  ]}
+];

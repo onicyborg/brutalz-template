@@ -1,0 +1,12 @@
+{
+  "name": "brutal-bootstrap-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first Neubrutalism admin template built on Bootstrap 5.3.8",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test": "playwright test"
+  },
+  "devDependencies": { "@playwright/test": "1.58.2" }
+}
