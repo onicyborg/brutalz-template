@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Font Awesome — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body data-page="icon-font-awesome">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Ikon</li>
+            <li class="breadcrumb-item active" aria-current="page">Font Awesome</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Satu simbol, banyak ide.</h1>
+          <p>Font Awesome Free: solid, regular, dan brand dalam grid yang siap disalin.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <section class="card icon-guide mb-4">
+        <div class="card-body">
+          <span class="badge bg-purple mb-3">FONT AWESOME FREE</span>
+          <p class="mb-0">CSS dan webfont diambil dari paket Font Awesome Free lokal. Salin snippet HTML pada kartu; stylesheet hanya diperlukan pada halaman yang memakai ikon.</p>
+        </div>
+      </section>
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-7">
+          <label class="form-label fw-bold" for="iconSearch">Cari ikon di halaman ini</label>
+          <input id="iconSearch" class="form-control" type="search" autocomplete="off" placeholder="Contoh: home, cloud, calendar…">
+        </div>
+        <div class="col-md-5">
+          <p class="small text-muted mb-0" id="iconCount" role="status"></p>
+        </div>
+      </div>
+      <p id="iconEmpty" class="alert alert-warning d-none">Tidak ada ikon yang cocok. Coba kata lain.</p>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Solid</h2>
+            <p class="text-muted mb-0">Ikon penuh untuk aksi dan navigasi.</p>
+          </div>
+          <span class="badge bg-yellow">12 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="house">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-house"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>House</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-house&quot;&gt;&lt;/i&gt;" aria-label="Salin kode House">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="magnifying glass">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Magnifying glass</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-magnifying-glass&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Magnifying glass">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-magnifying-glass"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="user">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>User</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-user&quot;&gt;&lt;/i&gt;" aria-label="Salin kode User">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="gear">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Gear</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-gear&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Gear">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="bell">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-bell"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Bell</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-bell&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Bell">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="envelope">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Envelope</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-envelope&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Envelope">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-envelope"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="calendar">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Calendar</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-calendar&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Calendar">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-calendar"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="chart line">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Chart line</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-chart-line&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Chart line">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-chart-line"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="folder">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-folder"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Folder</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-folder&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Folder">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-folder"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="download">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-download"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Download</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-download&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Download">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-download"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="heart">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Heart</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-heart&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Heart">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="star">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Star</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-solid fa-star&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Star">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-solid fa-star"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Regular</h2>
+            <p class="text-muted mb-0">Versi garis untuk UI yang lebih ringan.</p>
+          </div>
+          <span class="badge bg-yellow">6 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="user">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-user"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>User</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-user&quot;&gt;&lt;/i&gt;" aria-label="Salin kode User">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-user"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="bell">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-bell"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Bell</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-bell&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Bell">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-bell"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="calendar">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Calendar</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-calendar&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Calendar">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-calendar"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="envelope">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Envelope</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-envelope&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Envelope">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-envelope"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="heart">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Heart</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-heart&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Heart">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-heart"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="star">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Star</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-regular fa-star&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Star">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-regular fa-star"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Brands</h2>
+            <p class="text-muted mb-0">Logo brand resmi dari koleksi gratis.</p>
+          </div>
+          <span class="badge bg-yellow">6 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="github">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>GitHub</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-github&quot;&gt;&lt;/i&gt;" aria-label="Salin kode GitHub">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-github"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="instagram">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Instagram</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-instagram&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Instagram">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-instagram"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="youtube">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-youtube"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>YouTube</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-youtube&quot;&gt;&lt;/i&gt;" aria-label="Salin kode YouTube">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-youtube"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="linkedin">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>LinkedIn</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-linkedin&quot;&gt;&lt;/i&gt;" aria-label="Salin kode LinkedIn">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-linkedin"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="figma">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-figma"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Figma</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-figma&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Figma">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-figma"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="dribbble">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="fa-brands fa-dribbble"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Dribbble</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;fa-brands fa-dribbble&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Dribbble">Salin kode</button>
+              </div>
+              <code>&lt;i class="fa-brands fa-dribbble"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <p id="iconCopyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/icons.js"></script>
+</body>
+</html>

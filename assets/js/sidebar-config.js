@@ -76,6 +76,13 @@ window.BRUTAL_SIDEBAR = [
       {"page":"chart-echart","label":"Apache ECharts"},
       {"page":"chart-sparkline","label":"Sparkline"},
       {"page":"chart-morris","label":"Morris.js"}
+    ]},
+    {"id":"iconsMenu","label":"Ikon","icon":"layers","children":[
+      {"page":"icon-font-awesome","label":"Font Awesome"},
+      {"page":"icon-material","label":"Material Icons"},
+      {"page":"icon-ionicons","label":"Ionicons"},
+      {"page":"icon-feather","label":"Feather Icons"},
+      {"page":"icon-weather-icon","label":"Weather Icons"}
     ]}
   ]},
   {"group":"HALAMAN","items":[

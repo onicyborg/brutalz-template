@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Ionicons — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body data-page="icon-ionicons">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Ikon</li>
+            <li class="breadcrumb-item active" aria-current="page">Ionicons</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Ionicons untuk semua sudut.</h1>
+          <p>Ikon Ionic modern sebagai SVG lokal, tanpa permintaan jaringan tambahan.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <section class="card icon-guide mb-4">
+        <div class="card-body">
+          <span class="badge bg-purple mb-3">IONICONS</span>
+          <p class="mb-0">File SVG resmi disimpan lokal. Snippet memakai <code>&lt;img&gt;</code>; untuk ikon dekoratif, atribut <code>alt</code> boleh kosong.</p>
+        </div>
+      </section>
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-7">
+          <label class="form-label fw-bold" for="iconSearch">Cari ikon di halaman ini</label>
+          <input id="iconSearch" class="form-control" type="search" autocomplete="off" placeholder="Contoh: home, cloud, calendar…">
+        </div>
+        <div class="col-md-5">
+          <p class="small text-muted mb-0" id="iconCount" role="status"></p>
+        </div>
+      </div>
+      <p id="iconEmpty" class="alert alert-warning d-none">Tidak ada ikon yang cocok. Coba kata lain.</p>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Interface dan brand</h2>
+            <p class="text-muted mb-0">Ikon bentuk penuh yang bekerja tanpa runtime JavaScript.</p>
+          </div>
+          <span class="badge bg-yellow">24 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="home">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/home.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Home</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/home.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Home">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/home.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="search">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/search.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Search</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/search.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Search">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/search.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="person">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/person.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Person</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/person.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Person">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/person.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="settings">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/settings.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Settings</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/settings.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Settings">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/settings.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="notifications">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/notifications.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Notifications</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/notifications.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Notifications">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/notifications.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="mail">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/mail.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Mail</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/mail.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Mail">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/mail.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="calendar">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/calendar.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Calendar</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/calendar.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Calendar">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/calendar.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="heart">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/heart.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Heart</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/heart.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Heart">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/heart.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="star">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/star.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Star</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/star.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Star">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/star.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="cart">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/cart.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Cart</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/cart.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Cart">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/cart.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="chatbubble">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/chatbubble.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Chatbubble</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/chatbubble.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Chatbubble">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/chatbubble.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="cloud">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/cloud.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Cloud</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/cloud.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Cloud">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/cloud.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="sunny">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/sunny.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Sunny</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/sunny.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Sunny">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/sunny.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="moon">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/moon.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Moon</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/moon.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Moon">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/moon.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="camera">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/camera.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Camera</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/camera.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Camera">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/camera.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="document">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/document.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Document</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/document.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Document">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/document.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="download">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/download.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Download</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/download.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Download">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/download.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="share social">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/share-social.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Share Social</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/share-social.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Share Social">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/share-social.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="shield checkmark">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/shield-checkmark.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Shield Checkmark</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/shield-checkmark.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Shield Checkmark">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/shield-checkmark.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="color palette">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/color-palette.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Color Palette</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/color-palette.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Color Palette">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/color-palette.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="logo github">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/logo-github.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Logo Github</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/logo-github.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Logo Github">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/logo-github.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="logo instagram">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/logo-instagram.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Logo Instagram</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/logo-instagram.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Logo Instagram">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/logo-instagram.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="logo youtube">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/logo-youtube.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Logo Youtube</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/logo-youtube.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Logo Youtube">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/logo-youtube.svg" alt=""&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="logo linkedin">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/ionicons/svg/logo-linkedin.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Logo Linkedin</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;img src=&quot;assets/bundles/ionicons/svg/logo-linkedin.svg&quot; alt=&quot;&quot;&gt;" aria-label="Salin kode Logo Linkedin">Salin kode</button>
+              </div>
+              <code>&lt;img src="assets/bundles/ionicons/svg/logo-linkedin.svg" alt=""&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <p id="iconCopyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/icons.js"></script>
+</body>
+</html>

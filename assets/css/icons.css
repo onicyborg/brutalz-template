@@ -1,0 +1,35 @@
+/* Phase 6 icon showcases. The icon fonts themselves are loaded per page. */
+.icon-guide { background: var(--neo-paper); }
+.icon-section { min-width: 0; }
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 2px solid var(--neo-ink);
+  background: #fff;
+  box-shadow: 4px 4px 0 var(--neo-ink);
+}
+.icon-preview {
+  display: grid;
+  place-items: center;
+  height: 76px;
+  border: 2px solid var(--neo-ink);
+  background: var(--neo-yellow);
+  color: var(--neo-ink);
+  font-size: 2rem;
+}
+.icon-item:nth-child(4n + 2) .icon-preview { background: var(--neo-purple); }
+.icon-item:nth-child(4n + 3) .icon-preview { background: var(--neo-green); }
+.icon-item:nth-child(4n + 4) .icon-preview { background: var(--neo-orange); }
+.icon-preview img { width: 36px; height: 36px; }
+.icon-preview .material-icons { font-size: 2.25rem; }
+.icon-card-meta { display: flex; align-items: start; justify-content: space-between; gap: .5rem; }
+.icon-card h3 { min-width: 0; margin: 0; font-size: .95rem; font-weight: 800; overflow-wrap: anywhere; }
+.icon-card code { display: block; min-width: 0; padding: .45rem .55rem; border-radius: 0; background: #f4f4f0; color: var(--neo-ink); font-size: .7rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.icon-copy { flex: 0 0 auto; padding: .25rem .45rem; font-size: .7rem; white-space: nowrap; }
+@media (max-width: 575.98px) {
+  .icon-card { padding: .75rem; }
+  .icon-card-meta { flex-direction: column; }
+}

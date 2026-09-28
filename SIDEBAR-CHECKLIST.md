@@ -20,19 +20,21 @@
 
 > **Audit Phase 5 — 28 September 2026:** showcase SVG dan statistik dipindah ke `chart-chartjs.html`, `charts.html` menjadi overview, dan enam library grafik aktif. Kini terdapat **64 file HTML aktual**: 58 entri target dan 6 halaman pendukung; 28 entri target masih menunggu phase berikutnya.
 
+> **Audit Phase 6 — 28 September 2026:** lima showcase ikon dengan aset lokal tersedia di dropdown Ikon. Kini terdapat **69 file HTML aktual**: 63 entri target dan 6 halaman pendukung; 23 entri target masih menunggu phase berikutnya.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 58 |
-| ❌ Entri target belum tersedia | 28 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 63 |
+| ❌ Entri target belum tersedia | 23 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 64 |
+| File HTML aktual, termasuk 6 halaman pendukung | 69 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **64 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **69 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
 
 ---
 
@@ -139,11 +141,11 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ### Icons
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 53 | Font Awesome | `icon-font-awesome.html` | — | ❌ Belum |
-| 54 | Material Design | `icon-material.html` | — | ❌ Belum |
-| 55 | Ion Icons | `icon-ionicons.html` | — | ❌ Belum |
-| 56 | Feather Icons | `icon-feather.html` | — | ❌ Belum |
-| 57 | Weather Icon | `icon-weather-icon.html` | — | ❌ Belum |
+| 53 | Font Awesome | `icon-font-awesome.html` | `icon-font-awesome.html` | ✅ Phase 6 |
+| 54 | Material Design | `icon-material.html` | `icon-material.html` | ✅ Phase 6 |
+| 55 | Ion Icons | `icon-ionicons.html` | `icon-ionicons.html` | ✅ Phase 6 |
+| 56 | Feather Icons | `icon-feather.html` | `icon-feather.html` | ✅ Phase 6 |
+| 57 | Weather Icon | `icon-weather-icon.html` | `icon-weather-icon.html` | ✅ Phase 6 |
 
 ---
 
@@ -253,22 +255,20 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ✅ chart-chartjs.html      ✅ chart-apexchart.html
 ✅ chart-amchart.html      ✅ chart-echart.html
 ✅ chart-sparkline.html    ✅ chart-morris.html
+✅ icon-font-awesome.html ✅ icon-material.html
+✅ icon-ionicons.html      ✅ icon-feather.html
+✅ icon-weather-icon.html
 ```
 
-**Total: 64 file HTML aktual; 58 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 69 file HTML aktual; 63 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (28 entri target tersisa)
+## ❌ Yang Perlu Dibuat (23 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
 
 ### 🟢 Prioritas Rendah (visual & library)
-- [ ] `icon-font-awesome.html` — Font Awesome showcase
-- [ ] `icon-material.html` — Material Icons
-- [ ] `icon-ionicons.html` — Ionicons
-- [ ] `icon-feather.html` — Feather Icons
-- [ ] `icon-weather-icon.html` — Weather Icons
 - [ ] `light-gallery.html` — Lightbox gallery
 - [ ] `gallery1.html` — Gallery alternatif
 - [ ] `carousel.html` — Bootstrap carousel demo
@@ -359,6 +359,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 - [x] Semua bundle dimuat lokal per halaman dengan warna tema; amCharts mempertahankan branding, ApexCharts dipin pada rilis MIT, dan Morris.js memakai patch keamanan upstream.
 - [x] `npm run build` menghasilkan 64 halaman; **41 tes browser lulus**, termasuk rendering grafik dan regresi desktop/mobile.
 
+### Hasil Phase 6 — Icons
+
+- [x] Lima halaman ikon aktif di dropdown Ikon: Font Awesome Free, Material Icons, Ionicons, Feather Icons, dan Weather Icons.
+- [x] Tiap halaman menampilkan 24 ikon dengan pencarian serta tombol salin; Feather menyalin markup SVG lengkap.
+- [x] Font, CSS, dan SVG di-host lokal. Ikon sidebar BRUTAL. adalah SVG template tersendiri, sementara showcase Feather memakai SVG resmi.
+- [x] `npm run build` menghasilkan 69 halaman; **44 tes browser lulus**, termasuk aset ikon dan regresi desktop/mobile.
+
 ---
 
 ## 🗂️ Rekomendasi Struktur Sidebar BRUTAL. (Final)
@@ -415,12 +422,12 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 │   ├── eChart                 → chart-echart.html  ✅
 │   ├── Sparkline              → chart-sparkline.html ✅
 │   └── Morris                 → chart-morris.html  ✅
-└── Ikon                       → (group baru)
-    ├── Font Awesome           → icon-font-awesome.html ❌
-    ├── Material Design        → icon-material.html ❌
-    ├── Ion Icons              → icon-ionicons.html ❌
-    ├── Feather Icons          → icon-feather.html  ❌
-    └── Weather Icon           → icon-weather-icon.html ❌
+└── Ikon                       → (dropdown aktif)
+    ├── Font Awesome           → icon-font-awesome.html ✅
+    ├── Material Design        → icon-material.html ✅
+    ├── Ion Icons              → icon-ionicons.html ✅
+    ├── Feather Icons          → icon-feather.html  ✅
+    └── Weather Icon           → icon-weather-icon.html ✅
 
 🖼️ MEDIA
 ├── Galeri                     → (group baru)
@@ -466,9 +473,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 64 (58 target + 6 halaman pendukung)
-Sudah selesai: 58/86 (67.4%)
-Belum selesai: 28/86 (32.6%)
+Total file HTML aktual: 69 (63 target + 6 halaman pendukung)
+Sudah selesai: 63/86 (73.3%)
+Belum selesai: 23/86 (26.7%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -482,7 +489,7 @@ Belum selesai: 28/86 (32.6%)
 - [x] **Forms**: 5/5 (overview di forms.html)
 - [x] **Tables**: 5/5 (overview di tables.html)
 - [x] **Charts**: 6/6 (overview di `charts.html`)
-- [ ] **Icons**: 0/5
+- [x] **Icons**: 5/5
 - [ ] **Gallery**: 0/2
 - [ ] **Sliders**: 0/2
 - [ ] **Timeline**: 0/1
@@ -497,10 +504,10 @@ Belum selesai: 28/86 (32.6%)
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Phase 0–5 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, serta Charts sudah diterapkan.
-2. **Lanjut Phase 6 — Icons**: siapkan lima halaman ikon dan dropdown sesuai `PHASE-PLAN.md`.
+1. **Phase 0–6 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, Charts, serta Icons sudah diterapkan.
+2. **Lanjut Phase 7 — Media**: siapkan galeri, slider, dan timeline sesuai `PHASE-PLAN.md`.
 3. **Fase berikutnya**: Media, Maps, Errors, dan Posts mengikuti urutan rencana; Google Maps membutuhkan API key.
 
 ---
 
-> 📌 **Setelah Phase 5**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Setelah Phase 6**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

@@ -1,6 +1,6 @@
 # Library eksternal lokal
 
-Phase 2–5 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
+Phase 2–6 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
 `package.json` dan `package-lock.json`; file distribusi disalin ke sini agar
 halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 
@@ -23,6 +23,11 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | Apache ECharts | 6.1.0 | `chart-echart.html` | Apache-2.0, https://echarts.apache.org/ (`echarts/LICENSE`, `echarts/NOTICE`) |
 | jQuery Sparkline | 2.4.0 | `chart-sparkline.html` | BSD, https://github.com/gwatts/jquery.sparkline (`sparkline/LICENSE.txt`) |
 | Morris.js + Raphael | 0.5.1 (commit `14530d0`) + 2.3.0 | `chart-morris.html` | BSD-2-Clause + MIT, https://github.com/morrisjs/morris.js dan https://github.com/DmitryBaranovskiy/raphael (`morris/LICENSE-MORRIS.txt`, `morris/license.txt`) |
+| Font Awesome Free | 6.7.2 | `icon-font-awesome.html` | Ikon CC BY 4.0, font SIL OFL 1.1, kode MIT, https://fontawesome.com/ (`fontawesome/LICENSE.txt`) |
+| Material Icons via Fontsource | 5.3.0 | `icon-material.html` | Font SIL OFL 1.1, https://github.com/fontsource/fontsource (`material-icons/LICENSE`) |
+| Ionicons | 7.4.0 | `icon-ionicons.html` | MIT, https://github.com/ionic-team/ionicons (`ionicons/LICENSE`) |
+| Feather Icons | 4.29.2 | `icon-feather.html` | MIT, https://github.com/feathericons/feather (`feather/LICENSE`) |
+| Weather Icons | 2.0.12 | `icon-weather-icon.html` | Font SIL OFL 1.1, CSS MIT, https://github.com/erikflowers/weather-icons (`weather-icons/LICENSE.md`) |
 
 Otika memakai SweetAlert lama dan iziToast. Phase 2 memakai SweetAlert2 dan
 Toastr seperti yang tertulis di `PHASE-PLAN.md`; keduanya dipisahkan per halaman.
@@ -46,3 +51,10 @@ berbeda. amCharts 4 memakai file browser resmi dan menampilkan logo bawaan
 sesuai lisensi gratis. Morris.js diambil dari commit upstream yang memperbaiki
 injeksi label tooltip (rilis npm 0.5.0 belum memuat patch). Semua angka grafik
 adalah data ilustratif dan tidak memerlukan layanan eksternal.
+
+Phase 6 menyediakan CSS dan webfont Font Awesome Free, Material Icons, dan
+Weather Icons hanya di halaman terkait. Ionicons dan Feather memakai 24 SVG
+resmi terpilih masing-masing; keduanya tidak memerlukan runtime eksternal.
+Halaman Feather memakai `assets/js/feather-data.js` hasil generator untuk
+menyalin SVG lengkap tanpa fetch, termasuk saat template dibuka langsung
+dengan `file://`. Ikon sidebar BRUTAL. tetap memakai SVG template tersendiri.

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Feather Icons — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body data-page="icon-feather">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Ikon</li>
+            <li class="breadcrumb-item active" aria-current="page">Feather Icons</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Tipis, jelas, serbaguna.</h1>
+          <p>Feather SVG dengan gaya garis yang dekat dengan ikon sidebar BRUTAL.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <section class="card icon-guide mb-4">
+        <div class="card-body">
+          <span class="badge bg-purple mb-3">FEATHER ICONS</span>
+          <p class="mb-0">Klik “Salin kode” untuk menyalin markup SVG lengkap. Ikon sidebar template dibuat terpisah; koleksi ini memakai aset Feather resmi.</p>
+        </div>
+      </section>
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-7">
+          <label class="form-label fw-bold" for="iconSearch">Cari ikon di halaman ini</label>
+          <input id="iconSearch" class="form-control" type="search" autocomplete="off" placeholder="Contoh: home, cloud, calendar…">
+        </div>
+        <div class="col-md-5">
+          <p class="small text-muted mb-0" id="iconCount" role="status"></p>
+        </div>
+      </div>
+      <p id="iconEmpty" class="alert alert-warning d-none">Tidak ada ikon yang cocok. Coba kata lain.</p>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Ikon antarmuka</h2>
+            <p class="text-muted mb-0">Pratinjau SVG lokal, dengan markup inline siap disalin.</p>
+          </div>
+          <span class="badge bg-yellow">24 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="dashboard">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/grid.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Dashboard</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="grid" aria-label="Salin kode Dashboard">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-grid"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="grafik">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/bar-chart-2.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Grafik</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="bar-chart-2" aria-label="Salin kode Grafik">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-bar-chart-2"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="folder">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/folder.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Folder</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="folder" aria-label="Salin kode Folder">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-folder"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="kalender">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/calendar.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Kalender</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="calendar" aria-label="Salin kode Kalender">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-calendar"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="lapisan">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/layers.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Lapisan</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="layers" aria-label="Salin kode Lapisan">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-layers"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="dokumen">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/file-text.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Dokumen</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="file-text" aria-label="Salin kode Dokumen">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-file-text"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="pengguna">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/user.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Pengguna</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="user" aria-label="Salin kode Pengguna">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-user"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="tim">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/users.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Tim</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="users" aria-label="Salin kode Tim">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-users"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="kunci">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/lock.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Kunci</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="lock" aria-label="Salin kode Kunci">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-lock"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="cari">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/search.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Cari</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="search" aria-label="Salin kode Cari">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-search"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="notifikasi">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/bell.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Notifikasi</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="bell" aria-label="Salin kode Notifikasi">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-bell"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="tambah">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/plus.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Tambah</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="plus" aria-label="Salin kode Tambah">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-plus"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="panah">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/arrow-right.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Panah</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="arrow-right" aria-label="Salin kode Panah">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-arrow-right"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="tren">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/trending-up.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Tren</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="trending-up" aria-label="Salin kode Tren">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-trending-up"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="centang">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/check.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Centang</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="check" aria-label="Salin kode Centang">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-check"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="menu">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/menu.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Menu</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="menu" aria-label="Salin kode Menu">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-menu"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="keluar">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/log-out.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Keluar</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="log-out" aria-label="Salin kode Keluar">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-log-out"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="kilat">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/zap.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Kilat</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="zap" aria-label="Salin kode Kilat">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-zap"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="kode">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/code.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Kode</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="code" aria-label="Salin kode Kode">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-code"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="email">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/mail.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Email</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="mail" aria-label="Salin kode Email">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-mail"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="favorit">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/heart.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Favorit</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="heart" aria-label="Salin kode Favorit">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-heart"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="lihat">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/eye.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Lihat</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="eye" aria-label="Salin kode Lihat">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-eye"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="pengaturan">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/settings.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Pengaturan</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="settings" aria-label="Salin kode Pengaturan">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-settings"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="unduh">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <img src="assets/bundles/feather/svg/download.svg" alt="">
+              </div>
+              <div class="icon-card-meta">
+                <h3>Unduh</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy-key="download" aria-label="Salin kode Unduh">Salin kode</button>
+              </div>
+              <code>&lt;svg class="feather feather-download"&gt;…&lt;/svg&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <p id="iconCopyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/feather-data.js"></script>
+  <script src="assets/js/icons.js"></script>
+</body>
+</html>

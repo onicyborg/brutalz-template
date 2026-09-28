@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Weather Icons — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/weather-icons/css/weather-icons.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body data-page="icon-weather-icon">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Ikon</li>
+            <li class="breadcrumb-item active" aria-current="page">Weather Icons</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Prakiraan dengan karakter.</h1>
+          <p>Weather Icons: koleksi cuaca berbasis font lokal.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <section class="card icon-guide mb-4">
+        <div class="card-body">
+          <span class="badge bg-purple mb-3">WEATHER ICONS</span>
+          <p class="mb-0">Gunakan kelas <code>wi</code> dan <code>wi-*</code> bersama. Font dan CSS tersedia di bundle lokal.</p>
+        </div>
+      </section>
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-7">
+          <label class="form-label fw-bold" for="iconSearch">Cari ikon di halaman ini</label>
+          <input id="iconSearch" class="form-control" type="search" autocomplete="off" placeholder="Contoh: home, cloud, calendar…">
+        </div>
+        <div class="col-md-5">
+          <p class="small text-muted mb-0" id="iconCount" role="status"></p>
+        </div>
+      </div>
+      <p id="iconEmpty" class="alert alert-warning d-none">Tidak ada ikon yang cocok. Coba kata lain.</p>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Siang</h2>
+            <p class="text-muted mb-0">Kelas CSS dapat dipakai bersama warna dan ukuran tema.</p>
+          </div>
+          <span class="badge bg-yellow">6 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day sunny">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-sunny"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Sunny</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-sunny&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Sunny">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-sunny"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day cloudy">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-cloudy"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Cloudy</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-cloudy&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Cloudy">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-cloudy"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day rain">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-rain"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Rain</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-rain&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Rain">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-rain"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day showers">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-showers"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Showers</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-showers&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Showers">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-showers"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day snow">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-snow"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Snow</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-snow&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Snow">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-snow"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="day thunderstorm">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-day-thunderstorm"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Day Thunderstorm</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-day-thunderstorm&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Day Thunderstorm">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-day-thunderstorm"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Malam</h2>
+            <p class="text-muted mb-0">Kelas CSS dapat dipakai bersama warna dan ukuran tema.</p>
+          </div>
+          <span class="badge bg-yellow">6 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night clear">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-clear"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Clear</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-clear&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Clear">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-clear"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night alt cloudy">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-alt-cloudy"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Alt Cloudy</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-alt-cloudy&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Alt Cloudy">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-alt-cloudy"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night alt rain">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-alt-rain"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Alt Rain</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-alt-rain&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Alt Rain">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-alt-rain"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night alt snow">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-alt-snow"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Alt Snow</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-alt-snow&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Alt Snow">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-alt-snow"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night alt thunderstorm">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-alt-thunderstorm"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Alt Thunderstorm</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-alt-thunderstorm&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Alt Thunderstorm">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-alt-thunderstorm"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="night fog">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-night-fog"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Night Fog</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-night-fog&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Night Fog">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-night-fog"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="icon-section mb-5">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="fs-4 mb-1">Kondisi</h2>
+            <p class="text-muted mb-0">Kelas CSS dapat dipakai bersama warna dan ukuran tema.</p>
+          </div>
+          <span class="badge bg-yellow">12 ikon</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="cloud">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-cloud"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Cloud</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-cloud&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Cloud">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-cloud"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="cloudy">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-cloudy"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Cloudy</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-cloudy&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Cloudy">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-cloudy"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="rain">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-rain"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Rain</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-rain&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Rain">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-rain"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="showers">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-showers"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Showers</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-showers&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Showers">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-showers"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="snow">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-snow"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Snow</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-snow&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Snow">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-snow"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="fog">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-fog"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Fog</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-fog&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Fog">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-fog"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="strong wind">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-strong-wind"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Strong Wind</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-strong-wind&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Strong Wind">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-strong-wind"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="humidity">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-humidity"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Humidity</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-humidity&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Humidity">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-humidity"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="thermometer">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-thermometer"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Thermometer</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-thermometer&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Thermometer">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-thermometer"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="umbrella">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-umbrella"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Umbrella</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-umbrella&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Umbrella">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-umbrella"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="sunrise">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-sunrise"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Sunrise</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-sunrise&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Sunrise">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-sunrise"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 icon-item" data-icon-name="sunset">
+            <article class="icon-card h-100">
+              <div class="icon-preview" aria-hidden="true">
+                <i class="wi wi-sunset"></i>
+              </div>
+              <div class="icon-card-meta">
+                <h3>Sunset</h3>
+                <button type="button" class="btn btn-sm icon-copy" data-copy="&lt;i class=&quot;wi wi-sunset&quot;&gt;&lt;/i&gt;" aria-label="Salin kode Sunset">Salin kode</button>
+              </div>
+              <code>&lt;i class="wi wi-sunset"&gt;&lt;/i&gt;</code>
+            </article>
+          </div>
+        </div>
+      </section>
+      <p id="iconCopyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/icons.js"></script>
+</body>
+</html>

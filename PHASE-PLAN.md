@@ -531,32 +531,38 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 > **Tujuan**: 5 halaman showcase ikon library.
 
 ## 6.0 Keputusan
-- [ ] Feather Icons sudah dipakai di sidebar BRUTAL. (SVG inline). Halaman `icon-feather.html` cukup mendemokan daftar icon yang umum dipakai.
-- [ ] Library lain pakai CDN lokal (file di `assets/bundles/`).
+  - [x] Ikon sidebar BRUTAL. adalah SVG lokal buatan template; `icon-feather.html` mendemokan 24 SVG Feather resmi dengan gaya garis yang senada.
+  - [x] Semua font, CSS, dan SVG ikon disimpan lokal di `assets/bundles/`, tanpa CDN.
 
 ## 6.1 `icon-font-awesome.html`
-- [ ] Install Font Awesome 5/6 di `assets/bundles/fontawesome/`.
-- [ ] Grid ikon: solid, regular, brand. Copy-paste snippet.
+- [x] Install Font Awesome Free 6 di `assets/bundles/fontawesome/`.
+- [x] Grid ikon: solid, regular, brand. Copy-paste snippet.
 
 ## 6.2 `icon-material.html`
-- [ ] Material Icons via Google Fonts (font di lokal) atau file iconfont.
-- [ ] Grid ikon Material.
+- [x] Material Icons memakai icon font lokal.
+- [x] Grid ikon Material.
 
 ## 6.3 `icon-ionicons.html`
-- [ ] Install `assets/bundles/ionicons/ionicons.min.css/js`.
-- [ ] Grid ikon Ionicons.
+- [x] Install SVG resmi Ionicons di `assets/bundles/ionicons/svg/`; tidak memerlukan runtime CSS/JS.
+- [x] Grid ikon Ionicons.
 
 ## 6.4 `icon-feather.html`
-- [ ] Daftar Feather icon (SVG inline) yang dipakai di template.
-- [ ] Tiap ikon diklik → salin SVG path otomatis (clipboard.js).
+- [x] Daftar Feather SVG resmi dengan padanan ikon sidebar template.
+- [x] Tombol tiap ikon menyalin markup SVG lengkap dengan Clipboard API lokal dan fallback.
 
 ## 6.5 `icon-weather-icon.html`
-- [ ] Install `weather-icons` (CSS icon font).
-- [ ] Grid ikon cuaca.
+- [x] Install `weather-icons` (CSS icon font).
+- [x] Grid ikon cuaca.
 
 ## 🚦 Keluar Phase 6 jika:
 - ✅ 5 file ikon aktif.
 - ✅ Semua library/icon-font terinstal di `assets/bundles/`.
+
+### Hasil Phase 6 — 28 September 2026
+
+- Lima halaman ikon aktif di dropdown **Ikon**: Font Awesome Free (solid, regular, brand), Material Icons, Ionicons, Feather, dan Weather Icons.
+- Setiap halaman memiliki 24 contoh, pencarian lokal, serta salin snippet. Feather menyalin SVG lengkap; preview dan font tetap berjalan tanpa CDN.
+- `npm run build` menghasilkan 69 HTML rapi; `npm test` **44 passed**, termasuk aset ikon dan regresi desktop/mobile.
 
 ---
 
@@ -750,7 +756,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 3 | Forms Lanjutan | 5 (basic-form + 4 lanjutan) | forms.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 29 tes lulus |
 | 4 | Tables Lanjutan | 5 (basic-table + 4 lanjutan) | tables.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 34 tes lulus |
 | 5 | Charts | 6 (Chart.js + 5 library lain) | charts.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 41 tes lulus |
-| 6 | Icons | 5 | 0 | ⬜ |
+| 6 | Icons | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 44 tes lulus |
 | 7 | Media | 5 | 0 | ⬜ |
 | 8 | Maps | 9 | 0 | ⬜ |
 | 9 | Halaman Khusus & Errors | 7 + multilevel entry | rename `404.html` | ⬜ |
