@@ -22,19 +22,21 @@
 
 > **Audit Phase 6 — 28 September 2026:** lima showcase ikon dengan aset lokal tersedia di dropdown Ikon. Kini terdapat **69 file HTML aktual**: 63 entri target dan 6 halaman pendukung; 23 entri target masih menunggu phase berikutnya.
 
+> **Audit Phase 7 — 28 September 2026:** lima halaman Media aktif dengan dua galeri, dua slider, dan timeline. Kini terdapat **74 file HTML aktual**: 68 entri target dan 6 halaman pendukung; 18 entri target masih menunggu phase berikutnya. GLightbox MIT dipakai untuk demo lightbox karena ketentuan lisensi LightGallery bagi themes/templates komersial.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 63 |
-| ❌ Entri target belum tersedia | 23 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 68 |
+| ❌ Entri target belum tersedia | 18 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 69 |
+| File HTML aktual, termasuk 6 halaman pendukung | 74 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **69 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup utama** dan **74 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
 
 ---
 
@@ -154,19 +156,19 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ### Gallery
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 58 | Light Gallery | `light-gallery.html` | — | ❌ Belum |
-| 59 | Gallery 2 | `gallery1.html` | — | ❌ Belum |
+| 58 | Light Gallery | `light-gallery.html` | `light-gallery.html` | ✅ Phase 7; GLightbox MIT |
+| 59 | Gallery 2 | `gallery1.html` | `gallery1.html` | ✅ Phase 7 |
 
 ### Sliders
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 60 | Bootstrap Carousel | `carousel.html` | — | ❌ Belum |
-| 61 | Owl Carousel | `owl-carousel.html` | — | ❌ Belum |
+| 60 | Bootstrap Carousel | `carousel.html` | `carousel.html` | ✅ Phase 7 |
+| 61 | Owl Carousel | `owl-carousel.html` | `owl-carousel.html` | ✅ Phase 7 |
 
 ### Timeline
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 62 | Timeline | `timeline.html` | — | ❌ Belum |
+| 62 | Timeline | `timeline.html` | `timeline.html` | ✅ Phase 7 |
 
 ---
 
@@ -258,22 +260,20 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ✅ icon-font-awesome.html ✅ icon-material.html
 ✅ icon-ionicons.html      ✅ icon-feather.html
 ✅ icon-weather-icon.html
+✅ light-gallery.html      ✅ gallery1.html
+✅ carousel.html           ✅ owl-carousel.html
+✅ timeline.html
 ```
 
-**Total: 69 file HTML aktual; 63 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 74 file HTML aktual; 68 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (23 entri target tersisa)
+## ❌ Yang Perlu Dibuat (18 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
 
 ### 🟢 Prioritas Rendah (visual & library)
-- [ ] `light-gallery.html` — Lightbox gallery
-- [ ] `gallery1.html` — Gallery alternatif
-- [ ] `carousel.html` — Bootstrap carousel demo
-- [ ] `owl-carousel.html` — Owl Carousel demo
-- [ ] `timeline.html` — Timeline component
 
 ### ⚪ Optional / Maps (butuh API key)
 - [ ] `gmaps-simple.html` — Google Maps simple
@@ -366,6 +366,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 - [x] Font, CSS, dan SVG di-host lokal. Ikon sidebar BRUTAL. adalah SVG template tersendiri, sementara showcase Feather memakai SVG resmi.
 - [x] `npm run build` menghasilkan 69 halaman; **44 tes browser lulus**, termasuk aset ikon dan regresi desktop/mobile.
 
+### Hasil Phase 7 — Media
+
+- [x] Lima halaman Media aktif di sidebar: lightbox, galeri masonry, Bootstrap Carousel, Owl Carousel, dan timeline.
+- [x] GLightbox MIT menggantikan LightGallery untuk demo lightbox; Owl Carousel dimuat lokal bersama jQuery hanya pada halaman demo terkait.
+- [x] Bootstrap Carousel memiliki hero, grup kartu, dan caption; Owl menyediakan mode dasar, autoplay dengan jeda, dan navigasi thumbnail. Timeline memiliki alur vertikal, zigzag, dan lampiran gambar.
+- [x] `npm run build` menghasilkan 74 halaman; **49 tes browser lulus**, termasuk interaksi media dan regresi desktop/mobile.
+
 ---
 
 ## 🗂️ Rekomendasi Struktur Sidebar BRUTAL. (Final)
@@ -430,13 +437,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
     └── Weather Icon           → icon-weather-icon.html ✅
 
 🖼️ MEDIA
-├── Galeri                     → (group baru)
-│   ├── Light Gallery          → light-gallery.html ❌
-│   └── Gallery 2              → gallery1.html      ❌
-├── Slider                     → (group baru)
-│   ├── Bootstrap Carousel     → carousel.html      ❌
-│   └── Owl Carousel           → owl-carousel.html  ❌
-└── Timeline                   → timeline.html      ❌
+├── Galeri                     → (dropdown aktif)
+│   ├── Light Gallery          → light-gallery.html ✅ (GLightbox)
+│   └── Gallery 2              → gallery1.html      ✅
+├── Slider                     → (dropdown aktif)
+│   ├── Bootstrap Carousel     → carousel.html      ✅
+│   └── Owl Carousel           → owl-carousel.html  ✅
+└── Timeline                   → timeline.html      ✅
 
 🗺️ MAPS
 ├── Google Maps                → (group baru, 8 submenu) ❌
@@ -473,9 +480,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 69 (63 target + 6 halaman pendukung)
-Sudah selesai: 63/86 (73.3%)
-Belum selesai: 23/86 (26.7%)
+Total file HTML aktual: 74 (68 target + 6 halaman pendukung)
+Sudah selesai: 68/86 (79.1%)
+Belum selesai: 18/86 (20.9%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -490,9 +497,9 @@ Belum selesai: 23/86 (26.7%)
 - [x] **Tables**: 5/5 (overview di tables.html)
 - [x] **Charts**: 6/6 (overview di `charts.html`)
 - [x] **Icons**: 5/5
-- [ ] **Gallery**: 0/2
-- [ ] **Sliders**: 0/2
-- [ ] **Timeline**: 0/1
+- [x] **Gallery**: 2/2
+- [x] **Sliders**: 2/2
+- [x] **Timeline**: 1/1
 - [ ] **Google Maps**: 0/8
 - [ ] **Vector Map**: 0/1
 - [ ] **Auth**: 3/5 (Reset Password dan Subscribe belum)
@@ -504,10 +511,10 @@ Belum selesai: 23/86 (26.7%)
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Phase 0–6 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, Charts, serta Icons sudah diterapkan.
-2. **Lanjut Phase 7 — Media**: siapkan galeri, slider, dan timeline sesuai `PHASE-PLAN.md`.
-3. **Fase berikutnya**: Media, Maps, Errors, dan Posts mengikuti urutan rencana; Google Maps membutuhkan API key.
+1. **Phase 0–7 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, Charts, Icons, serta Media sudah diterapkan.
+2. **Lanjut Phase 8 — Maps** sesuai `PHASE-PLAN.md`; Google Maps membutuhkan API key.
+3. **Fase berikutnya**: Errors dan Posts mengikuti urutan rencana.
 
 ---
 
-> 📌 **Setelah Phase 6**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Setelah Phase 7**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

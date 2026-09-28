@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Bootstrap Carousel — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/media.css">
+</head>
+<body data-page="carousel">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Slider</li>
+            <li class="breadcrumb-item active" aria-current="page">Bootstrap Carousel</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Slide demi slide, tetap berani.</h1>
+          <p>Tiga variasi carousel bawaan Bootstrap 5: hero, kumpulan kartu, dan cerita dengan caption.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <div class="d-grid gap-4">
+        <section class="card media-panel ">
+          <div class="card-body">
+            <div class="panel-heading">
+              <div>
+                <h2>Hero dengan indikator</h2>
+                <p>Satu karya per slide, dengan kontrol dan indikator posisi.</p>
+              </div>
+            </div>
+            <div id="mediaHeroCarousel" class="carousel slide media-carousel" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mediaHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mediaHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mediaHeroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/workspace/studio.svg" alt="Ilustrasi karya Studio North" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Website</span>
+                    <h3>Studio North</h3>
+                    <p>Ruang digital untuk ide yang berani.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/workspace/forma.svg" alt="Ilustrasi karya Forma Objects" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Branding</span>
+                    <h3>Forma Objects</h3>
+                    <p>Bentuk sederhana, kesan yang menetap.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/workspace/pocket.svg" alt="Ilustrasi karya Pocket Club" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Aplikasi</span>
+                    <h3>Pocket Club</h3>
+                    <p>Keuangan terasa lebih dekat.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#mediaHeroCarousel" data-bs-slide="prev" aria-label="Slide sebelumnya">
+                <span aria-hidden="true">←</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#mediaHeroCarousel" data-bs-slide="next" aria-label="Slide berikutnya">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="card media-panel ">
+          <div class="card-body">
+            <div class="panel-heading">
+              <div>
+                <h2>Beberapa kartu sekaligus</h2>
+                <p>Dua kelompok karya dalam susunan responsif.</p>
+              </div>
+            </div>
+            <div id="mediaMultiCarousel" class="carousel slide media-carousel-multi" data-bs-ride="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row g-3">
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/studio.svg" alt="Ilustrasi karya Studio North" width="720" height="480" loading="eager">
+                        <h3>Studio North</h3>
+                        <p>Website</p>
+                      </article>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/forma.svg" alt="Ilustrasi karya Forma Objects" width="720" height="480" loading="eager">
+                        <h3>Forma Objects</h3>
+                        <p>Branding</p>
+                      </article>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/pocket.svg" alt="Ilustrasi karya Pocket Club" width="720" height="480" loading="eager">
+                        <h3>Pocket Club</h3>
+                        <p>Aplikasi</p>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-3">
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/bloom.svg" alt="Ilustrasi karya Bloom Market" width="720" height="480" loading="eager">
+                        <h3>Bloom Market</h3>
+                        <p>Branding</p>
+                      </article>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/mono.svg" alt="Ilustrasi karya Mono Journal" width="720" height="480" loading="eager">
+                        <h3>Mono Journal</h3>
+                        <p>Website</p>
+                      </article>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                      <article class="media-mini-card">
+                        <img src="assets/img/workspace/move.svg" alt="Ilustrasi karya Move Together" width="720" height="480" loading="eager">
+                        <h3>Move Together</h3>
+                        <p>Aplikasi</p>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#mediaMultiCarousel" data-bs-slide="prev" aria-label="Slide sebelumnya">
+                <span aria-hidden="true">←</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#mediaMultiCarousel" data-bs-slide="next" aria-label="Slide berikutnya">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="card media-panel ">
+          <div class="card-body">
+            <div class="panel-heading">
+              <div>
+                <h2>Caption yang menonjol</h2>
+                <p>Cerita singkat di atas ilustrasi karya.</p>
+              </div>
+            </div>
+            <div id="mediaCaptionCarousel" class="carousel slide media-caption-carousel" data-bs-ride="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/workspace/bloom.svg" alt="Ilustrasi karya Bloom Market" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Branding</span>
+                    <h3>Bloom Market</h3>
+                    <p>Pasar tanaman dengan semangat baru.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/workspace/mono.svg" alt="Ilustrasi karya Mono Journal" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Website</span>
+                    <h3>Mono Journal</h3>
+                    <p>Cerita yang nyaman untuk dibaca.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/workspace/move.svg" alt="Ilustrasi karya Move Together" width="720" height="480" loading="eager">
+                  <div class="media-slide-caption">
+                    <span class="badge bg-yellow">Aplikasi</span>
+                    <h3>Move Together</h3>
+                    <p>Kemajuan kecil yang dirayakan bersama.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#mediaCaptionCarousel" data-bs-slide="prev" aria-label="Slide sebelumnya">
+                <span aria-hidden="true">←</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#mediaCaptionCarousel" data-bs-slide="next" aria-label="Slide berikutnya">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

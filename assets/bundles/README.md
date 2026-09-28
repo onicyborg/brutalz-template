@@ -1,6 +1,6 @@
 # Library eksternal lokal
 
-Phase 2–6 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
+Phase 2–7 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
 `package.json` dan `package-lock.json`; file distribusi disalin ke sini agar
 halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 
@@ -8,7 +8,7 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | --- | --- | --- | --- |
 | SweetAlert2 | 11.26.25 | `sweet-alert.html` | MIT, https://github.com/sweetalert2/sweetalert2 (`sweetalert/LICENSE`) |
 | Toastr | 2.1.4 | `toastr.html` | MIT, https://github.com/CodeSeven/toastr (lisensi dinyatakan pada README upstream) |
-| jQuery | 3.7.1 | `toastr.html`, `forms-advanced-form.html`, `form-wizard.html`, `datatables.html`, `export-table.html`, `chart-sparkline.html`, `chart-morris.html` | MIT, https://github.com/jquery/jquery (`jquery/LICENSE.txt`) |
+| jQuery | 3.7.1 | `toastr.html`, `forms-advanced-form.html`, `form-wizard.html`, `datatables.html`, `export-table.html`, `chart-sparkline.html`, `chart-morris.html`, `owl-carousel.html` | MIT, https://github.com/jquery/jquery (`jquery/LICENSE.txt`) |
 | Dropzone | 5.9.3 | `multiple-upload.html` | MIT, https://github.com/dropzone/dropzone (`dropzone/LICENSE`) |
 | Select2 | 4.0.13 | `forms-advanced-form.html` | MIT, https://github.com/select2/select2 (`select2/LICENSE.md`) |
 | Quill | 2.0.3 | `forms-editor.html` | BSD-3-Clause, https://github.com/slab/quill (`quill/LICENSE`; bundle juga memuat notice lisensi dependensi) |
@@ -28,6 +28,8 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | Ionicons | 7.4.0 | `icon-ionicons.html` | MIT, https://github.com/ionic-team/ionicons (`ionicons/LICENSE`) |
 | Feather Icons | 4.29.2 | `icon-feather.html` | MIT, https://github.com/feathericons/feather (`feather/LICENSE`) |
 | Weather Icons | 2.0.12 | `icon-weather-icon.html` | Font SIL OFL 1.1, CSS MIT, https://github.com/erikflowers/weather-icons (`weather-icons/LICENSE.md`) |
+| GLightbox | 3.3.1 | `light-gallery.html` | MIT, https://github.com/biati-digital/glightbox (`glightbox/LICENSE.md`) |
+| Owl Carousel | 2.3.4 | `owl-carousel.html` | MIT, https://github.com/OwlCarousel2/OwlCarousel2 (`owlcarousel/LICENSE`) |
 
 Otika memakai SweetAlert lama dan iziToast. Phase 2 memakai SweetAlert2 dan
 Toastr seperti yang tertulis di `PHASE-PLAN.md`; keduanya dipisahkan per halaman.
@@ -58,3 +60,9 @@ resmi terpilih masing-masing; keduanya tidak memerlukan runtime eksternal.
 Halaman Feather memakai `assets/js/feather-data.js` hasil generator untuk
 menyalin SVG lengkap tanpa fetch, termasuk saat template dibuka langsung
 dengan `file://`. Ikon sidebar BRUTAL. tetap memakai SVG template tersendiri.
+
+Phase 7 memakai GLightbox sebagai pengganti LightGallery untuk demo lightbox.
+Lisensi LightGallery meminta lisensi komersial untuk themes/templates,
+sedangkan GLightbox tersedia di bawah MIT. Owl Carousel 2.3.4 tetap mengikuti
+rencana dan dimuat bersama jQuery hanya di halaman demonya. Bootstrap Carousel,
+galeri masonry, dan timeline memakai CSS/JavaScript template tanpa plugin baru.

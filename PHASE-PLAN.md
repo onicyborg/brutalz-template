@@ -571,33 +571,39 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 ## 7.1 Gallery
 
 ### `light-gallery.html`
-- [ ] Install `assets/bundles/lightgallery/lightgallery.min.js` + CSS.
-- [ ] Grid thumbnail gambar, klik → lightbox.
-- [ ] Library: **LightGallery**.
+- [x] Install GLightbox lokal di `assets/bundles/glightbox/` dengan CSS.
+- [x] Grid thumbnail gambar, klik → lightbox.
+- [x] Library: **GLightbox** (MIT). LightGallery memiliki ketentuan lisensi komersial untuk themes/templates; pengganti ini mempertahankan interaksi lightbox tanpa persyaratan lisensi tersebut.
 
 ### `gallery1.html`
-- [ ] Gallery sederhana dengan grid masonry (CSS columns / grid).
-- [ ] Library: **tanpa**.
+- [x] Gallery sederhana dengan grid masonry (CSS columns / grid).
+- [x] Library: **tanpa**.
 
 ## 7.2 Sliders
 
 ### `carousel.html`
-- [ ] Bootstrap Carousel showcase: slide tunggal, multiple, dengan caption, dengan kontrol.
-- [ ] Library: **Bootstrap 5 carousel** (built-in).
+- [x] Bootstrap Carousel showcase: slide tunggal, multiple, dengan caption, dengan kontrol.
+- [x] Library: **Bootstrap 5 carousel** (built-in).
 
 ### `owl-carousel.html`
-- [ ] Install `assets/bundles/owlcarousel/owl.carousel.min.js` + CSS.
-- [ ] Demo: carousel basic, dengan autoplay, dengan thumbnail nav.
-- [ ] Library: **Owl Carousel**.
+- [x] Install `assets/bundles/owlcarousel/` JS + CSS lokal.
+- [x] Demo: carousel basic, dengan autoplay, dengan thumbnail nav.
+- [x] Library: **Owl Carousel**.
 
 ## 7.3 Timeline (`timeline.html`)
-- [ ] Timeline vertikal dengan activity items (ikon, waktu, deskripsi).
-- [ ] Varian: kiri-kanan (zigzag), single column, dengan image attachment.
-- [ ] Library: **tanpa**.
+- [x] Timeline vertikal dengan tanggal, judul, dan deskripsi aktivitas.
+- [x] Varian: kiri-kanan (zigzag), single column, dengan image attachment.
+- [x] Library: **tanpa**.
 
 ## 🚦 Keluar Phase 7 jika:
 - ✅ 5 file media baru aktif.
-- ✅ Library LightGallery, Owl Carousel terinstal.
+- ✅ GLightbox dan Owl Carousel terinstal lokal; galeri masonry dan timeline tanpa plugin tambahan.
+
+### Hasil Phase 7 — 28 September 2026
+
+- Lima halaman Media aktif: lightbox untuk ilustrasi SVG lokal, galeri masonry, tiga demo Bootstrap Carousel, tiga demo Owl Carousel, dan tiga variasi timeline.
+- GLightbox MIT menggantikan LightGallery sesuai keputusan lisensi di atas. Semua bundle hanya dimuat pada halaman terkait; gambar berasal dari aset workspace template.
+- `npm run build` menghasilkan 74 HTML rapi; `npm test` **49 passed**, termasuk interaksi media dan regresi desktop/mobile.
 
 ---
 
@@ -757,7 +763,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 4 | Tables Lanjutan | 5 (basic-table + 4 lanjutan) | tables.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 34 tes lulus |
 | 5 | Charts | 6 (Chart.js + 5 library lain) | charts.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 41 tes lulus |
 | 6 | Icons | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 44 tes lulus |
-| 7 | Media | 5 | 0 | ⬜ |
+| 7 | Media | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 49 tes lulus |
 | 8 | Maps | 9 | 0 | ⬜ |
 | 9 | Halaman Khusus & Errors | 7 + multilevel entry | rename `404.html` | ⬜ |
 | 10 | Polish & QA | 0 | 2 (docs.html, README.md) | ⬜ |

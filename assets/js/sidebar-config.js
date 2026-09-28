@@ -85,6 +85,17 @@ window.BRUTAL_SIDEBAR = [
       {"page":"icon-weather-icon","label":"Weather Icons"}
     ]}
   ]},
+  {"group":"MEDIA","items":[
+    {"id":"galleryMenu","label":"Galeri","icon":"grid","children":[
+      {"page":"light-gallery","label":"Light Gallery"},
+      {"page":"gallery1","label":"Gallery 2"}
+    ]},
+    {"id":"sliderMenu","label":"Slider","icon":"layers","children":[
+      {"page":"carousel","label":"Bootstrap Carousel"},
+      {"page":"owl-carousel","label":"Owl Carousel"}
+    ]},
+    {"page":"timeline","label":"Timeline","icon":"calendar"}
+  ]},
   {"group":"HALAMAN","items":[
     {"page":"profile","label":"Profil & pengaturan","icon":"user"},
     {"page":"invoice","label":"Invoice","icon":"file"},
