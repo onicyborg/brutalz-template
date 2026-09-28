@@ -25,6 +25,7 @@
     "jquery": "3.7.1",
     "jquery-sparkline": "2.4.0",
     "jquery-steps": "1.1.0",
+    "jsvectormap": "1.7.0",
     "jszip": "3.10.2",
     "morris.js": "https://codeload.github.com/morrisjs/morris.js/tar.gz/14530d0733801d5bef1264cf3d062ecace7e326b",
     "owl.carousel": "2.3.4",

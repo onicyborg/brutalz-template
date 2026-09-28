@@ -41,6 +41,8 @@ Tidak perlu `npm install` untuk melihat template. Instalasi npm hanya diperlukan
 | `light-gallery.html`, `gallery1.html` | Lightbox GLightbox dan galeri masonry tanpa plugin |
 | `carousel.html`, `owl-carousel.html` | Variasi Bootstrap Carousel dan Owl Carousel lokal |
 | `timeline.html` | Timeline vertikal, zigzag, dan lampiran gambar |
+| `gmaps-*.html` | Delapan demo Google Maps: peta, marker, rute, geocoding, dan geolocation |
+| `vector-map.html` | Peta dunia jsVectorMap lokal dengan region dan marker interaktif |
 | `projects.html` | Kanban proyek, penambahan proyek, perubahan status |
 | `calendar.html` | Navigasi bulan, penambahan agenda, detail agenda |
 | `widget-chart.html`, `widget-data.html` | Mini grafik SVG, KPI, progres, heatmap, kalender mini |
@@ -71,6 +73,7 @@ assets/css/tables.css      Style halaman Tables Phase 4
 assets/css/charts.css      Style halaman Charts Phase 5
 assets/css/icons.css       Style lima halaman Icons Phase 6
 assets/css/media.css       Style lima halaman Media Phase 7
+assets/css/maps.css        Style sembilan halaman Maps Phase 8
 assets/js/app.js           Interaksi demo dan penyimpanan lokal
 assets/js/workspace.js     Interaksi chat, portfolio, blog, widget, dan email lokal
 assets/js/advanced.js      Interaksi modal, notifikasi, empty state, dan pratinjau file
@@ -80,6 +83,7 @@ assets/js/charts.js        Inisialisasi enam library grafik dan responsivitasnya
 assets/js/icons.js         Pencarian dan salin kode ikon
 assets/js/feather-data.js  Data SVG Feather resmi, dihasilkan generator
 assets/js/media.js         Inisialisasi lightbox dan Owl Carousel
+assets/js/maps.js          Google Maps, Routes, geocoding, geolocation, dan jsVectorMap
 assets/js/sidebar-config.js Sumber tunggal menu sidebar dan pencarian
 assets/js/sidebar.js       Renderer, collapse, drawer, dan fokus keyboard
 assets/js/sidebar-icons.js SVG lokal, dihasilkan dari ICONS di generator
@@ -96,6 +100,7 @@ scripts/table_pages.py    Konten overview dan empat halaman Tables Phase 4
 scripts/chart_pages.py    Konten overview dan enam halaman Charts Phase 5
 scripts/icon_pages.py     Konten lima halaman Icons Phase 6
 scripts/media_pages.py    Konten lima halaman Media Phase 7
+scripts/map_pages.py      Konten sembilan halaman Maps Phase 8
 tests/template.spec.js    Pengujian alur pengguna dengan Playwright
 tests/workspace.spec.js   Pengujian interaksi Phase 1
 tests/advanced.spec.js    Pengujian interaksi dan bundle Phase 2
@@ -104,6 +109,7 @@ tests/tables.spec.js      Pengujian alur tabel dan ekspor Phase 4
 tests/charts.spec.js      Pengujian keenam library grafik Phase 5
 tests/icons.spec.js       Pengujian aset, pencarian, dan salin kode ikon Phase 6
 tests/media.spec.js       Pengujian lightbox, carousel, dan timeline Phase 7
+tests/maps.spec.js        Pengujian placeholder, peta vektor, dan interaksi Maps Phase 8
 ```
 
 Ubah token `--neo-*` di `assets/css/theme.css` untuk mengganti warna, shadow, dan border. File ini harus dimuat **setelah** Bootstrap CSS. Komponen tetap menggunakan kelas Bootstrap seperti `.btn`, `.card`, `.form-control`, `.modal`, `.row`, dan `.col-md-*`.
@@ -115,13 +121,13 @@ python3 -m pip install -r requirements-build.txt
 npm run build
 ```
 
-**Build menimpa 74 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
+**Build menimpa 83 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
 
 ## Fondasi sidebar — Phase 0
 
 `sidebar-config.js` berisi array `{ group, items }`. Item halaman memakai `{ page, label, icon }`; item grup memakai `{ id, label, icon, children }`. Nilai `page` sama dengan `data-page` dan nama HTML tanpa ekstensi. Gunakan ID grup yang unik. Array harus valid JSON karena generator juga membacanya untuk judul halaman.
 
-Semua 74 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; dan halaman Phase 7 yang memerlukan plugin menambah `media.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
+Semua 83 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; halaman Phase 7 yang memerlukan plugin menambah `media.js`; dan halaman Phase 8 menambah `maps.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
 
 Sidebar membuka grup halaman aktif secara otomatis. Di mobile, drawer mendukung backdrop, Escape, focus trap, dan pengembalian fokus. Halaman autentikasi/error menggunakan drawer yang sama melalui tombol menu pada semua ukuran layar agar layout standalone tetap nyaman.
 
@@ -140,13 +146,21 @@ Keputusan pemisahan form, tabel, dan grafik di `SIDEBAR-CHECKLIST.md` sudah dite
 - Hubungkan handler submit/data di `assets/js/app.js` ke API pilihanmu. Validasi server, otorisasi, autentikasi, dan penyimpanan permanen perlu diimplementasikan di backend.
 - Server development hanya untuk preview. Untuk deployment statis, salin HTML, `assets/`, dan file Bootstrap `dist/css/bootstrap.min.css` serta `dist/js/bootstrap.bundle.min.js` (beserta sourcemap jika dibutuhkan). Folder source Bootstrap lainnya tidak harus dideploy.
 
+## Google Maps dan API key
+
+Buka salah satu halaman `gmaps-*.html`, lalu masukkan API key browser pada panel **Hubungkan Google Maps**. Aktifkan billing dan Maps JavaScript API di Google Cloud; demo rute juga memerlukan Routes API, sedangkan pencarian alamat memerlukan Geocoding API. Batasi key ke domain situs dan API yang dipakai. Key disimpan di `localStorage` browser (`brutal.mapsApiKey`) agar berlaku lintas delapan halaman; tombol **Hapus key tersimpan** menghapusnya. Jangan memasukkan key yang tidak dibatasi. Tanpa key, halaman menampilkan placeholder dan tidak memuat request Google. Geolocation memerlukan HTTPS atau `localhost` serta izin browser.
+
+Key demo yang diberikan untuk Phase 8 berhasil memuat peta dasar dan rute pada pengujian lokal. Permintaan geocoding ditolak oleh konfigurasi key saat ini; aktifkan Geocoding API dan periksa pembatasan API key di Google Cloud untuk menjalankan demo pencarian alamat. Key tidak disimpan di repository.
+
+Rute menggunakan Routes Library resmi. Di Advanced Route, mode via Cirebon dan alternatif Jakarta–Bandung terpisah karena Google tidak menyediakan alternatif ketika request memuat waypoint. `vector-map.html` memakai jsVectorMap dan data dunia lokal tanpa key atau layanan eksternal.
+
 ## Analisis acuan Otika
 
 Referensi lokal yang dianalisis: `/mnt/C80A6A9E0A6A88F0/Templete Web/otika.namikulo.com`.
 
 Otika menyediakan admin shell, dashboard, widget, UI dasar/advanced, forms, tables, chart plugins, apps, auth, dan utility pages, dengan fondasi Bootstrap 4 dan jQuery. BRUTAL. mengambil **cakupan dan pola navigasi** sebagai acuan; markup, CSS tema, ikon, dan interaksinya dibuat ulang untuk Bootstrap 5.3.8. Tidak menyalin atau memuat aset Otika.
 
-Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE; delapan halaman Phase 2 berada di dropdown Komponen Lanjutan. Lima demo form berada di dropdown Form & Validasi; lima demo tabel berada di dropdown Tabel Data; enam library grafik berada di dropdown Grafik & Widget; lima koleksi ikon berada di dropdown Ikon. Grup Media menyediakan dua galeri, dua carousel, dan timeline. Versi ini belum mencakup pengiriman chat/email nyata, maps, atau upload server. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
+Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE; delapan halaman Phase 2 berada di dropdown Komponen Lanjutan. Lima demo form berada di dropdown Form & Validasi; lima demo tabel berada di dropdown Tabel Data; enam library grafik berada di dropdown Grafik & Widget; lima koleksi ikon berada di dropdown Ikon. Grup Media menyediakan dua galeri, dua carousel, dan timeline. Grup Maps menyediakan delapan demo Google Maps dan peta vektor dunia. Versi ini belum mencakup pengiriman chat/email nyata atau upload server. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
 
 ## Verifikasi
 

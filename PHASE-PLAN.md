@@ -607,7 +607,7 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 
 ---
 
-# 🟨 PHASE 8 — Maps (Butuh API Key)
+# ✅ PHASE 8 — Maps (Butuh API Key)
 
 ## 8.0 Catatan
 - Google Maps butuh API Key dari Google Cloud Console. Tampilkan placeholder + cara mengisi API Key.
@@ -616,37 +616,46 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 ## 8.1 Google Maps (8 halaman)
 
 ### `gmaps-simple.html`
-- [ ] Init peta dasar (center Indonesia).
-- [ ] Library: **GMaps.js** (`assets/bundles/gmaps/gmaps.min.js`).
+- [x] Init peta dasar (center Indonesia).
+- [x] Library: **Maps JavaScript API resmi** + Routes Library (GMaps.js diarsipkan; lihat catatan implementasi).
 
 ### `gmaps-marker.html`
-- [ ] Peta + 1 marker dengan info window.
+- [x] Peta + 1 marker dengan info window.
 
 ### `gmaps-multiple-marker.html`
-- [ ] Peta + banyak marker (data array).
+- [x] Peta + banyak marker (data array).
 
 ### `gmaps-route.html`
-- [ ] Peta + direction route A→B.
+- [x] Peta + direction route A→B.
 
 ### `gmaps-advanced-route.html`
-- [ ] Peta + multi-waypoint + alternatif.
+- [x] Peta + multi-waypoint + alternatif.
 
 ### `gmaps-draggable-marker.html`
-- [ ] Peta + marker yang bisa di-drag, koordinat update realtime.
+- [x] Peta + marker yang bisa di-drag, koordinat update realtime.
 
 ### `gmaps-geocoding.html`
-- [ ] Input alamat → peta pindah + marker.
+- [x] Input alamat → peta pindah + marker.
 
 ### `gmaps-geolocation.html`
-- [ ] Tombol "Lokasi saya" → peta zoom ke user location.
+- [x] Tombol "Lokasi saya" → peta zoom ke user location.
 
 ## 8.2 `vector-map.html`
-- [ ] Install `assets/bundles/jvectormap/jquery-jvectormap.min.js` + CSS + world map data.
-- [ ] Peta dunia interaktif dengan warna per-region.
+- [x] Install **jsVectorMap 1.7.0** (`assets/bundles/jsvectormap/`) + CSS + world map data.
+- [x] Peta dunia interaktif dengan warna per-region.
 
 ## 🚦 Keluar Phase 8 jika:
 - ✅ 9 file peta aktif (8 gmaps + 1 vector).
 - ✅ Dokumentasi cara isi API Key tercantum di setiap halaman gmaps.
+
+---
+
+### Hasil Phase 8 — 28 September 2026
+- Sembilan halaman peta aktif di grup MAPS: delapan Google Maps dan satu peta vektor dunia lokal. Setiap halaman Google menyediakan placeholder, instruksi key, status, tombol hapus key, serta pemuatan API hanya setelah key tersedia di browser. Key demo tidak disimpan di source atau commit.
+- GMaps.js sudah diarsipkan dan Directions Service lama sudah digantikan; implementasi memakai Maps JavaScript API resmi dengan Routes Library. Alternatif rute tidak tersedia bila request berisi waypoint, sehingga halaman Advanced Route memberi dua mode terpisah: via Cirebon dan alternatif Jakarta–Bandung.
+- jsVectorMap (fork MIT modern dari jVectorMap) dipin versi 1.7.0 dan dibundel lokal. Navigasi, pencarian, generator, README, dan checklist diperbarui.
+- Pengujian browser mencakup placeholder tanpa request eksternal, peta dunia, marker, rute/alternatif, geocoding, drag, geolocation, serta smoke test seluruh halaman.
+- Uji langsung dengan key demo berhasil untuk peta dasar dan rute. Geocoding API menolak key demo pada konfigurasi Google Cloud saat ini; halaman menampilkan petunjuk izin API yang perlu diaktifkan.
 
 ---
 
@@ -764,7 +773,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 5 | Charts | 6 (Chart.js + 5 library lain) | charts.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 41 tes lulus |
 | 6 | Icons | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 44 tes lulus |
 | 7 | Media | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 49 tes lulus |
-| 8 | Maps | 9 | 0 | ⬜ |
+| 8 | Maps | 9 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 53 tes lulus |
 | 9 | Halaman Khusus & Errors | 7 + multilevel entry | rename `404.html` | ⬜ |
 | 10 | Polish & QA | 0 | 2 (docs.html, README.md) | ⬜ |
 

@@ -24,13 +24,15 @@
 
 > **Audit Phase 7 — 28 September 2026:** lima halaman Media aktif dengan dua galeri, dua slider, dan timeline. Kini terdapat **74 file HTML aktual**: 68 entri target dan 6 halaman pendukung; 18 entri target masih menunggu phase berikutnya. GLightbox MIT dipakai untuk demo lightbox karena ketentuan lisensi LightGallery bagi themes/templates komersial.
 
+> **Audit Phase 8 — 28 September 2026:** sembilan halaman Maps aktif: delapan Google Maps dengan key yang dimasukkan di browser, dan satu peta dunia jsVectorMap lokal. Kini terdapat **83 file HTML aktual**: 77 entri target dan 6 halaman pendukung; 9 entri target masih menunggu phase berikutnya.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 68 |
-| ❌ Entri target belum tersedia | 18 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 77 |
+| ❌ Entri target belum tersedia | 9 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 74 |
+| File HTML aktual, termasuk 6 halaman pendukung | 83 |
 
 ---
 
@@ -177,19 +179,19 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 ### Google Maps
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 63 | Advanced Route | `gmaps-advanced-route.html` | — | ❌ Belum |
-| 64 | Draggable Marker | `gmaps-draggable-marker.html` | — | ❌ Belum |
-| 65 | Geocoding | `gmaps-geocoding.html` | — | ❌ Belum |
-| 66 | Geolocation | `gmaps-geolocation.html` | — | ❌ Belum |
-| 67 | Marker | `gmaps-marker.html` | — | ❌ Belum |
-| 68 | Multiple Marker | `gmaps-multiple-marker.html` | — | ❌ Belum |
-| 69 | Route | `gmaps-route.html` | — | ❌ Belum |
-| 70 | Simple | `gmaps-simple.html` | — | ❌ Belum |
+| 63 | Advanced Route | `gmaps-advanced-route.html` | `gmaps-advanced-route.html` | ✅ Phase 8 |
+| 64 | Draggable Marker | `gmaps-draggable-marker.html` | `gmaps-draggable-marker.html` | ✅ Phase 8 |
+| 65 | Geocoding | `gmaps-geocoding.html` | `gmaps-geocoding.html` | ✅ Phase 8 |
+| 66 | Geolocation | `gmaps-geolocation.html` | `gmaps-geolocation.html` | ✅ Phase 8 |
+| 67 | Marker | `gmaps-marker.html` | `gmaps-marker.html` | ✅ Phase 8 |
+| 68 | Multiple Marker | `gmaps-multiple-marker.html` | `gmaps-multiple-marker.html` | ✅ Phase 8 |
+| 69 | Route | `gmaps-route.html` | `gmaps-route.html` | ✅ Phase 8 |
+| 70 | Simple | `gmaps-simple.html` | `gmaps-simple.html` | ✅ Phase 8 |
 
 ### Vector Map
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 71 | Vector Map | `vector-map.html` | — | ❌ Belum |
+| 71 | Vector Map | `vector-map.html` | `vector-map.html` | ✅ Phase 8 |
 
 ---
 
@@ -265,26 +267,26 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 ✅ timeline.html
 ```
 
-**Total: 74 file HTML aktual; 68 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 83 file HTML aktual; 77 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (18 entri target tersisa)
+## ❌ Yang Perlu Dibuat (9 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
 
 ### 🟢 Prioritas Rendah (visual & library)
 
-### ⚪ Optional / Maps (butuh API key)
-- [ ] `gmaps-simple.html` — Google Maps simple
-- [ ] `gmaps-marker.html` — Google Maps marker
-- [ ] `gmaps-multiple-marker.html` — Multiple markers
-- [ ] `gmaps-route.html` — Direction route
-- [ ] `gmaps-advanced-route.html` — Advanced route
-- [ ] `gmaps-draggable-marker.html` — Draggable marker
-- [ ] `gmaps-geocoding.html` — Geocoding search
-- [ ] `gmaps-geolocation.html` — User geolocation
-- [ ] `vector-map.html` — Vector map (jvectormap)
+### ✅ Maps (Phase 8 selesai; Google Maps butuh API key)
+- [x] `gmaps-simple.html` — Google Maps simple
+- [x] `gmaps-marker.html` — Google Maps marker
+- [x] `gmaps-multiple-marker.html` — Multiple markers
+- [x] `gmaps-route.html` — Direction route
+- [x] `gmaps-advanced-route.html` — Advanced route
+- [x] `gmaps-draggable-marker.html` — Draggable marker
+- [x] `gmaps-geocoding.html` — Geocoding search
+- [x] `gmaps-geolocation.html` — User geolocation
+- [x] `vector-map.html` — Vector map (jvectormap)
 
 ### 🟤 Halaman khusus
 - [ ] `subscribe.html` — Subscribe page
@@ -446,8 +448,8 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 └── Timeline                   → timeline.html      ✅
 
 🗺️ MAPS
-├── Google Maps                → (group baru, 8 submenu) ❌
-└── Vector Map                 → vector-map.html    ❌
+├── Google Maps                → (dropdown aktif, 8 submenu) ✅
+└── Vector Map                 → vector-map.html    ✅
 
 📄 HALAMAN
 ├── Profil                     → profile.html       ✅
@@ -480,9 +482,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 74 (68 target + 6 halaman pendukung)
-Sudah selesai: 68/86 (79.1%)
-Belum selesai: 18/86 (20.9%)
+Total file HTML aktual: 83 (77 target + 6 halaman pendukung)
+Sudah selesai: 77/86 (89.5%)
+Belum selesai: 9/86 (10.5%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -500,8 +502,8 @@ Belum selesai: 18/86 (20.9%)
 - [x] **Gallery**: 2/2
 - [x] **Sliders**: 2/2
 - [x] **Timeline**: 1/1
-- [ ] **Google Maps**: 0/8
-- [ ] **Vector Map**: 0/1
+- [x] **Google Maps**: 8/8
+- [x] **Vector Map**: 1/1
 - [ ] **Auth**: 3/5 (Reset Password dan Subscribe belum)
 - [ ] **Errors**: 1/4 (404 via `errors-404.html`)
 - [x] **Other Pages**: 2/5 (Profile, Invoice)
@@ -511,10 +513,9 @@ Belum selesai: 18/86 (20.9%)
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Phase 0–7 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, Charts, Icons, serta Media sudah diterapkan.
-2. **Lanjut Phase 8 — Maps** sesuai `PHASE-PLAN.md`; Google Maps membutuhkan API key.
-3. **Fase berikutnya**: Errors dan Posts mengikuti urutan rencana.
+1. **Phase 0–8 selesai**: seluruh halaman Maps aktif; Google Maps meminta API key browser.
+2. **Lanjut Phase 9 — Halaman Khusus & Errors** sesuai `PHASE-PLAN.md`.
 
 ---
 
-> 📌 **Setelah Phase 7**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Setelah Phase 8**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

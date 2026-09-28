@@ -96,6 +96,19 @@ window.BRUTAL_SIDEBAR = [
     ]},
     {"page":"timeline","label":"Timeline","icon":"calendar"}
   ]},
+  {"group":"MAPS","items":[
+    {"id":"googleMapsMenu","label":"Google Maps","icon":"grid","children":[
+      {"page":"gmaps-simple","label":"Simple"},
+      {"page":"gmaps-marker","label":"Marker"},
+      {"page":"gmaps-multiple-marker","label":"Multiple Marker"},
+      {"page":"gmaps-route","label":"Route"},
+      {"page":"gmaps-advanced-route","label":"Advanced Route"},
+      {"page":"gmaps-draggable-marker","label":"Draggable Marker"},
+      {"page":"gmaps-geocoding","label":"Geocoding"},
+      {"page":"gmaps-geolocation","label":"Geolocation"}
+    ]},
+    {"page":"vector-map","label":"Vector Map","icon":"grid"}
+  ]},
   {"group":"HALAMAN","items":[
     {"page":"profile","label":"Profil & pengaturan","icon":"user"},
     {"page":"invoice","label":"Invoice","icon":"file"},

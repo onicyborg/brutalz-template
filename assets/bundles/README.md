@@ -30,6 +30,7 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | Weather Icons | 2.0.12 | `icon-weather-icon.html` | Font SIL OFL 1.1, CSS MIT, https://github.com/erikflowers/weather-icons (`weather-icons/LICENSE.md`) |
 | GLightbox | 3.3.1 | `light-gallery.html` | MIT, https://github.com/biati-digital/glightbox (`glightbox/LICENSE.md`) |
 | Owl Carousel | 2.3.4 | `owl-carousel.html` | MIT, https://github.com/OwlCarousel2/OwlCarousel2 (`owlcarousel/LICENSE`) |
+| jsVectorMap | 1.7.0 | `vector-map.html` | MIT, https://github.com/themustafaomar/jsvectormap (`jsvectormap/LICENSE`) |
 
 Otika memakai SweetAlert lama dan iziToast. Phase 2 memakai SweetAlert2 dan
 Toastr seperti yang tertulis di `PHASE-PLAN.md`; keduanya dipisahkan per halaman.
@@ -66,3 +67,5 @@ Lisensi LightGallery meminta lisensi komersial untuk themes/templates,
 sedangkan GLightbox tersedia di bawah MIT. Owl Carousel 2.3.4 tetap mengikuti
 rencana dan dimuat bersama jQuery hanya di halaman demonya. Bootstrap Carousel,
 galeri masonry, dan timeline memakai CSS/JavaScript template tanpa plugin baru.
+
+Phase 8 memakai jsVectorMap lokal untuk peta dunia. Google Maps dimuat hanya setelah pengunjung memasukkan API key browser; Google Maps JavaScript API tidak dibundel.
