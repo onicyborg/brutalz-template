@@ -17,7 +17,7 @@ test('all pages work on desktop and mobile without broken assets or page overflo
 });
 
 test('project creation persists, filters, pagination, export and status work together', async ({ page }) => {
-  await page.goto('/tables.html');
+  await page.goto('/basic-table.html');
   await page.getByRole('button', {name:'Proyek baru'}).click();
   await page.getByLabel('Nama proyek', {exact:true}).fill('Website uji <studio>');
   await page.getByLabel('Tenggat', {exact:true}).fill('2026-12-15');

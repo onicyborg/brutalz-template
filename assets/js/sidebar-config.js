@@ -60,7 +60,14 @@ window.BRUTAL_SIDEBAR = [
       {"page":"forms-validation","label":"Validation"},
       {"page":"form-wizard","label":"Form Wizard"}
     ]},
-    {"page":"tables","label":"Tabel data","icon":"table"},
+    {"id":"tablesMenu","label":"Tabel Data","icon":"table","children":[
+      {"page":"tables","label":"Semua tabel"},
+      {"page":"basic-table","label":"Tabel Dasar"},
+      {"page":"advance-table","label":"Advanced Table"},
+      {"page":"datatables","label":"DataTables"},
+      {"page":"export-table","label":"Export Table"},
+      {"page":"editable-table","label":"Editable Table"}
+    ]},
     {"page":"charts","label":"Grafik & widget","icon":"chart"}
   ]},
   {"group":"HALAMAN","items":[

@@ -440,34 +440,41 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 > **Tujuan**: Sama seperti Phase 3 tapi untuk tabel.
 
 ## 4.1 Tabel Dasar (Refactor)
-- [ ] Pindahkan konten `tables.html` ke `basic-table.html`.
-- [ ] Buat `tables.html` jadi halaman overview/landing (daftar tipe tabel + link).
+- [x] Pindahkan konten `tables.html` ke `basic-table.html`.
+- [x] Buat `tables.html` jadi halaman overview/landing (daftar tipe tabel + link).
 
 ## 4.2 `advance-table.html`
-- [ ] Tabel dengan sorting client-side (sortable.js atau implementasi vanilla).
-- [ ] Tabel dengan row hover, striped, bordered.
-- [ ] Tabel responsif di mobile.
-- [ ] Library: opsional **sortable.js** (atau vanilla JS).
+- [x] Tabel dengan sorting client-side (implementasi vanilla).
+- [x] Tabel dengan row hover, striped, bordered.
+- [x] Tabel responsif di mobile.
+- [x] Library: **vanilla JS**.
 
 ## 4.3 `datatables.html`
-- [ ] Install `assets/bundles/datatables/datatables.min.js` + CSS.
-- [ ] Tabel dengan search box, pagination, sorting multi-kolom, info jumlah data.
-- [ ] Library: **DataTables.net** (versi Otika).
+- [x] Install DataTables core + integrasi Bootstrap 5 di `assets/bundles/datatables/` beserta CSS.
+- [x] Tabel dengan search box, pagination, sorting multi-kolom, info jumlah data.
+- [x] Library: **DataTables.net** lokal versi modern untuk Bootstrap 5.
 
 ## 4.4 `export-table.html`
-- [ ] Install plugin export: `datatables-buttons`, `jszip`, `pdfmake`, `buttons.html5`.
-- [ ] Tabel dengan tombol Export ke Excel, CSV, PDF, Print.
-- [ ] Library: **DataTables Buttons**.
+- [x] Install plugin export: `datatables-buttons`, `jszip`, `pdfmake`, `buttons.html5`.
+- [x] Tabel dengan tombol Export ke Excel, CSV, PDF, Print.
+- [x] Library: **DataTables Buttons** lokal.
 
 ## 4.5 `editable-table.html`
-- [ ] Install plugin `datatables-editor` atau pakai library **X-editable**.
-- [ ] Tabel dengan cell inline-editable (klik → edit → simpan).
-- [ ] Library: **X-editable** atau **DataTables Editor**.
+- [x] Gunakan editor sel vanilla yang cocok dengan Bootstrap 5; plugin lama Otika tidak dipakai.
+- [x] Tabel dengan cell inline-editable (klik → edit → simpan), validasi, batal, reset, dan penyimpanan demo di browser.
+- [x] Library: **vanilla JS**. Pilihan ini menggantikan opsi X-editable/DataTables Editor pada rencana awal.
 
 ## 🚦 Keluar Phase 4 jika:
 - ✅ Tabel dasar direfactor.
-- ✅ 4 file tabel baru aktif.
+- ✅ 5 file tabel baru aktif (tabel dasar hasil refactor + 4 demo lanjutan).
 - ✅ Library DataTables + plugins terinstal.
+
+### Hasil Phase 4 — 28 September 2026
+
+- `tables.html` menjadi overview; showcase proyek lama dipindahkan ke `basic-table.html`. Empat demo baru tersedia di dropdown **Tabel Data**.
+- DataTables 2 + Buttons 3, JSZip, dan pdfMake dipin di npm lalu disalin lokal; library tersebut dimuat hanya pada halaman DataTables dan ekspor.
+- Sorting lanjutan dan editor sel menggunakan JavaScript lokal. Editor menyimpan perubahan contoh di localStorage, tanpa mengubah data proyek workspace.
+- `npm run build` menghasilkan 58 HTML rapi; `npm test` **34 passed**, termasuk ekspor dan regresi desktop/mobile seluruh halaman.
 
 ---
 
@@ -734,7 +741,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 1 | Workspace Inti | 8 (widget-chart, widget-data, chat, portfolio, blog, email-inbox, email-compose, email-read) | sidebar, generator, CSS/JS lokal, dokumentasi | ✅ Selesai — 19 tes lulus |
 | 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 24 tes lulus |
 | 3 | Forms Lanjutan | 5 (basic-form + 4 lanjutan) | forms.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 29 tes lulus |
-| 4 | Tables Lanjutan | 4 (+refactor tables.html) | 1 | ⬜ |
+| 4 | Tables Lanjutan | 5 (basic-table + 4 lanjutan) | tables.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 34 tes lulus |
 | 5 | Charts | 5 (+refactor charts.html) | 1 | ⬜ |
 | 6 | Icons | 5 | 0 | ⬜ |
 | 7 | Media | 5 | 0 | ⬜ |

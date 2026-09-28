@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Semua tabel — BRUTAL.</title>
+  <title>Editable Table — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/tables.css">
 </head>
-<body data-page="tables">
+<body data-page="editable-table">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -24,7 +24,8 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Semua tabel</li>
+            <li class="breadcrumb-item">Tabel Data</li>
+            <li class="breadcrumb-item active" aria-current="page">Editable Table</li>
           </ol>
         </nav>
       </div>
@@ -68,56 +69,122 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Data yang mudah dibaca.</h1>
-          <p>Pilih pola tabel sesuai kebutuhan: sederhana, interaktif, ekspor, atau edit langsung.</p>
+          <h1>Ubah data tanpa pindah halaman.</h1>
+          <p>Klik nama, kategori, atau anggaran untuk membuka editor sel.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
       <div class="row g-4">
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="basic-table.html">
+        <div class="col-xl-9">
+          <section class="card">
             <div class="card-body">
-              <span class="badge bg-yellow mb-3">Tabel dasar</span>
-              <h2 class="fs-4">Tabel dasar →</h2>
-              <p class="text-muted mb-0">Daftar proyek workspace: cari, filter, urutkan, pagination, dan CSV.</p>
+              <div class="d-flex justify-content-between flex-wrap gap-2">
+                <div>
+                  <h2>Anggaran proyek</h2>
+                  <p class="small text-muted mb-3">Perubahan demo tersimpan di browser ini. Tekan Enter untuk simpan atau Escape untuk batal.</p>
+                </div>
+                <button class="btn btn-sm align-self-start" id="editableReset" type="button">Pulihkan contoh</button>
+              </div>
+              <div class="table-responsive">
+                <table id="editableTable" class="table table-hover table-showcase">
+                  <caption class="visually-hidden">Data proyek dengan sel yang dapat diedit</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Kode</th>
+                      <th scope="col">Proyek</th>
+                      <th scope="col">Kategori</th>
+                      <th scope="col">Anggaran</th>
+                      <th scope="col">Tenggat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-record="PRJ-101">
+                      <td class="fw-bold">PRJ-101</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Studio website">Studio website</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Studio website">Website</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="4800000" aria-label="Edit anggaran Studio website">Rp4,800,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-10-12</td>
+                    </tr>
+                    <tr data-record="PRJ-102">
+                      <td class="fw-bold">PRJ-102</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Acme identity">Acme identity</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Acme identity">Branding</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="3600000" aria-label="Edit anggaran Acme identity">Rp3,600,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-10-18</td>
+                    </tr>
+                    <tr data-record="PRJ-103">
+                      <td class="fw-bold">PRJ-103</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Finance mobile">Finance mobile</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Finance mobile">Mobile app</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="7800000" aria-label="Edit anggaran Finance mobile">Rp7,800,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-10-22</td>
+                    </tr>
+                    <tr data-record="PRJ-104">
+                      <td class="fw-bold">PRJ-104</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Summer campaign">Summer campaign</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Summer campaign">Marketing</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="2400000" aria-label="Edit anggaran Summer campaign">Rp2,400,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-09-30</td>
+                    </tr>
+                    <tr data-record="PRJ-105">
+                      <td class="fw-bold">PRJ-105</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Coffee landing">Coffee landing</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Coffee landing">Website</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="1850000" aria-label="Edit anggaran Coffee landing">Rp1,850,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-11-03</td>
+                    </tr>
+                    <tr data-record="PRJ-106">
+                      <td class="fw-bold">PRJ-106</td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="name" aria-label="Edit nama Creative portfolio">Creative portfolio</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="category" aria-label="Edit kategori Creative portfolio">Website</button>
+                      </td>
+                      <td>
+                        <button type="button" class="editable-cell" data-field="budget" data-value="2200000" aria-label="Edit anggaran Creative portfolio">Rp2,200,000</button>
+                      </td>
+                      <td class="text-nowrap">2026-11-08</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p id="editableStatus" class="small mt-3 mb-0" role="status"></p>
             </div>
-          </a>
+          </section>
         </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="advance-table.html">
-            <div class="card-body">
-              <span class="badge bg-purple mb-3">Advanced table</span>
-              <h2 class="fs-4">Advanced table →</h2>
-              <p class="text-muted mb-0">Variasi striped, hover, bordered, dan sorting langsung.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="datatables.html">
-            <div class="card-body">
-              <span class="badge bg-green mb-3">DataTables</span>
-              <h2 class="fs-4">DataTables →</h2>
-              <p class="text-muted mb-0">Pencarian, urut multi-kolom, pagination, serta jumlah data.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="export-table.html">
-            <div class="card-body">
-              <span class="badge bg-orange mb-3">Export table</span>
-              <h2 class="fs-4">Export table →</h2>
-              <p class="text-muted mb-0">Unduh XLSX, CSV, PDF, atau buka tampilan cetak.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="editable-table.html">
-            <div class="card-body">
-              <span class="badge bg-blue mb-3">Editable table</span>
-              <h2 class="fs-4">Editable table →</h2>
-              <p class="text-muted mb-0">Klik sel, ubah nilainya, lalu simpan di browser.</p>
-            </div>
-          </a>
+        <div class="col-xl-3">
+          <div class="alert alert-info small">Editor hanya mengubah dataset demo di halaman ini. Proyek workspace asli tetap terpisah.</div>
         </div>
       </div>
     </main>
@@ -195,5 +262,6 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/tables.js"></script>
 </body>
 </html>

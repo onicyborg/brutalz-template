@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Semua tabel — BRUTAL.</title>
+  <title>Tabel Dasar — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/tables.css">
 </head>
-<body data-page="tables">
+<body data-page="basic-table">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -24,7 +24,8 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Semua tabel</li>
+            <li class="breadcrumb-item">Tabel Data</li>
+            <li class="breadcrumb-item active" aria-current="page">Tabel Dasar</li>
           </ol>
         </nav>
       </div>
@@ -68,58 +69,69 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Data yang mudah dibaca.</h1>
-          <p>Pilih pola tabel sesuai kebutuhan: sederhana, interaktif, ekspor, atau edit langsung.</p>
+          <h1>Data rapi. Keputusan tepat.</h1>
+          <p>Cari, filter, dan ekspor proyek dari workspace demo.</p>
         </div>
-        <div class="page-heading-actions"></div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="basic-table.html">
-            <div class="card-body">
-              <span class="badge bg-yellow mb-3">Tabel dasar</span>
-              <h2 class="fs-4">Tabel dasar →</h2>
-              <p class="text-muted mb-0">Daftar proyek workspace: cari, filter, urutkan, pagination, dan CSV.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="advance-table.html">
-            <div class="card-body">
-              <span class="badge bg-purple mb-3">Advanced table</span>
-              <h2 class="fs-4">Advanced table →</h2>
-              <p class="text-muted mb-0">Variasi striped, hover, bordered, dan sorting langsung.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="datatables.html">
-            <div class="card-body">
-              <span class="badge bg-green mb-3">DataTables</span>
-              <h2 class="fs-4">DataTables →</h2>
-              <p class="text-muted mb-0">Pencarian, urut multi-kolom, pagination, serta jumlah data.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="export-table.html">
-            <div class="card-body">
-              <span class="badge bg-orange mb-3">Export table</span>
-              <h2 class="fs-4">Export table →</h2>
-              <p class="text-muted mb-0">Unduh XLSX, CSV, PDF, atau buka tampilan cetak.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card table-index-card h-100 text-decoration-none text-dark" href="editable-table.html">
-            <div class="card-body">
-              <span class="badge bg-blue mb-3">Editable table</span>
-              <h2 class="fs-4">Editable table →</h2>
-              <p class="text-muted mb-0">Klik sel, ubah nilainya, lalu simpan di browser.</p>
-            </div>
-          </a>
+        <div class="page-heading-actions">
+          <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            Proyek baru
+          </button>
         </div>
       </div>
+      <section class="card">
+        <div class="card-body pb-0">
+          <div class="panel-heading">
+            <div>
+              <h2>Semua proyek</h2>
+              <p>Ide yang sedang jadi kenyataan.</p>
+            </div>
+            <button class="btn btn-sm" id="exportTable">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"></path>
+              </svg>
+              CSV
+            </button>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mb-3">
+            <input class="form-control flex-grow-1" style="min-width:160px;flex-basis:200px" type="search" id="tableSearch" placeholder="Cari nama atau kategori…" aria-label="Cari proyek">
+            <select id="tableStatus" class="form-select w-auto" aria-label="Filter status">
+              <option value="">Semua status</option>
+              <option>Berjalan</option>
+              <option>Selesai</option>
+              <option>Review</option>
+              <option>Rencana</option>
+            </select>
+            <select id="tableSort" class="form-select w-auto" aria-label="Urutkan proyek">
+              <option value="newest">Terbaru</option>
+              <option value="name">Nama A–Z</option>
+              <option value="due">Tenggat terdekat</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <caption class="visually-hidden">Daftar proyek workspace demo</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nama proyek</th>
+                <th scope="col">Tim</th>
+                <th scope="col">Status</th>
+                <th scope="col">Tenggat</th>
+              </tr>
+            </thead>
+            <tbody id="projectRows" data-limit="5"></tbody>
+          </table>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <small id="tableCount" aria-live="polite"></small>
+          <nav aria-label="Halaman tabel">
+            <ul class="pagination mb-0" id="tablePagination"></ul>
+          </nav>
+        </div>
+      </section>
     </main>
     <footer class="app-footer">
       <span>
@@ -195,5 +207,6 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/tables.js"></script>
 </body>
 </html>

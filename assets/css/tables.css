@@ -1,0 +1,39 @@
+/* Phase 4 table showcases. Bootstrap and DataTables are the base layers. */
+.table-index-card { transition: transform .15s ease, box-shadow .15s ease; }
+.table-index-card:hover,
+.table-index-card:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neo-ink); }
+
+.table-showcase { min-width: 700px; }
+.table-showcase thead button {
+  padding: 0; border: 0; background: none; color: inherit;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  cursor: pointer; text-align: left;
+}
+.table-showcase thead button:hover,
+.table-showcase thead button:focus-visible { text-decoration: underline; }
+.table-showcase th[aria-sort="ascending"] button::after { content: ' ↑'; }
+.table-showcase th[aria-sort="descending"] button::after { content: ' ↓'; }
+.table-showcase.table-bordered { --bs-table-border-color: var(--neo-ink); }
+
+.dt-container { min-width: 0; }
+.dt-container .dt-layout-row { gap: .75rem; flex-wrap: wrap; }
+.dt-container .dt-layout-cell { min-width: 0; }
+.dt-container .dt-search input,
+.dt-container .dt-length select { border: 2px solid var(--neo-ink); box-shadow: 2px 2px 0 var(--neo-ink); }
+.dt-container .dt-buttons { display: flex; flex-wrap: wrap; gap: .5rem; }
+.dt-container .dt-button { border: 2px solid var(--neo-ink); border-radius: .5rem; background: var(--neo-yellow); color: var(--neo-ink); box-shadow: 2px 2px 0 var(--neo-ink); font-weight: 700; }
+.dt-container .dt-button:hover { background: var(--neo-purple); color: var(--neo-ink); }
+.dt-container .pagination { flex-wrap: wrap; }
+
+.editable-cell { padding: .2rem .3rem; margin: -.2rem -.3rem; border: 2px dashed transparent; border-radius: .35rem; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.editable-cell:hover,
+.editable-cell:focus-visible { border-color: var(--neo-ink); background: var(--neo-yellow); }
+.editable-input { min-width: 160px; }
+.editable-controls { display: flex; align-items: center; gap: .35rem; min-width: 310px; }
+
+@media (max-width: 575.98px) {
+  .dt-container .dt-layout-cell { width: 100%; text-align: left !important; }
+  .dt-container .dt-search { width: 100%; }
+  .dt-container .dt-search input { max-width: 100%; }
+  .dt-container .dt-buttons { max-width: 100%; }
+}

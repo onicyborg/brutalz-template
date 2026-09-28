@@ -7,6 +7,7 @@ from component_pages import CATALOG, overview, build_pages, write_flags
 from workspace_pages import WORKSPACE_PAGES, build_workspace_pages, write_workspace_assets
 from advanced_pages import ADVANCED_PAGES, build_advanced_pages
 from form_pages import FORM_PAGES, build_form_pages
+from table_pages import TABLE_PAGES, build_table_pages
 from format_html import format_html, verify_semantic
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -76,7 +77,7 @@ def shell(key, content):
     component_crumb = '<li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>' if key in {item[0] for item in CATALOG} else ''
     for section in NAV:
         for item in section['items']:
-            if 'children' in item and key in (*WORKSPACE_PAGES, *ADVANCED_PAGES, *FORM_PAGES, 'pricing') and any(child['page'] == key for child in item['children']):
+            if 'children' in item and key in (*WORKSPACE_PAGES, *ADVANCED_PAGES, *FORM_PAGES, *TABLE_PAGES, 'pricing') and any(child['page'] == key for child in item['children']):
                 component_crumb = f'<li class="breadcrumb-item">{escape(item["label"])}</li>'
     return f'''<a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
     <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">{icon('menu')}</button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li>{component_crumb}<li class="breadcrumb-item active" aria-current="page">{escape(TITLES[key])}</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">{icon('search')}<span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">{icon('bell')}<span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan {icon('arrow')}</a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1">{content}</main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div>{common_ui()}'''
@@ -87,6 +88,7 @@ def page(key,content,standalone=False):
     workspace_script = '<script src="assets/js/workspace.js"></script>' if key in WORKSPACE_PAGES else ''
     advanced_style = '<link rel="stylesheet" href="assets/css/advanced.css">' if key in ADVANCED_PAGES else ''
     form_style = '<link rel="stylesheet" href="assets/css/forms.css">' if key in FORM_PAGES or key == 'forms' else ''
+    table_style = '<link rel="stylesheet" href="assets/css/tables.css">' if key in TABLE_PAGES or key == 'tables' else ''
     vendor_css = {
         'sweet-alert': 'sweetalert/sweetalert2.min.css',
         'toastr': 'toastr/toastr.min.css',
@@ -103,12 +105,27 @@ def page(key,content,standalone=False):
         'form-wizard': ['jquery/jquery.min.js', 'jquery-steps/jquery.steps.min.js'],
     }
     vendor_style = f'<link rel="stylesheet" href="assets/bundles/{vendor_css[key]}">' if key in vendor_css else ''
+    if key in ('datatables', 'export-table'):
+        vendor_style += '<link rel="stylesheet" href="assets/bundles/datatables/dataTables.bootstrap5.min.css">'
+    if key == 'export-table':
+        vendor_style += '<link rel="stylesheet" href="assets/bundles/datatables-buttons/buttons.bootstrap5.min.css">'
     vendor_scripts = ''.join(f'<script src="assets/bundles/{path}"></script>' for path in vendor_js.get(key, []))
+    if key in ('datatables', 'export-table'):
+        vendor_scripts += '<script src="assets/bundles/jquery/jquery.min.js"></script><script src="assets/bundles/datatables/dataTables.min.js"></script><script src="assets/bundles/datatables/dataTables.bootstrap5.min.js"></script>'
+    if key == 'export-table':
+        vendor_scripts += ''.join(f'<script src="assets/bundles/{path}"></script>' for path in (
+            'jszip/jszip.min.js', 'pdfmake/pdfmake.min.js', 'pdfmake/vfs_fonts.js',
+            'datatables-buttons/dataTables.buttons.min.js',
+            'datatables-buttons/buttons.bootstrap5.min.js',
+            'datatables-buttons/buttons.html5.min.js',
+            'datatables-buttons/buttons.print.min.js',
+        ))
     advanced_script = '<script src="assets/js/advanced.js"></script>' if key in ADVANCED_PAGES else ''
     form_script = '<script src="assets/js/forms.js"></script>' if key in FORM_PAGES else ''
+    table_script = '<script src="assets/js/tables.js"></script>' if key in TABLE_PAGES else ''
     bubble_style = '<link rel="stylesheet" href="assets/bundles/quill/quill.bubble.css">' if key == 'forms-editor' else ''
     return f'''<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}{vendor_scripts}{advanced_script}{form_script}</body></html>'''
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}{table_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}{vendor_scripts}{advanced_script}{form_script}{table_script}</body></html>'''
 
 def new_project_button():
     return f'<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">{icon("plus")} Proyek baru</button>'
@@ -129,7 +146,7 @@ def source_panel():
     return '<section class="card"><div class="card-body"><div class="panel-heading"><div><h2>Dari mana mereka datang?</h2><p>Sumber kunjungan bulan ini</p></div></div><div class="donut" role="img" aria-label="Kunjungan: organik 48 persen, langsung 32 persen, referral 20 persen"><div class="donut-hole"><strong>8.542</strong><small>Total pengunjung</small></div></div>'+''.join(f'<div class="source-row"><i class="legend-dot bg-{c}"></i>{s}<strong>{n}%</strong></div>' for s,n,c in [('Pencarian organik',48,'purple'),('Kunjungan langsung',32,'green'),('Referral & sosial',20,'yellow')])+'</div></section>'
 
 def projects_table(full=False):
-    return f'''<section class="card"><div class="card-body pb-0"><div class="panel-heading"><div><h2>{'Semua proyek' if full else 'Proyek terbaru'}</h2><p>Ide yang sedang jadi kenyataan.</p></div>{'<button class="btn btn-sm" id="exportTable">'+icon('download')+' CSV</button>' if full else '<a class="small fw-bold text-dark text-decoration-none" href="tables.html">Lihat semua ↗</a>'}</div>{'<div class="d-flex flex-wrap gap-3 mb-3"><input class="form-control flex-grow-1" style="min-width:160px;flex-basis:200px" type="search" id="tableSearch" placeholder="Cari nama atau kategori…" aria-label="Cari proyek"><select id="tableStatus" class="form-select w-auto" aria-label="Filter status"><option value="">Semua status</option><option>Berjalan</option><option>Selesai</option><option>Review</option><option>Rencana</option></select><select id="tableSort" class="form-select w-auto" aria-label="Urutkan proyek"><option value="newest">Terbaru</option><option value="name">Nama A–Z</option><option value="due">Tenggat terdekat</option></select></div>' if full else ''}</div><div class="table-responsive"><table class="table table-hover"><caption class="visually-hidden">Daftar proyek workspace demo</caption><thead><tr><th scope="col">Nama proyek</th><th scope="col">Tim</th><th scope="col">Status</th><th scope="col">Tenggat</th></tr></thead><tbody id="projectRows" data-limit="{'5' if full else '4'}"></tbody></table></div>{'<div class="card-footer d-flex justify-content-between align-items-center"><small id="tableCount" aria-live="polite"></small><nav aria-label="Halaman tabel"><ul class="pagination mb-0" id="tablePagination"></ul></nav></div>' if full else ''}</section>'''
+    return f'''<section class="card"><div class="card-body pb-0"><div class="panel-heading"><div><h2>{'Semua proyek' if full else 'Proyek terbaru'}</h2><p>Ide yang sedang jadi kenyataan.</p></div>{'<button class="btn btn-sm" id="exportTable">'+icon('download')+' CSV</button>' if full else '<a class="small fw-bold text-dark text-decoration-none" href="basic-table.html">Lihat semua ↗</a>'}</div>{'<div class="d-flex flex-wrap gap-3 mb-3"><input class="form-control flex-grow-1" style="min-width:160px;flex-basis:200px" type="search" id="tableSearch" placeholder="Cari nama atau kategori…" aria-label="Cari proyek"><select id="tableStatus" class="form-select w-auto" aria-label="Filter status"><option value="">Semua status</option><option>Berjalan</option><option>Selesai</option><option>Review</option><option>Rencana</option></select><select id="tableSort" class="form-select w-auto" aria-label="Urutkan proyek"><option value="newest">Terbaru</option><option value="name">Nama A–Z</option><option value="due">Tenggat terdekat</option></select></div>' if full else ''}</div><div class="table-responsive"><table class="table table-hover"><caption class="visually-hidden">Daftar proyek workspace demo</caption><thead><tr><th scope="col">Nama proyek</th><th scope="col">Tim</th><th scope="col">Status</th><th scope="col">Tenggat</th></tr></thead><tbody id="projectRows" data-limit="{'5' if full else '4'}"></tbody></table></div>{'<div class="card-footer d-flex justify-content-between align-items-center"><small id="tableCount" aria-live="polite"></small><nav aria-label="Halaman tabel"><ul class="pagination mb-0" id="tablePagination"></ul></nav></div>' if full else ''}</section>'''
 
 def dashboard():
     intro = heading('Sedikit ide. Dampak besar. ✳','Selamat datang kembali, Alex. Yuk, buat sesuatu yang hebat hari ini.',f'<button class="btn" id="exportDashboard">{icon("download")} Ekspor</button>{new_project_button()}')
@@ -190,7 +207,8 @@ components.html             Indeks 16 halaman komponen
 alert.html / buttons.html   Contoh komponen terpisah
 forms.html                  Overview form (5 demo)
 basic-form.html              Form dasar interaktif
-tables.html                 Tabel interaktif
+tables.html                 Overview tabel (5 demo)
+basic-table.html             Tabel proyek interaktif
 assets/css/theme.css        Token, override Bootstrap, layout
 assets/js/app.js            Interaksi demo & localStorage
 assets/img/favicon.svg      Identitas lokal
@@ -217,7 +235,6 @@ blank.html                  Titik awal halaman baru</pre></div></section><sectio
 def main():
     pages = {
         'index':dashboard(), 'components':components(), 'basic-form':basic_form(),
-        'tables':heading('Data rapi. Keputusan tepat.','Cari, filter, dan ekspor proyek dari workspace demo.',new_project_button())+projects_table(True),
         'charts':heading('Angka yang punya cerita.','Widget statistik dan grafik SVG lokal. Data ilustratif, tanpa library tambahan.')+stats()+f'<div class="dashboard-grid">{chart_panel()}{source_panel()}</div>'+card('Aktivitas workspace','<div class="mt-4">'+''.join(f'<div class="timeline-item"><h3>{t}</h3><p class="small text-muted mb-0">{d}</p></div>' for t,d in [('Website studio masuk tahap review','Hari ini, 09.30 · oleh Alex Darma'),('Brand identity diselesaikan','Kemarin, 16.45 · oleh Nina Sari'),('Proyek baru ditambahkan','25 September, 10.00 · oleh Rio Kurnia')])+'</div>'),
         'projects':projects(), 'calendar':calendar(), 'profile':profile(), 'invoice':invoice(), 'pricing':pricing(), 'docs':docs(),
         'blank':heading('Sesuatu yang besar dimulai di sini.','Halaman kosong, penuh kemungkinan.')+card('Kanvas berikutnya milikmu.','<div class="text-center py-5"><span class="brand-mark bg-yellow mx-auto mb-4" style="width:60px;height:60px;font-size:40px">✳</span><h2 class="fs-3">Satu ide sudah cukup.</h2><p class="text-muted mb-4">Mulai dengan komponen yang ada, lalu buat jadi sesuatu yang baru.</p><a class="btn btn-primary" href="components.html">Jelajahi komponen '+icon('arrow')+'</a></div>')
@@ -226,6 +243,7 @@ def main():
     pages.update(build_workspace_pages(heading, icon, stats))
     pages.update(build_advanced_pages(heading, icon))
     pages.update(build_form_pages(heading, card))
+    pages.update(build_table_pages(heading, projects_table, new_project_button))
     write_workspace_assets(ROOT)
     (ROOT/'assets/js/sidebar-icons.js').write_text('// Generated from ICONS in scripts/build.py.\nwindow.BRUTAL_ICONS = '+json.dumps(ICONS)+';\n',encoding='utf-8')
     write_flags(ROOT)
