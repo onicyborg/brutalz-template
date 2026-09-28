@@ -45,6 +45,7 @@
       [{ list: 'ordered' }, { list: 'bullet' }], ['link'], ['clean'],
     ] } });
     editor.root.setAttribute('aria-labelledby', 'postEditorLabel');
+    document.querySelectorAll('.ql-picker-label').forEach(label => label.setAttribute('aria-label', 'Gaya teks'));
     const coverInput = $('#postCover');
     const coverPreview = $('#postCoverPreview');
     let coverData = '';

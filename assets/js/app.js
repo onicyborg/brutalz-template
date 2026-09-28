@@ -166,9 +166,17 @@
   $('#budget')?.addEventListener('input',e=>$('#budgetOutput').value=e.target.value);
   $('#fileUpload')?.addEventListener('change',e=>{$('#fileNames').textContent=[...e.target.files].map(f=>f.name).join(', ')||'File tidak diunggah ke server.';});
   $('#togglePassword')?.addEventListener('click',e=>{const input=$('#authPassword');const shown=input.type==='password';input.type=shown?'text':'password';e.currentTarget.setAttribute('aria-label',shown?'Sembunyikan password':'Tampilkan password');e.currentTarget.setAttribute('aria-pressed',String(shown));});
+  $('#authConfirmPassword')?.addEventListener('input',e=>e.currentTarget.setCustomValidity(''));
   $('#authForm')?.addEventListener('submit',e=>{
     e.preventDefault();const page=document.body.dataset.page;
     if(page==='auth-forgot-password'){$('#authResult').textContent='Simulasi selesai. Pada aplikasi nyata, backend mengirim tautan reset ke email. Tidak ada email dikirim dalam demo ini.';}
+    else if(page==='auth-reset-password'){
+      const password=$('#authPassword'), confirm=$('#authConfirmPassword');
+      if(password.value!==confirm.value){$('#authResult').textContent='Konfirmasi password belum sama. Coba lagi.';confirm.setCustomValidity('Password tidak sama');confirm.reportValidity();return;}
+      confirm.setCustomValidity('');
+      password.value='';confirm.value='';
+      $('#authResult').textContent='Password baru valid untuk demo. Tidak ada akun nyata yang diubah atau password disimpan.';
+    }
     else {if($('#authPassword'))$('#authPassword').value='';window.location.href='index.html';}
   });
 

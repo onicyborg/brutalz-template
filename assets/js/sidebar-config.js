@@ -121,6 +121,7 @@ window.BRUTAL_SIDEBAR = [
       {"page":"auth-login","label":"Login"},
       {"page":"auth-register","label":"Daftar"},
       {"page":"auth-forgot-password","label":"Lupa Password"},
+      {"page":"auth-reset-password","label":"Reset Password"},
       {"page":"subscribe","label":"Subscribe"}
     ]},
     {"id":"errorsMenu","label":"Errors","icon":"file","children":[

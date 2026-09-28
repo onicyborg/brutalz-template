@@ -58,6 +58,7 @@
       theme: 'bubble',
       modules: { toolbar: ['bold', 'italic', 'link'] },
     });
+    document.querySelectorAll('.ql-picker-label').forEach(label => label.setAttribute('aria-label', 'Gaya teks'));
     $('#editorPreview').addEventListener('click', () => {
       const content = snow.getText().trim();
       $('#editorOutput').textContent = content || 'Editor masih kosong.';
@@ -141,6 +142,7 @@
         return true;
       },
     });
+    wizard[0].querySelectorAll('.actions ul[role="menu"], .actions a[role="menuitem"]').forEach(element => element.removeAttribute('role'));
     steps.flat().forEach(selector => {
       $(selector).addEventListener('input', event => event.target.classList.remove('is-invalid'));
       $(selector).addEventListener('change', event => event.target.classList.remove('is-invalid'));

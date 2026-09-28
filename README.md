@@ -55,7 +55,8 @@ Tidak perlu `npm install` untuk melihat template. Instalasi npm hanya diperlukan
 | `profile.html` | Edit profil, preferensi tampilan ringkas, reset data demo |
 | `auth-login.html` | Antarmuka login demo |
 | `auth-register.html` | Antarmuka register demo |
-| `auth-forgot-password.html` | Simulasi permintaan reset password |
+| `auth-forgot-password.html` | Simulasi permintaan tautan reset password |
+| `auth-reset-password.html` | Validasi password baru dan konfirmasi, tanpa menyimpan password |
 | `subscribe.html` | Landing page newsletter dengan ilustrasi SVG dan pendaftaran demo lokal |
 | `create-post.html`, `posts.html` | Editor Quill, cover, draft/publikasi lokal, pencarian dan filter post |
 | `contact.html` | Form kontak dan informasi studio contoh dalam dua kolom |
@@ -107,6 +108,7 @@ scripts/chart_pages.py    Konten overview dan enam halaman Charts Phase 5
 scripts/icon_pages.py     Konten lima halaman Icons Phase 6
 scripts/media_pages.py    Konten lima halaman Media Phase 7
 scripts/map_pages.py      Konten sembilan halaman Maps Phase 8
+scripts/docs_page.py      Direktori halaman dan versi library untuk docs.html
 scripts/special_pages.py  Konten halaman khusus dan error Phase 9
 tests/template.spec.js    Pengujian alur pengguna dengan Playwright
 tests/workspace.spec.js   Pengujian interaksi Phase 1
@@ -117,6 +119,7 @@ tests/charts.spec.js      Pengujian keenam library grafik Phase 5
 tests/icons.spec.js       Pengujian aset, pencarian, dan salin kode ikon Phase 6
 tests/media.spec.js       Pengujian lightbox, carousel, dan timeline Phase 7
 tests/maps.spec.js        Pengujian placeholder, peta vektor, dan interaksi Maps Phase 8
+tests/final.spec.js       Audit judul, breadcrumb, dokumentasi, dan reset password
 tests/special.spec.js     Pengujian subscribe, post, kontak, error, dan menu bertingkat
 ```
 
@@ -129,13 +132,13 @@ python3 -m pip install -r requirements-build.txt
 npm run build
 ```
 
-**Build menimpa 91 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
+**Build menimpa 92 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
 
 ## Fondasi sidebar — Phase 0
 
 `sidebar-config.js` berisi array `{ group, items }`. Item halaman memakai `{ page, label, icon }`; item grup memakai `{ id, label, icon, children }`. Nilai `page` sama dengan `data-page` dan nama HTML tanpa ekstensi. Gunakan ID grup yang unik. Array harus valid JSON karena generator juga membacanya untuk judul halaman.
 
-Semua 91 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; halaman Phase 7 yang memerlukan plugin menambah `media.js`; halaman Phase 8 menambah `maps.js`; dan halaman Phase 9 menambah `special.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
+Semua 92 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; halaman Phase 7 yang memerlukan plugin menambah `media.js`; halaman Phase 8 menambah `maps.js`; dan halaman Phase 9 menambah `special.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
 
 Sidebar membuka grup halaman aktif secara otomatis. Di mobile, drawer mendukung backdrop, Escape, focus trap, dan pengembalian fokus. Halaman autentikasi, subscribe, dan error menggunakan drawer yang sama melalui tombol menu pada semua ukuran layar agar layout standalone tetap nyaman.
 
@@ -163,6 +166,12 @@ Key demo yang diberikan untuk Phase 8 berhasil memuat peta dasar dan rute pada p
 
 Rute menggunakan Routes Library resmi. Di Advanced Route, mode via Cirebon dan alternatif Jakarta–Bandung terpisah karena Google tidak menyediakan alternatif ketika request memuat waypoint. `vector-map.html` memakai jsVectorMap dan data dunia lokal tanpa key atau layanan eksternal.
 
+## Kontribusi dan kredit
+
+Nama halaman menggunakan huruf kecil dan tanda hubung (`lowercase-kebab-case.html`); nilai `data-page` dan item `page` di `assets/js/sidebar-config.js` sama dengan nama file tanpa ekstensi. Edit konten permanen melalui `scripts/*_pages.py` atau `scripts/build.py`, lalu jalankan `npm run build` dan `npm test`. Direktori 92 halaman dan versi library tersedia di `docs.html`; lisensi setiap bundle ada di `assets/bundles/README.md`.
+
+BRUTAL. dibuat dengan [Bootstrap 5.3.8](https://getbootstrap.com/) (MIT). Library pihak ketiga dan kredit sumbernya tercatat di [daftar bundle](assets/bundles/README.md). Ilustrasi dan ikon antarmuka khusus BRUTAL. dibuat untuk proyek ini. Otika dipakai sebagai acuan cakupan halaman dan pola navigasi; tidak ada aset Otika yang disalin.
+
 ## Analisis acuan Otika
 
 Referensi lokal yang dianalisis: `/mnt/C80A6A9E0A6A88F0/Templete Web/otika.namikulo.com`.
@@ -178,6 +187,6 @@ npm install
 npm test
 ```
 
-Tes menggunakan Chrome lokal di `/usr/bin/google-chrome`. Override dengan `CHROME_PATH=/path/to/chrome npm test`. Playwright hanya dependency development. Sebanyak 49 tes mencakup 74 halaman pada desktop/mobile, aset dan error JavaScript, sidebar, akses `file://`, interaksi workspace Phase 1–7, termasuk alur form, tabel, grafik, ikon, lightbox, dan carousel.
+Tes menggunakan Chrome lokal di `/usr/bin/google-chrome`. Override dengan `CHROME_PATH=/path/to/chrome npm test`. Playwright hanya dependency development. Sebanyak 60 tes mencakup 92 halaman pada desktop/mobile, aset dan error JavaScript, sidebar, akses `file://`, seluruh fase komponen, form, tabel, grafik, media, peta, halaman khusus, reset password, dan dokumentasi. Audit Lighthouse Accessibility pada 11 halaman sampel mobile menghasilkan skor 92–100; amCharts 4 mendapat 92 karena kontrol yang dibuat library tersebut.
 
 Bootstrap memiliki lisensi MIT; lisensi aslinya tetap ada di `bootstrap-5.3.8/LICENSE` dan `assets/BOOTSTRAP-LICENSE`.

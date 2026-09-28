@@ -713,57 +713,65 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 
 ---
 
-# 🟪 PHASE 10 — Polish, Konsistensi, & Final QA
+# ✅ PHASE 10 — Polish, Konsistensi, & Final QA
 
 > **Tujuan**: Memastikan hasil akhir setara kualitas Otika dengan style neobrutalism.
 
 ## 10.1 Konsistensi Sidebar
-- [ ] Pastikan semua halaman (lama + baru) memakai sidebar hasil Phase 0 (auto-render).
-- [ ] Pastikan `data-page` di setiap halaman benar.
-- [ ] Pastikan `active` highlight benar di tiap halaman.
+- [x] Pastikan semua halaman (lama + baru) memakai sidebar hasil Phase 0 (auto-render).
+- [x] Pastikan `data-page` di setiap halaman benar.
+- [x] Pastikan `active` highlight benar di tiap halaman.
 
 ## 10.2 Konsistensi Topbar
-- [ ] Breadcrumb sesuai halaman.
-- [ ] Tombol search (`#searchModal`) berfungsi dari semua halaman (sudah ada di `index.html` — pastikan ada di semua halaman).
+- [x] Breadcrumb sesuai halaman.
+- [x] Tombol search (`#searchModal`) berfungsi dari semua halaman (sudah ada di `index.html` — pastikan ada di semua halaman).
 
 ## 10.3 Konsistensi Footer
-- [ ] "© 2026 BRUTAL." di semua halaman.
+- [x] "© 2026 BRUTAL." di semua halaman.
 
 ## 10.4 Validasi & Aksesibilitas
-- [ ] Setiap halaman punya `<title>` unik.
-- [ ] Skip link "Lewati ke konten" di setiap halaman.
-- [ ] Ikon SVG punya `aria-hidden="true"`, elemen interaktif punya `aria-label`.
-- [ ] Lighthouse Accessibility ≥ 90.
+- [x] Setiap halaman punya `<title>` unik.
+- [x] Skip link "Lewati ke konten" di setiap halaman.
+- [x] Ikon SVG punya `aria-hidden="true"`, elemen interaktif punya `aria-label`.
+- [x] Lighthouse Accessibility ≥ 90 pada 11 halaman sampel (rentang skor 92–100; pengujian mobile).
 
 ## 10.5 Performance
-- [ ] Library eksternal hanya di-load di halaman yang butuh (tidak global).
-- [ ] Kompres gambar jika perlu.
-- [ ] Inline critical CSS opsional.
+- [x] Library eksternal hanya di-load di halaman yang butuh (tidak global).
+- [x] Audit gambar: aset template berupa SVG lokal berukuran kecil (total folder `assets/img/` sekitar 88 KB); kompresi raster tidak diperlukan.
+- Inline critical CSS bersifat opsional dan tidak diterapkan pada template statis ini.
 
 ## 10.6 Dokumentasi
-- [ ] Update `docs.html` dengan:
-  - [ ] Daftar seluruh halaman.
-  - [ ] Library apa saja yang dipakai + versi.
-  - [ ] Cara menambah halaman baru (panduan kontribusi).
-  - [ ] Konvensi penamaan file & folder.
+- [x] Update `docs.html` dengan:
+  - [x] Daftar seluruh halaman.
+  - [x] Library apa saja yang dipakai + versi.
+  - [x] Cara menambah halaman baru (panduan kontribusi).
+  - [x] Konvensi penamaan file & folder.
 
 ## 10.7 README Project
-- [ ] Update `README.md` dengan:
-  - [ ] Deskripsi project.
-  - [ ] Cara menjalankan (statis HTML, bisa langsung buka `index.html` atau pakai static server).
-  - [ ] Struktur folder.
-  - [ ] Credits.
+- [x] Update `README.md` dengan:
+  - [x] Deskripsi project.
+  - [x] Cara menjalankan (statis HTML, bisa langsung buka `index.html` atau pakai static server).
+  - [x] Struktur folder.
+  - [x] Credits.
 
 ## 10.8 Smoke Test
-- [ ] Buka **setiap** halaman baru, cek:
-  - [ ] Sidebar render benar.
-  - [ ] Active state benar.
-  - [ ] Topbar breadcrumb benar.
-  - [ ] Library eksternal termuat (cek console log error).
-  - [ ] Style neobrutalism konsisten.
-- [ ] Cek **mobile view** untuk beberapa halaman kompleks (forms-wizard, charts, gmaps).
+- [x] Buka **setiap** halaman baru, cek:
+  - [x] Sidebar render benar.
+  - [x] Active state benar.
+  - [x] Topbar breadcrumb benar.
+  - [x] Library eksternal termuat (cek console log error).
+  - [x] Style neobrutalism konsisten.
+- [x] Cek **mobile view** untuk beberapa halaman kompleks (forms-wizard, charts, gmaps).
 
 ## 🚦 Selesai Phase 10 = Project COMPLETE.
+
+### Hasil Phase 10 — 28 September 2026
+- `auth-reset-password.html` ditambahkan sebagai simulasi validasi password baru dan konfirmasi tanpa penyimpanan. Seluruh 86 entri target kini tersedia; total 92 halaman termasuk enam halaman pendukung.
+- `docs.html` memiliki direktori seluruh halaman yang dihasilkan dari konfigurasi sidebar, versi library yang dipin, serta panduan penamaan dan kontribusi. README memuat struktur, cara menjalankan, batasan demo, dan kredit.
+- Aksesibilitas dipoles: nama tombol avatar, warna tautan dan kode, atribut editor Quill, semantik aksi jQuery Steps, dan copyright yang terlihat pada auth mobile.
+- Audit otomatis memeriksa seluruh halaman, navigasi aktif, judul unik, breadcrumb, skip link, pencarian, copyright, aset, error JavaScript, dan lebar layar 1440/390/320 px. Lighthouse Accessibility pada 11 halaman sampel bernilai 92–100.
+- `npm run build` menghasilkan 92 halaman; 60 tes browser lulus.
+
 
 ---
 
@@ -783,9 +791,9 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 7 | Media | 5 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 49 tes lulus |
 | 8 | Maps | 9 | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 53 tes lulus |
 | 9 | Halaman Khusus & Errors | 8 (7 halaman + demo multilevel) | sidebar, generator, CSS/JS, 404 diperbarui, dokumentasi | ✅ Selesai — 57 tes lulus |
-| 10 | Polish & QA | 0 | 2 (docs.html, README.md) | ⬜ |
+| 10 | Polish & QA | 1 (`auth-reset-password.html`) | generator, sidebar, CSS/JS, docs, README, audit aksesibilitas | ✅ Selesai — 60 tes lulus |
 
-**Total**: ~57 file baru, ~5 file diubah.
+**Hasil akhir**: 92 halaman HTML (86 entri target dan 6 halaman pendukung).
 
 ---
 

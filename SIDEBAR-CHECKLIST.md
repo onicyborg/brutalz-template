@@ -28,19 +28,21 @@
 
 > **Audit Phase 9 — 28 September 2026:** delapan halaman baru aktif: subscribe, tiga error, create-post, posts, contact, dan tujuan menu multilevel. Kini terdapat **91 file HTML aktual**: 85 entri target dan 6 halaman pendukung; hanya `auth-reset-password.html` yang belum tersedia.
 
+> **Audit final Phase 10 — 28 September 2026:** reset password demo melengkapi entri terakhir. Kini terdapat **92 file HTML aktual**: seluruh 86 entri target dan 6 halaman pendukung. Audit browser dan aksesibilitas selesai.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 85 |
-| ❌ Entri target belum tersedia | 1 |
+| ✅ Entri target dengan halaman tersedia | 86 |
+| ❌ Entri target belum tersedia | 0 |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 91 |
+| File HTML aktual, termasuk 6 halaman pendukung | 92 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup utama** dan **74 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **6 grup utama** dan **92 tautan halaman** dari `assets/js/sidebar-config.js`. Seluruh entri target kini tertaut.
 
 ---
 
@@ -205,7 +207,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 | 72 | Login | `auth-login.html` | `auth-login.html` | ✅ Ada |
 | 73 | Register | `auth-register.html` | `auth-register.html` | ✅ Ada |
 | 74 | Forgot Password | `auth-forgot-password.html` | `auth-forgot-password.html` | ✅ Ada |
-| 75 | Reset Password | `auth-reset-password.html` | — | ❌ Belum; audit Phase 0 mengoreksi status lama |
+| 75 | Reset Password | `auth-reset-password.html` | `auth-reset-password.html` | ✅ Phase 10 |
 | 76 | Subscribe | `subscribe.html` | `subscribe.html` | ✅ Phase 9 |
 
 ### Errors
@@ -240,7 +242,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 ✅ auth-forgot-password.html ✅ popover.html          ✅ progress.html
 ✅ auth-login.html         ✅ projects.html          ✅ tables.html
 ✅ auth-register.html      ✅ typography.html        ✅ tooltip.html
-❌ auth-reset-password.html ✅ forms.html            ✅ docs.html
+✅ auth-reset-password.html ✅ forms.html            ✅ docs.html
 ✅ badge.html              ✅ charts.html            ✅ components.html
 ✅ breadcrumb.html         ✅ flags.html             ✅ blank.html
 ✅ buttons.html            ✅ invoice.html           ✅ calendar.html
@@ -269,13 +271,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 ✅ timeline.html
 ```
 
-**Total: 91 file HTML aktual; 85 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 92 file HTML aktual; seluruh 86 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung.
 
 ---
 
-## ❌ Yang Perlu Dibuat (1 entri target tersisa)
+## ✅ Seluruh entri target tersedia
 
-- [ ] `auth-reset-password.html` — Form reset password; belum tersedia saat audit Phase 9.
+Tidak ada entri target yang tersisa.
 
 ---
 
@@ -358,6 +360,12 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 - [x] Post dan subscribe menyimpan data demo di browser; form kontak hanya memberi pratinjau. Quill yang sudah dibundel dipakai ulang.
 - [x] Tiga tingkat menu sidebar membuka induk halaman aktif dan mendukung keyboard.
 - [x] `npm run build` menghasilkan 91 halaman; **57 tes browser lulus**, termasuk regresi desktop/mobile.
+
+### Hasil Phase 10 — Finalisasi
+
+- [x] Reset password demo melengkapi entri target terakhir; 92 halaman HTML tersedia.
+- [x] Dokumentasi browser mencantumkan 92 halaman, versi library, konvensi file, dan panduan kontribusi; README diperbarui dengan kredit.
+- [x] Audit keseluruhan dan mobile lulus: **60 tes browser**, Lighthouse Accessibility **92–100** pada 11 halaman sampel.
 
 ---
 
@@ -446,7 +454,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 │   ├── Login                  → auth-login.html    ✅
 │   ├── Daftar                 → auth-register.html ✅
 │   ├── Lupa Password          → auth-forgot-password.html ✅
-│   ├── Reset Password         → auth-reset-password.html ❌
+│   ├── Reset Password         → auth-reset-password.html ✅
 │   └── Subscribe              → subscribe.html     ✅
 ├── Errors                     → (group baru)
 │   ├── 403                    → errors-403.html    ✅
@@ -466,14 +474,14 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 91 (85 target + 6 halaman pendukung)
-Sudah selesai: 85/86 (98.8%)
-Belum selesai: 1/86 (1.2%)
+Total file HTML aktual: 92 (86 target + 6 halaman pendukung)
+Sudah selesai: 86/86 (100%)
+Belum selesai: 0/86 (0%)
 ```
 
 ### Checklist Ringkasan per Kategori
 
-- [x] **Main**: Dashboard, Proyek, Kalender (3/8)
+- [x] **Workspace inti**: Dashboard, Proyek, Kalender (3/3)
 - [x] **Widgets**: 2/2
 - [x] **Apps**: 4/4 (Chat, Portfolio, Blog, Calendar)
 - [x] **Email**: 3/3
@@ -488,7 +496,7 @@ Belum selesai: 1/86 (1.2%)
 - [x] **Timeline**: 1/1
 - [x] **Google Maps**: 8/8
 - [x] **Vector Map**: 1/1
-- [ ] **Auth**: 4/5 (Reset Password belum)
+- [x] **Auth**: 5/5
 - [x] **Errors**: 4/4
 - [x] **Other Pages**: 5/5 (Profile, Invoice, Contact, Create Post, Posts)
 - [x] **Nested multilevel demo**: 1/1
@@ -497,9 +505,9 @@ Belum selesai: 1/86 (1.2%)
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Phase 0–9 selesai**: seluruh halaman khusus dan error Phase 9 aktif.
-2. **Lanjut Phase 10 — Polish & QA** sesuai `PHASE-PLAN.md`; periksa juga apakah reset password perlu dibuat untuk menutup satu entri target yang tersisa.
+1. **Phase 0–10 selesai**: seluruh 86 entri target tersedia dan telah diuji.
+2. Gunakan `docs.html` dan README untuk pengembangan atau integrasi backend selanjutnya.
 
 ---
 
-> 📌 **Setelah Phase 9**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Pengembangan berikutnya**: Daftarkan halaman baru di `assets/js/sidebar-config.js`. Sidebar dan pencarian seluruh halaman otomatis mengikuti konfigurasi; jangan menambahkan sidebar inline per-file.

@@ -1,6 +1,6 @@
 # Library eksternal lokal
 
-Phase 2–7 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
+Phase 2–8 menambahkan bundle berikut dari paket npm dan upstream resmi. Versi terkunci di
 `package.json` dan `package-lock.json`; file distribusi disalin ke sini agar
 halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 
@@ -11,7 +11,7 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | jQuery | 3.7.1 | `toastr.html`, `forms-advanced-form.html`, `form-wizard.html`, `datatables.html`, `export-table.html`, `chart-sparkline.html`, `chart-morris.html`, `owl-carousel.html` | MIT, https://github.com/jquery/jquery (`jquery/LICENSE.txt`) |
 | Dropzone | 5.9.3 | `multiple-upload.html` | MIT, https://github.com/dropzone/dropzone (`dropzone/LICENSE`) |
 | Select2 | 4.0.13 | `forms-advanced-form.html` | MIT, https://github.com/select2/select2 (`select2/LICENSE.md`) |
-| Quill | 2.0.3 | `forms-editor.html` | BSD-3-Clause, https://github.com/slab/quill (`quill/LICENSE`; bundle juga memuat notice lisensi dependensi) |
+| Quill | 2.0.3 | `forms-editor.html`, `create-post.html` | BSD-3-Clause, https://github.com/slab/quill (`quill/LICENSE`; bundle juga memuat notice lisensi dependensi) |
 | jQuery Steps | 1.1.0 | `form-wizard.html` | MIT, https://github.com/rstaib/jquery-steps (`jquery-steps/LICENSE.txt`) |
 | DataTables + Bootstrap 5 | 2.3.8 | `datatables.html`, `export-table.html` | MIT, https://github.com/DataTables/DataTablesSrc (`datatables/License.txt`, `datatables/Bootstrap5-License.txt`) |
 | DataTables Buttons + Bootstrap 5 | 3.2.6 | `export-table.html` | MIT, https://github.com/DataTables/Buttons (`datatables-buttons/License.txt`, `datatables-buttons/Bootstrap5-License.txt`) |
