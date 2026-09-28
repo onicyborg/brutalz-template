@@ -5,7 +5,7 @@ test('chat changes conversations and persists plain-text messages without networ
   await page.locator('[data-chat-contact="rio"]').click();
   await expect(page.locator('#chatHeader')).toContainText('Rio Kurnia');
   await page.locator('#chatInput').fill('<img src=x onerror=alert(1)> Pesan uji');
-  await page.getByRole('button',{name:'Kirim',exact:true}).click();
+  await page.locator('#chatForm button[type="submit"]').click();
   await expect(page.locator('.chat-message.mine')).toContainText('<img src=x onerror=alert(1)> Pesan uji');
   await expect(page.locator('#chatMessages img')).toHaveCount(0);
   await page.reload();
@@ -108,7 +108,7 @@ test('workspace survives unavailable storage',async({page})=>{
   await page.addInitScript(()=>{const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k.startsWith('brutal.'))throw new DOMException('Denied','QuotaExceededError');return set.call(this,k,v);};});
   await page.goto('/chat.html');
   await page.locator('#chatInput').fill('Pesan dalam memori');
-  await page.getByRole('button',{name:'Kirim',exact:true}).click();
+  await page.locator('#chatForm button[type="submit"]').click();
   await expect(page.locator('#chatMessages')).toContainText('Pesan dalam memori');
   await expect(page.locator('#toastMessage')).toContainText('Penyimpanan browser tidak tersedia');
 });
@@ -116,7 +116,7 @@ test('workspace survives unavailable storage',async({page})=>{
 test('profile reset clears chat and mail demo data without removing unrelated storage',async({page})=>{
   await page.goto('/chat.html');
   await page.locator('#chatInput').fill('Data sementara');
-  await page.getByRole('button',{name:'Kirim',exact:true}).click();
+  await page.locator('#chatForm button[type="submit"]').click();
   await page.goto('/email-read.html?id=m1');
   await page.evaluate(()=>localStorage.setItem('unrelated.workspace','keep'));
   await page.goto('/profile.html');

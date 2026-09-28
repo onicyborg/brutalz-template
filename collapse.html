@@ -1,5 +1,292 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>Collapse — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/theme.css"></head><body data-page="collapse"><a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
-    <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li><li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li><li class="breadcrumb-item active" aria-current="page">Collapse</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"/></svg><span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1"><div class="page-heading"><div><h1>Collapse</h1><p>Panel sederhana, multiple targets, dan accordion.</p></div><div class="page-heading-actions"><a class="btn" href="components.html"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"/></svg> Semua komponen</a></div></div><div class="demo-grid component-demos"><section class="card component-demo"><div class="card-body"><h2>Simple</h2><p class="small text-muted mb-4">Satu tombol untuk satu panel.</p><div class="component-preview"><div class="demo-row"><button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#simplePanel" aria-expanded="false" aria-controls="simplePanel">Buka / tutup panel</button></div><div class="collapse" id="simplePanel"><div class="demo-inset bg-green">Ide yang baik butuh ruang. Panel ini memakai Collapse Bootstrap.</div></div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;demo-row&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#simplePanel&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;simplePanel&quot;&gt;Buka / tutup panel&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;collapse&quot; id=&quot;simplePanel&quot;&gt;&lt;div class=&quot;demo-inset bg-green&quot;&gt;Ide yang baik butuh ruang. Panel ini memakai Collapse Bootstrap.&lt;/div&gt;&lt;/div&gt;</code></pre></details></div></section><section class="card component-demo"><div class="card-body"><h2>Multiple targets</h2><p class="small text-muted mb-4">Kontrol panel secara terpisah atau bersamaan.</p><div class="component-preview"><div class="demo-row"><button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#multiOne" aria-expanded="false" aria-controls="multiOne">Panel pertama</button><button type="button" class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#multiTwo" aria-expanded="false" aria-controls="multiTwo">Panel kedua</button><button type="button" class="btn btn-dark" data-bs-toggle="collapse" data-bs-target=".multi-demo" aria-expanded="false" aria-controls="multiOne multiTwo">Keduanya</button></div><div class="row g-3"><div class="col-sm-6"><div class="collapse multi-demo" id="multiOne"><div class="demo-inset bg-purple">Ruang untuk ide pertama.</div></div></div><div class="col-sm-6"><div class="collapse multi-demo" id="multiTwo"><div class="demo-inset bg-yellow">Ruang untuk ide kedua.</div></div></div></div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;demo-row&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#multiOne&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiOne&quot;&gt;Panel pertama&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#multiTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiTwo&quot;&gt;Panel kedua&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;.multi-demo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiOne multiTwo&quot;&gt;Keduanya&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;row g-3&quot;&gt;&lt;div class=&quot;col-sm-6&quot;&gt;&lt;div class=&quot;collapse multi-demo&quot; id=&quot;multiOne&quot;&gt;&lt;div class=&quot;demo-inset bg-purple&quot;&gt;Ruang untuk ide pertama.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;col-sm-6&quot;&gt;&lt;div class=&quot;collapse multi-demo&quot; id=&quot;multiTwo&quot;&gt;&lt;div class=&quot;demo-inset bg-yellow&quot;&gt;Ruang untuk ide kedua.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></details></div></section><section class="card component-demo demo-wide"><div class="card-body"><h2>Accordion</h2><p class="small text-muted mb-4">Satu panel terbuka pada satu waktu.</p><div class="component-preview"><div class="accordion" id="componentAccordion"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel0" aria-expanded="true" aria-controls="accordionPanel0">Apa itu BRUTAL.?</button></h3><div id="accordionPanel0" class="accordion-collapse collapse show" data-bs-parent="#componentAccordion"><div class="accordion-body">Template Bootstrap dengan karakter Neubrutalism.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel1" aria-expanded="false" aria-controls="accordionPanel1">Bisakah warnanya diganti?</button></h3><div id="accordionPanel1" class="accordion-collapse collapse" data-bs-parent="#componentAccordion"><div class="accordion-body">Ya. Ubah token --neo-* pada stylesheet tema.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel2" aria-expanded="false" aria-controls="accordionPanel2">Apakah memerlukan internet?</button></h3><div id="accordionPanel2" class="accordion-collapse collapse" data-bs-parent="#componentAccordion"><div class="accordion-body">Tidak. Seluruh aset demo tersedia lokal.</div></div></div></div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;accordion&quot; id=&quot;componentAccordion&quot;&gt;&lt;div class=&quot;accordion-item&quot;&gt;&lt;h3 class=&quot;accordion-header&quot;&gt;&lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel0&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;accordionPanel0&quot;&gt;Apa itu BRUTAL.?&lt;/button&gt;&lt;/h3&gt;&lt;div id=&quot;accordionPanel0&quot; class=&quot;accordion-collapse collapse show&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;&lt;div class=&quot;accordion-body&quot;&gt;Template Bootstrap dengan karakter Neubrutalism.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;accordion-item&quot;&gt;&lt;h3 class=&quot;accordion-header&quot;&gt;&lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel1&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;accordionPanel1&quot;&gt;Bisakah warnanya diganti?&lt;/button&gt;&lt;/h3&gt;&lt;div id=&quot;accordionPanel1&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;&lt;div class=&quot;accordion-body&quot;&gt;Ya. Ubah token --neo-* pada stylesheet tema.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;accordion-item&quot;&gt;&lt;h3 class=&quot;accordion-header&quot;&gt;&lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel2&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;accordionPanel2&quot;&gt;Apakah memerlukan internet?&lt;/button&gt;&lt;/h3&gt;&lt;div id=&quot;accordionPanel2&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;&lt;div class=&quot;accordion-body&quot;&gt;Tidak. Seluruh aset demo tersedia lokal.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></details></div></section></div></main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div><div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body"><label class="visually-hidden" for="globalSearch">Cari halaman</label><input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off"><div id="searchResults" class="search-results mt-3"></div></div></div></div></div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><form id="projectForm"><div class="modal-body"><p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p><label class="form-label" for="projectName">Nama proyek</label><input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required maxlength="70"><label class="form-label" for="projectCategory">Kategori</label><select id="projectCategory" name="category" class="form-select mb-3"><option>Website</option><option>Branding</option><option>Mobile app</option><option>Marketing</option></select><label class="form-label" for="projectDue">Tenggat</label><input id="projectDue" name="due" class="form-control" type="date" required></div><div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Buat proyek</button></div></form></div></div></div>
-    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div id="toastMessage" class="toast-body"></div><button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button></div></div></div><script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script></body></html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Collapse — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body data-page="collapse">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Collapse</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Collapse</h1>
+          <p>Panel sederhana, multiple targets, dan accordion.</p>
+        </div>
+        <div class="page-heading-actions">
+          <a class="btn" href="components.html">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"></path>
+            </svg>
+            Semua komponen
+          </a>
+        </div>
+      </div>
+      <div class="demo-grid component-demos">
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Simple</h2>
+            <p class="small text-muted mb-4">Satu tombol untuk satu panel.</p>
+            <div class="component-preview">
+              <div class="demo-row">
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#simplePanel" aria-expanded="false" aria-controls="simplePanel">Buka / tutup panel</button>
+              </div>
+              <div class="collapse" id="simplePanel">
+                <div class="demo-inset bg-green">Ide yang baik butuh ruang. Panel ini memakai Collapse Bootstrap.</div>
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;demo-row&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#simplePanel&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;simplePanel&quot;&gt;Buka / tutup panel&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;collapse&quot; id=&quot;simplePanel&quot;&gt;
+&lt;div class=&quot;demo-inset bg-green&quot;&gt;Ide yang baik butuh ruang. Panel ini memakai Collapse Bootstrap.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Multiple targets</h2>
+            <p class="small text-muted mb-4">Kontrol panel secara terpisah atau bersamaan.</p>
+            <div class="component-preview">
+              <div class="demo-row">
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#multiOne" aria-expanded="false" aria-controls="multiOne">Panel pertama</button>
+                <button type="button" class="btn btn-warning" data-bs-toggle="collapse" data-bs-target="#multiTwo" aria-expanded="false" aria-controls="multiTwo">Panel kedua</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="collapse" data-bs-target=".multi-demo" aria-expanded="false" aria-controls="multiOne multiTwo">Keduanya</button>
+              </div>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="collapse multi-demo" id="multiOne">
+                    <div class="demo-inset bg-purple">Ruang untuk ide pertama.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="collapse multi-demo" id="multiTwo">
+                    <div class="demo-inset bg-yellow">Ruang untuk ide kedua.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;demo-row&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#multiOne&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiOne&quot;&gt;Panel pertama&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#multiTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiTwo&quot;&gt;Panel kedua&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;.multi-demo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;multiOne multiTwo&quot;&gt;Keduanya&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row g-3&quot;&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;collapse multi-demo&quot; id=&quot;multiOne&quot;&gt;
+&lt;div class=&quot;demo-inset bg-purple&quot;&gt;Ruang untuk ide pertama.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;collapse multi-demo&quot; id=&quot;multiTwo&quot;&gt;
+&lt;div class=&quot;demo-inset bg-yellow&quot;&gt;Ruang untuk ide kedua.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo demo-wide">
+          <div class="card-body">
+            <h2>Accordion</h2>
+            <p class="small text-muted mb-4">Satu panel terbuka pada satu waktu.</p>
+            <div class="component-preview">
+              <div class="accordion" id="componentAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel0" aria-expanded="true" aria-controls="accordionPanel0">Apa itu BRUTAL.?</button>
+                  </h3>
+                  <div id="accordionPanel0" class="accordion-collapse collapse show" data-bs-parent="#componentAccordion">
+                    <div class="accordion-body">Template Bootstrap dengan karakter Neubrutalism.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel1" aria-expanded="false" aria-controls="accordionPanel1">Bisakah warnanya diganti?</button>
+                  </h3>
+                  <div id="accordionPanel1" class="accordion-collapse collapse" data-bs-parent="#componentAccordion">
+                    <div class="accordion-body">Ya. Ubah token --neo-* pada stylesheet tema.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionPanel2" aria-expanded="false" aria-controls="accordionPanel2">Apakah memerlukan internet?</button>
+                  </h3>
+                  <div id="accordionPanel2" class="accordion-collapse collapse" data-bs-parent="#componentAccordion">
+                    <div class="accordion-body">Tidak. Seluruh aset demo tersedia lokal.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;accordion&quot; id=&quot;componentAccordion&quot;&gt;
+&lt;div class=&quot;accordion-item&quot;&gt;
+&lt;h3 class=&quot;accordion-header&quot;&gt;
+&lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel0&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;accordionPanel0&quot;&gt;Apa itu BRUTAL.?&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id=&quot;accordionPanel0&quot; class=&quot;accordion-collapse collapse show&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;
+&lt;div class=&quot;accordion-body&quot;&gt;Template Bootstrap dengan karakter Neubrutalism.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;accordion-item&quot;&gt;
+&lt;h3 class=&quot;accordion-header&quot;&gt;
+&lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel1&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;accordionPanel1&quot;&gt;Bisakah warnanya diganti?&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id=&quot;accordionPanel1&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;
+&lt;div class=&quot;accordion-body&quot;&gt;Ya. Ubah token --neo-* pada stylesheet tema.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;accordion-item&quot;&gt;
+&lt;h3 class=&quot;accordion-header&quot;&gt;
+&lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#accordionPanel2&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;accordionPanel2&quot;&gt;Apakah memerlukan internet?&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id=&quot;accordionPanel2&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#componentAccordion&quot;&gt;
+&lt;div class=&quot;accordion-body&quot;&gt;Tidak. Seluruh aset demo tersedia lokal.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

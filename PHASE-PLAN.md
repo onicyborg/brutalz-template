@@ -242,75 +242,82 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 > File: `widget-chart.html`, `widget-data.html`
 
 ### `widget-chart.html`
-- [ ] Sidebar: WORKSPACE > Widgets > Chart Widgets (active).
-- [ ] Page heading: "Widget Grafik" dengan deskripsi singkat.
-- [ ] Grid 12 kolom berisi:
-  - [ ] **Mini line chart** (SVG/CSS sederhana, warna brutal).
-  - [ ] **Mini bar chart** (SVG statis).
-  - [ ] **Mini donut/pie chart** (SVG conic).
-  - [ ] **Mini area chart**.
-  - [ ] **Mini stacked bar**.
-- [ ] Tiap widget dibungkus `.card stat-card` dengan shadow neobrutalism.
-- [ ] Library: **tanpa library** — pakai SVG inline + CSS (sesuai gaya chart di `index.html`).
-- [ ] Footer + breadcrumb.
+- [x] Sidebar: WORKSPACE > Widgets > Chart Widgets (active).
+- [x] Page heading: "Widget Grafik" dengan deskripsi singkat.
+- [x] Grid 12 kolom berisi:
+  - [x] **Mini line chart** (SVG/CSS sederhana, warna brutal).
+  - [x] **Mini bar chart** (SVG statis).
+  - [x] **Mini donut/pie chart** (SVG conic).
+  - [x] **Mini area chart**.
+  - [x] **Mini stacked bar**.
+- [x] Tiap widget dibungkus `.card stat-card` dengan shadow neobrutalism.
+- [x] Library: **tanpa library** — pakai SVG inline + CSS (sesuai gaya chart di `index.html`).
+- [x] Footer + breadcrumb.
 
 ### `widget-data.html`
-- [ ] Sidebar: WORKSPACE > Widgets > Data Widgets (active).
-- [ ] Page heading: "Widget Data".
-- [ ] Komponen:
-  - [ ] **KPI stat card** (4 varian warna: purple, green, orange, yellow).
-  - [ ] **Progress radial**.
-  - [ ] **Info card** dengan ikon Feather.
-  - [ ] **List ranking** dengan progress bar.
-  - [ ] **Heatmap sederhana** (CSS grid).
-  - [ ] **Calendar mini widget**.
-- [ ] Library: **tanpa library** — pure CSS/HTML.
+- [x] Sidebar: WORKSPACE > Widgets > Data Widgets (active).
+- [x] Page heading: "Widget Data".
+- [x] Komponen:
+  - [x] **KPI stat card** (4 varian warna: purple, green, orange, yellow).
+  - [x] **Progress radial**.
+  - [x] **Info card** dengan ikon SVG lokal.
+  - [x] **List ranking** dengan progress bar.
+  - [x] **Heatmap sederhana** (CSS grid).
+  - [x] **Calendar mini widget**.
+- [x] Library: **tanpa library** — pure CSS/HTML.
 
 ## 1.2 Apps
 
 ### `chat.html`
-- [ ] Layout 2 kolom: daftar percakapan (kiri) + chat aktif (kanan).
-- [ ] Avatar, nama, waktu, badge unread.
-- [ ] Input chat di bawah + tombol kirim.
-- [ ] Styling: bubble chat dengan border tebal neobrutalism.
-- [ ] Library: **tanpa** (dummy/seed data saja).
+- [x] Layout 2 kolom: daftar percakapan (kiri) + chat aktif (kanan).
+- [x] Avatar, nama, waktu, badge unread.
+- [x] Input chat di bawah + tombol kirim.
+- [x] Styling: bubble chat dengan border tebal neobrutalism.
+- [x] Library: **tanpa** (data contoh dan pesan disimpan lokal).
 
 ### `portfolio.html`
-- [ ] Grid portfolio 3 kolom (filter kategori opsional).
-- [ ] Card gambar dengan judul + kategori + link.
-- [ ] Library: **tanpa** (gambar dari `assets/img/` lokal).
+- [x] Grid portfolio 3 kolom dengan filter kategori.
+- [x] Card gambar dengan judul + kategori + link detail.
+- [x] Library: **tanpa** (gambar dari `assets/img/` lokal).
 
 ### `blog.html`
-- [ ] Layout blog list (kiri) + sidebar widget (kanan).
-- [ ] Card artikel dengan gambar, judul, excerpt, tanggal, tag.
-- [ ] Pagination di bawah.
-- [ ] Library: **tanpa**.
+- [x] Layout blog list (kiri) + sidebar widget (kanan).
+- [x] Card artikel dengan gambar, judul, excerpt, tanggal, tag.
+- [x] Pagination di bawah.
+- [x] Library: **tanpa**.
 
 ## 1.3 Email
 
 ### `email-inbox.html`
-- [ ] Top toolbar: pilih semua, tandai baca, hapus.
-- [ ] Sidebar kategori: Inbox, Starred, Sent, Draft, Spam, Trash.
-- [ ] Daftar email dengan checkbox, star, avatar pengirim, subject, preview, waktu.
-- [ ] Klik email → buka `email-read.html` (link, bukan JS).
-- [ ] Library: **tanpa**.
+- [x] Top toolbar: pilih semua, tandai baca, hapus.
+- [x] Sidebar kategori: Inbox, Starred, Sent, Draft, Spam, Trash.
+- [x] Daftar email dengan checkbox, star, avatar pengirim, subject, preview, waktu.
+- [x] Klik email → buka `email-read.html` lewat link; draft menuju compose.
+- [x] Library: **tanpa**.
 
 ### `email-compose.html`
-- [ ] Form compose: Kepada, CC, BCC, Subject, Body.
-- [ ] Toolbar formatting (tombol Bold, Italic, Underline — visual saja).
-- [ ] Tombol Kirim, Draft, Discard.
-- [ ] Library: **tanpa** (atau integrasi ringan dengan Quill jika Phase 5 sudah ada).
+- [x] Form compose: Kepada, CC, BCC, Subject, Body.
+- [x] Toolbar formatting (tombol Bold, Italic, Underline — visual saja).
+- [x] Tombol Kirim, Draft, Discard.
+- [x] Library: **tanpa**; kirim menyimpan demo lokal, tidak mengirim email.
 
 ### `email-read.html`
-- [ ] Header email: avatar, pengirim, tanggal, Kepada/CC.
-- [ ] Body email dengan lampiran (file list).
-- [ ] Tombol Reply, Forward, Print.
-- [ ] Library: **tanpa**.
+- [x] Header email: avatar, pengirim, tanggal, Kepada/CC.
+- [x] Body email dengan lampiran (file list).
+- [x] Tombol Reply, Forward, Print.
+- [x] Library: **tanpa**.
 
 ## 🚦 Keluar Phase 1 jika:
-- ✅ 7 file baru dibuat, terdaftar di sidebar, dapat dibuka tanpa error 404.
+- ✅ 8 file baru dibuat, terdaftar di sidebar, dapat dibuka tanpa error 404.
 - ✅ Style neobrutalism konsisten di seluruh halaman baru.
 - ✅ Active state sidebar benar.
+
+### Hasil Phase 1 — 28 September 2026
+
+- Delapan halaman di atas selesai dan sidebar WORKSPACE memiliki dropdown Widgets, Apps, dan Email. Seluruhnya memakai shell, breadcrumb, serta active state bersama.
+- Grafik memakai SVG/CSS lokal; portfolio dan blog memakai enam ilustrasi SVG asli di `assets/img/workspace/`. Interaksi filter, pagination, detail, chat, dan email menggunakan JavaScript lokal tanpa dependency baru.
+- Chat dan email adalah demo browser: pesan dan draft disimpan pada `brutal.chat` dan `brutal.mail`, dapat dihapus lewat reset data demo; tombol Kirim email tidak mengirim ke alamat asli.
+- `npm run build` menghasilkan 40 halaman; `npm test` **19 passed**. Cakupan mencakup semua halaman pada desktop/mobile, sidebar dan aset, chat, filter portfolio/blog, alur email, data tidak tersedia, serta reset profil. Tampilan desktop/mobile Phase 1 ditinjau.
 
 ---
 
@@ -711,7 +718,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | Phase | Tema | File Baru | File Diubah | Status |
 | --- | --- | --- | --- | --- |
 | 0 | Fondasi & Sidebar | 3 JS sidebar + panduan bundles + tes sidebar | 32 HTML (termasuk rename 404), generator, app.js, CSS, dokumentasi | ✅ Selesai — 12 tes lulus |
-| 1 | Workspace Inti | 7 (widget-chart, widget-data, chat, portfolio, blog, email-inbox, email-compose, email-read) | 0 | ⬜ |
+| 1 | Workspace Inti | 8 (widget-chart, widget-data, chat, portfolio, blog, email-inbox, email-compose, email-read) | sidebar, generator, CSS/JS lokal, dokumentasi | ✅ Selesai — 19 tes lulus |
 | 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | 0 | ⬜ |
 | 3 | Forms Lanjutan | 4 (+refactor forms.html) | 1 | ⬜ |
 | 4 | Tables Lanjutan | 4 (+refactor tables.html) | 1 | ⬜ |

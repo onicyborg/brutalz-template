@@ -10,19 +10,21 @@
 
 > **Audit Phase 0 — 27 September 2026:** terdapat **32 file HTML aktual** dan semuanya terdaftar di konfigurasi navigasi bersama. Sebanyak 29 memenuhi entri target di tabel berikut; 3 halaman pendukung adalah `components.html`, `blank.html`, dan `docs.html`. Penomoran tabel mencapai 86 entri (termasuk demo multilevel), bukan 74. Jumlah lama 41 halaman belum tersedia telah dikoreksi menjadi 57 entri target. `auth-reset-password.html` ternyata belum tersedia.
 
+> **Audit Phase 1 — 28 September 2026:** delapan halaman Widgets, Apps, dan Email telah ditambahkan. Kini terdapat **40 file HTML aktual**: 37 entri target dan 3 halaman pendukung; 49 entri target masih menunggu phase berikutnya.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 29 |
-| ❌ Entri target belum tersedia | 57 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 37 |
+| ❌ Entri target belum tersedia | 49 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 3 halaman pendukung | 32 |
+| File HTML aktual, termasuk 3 halaman pendukung | 40 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **4 grup utama** dan **32 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **40 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
 
 ---
 
@@ -37,25 +39,25 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **
 ### Widgets
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 3 | Chart Widgets | `widget-chart.html` | — | ❌ Belum |
-| 4 | Data Widgets | `widget-data.html` | — | ❌ Belum |
+| 3 | Chart Widgets | `widget-chart.html` | `widget-chart.html` | ✅ Phase 1 |
+| 4 | Data Widgets | `widget-data.html` | `widget-data.html` | ✅ Phase 1 |
 
-> ⚠️ **Catatan**: BRUTAL. saat ini belum punya grup Widgets terpisah. Widget chart sudah jadi satu di `charts.html`.
+> **Catatan**: Dropdown Widgets sudah tersedia. Showcase grafik `charts.html` tetap terpisah sampai Phase 5.
 
 ### Apps
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 5 | Chat | `chat.html` | — | ❌ Belum |
-| 6 | Portfolio | `portfolio.html` | — | ❌ Belum |
-| 7 | Blog | `blog.html` | — | ❌ Belum |
+| 5 | Chat | `chat.html` | `chat.html` | ✅ Phase 1 |
+| 6 | Portfolio | `portfolio.html` | `portfolio.html` | ✅ Phase 1 |
+| 7 | Blog | `blog.html` | `blog.html` | ✅ Phase 1 |
 | 8 | Calendar | `calendar.html` | `calendar.html` | ✅ Ada |
 
 ### Email
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 9 | Inbox | `email-inbox.html` / `mail-inbox.html` | — | ❌ Belum |
-| 10 | Compose | `email-compose.html` | — | ❌ Belum |
-| 11 | Read | `email-read.html` | — | ❌ Belum |
+| 9 | Inbox | `email-inbox.html` / `mail-inbox.html` | `email-inbox.html` | ✅ Phase 1 |
+| 10 | Compose | `email-compose.html` | `email-compose.html` | ✅ Phase 1 |
+| 11 | Read | `email-read.html` | `email-read.html` | ✅ Phase 1 |
 
 ---
 
@@ -228,23 +230,18 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **
 ✅ buttons.html            ✅ invoice.html           ✅ calendar.html
 ✅ checkbox-and-radio.html ✅ list-group.html        ✅ errors-404.html
 ✅ collapse.html           ✅ media-object.html      ✅ dropdown.html
+✅ widget-chart.html       ✅ widget-data.html       ✅ chat.html
+✅ portfolio.html          ✅ blog.html              ✅ email-inbox.html
+✅ email-compose.html      ✅ email-read.html
 ```
 
-**Total: 32 file HTML aktual; 29 masuk pemetaan target dan 3 halaman pendukung.** Baris reset password ditandai belum tersedia sesuai audit filesystem.
+**Total: 40 file HTML aktual; 37 masuk pemetaan target dan 3 halaman pendukung.** Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (57 entri target tersisa)
+## ❌ Yang Perlu Dibuat (49 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
-- [ ] `widget-chart.html` — Chart widgets showcase
-- [ ] `widget-data.html` — Data widgets (stats, KPI cards)
-- [ ] `chat.html` — Aplikasi chat
-- [ ] `portfolio.html` — Halaman portfolio
-- [ ] `blog.html` — Listing blog
-- [ ] `email-inbox.html` — Kotak masuk email
-- [ ] `email-compose.html` — Compose email
-- [ ] `email-read.html` — Baca email
 - [ ] `card.html` — Showcase kartu
 - [ ] `modal.html` — Showcase modal dialog
 - [ ] `tabs.html` — Showcase tabs Bootstrap
@@ -328,6 +325,14 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **
 
 **Cakupan:** Phase 0 selesai. Pemisahan konten form/tabel/grafik dan halaman baru untuk phase lain belum dieksekusi.
 
+### Hasil Phase 1 — Workspace Inti
+
+- [x] Delapan halaman Widgets, Apps, dan Email tersedia di dropdown WORKSPACE dengan breadcrumb serta active state sidebar.
+- [x] Widget grafik SVG, KPI/progres/heatmap/kalender mini, filter portfolio, pencarian dan pagination blog, chat, serta alur inbox–baca–compose/draft/terkirim memakai aset dan interaksi lokal.
+- [x] Email/chat memakai data contoh tersimpan di browser; reset profil juga menghapus `brutal.chat` dan `brutal.mail`. Tidak ada pengiriman email sungguhan.
+- [x] Grafik dan ilustrasi portfolio/blog memakai SVG lokal tanpa CDN atau library baru.
+- [x] `npm run build` menghasilkan 40 halaman; **19 tes browser lulus** termasuk alur Phase 1 dan pemeriksaan seluruh halaman pada desktop/mobile.
+
 ---
 
 ## 🗂️ Rekomendasi Struktur Sidebar BRUTAL. (Final)
@@ -337,17 +342,17 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **
 ├── Dashboard                  → index.html         ✅
 ├── Proyek                     → projects.html      ✅
 ├── Kalender                   → calendar.html      ✅
-├── Widgets                    → (group baru)
-│   ├── Chart Widgets          → widget-chart.html  ❌
-│   └── Data Widgets           → widget-data.html   ❌
-├── Apps                       → (group baru)
-│   ├── Chat                   → chat.html          ❌
-│   ├── Portfolio              → portfolio.html     ❌
-│   └── Blog                   → blog.html          ❌
-└── Email                      → (group baru)
-    ├── Inbox                  → email-inbox.html   ❌
-    ├── Compose                → email-compose.html ❌
-    └── Baca                   → email-read.html    ❌
+├── Widgets                    → (dropdown aktif)
+│   ├── Chart Widgets          → widget-chart.html  ✅
+│   └── Data Widgets           → widget-data.html   ✅
+├── Apps                       → (dropdown aktif)
+│   ├── Chat                   → chat.html          ✅
+│   ├── Portfolio              → portfolio.html     ✅
+│   └── Blog                   → blog.html          ✅
+└── Email                      → (dropdown aktif)
+    ├── Inbox                  → email-inbox.html   ✅
+    ├── Compose                → email-compose.html ✅
+    └── Baca                   → email-read.html    ✅
 
 🧱 BUILDING BLOCKS
 ├── Komponen UI                → (group, sudah ada)
@@ -432,17 +437,17 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. Phase 0 memiliki **
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 32 (29 target + 3 halaman pendukung)
-Sudah selesai: 29/86  ████░░░░░░░░░░░░░░░░  33.7%
-Belum selesai: 57/86  ░░░░░░░░░░░░░░░░░░░░  66.3%
+Total file HTML aktual: 40 (37 target + 3 halaman pendukung)
+Sudah selesai: 37/86 (43.0%)
+Belum selesai: 49/86 (57.0%)
 ```
 
 ### Checklist Ringkasan per Kategori
 
 - [x] **Main**: Dashboard, Proyek, Kalender (3/8)
-- [ ] **Widgets**: 0/2
-- [ ] **Apps**: 1/4 (Calendar)
-- [ ] **Email**: 0/3
+- [x] **Widgets**: 2/2
+- [x] **Apps**: 4/4 (Chat, Portfolio, Blog, Calendar)
+- [x] **Email**: 3/3
 - [x] **Basic Components**: 16/16 ✅ **100%**
 - [ ] **Advanced Components**: 1/9 (Pricing)
 - [ ] **Forms**: 1/5 (dasar di forms.html; migrasi pada Phase 3)
@@ -464,8 +469,8 @@ Belum selesai: 57/86  ░░░░░░░░░░░░░░░░░░░�
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
 1. **Keputusan struktur selesai pada Phase 0**: pecah Form/Tabel/Chart pada Phase 3/4/5 sesuai tabel keputusan.
-2. **Tambah grup sidebar baru**: Widgets, Apps, Email, Advanced Components, Icons, Media, Maps, Errors, Posts.
-3. **Mulai dari prioritas tinggi**: Widgets + Apps + Email (inti dashboard modern).
+2. **Lanjutkan grup sidebar baru**: Widgets, Apps, dan Email selesai; Advanced Components, Icons, Media, Maps, Errors, Posts menyusul.
+3. **Phase 1 selesai**: Widgets + Apps + Email sudah aktif sebagai inti workspace modern.
 4. **Lanjut Advanced Components**: Card, Modal, Tabs, Avatar (sering dipakai).
 5. **Lalu Forms & Tables detail**: pecah sesuai Otika atau tetap kompak.
 6. **Charts & Icons**: tergantung library mana yang akan di-include.
@@ -474,4 +479,4 @@ Belum selesai: 57/86  ░░░░░░░░░░░░░░░░░░░�
 
 ---
 
-> 📌 **Setelah Phase 0**: Tambahkan halaman yang sudah tersedia ke `assets/js/sidebar-config.js`. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas adalah target phase mendatang, bukan daftar tautan yang semuanya sudah aktif.
+> 📌 **Setelah Phase 1**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

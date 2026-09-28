@@ -1,5 +1,333 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>Navbar — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/theme.css"></head><body data-page="navbar"><a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
-    <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li><li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li><li class="breadcrumb-item active" aria-current="page">Navbar</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"/></svg><span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1"><div class="page-heading"><div><h1>Navbar</h1><p>Brand, navigasi responsif, pencarian, dan teks.</p></div><div class="page-heading-actions"><a class="btn" href="components.html"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"/></svg> Semua komponen</a></div></div><div class="demo-grid component-demos"><section class="card component-demo demo-wide"><div class="card-body"><h2>Brand</h2><p class="small text-muted mb-4">Identitas dan teks pendamping dalam navbar.</p><div class="component-preview"><nav class="navbar demo-navbar bg-purple" aria-label="Contoh navbar brand"><div class="container-fluid"><a class="navbar-brand fw-bold" href="index.html">BRUTAL.</a><span class="navbar-text small">Creative workspace</span></div></nav></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar bg-purple&quot; aria-label=&quot;Contoh navbar brand&quot;&gt;&lt;div class=&quot;container-fluid&quot;&gt;&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;BRUTAL.&lt;/a&gt;&lt;span class=&quot;navbar-text small&quot;&gt;Creative workspace&lt;/span&gt;&lt;/div&gt;&lt;/nav&gt;</code></pre></details></div></section><section class="card component-demo demo-wide"><div class="card-body"><h2>Items & responsive collapse</h2><p class="small text-muted mb-4">Menu berubah menjadi toggler pada layar kecil.</p><div class="component-preview"><nav class="navbar navbar-expand-lg demo-navbar bg-yellow" aria-label="Contoh navbar responsif"><div class="container-fluid"><a class="navbar-brand fw-bold" href="index.html">Studio.</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#demoNavbarMenu" aria-controls="demoNavbarMenu" aria-expanded="false" aria-label="Buka menu contoh navbar"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="demoNavbarMenu"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" href="navbar.html" aria-current="page">Home</a></li><li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li><li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lainnya</button><ul class="dropdown-menu "><li><h3 class="dropdown-header">Workspace</h3></li><li><a class="dropdown-item" href="projects.html">Proyek</a></li><li><a class="dropdown-item" href="profile.html">Profil</a></li><li><hr class="dropdown-divider"></li><li><button class="dropdown-item" type="button" data-toast="Aksi menu dipilih.">Aksi demo</button></li><li><button class="dropdown-item" type="button" disabled>Arsip (disabled)</button></li></ul></li><li class="nav-item"><span class="nav-link disabled" aria-disabled="true">Arsip</span></li></ul></div></div></nav></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar navbar-expand-lg demo-navbar bg-yellow&quot; aria-label=&quot;Contoh navbar responsif&quot;&gt;&lt;div class=&quot;container-fluid&quot;&gt;&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;Studio.&lt;/a&gt;&lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#demoNavbarMenu&quot; aria-controls=&quot;demoNavbarMenu&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Buka menu contoh navbar&quot;&gt;&lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;&lt;/button&gt;&lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;demoNavbarMenu&quot;&gt;&lt;ul class=&quot;navbar-nav ms-auto&quot;&gt;&lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link active&quot; href=&quot;navbar.html&quot; aria-current=&quot;page&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;projects.html&quot;&gt;Proyek&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;nav-item dropdown&quot;&gt;&lt;button class=&quot;nav-link dropdown-toggle&quot; type=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;Lainnya&lt;/button&gt;&lt;ul class=&quot;dropdown-menu &quot;&gt;&lt;li&gt;&lt;h3 class=&quot;dropdown-header&quot;&gt;Workspace&lt;/h3&gt;&lt;/li&gt;&lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;projects.html&quot;&gt;Proyek&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;profile.html&quot;&gt;Profil&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;&lt;li&gt;&lt;button class=&quot;dropdown-item&quot; type=&quot;button&quot; data-toast=&quot;Aksi menu dipilih.&quot;&gt;Aksi demo&lt;/button&gt;&lt;/li&gt;&lt;li&gt;&lt;button class=&quot;dropdown-item&quot; type=&quot;button&quot; disabled&gt;Arsip (disabled)&lt;/button&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li class=&quot;nav-item&quot;&gt;&lt;span class=&quot;nav-link disabled&quot; aria-disabled=&quot;true&quot;&gt;Arsip&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/nav&gt;</code></pre></details></div></section><section class="card component-demo demo-wide"><div class="card-body"><h2>Form pencarian</h2><p class="small text-muted mb-4">Form demo memberi feedback tanpa berpindah halaman.</p><div class="component-preview"><nav class="navbar demo-navbar bg-green" aria-label="Contoh navbar pencarian"><div class="container-fluid gap-3"><a class="navbar-brand fw-bold" href="index.html">Find your idea.</a><form class="d-flex gap-2 navbar-demo-search" role="search"><input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required><button class="btn btn-dark" type="submit">Cari</button></form></div></nav><p id="navbarSearchResult" class="small mt-3 mb-0" role="status"></p></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar bg-green&quot; aria-label=&quot;Contoh navbar pencarian&quot;&gt;&lt;div class=&quot;container-fluid gap-3&quot;&gt;&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;Find your idea.&lt;/a&gt;&lt;form class=&quot;d-flex gap-2 navbar-demo-search&quot; role=&quot;search&quot;&gt;&lt;input class=&quot;form-control&quot; type=&quot;search&quot; aria-label=&quot;Cari di navbar contoh&quot; placeholder=&quot;Cari ide…&quot; required&gt;&lt;button class=&quot;btn btn-dark&quot; type=&quot;submit&quot;&gt;Cari&lt;/button&gt;&lt;/form&gt;&lt;/div&gt;&lt;/nav&gt;&lt;p id=&quot;navbarSearchResult&quot; class=&quot;small mt-3 mb-0&quot; role=&quot;status&quot;&gt;&lt;/p&gt;</code></pre></details></div></section><section class="card component-demo demo-wide"><div class="card-body"><h2>Teks & aksi</h2><p class="small text-muted mb-4">Navbar juga dapat berisi informasi akun.</p><div class="component-preview"><nav class="navbar demo-navbar" aria-label="Contoh navbar teks"><div class="container-fluid gap-3"><span class="navbar-text">Masuk sebagai <strong>Alex Darma</strong></span><a class="btn btn-sm btn-primary" href="profile.html">Lihat profil ↗</a></div></nav></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar&quot; aria-label=&quot;Contoh navbar teks&quot;&gt;&lt;div class=&quot;container-fluid gap-3&quot;&gt;&lt;span class=&quot;navbar-text&quot;&gt;Masuk sebagai &lt;strong&gt;Alex Darma&lt;/strong&gt;&lt;/span&gt;&lt;a class=&quot;btn btn-sm btn-primary&quot; href=&quot;profile.html&quot;&gt;Lihat profil ↗&lt;/a&gt;&lt;/div&gt;&lt;/nav&gt;</code></pre></details></div></section></div></main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div><div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body"><label class="visually-hidden" for="globalSearch">Cari halaman</label><input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off"><div id="searchResults" class="search-results mt-3"></div></div></div></div></div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><form id="projectForm"><div class="modal-body"><p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p><label class="form-label" for="projectName">Nama proyek</label><input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required maxlength="70"><label class="form-label" for="projectCategory">Kategori</label><select id="projectCategory" name="category" class="form-select mb-3"><option>Website</option><option>Branding</option><option>Mobile app</option><option>Marketing</option></select><label class="form-label" for="projectDue">Tenggat</label><input id="projectDue" name="due" class="form-control" type="date" required></div><div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Buat proyek</button></div></form></div></div></div>
-    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div id="toastMessage" class="toast-body"></div><button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button></div></div></div><script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script></body></html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Navbar — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body data-page="navbar">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Navbar</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Navbar</h1>
+          <p>Brand, navigasi responsif, pencarian, dan teks.</p>
+        </div>
+        <div class="page-heading-actions">
+          <a class="btn" href="components.html">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"></path>
+            </svg>
+            Semua komponen
+          </a>
+        </div>
+      </div>
+      <div class="demo-grid component-demos">
+        <section class="card component-demo demo-wide">
+          <div class="card-body">
+            <h2>Brand</h2>
+            <p class="small text-muted mb-4">Identitas dan teks pendamping dalam navbar.</p>
+            <div class="component-preview">
+              <nav class="navbar demo-navbar bg-purple" aria-label="Contoh navbar brand">
+                <div class="container-fluid">
+                  <a class="navbar-brand fw-bold" href="index.html">BRUTAL.</a>
+                  <span class="navbar-text small">Creative workspace</span>
+                </div>
+              </nav>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar bg-purple&quot; aria-label=&quot;Contoh navbar brand&quot;&gt;
+&lt;div class=&quot;container-fluid&quot;&gt;
+&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;BRUTAL.&lt;/a&gt;
+&lt;span class=&quot;navbar-text small&quot;&gt;Creative workspace&lt;/span&gt;
+&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo demo-wide">
+          <div class="card-body">
+            <h2>Items &amp; responsive collapse</h2>
+            <p class="small text-muted mb-4">Menu berubah menjadi toggler pada layar kecil.</p>
+            <div class="component-preview">
+              <nav class="navbar navbar-expand-lg demo-navbar bg-yellow" aria-label="Contoh navbar responsif">
+                <div class="container-fluid">
+                  <a class="navbar-brand fw-bold" href="index.html">Studio.</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#demoNavbarMenu" aria-controls="demoNavbarMenu" aria-expanded="false" aria-label="Buka menu contoh navbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="demoNavbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                      <li class="nav-item"><a class="nav-link active" href="navbar.html" aria-current="page">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li>
+                      <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lainnya</button>
+                        <ul class="dropdown-menu ">
+                          <li>
+                            <h3 class="dropdown-header">Workspace</h3>
+                          </li>
+                          <li><a class="dropdown-item" href="projects.html">Proyek</a></li>
+                          <li><a class="dropdown-item" href="profile.html">Profil</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li>
+                            <button class="dropdown-item" type="button" data-toast="Aksi menu dipilih.">Aksi demo</button>
+                          </li>
+                          <li>
+                            <button class="dropdown-item" type="button" disabled="disabled">Arsip (disabled)</button>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item"><span class="nav-link disabled" aria-disabled="true">Arsip</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar navbar-expand-lg demo-navbar bg-yellow&quot; aria-label=&quot;Contoh navbar responsif&quot;&gt;
+&lt;div class=&quot;container-fluid&quot;&gt;
+&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;Studio.&lt;/a&gt;
+&lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#demoNavbarMenu&quot; aria-controls=&quot;demoNavbarMenu&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Buka menu contoh navbar&quot;&gt;
+&lt;span class=&quot;navbar-toggler-icon&quot;&gt;
+&lt;/span&gt;
+&lt;/button&gt;
+&lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;demoNavbarMenu&quot;&gt;
+&lt;ul class=&quot;navbar-nav ms-auto&quot;&gt;
+&lt;li class=&quot;nav-item&quot;&gt;
+&lt;a class=&quot;nav-link active&quot; href=&quot;navbar.html&quot; aria-current=&quot;page&quot;&gt;Home&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class=&quot;nav-item&quot;&gt;
+&lt;a class=&quot;nav-link&quot; href=&quot;projects.html&quot;&gt;Proyek&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class=&quot;nav-item dropdown&quot;&gt;
+&lt;button class=&quot;nav-link dropdown-toggle&quot; type=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;Lainnya&lt;/button&gt;
+&lt;ul class=&quot;dropdown-menu &quot;&gt;
+&lt;li&gt;
+&lt;h3 class=&quot;dropdown-header&quot;&gt;Workspace&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a class=&quot;dropdown-item&quot; href=&quot;projects.html&quot;&gt;Proyek&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a class=&quot;dropdown-item&quot; href=&quot;profile.html&quot;&gt;Profil&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;hr class=&quot;dropdown-divider&quot;&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;button class=&quot;dropdown-item&quot; type=&quot;button&quot; data-toast=&quot;Aksi menu dipilih.&quot;&gt;Aksi demo&lt;/button&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;button class=&quot;dropdown-item&quot; type=&quot;button&quot; disabled&gt;Arsip (disabled)&lt;/button&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=&quot;nav-item&quot;&gt;
+&lt;span class=&quot;nav-link disabled&quot; aria-disabled=&quot;true&quot;&gt;Arsip&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo demo-wide">
+          <div class="card-body">
+            <h2>Form pencarian</h2>
+            <p class="small text-muted mb-4">Form demo memberi feedback tanpa berpindah halaman.</p>
+            <div class="component-preview">
+              <nav class="navbar demo-navbar bg-green" aria-label="Contoh navbar pencarian">
+                <div class="container-fluid gap-3">
+                  <a class="navbar-brand fw-bold" href="index.html">Find your idea.</a>
+                  <form class="d-flex gap-2 navbar-demo-search" role="search">
+                    <input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required="">
+                    <button class="btn btn-dark" type="submit">Cari</button>
+                  </form>
+                </div>
+              </nav>
+              <p id="navbarSearchResult" class="small mt-3 mb-0" role="status"></p>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar bg-green&quot; aria-label=&quot;Contoh navbar pencarian&quot;&gt;
+&lt;div class=&quot;container-fluid gap-3&quot;&gt;
+&lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;Find your idea.&lt;/a&gt;
+&lt;form class=&quot;d-flex gap-2 navbar-demo-search&quot; role=&quot;search&quot;&gt;
+&lt;input class=&quot;form-control&quot; type=&quot;search&quot; aria-label=&quot;Cari di navbar contoh&quot; placeholder=&quot;Cari ide…&quot; required&gt;
+&lt;button class=&quot;btn btn-dark&quot; type=&quot;submit&quot;&gt;Cari&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;p id=&quot;navbarSearchResult&quot; class=&quot;small mt-3 mb-0&quot; role=&quot;status&quot;&gt;
+&lt;/p&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo demo-wide">
+          <div class="card-body">
+            <h2>Teks &amp; aksi</h2>
+            <p class="small text-muted mb-4">Navbar juga dapat berisi informasi akun.</p>
+            <div class="component-preview">
+              <nav class="navbar demo-navbar" aria-label="Contoh navbar teks">
+                <div class="container-fluid gap-3">
+                  <span class="navbar-text">
+                    Masuk sebagai
+                    <strong>Alex Darma</strong>
+                  </span>
+                  <a class="btn btn-sm btn-primary" href="profile.html">Lihat profil ↗</a>
+                </div>
+              </nav>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar&quot; aria-label=&quot;Contoh navbar teks&quot;&gt;
+&lt;div class=&quot;container-fluid gap-3&quot;&gt;
+&lt;span class=&quot;navbar-text&quot;&gt;Masuk sebagai &lt;strong&gt;Alex Darma&lt;/strong&gt;
+&lt;/span&gt;
+&lt;a class=&quot;btn btn-sm btn-primary&quot; href=&quot;profile.html&quot;&gt;Lihat profil ↗&lt;/a&gt;
+&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

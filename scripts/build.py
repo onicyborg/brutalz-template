@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Generate editable, standalone HTML pages. Python standard library only."""
+"""Generate readable, standalone HTML pages."""
 from pathlib import Path
 from html import escape
 import json
 from component_pages import CATALOG, overview, build_pages, write_flags
 from workspace_pages import WORKSPACE_PAGES, build_workspace_pages, write_workspace_assets
+from format_html import format_html, verify_semantic
 
 ROOT = Path(__file__).resolve().parent.parent
 ICONS = {
@@ -200,12 +201,20 @@ def main():
     write_workspace_assets(ROOT)
     (ROOT/'assets/js/sidebar-icons.js').write_text('// Generated from ICONS in scripts/build.py.\nwindow.BRUTAL_ICONS = '+json.dumps(ICONS)+';\n',encoding='utf-8')
     write_flags(ROOT)
+    def write_page(key, content, standalone=False):
+        source = page(key, content, standalone)
+        formatted = format_html(source)
+        valid, reason = verify_semantic(source, formatted)
+        if not valid:
+            raise ValueError(f'HTML formatting changed {key}.html: {reason}')
+        (ROOT/f'{key}.html').write_text(formatted,encoding='utf-8')
+
     for key,content in pages.items():
-        (ROOT/f'{key}.html').write_text(page(key,content),encoding='utf-8')
+        write_page(key, content)
     for key in ['auth-login','auth-register','auth-forgot-password']:
-        (ROOT/f'{key}.html').write_text(page(key,auth(key),True),encoding='utf-8')
+        write_page(key, auth(key), True)
     error = '<main class="min-vh-100 d-flex align-items-center justify-content-center p-4 text-center" id="main"><div><span class="badge bg-yellow mb-4">A LITTLE LOST, STILL BOLD.</span><div class="error-code">404</div><h1 class="mt-4">Oops. Ide ini belum ada.</h1><p class="text-muted mb-4">Halaman yang kamu cari mungkin sudah pindah.<br>Yuk, kembali ke tempat semua ide dimulai.</p><a class="btn btn-primary" href="index.html">Kembali ke dashboard '+icon('arrow')+'</a></div></main>'
-    (ROOT/'errors-404.html').write_text(page('errors-404',error,True),encoding='utf-8')
+    write_page('errors-404', error, True)
     print(f'Built {len(pages)+4} static pages.')
 
 if __name__ == '__main__':

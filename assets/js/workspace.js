@@ -100,7 +100,6 @@
   function persist(){return save('mail',mail);}
   const messageById=id=>mail.messages.find(m=>m.id===id);
   function missing(){return '<div class="mail-empty"><span aria-hidden="true">✳</span><h2>Pesan tidak ditemukan.</h2><p>Pesan ini mungkin tidak tersedia di browser kamu.</p><a class="btn btn-primary" href="email-inbox.html">Kembali ke inbox</a></div>';}
-  function navigateAfterSave(url){if(persist())location.href=url;else sidebar();}
 
   if(page==='email-inbox'){
     const selected=new Set();

@@ -23,7 +23,8 @@ VARIANTS = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'lig
 
 
 def demo(title, description, markup, wide=False):
-    return f'''<section class="card component-demo{' demo-wide' if wide else ''}"><div class="card-body"><h2>{title}</h2><p class="small text-muted mb-4">{description}</p><div class="component-preview">{markup}</div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>{escape(markup)}</code></pre></details></div></section>'''
+    readable_markup = markup.replace('><', '>\n<')
+    return f'''<section class="card component-demo{' demo-wide' if wide else ''}"><div class="card-body"><h2>{title}</h2><p class="small text-muted mb-4">{description}</p><div class="component-preview">{markup}</div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>{escape(readable_markup)}</code></pre></details></div></section>'''
 
 
 def row(markup):

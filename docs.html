@@ -1,8 +1,94 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>Dokumentasi — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/theme.css"></head><body data-page="docs"><a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
-    <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li><li class="breadcrumb-item active" aria-current="page">Dokumentasi</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"/></svg><span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1"><div class="page-heading"><div><h1>Mulai dari sini. Buat jadi milikmu.</h1><p>Panduan singkat membangun dengan BRUTAL. dan Bootstrap 5.3.8.</p></div><div class="page-heading-actions"></div></div><div class="row g-4"><div class="col-lg-8"><section class="card mb-4"><div class="card-body"><span class="badge bg-green mb-3">LOCAL FIRST · NO BUILD REQUIRED</span><h2 class="fs-4">Hello, builder.</h2><p>BRUTAL. adalah template admin HTML statis dengan tema Neubrutalism. Grid, utilities, dan interaksi dasar memakai Bootstrap asli. Lapisan tema memberi garis tegas, pastel, dan bayangan solid.</p><div class="code">npm run dev
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Dokumentasi — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body data-page="docs">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dokumentasi</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Mulai dari sini. Buat jadi milikmu.</h1>
+          <p>Panduan singkat membangun dengan BRUTAL. dan Bootstrap 5.3.8.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <section class="card mb-4">
+            <div class="card-body">
+              <span class="badge bg-green mb-3">LOCAL FIRST · NO BUILD REQUIRED</span>
+              <h2 class="fs-4">Hello, builder.</h2>
+              <p>BRUTAL. adalah template admin HTML statis dengan tema Neubrutalism. Grid, utilities, dan interaksi dasar memakai Bootstrap asli. Lapisan tema memberi garis tegas, pastel, dan bayangan solid.</p>
+              <div class="code">npm run dev
 # Buka http://localhost:4173
-# Atau buka index.html langsung di browser.</div><p class="small text-muted mt-3 mb-0">Python 3 diperlukan untuk server lokal dan generator. Tidak ada dependensi runtime CDN atau jQuery.</p></div></section><section class="card mb-4"><div class="card-body"><h2>Struktur proyek</h2><pre class="code mb-0">index.html                  Dashboard
+# Atau buka index.html langsung di browser.</div>
+              <p class="small text-muted mt-3 mb-0">Python 3 diperlukan untuk server lokal dan generator. Tidak ada dependensi runtime CDN atau jQuery.</p>
+            </div>
+          </section>
+          <section class="card mb-4">
+            <div class="card-body">
+              <h2>Struktur proyek</h2>
+              <pre class="code mb-0">index.html                  Dashboard
 components.html             Indeks 16 halaman komponen
 alert.html / buttons.html   Contoh komponen terpisah
 forms.html / tables.html     Form & tabel interaktif
@@ -13,7 +99,14 @@ bootstrap-5.3.8/dist/        Bootstrap vendor asli
 scripts/build.py            Generator halaman & shell
 assets/js/sidebar-config.js Satu konfigurasi navigasi
 assets/js/sidebar.js        Renderer & drawer bersama
-blank.html                  Titik awal halaman baru</pre></div></section><section class="card mb-4" id="components"><div class="card-body"><h2>Bootstrap dulu, tema setelahnya.</h2><p class="small">Urutan stylesheet penting. Semua kelas Bootstrap tetap tersedia.</p><pre class="code">&lt;link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"&gt;
+blank.html                  Titik awal halaman baru</pre>
+            </div>
+          </section>
+          <section class="card mb-4" id="components">
+            <div class="card-body">
+              <h2>Bootstrap dulu, tema setelahnya.</h2>
+              <p class="small">Urutan stylesheet penting. Semua kelas Bootstrap tetap tersedia.</p>
+              <pre class="code">&lt;link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"&gt;
 &lt;link rel="stylesheet" href="assets/css/theme.css"&gt;
 &lt;button class="btn btn-primary"&gt;Mulai membangun&lt;/button&gt;
 &lt;script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
@@ -21,12 +114,144 @@ blank.html                  Titik awal halaman baru</pre></div></section><sectio
 &lt;script src="assets/js/sidebar-config.js"&gt;&lt;/script&gt;
 &lt;script src="assets/js/sidebar-icons.js"&gt;&lt;/script&gt;
 &lt;script src="assets/js/sidebar.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;</pre><p class="small mb-0">Gunakan <code>.bg-purple</code>, <code>.bg-yellow</code>, <code>.bg-green</code>, <code>.bg-orange</code>, atau <code>.bg-blue</code> untuk warna pastel. Grid menggunakan <code>.row</code> dan <code>.col-*</code>.</p></div></section><section class="card mb-4"><div class="card-body"><h2>Ganti warna, pertahankan karakter.</h2><p class="small">Edit token di awal <code>assets/css/theme.css</code>. Source Bootstrap vendor tetap utuh sehingga lebih mudah diperbarui.</p><pre class="code">:root {
+&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;</pre>
+              <p class="small mb-0">Gunakan <code>.bg-purple</code>, <code>.bg-yellow</code>, <code>.bg-green</code>, <code>.bg-orange</code>, atau <code>.bg-blue</code> untuk warna pastel. Grid menggunakan <code>.row</code> dan <code>.col-*</code>.</p>
+            </div>
+          </section>
+          <section class="card mb-4">
+            <div class="card-body">
+              <h2>Ganti warna, pertahankan karakter.</h2>
+              <p class="small">Edit token di awal <code>assets/css/theme.css</code>. Source Bootstrap vendor tetap utuh sehingga lebih mudah diperbarui.</p>
+              <pre class="code">:root {
   --neo-purple: #c4a8f5;
   --neo-yellow: #f9de6e;
   --neo-ink: #232420;
   --neo-paper: #f5f4ef;
   --neo-shadow: 4px 4px 0 var(--neo-ink);
-}</pre></div></section><section class="card"><div class="card-body"><h2>Menambah halaman</h2><ol class="small ps-3"><li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li><li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li><li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li><li>Hubungkan form dan data ke backend pilihanmu.</li></ol><div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div></div></section></div><div class="col-lg-4"><section class="card mb-4 bg-yellow"><div class="card-body"><h2>Isi starter ini</h2><ul class="small ps-3 mb-0"><li>Dashboard, widget grafik & data</li><li>Chat, portfolio, blog & mailbox demo</li><li>16 halaman komponen Bootstrap</li><li>Form dan validasi</li><li>Tabel: cari, filter, urutkan, CSV</li><li>Kanban proyek & kalender</li><li>Profil dan preferensi</li><li>Login, register, reset password</li><li>Invoice, pricing, blank, 404</li></ul></div></section><section class="card mb-4"><div class="card-body"><h2>Interaksi & data</h2><p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p><p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode. Login/register hanya simulasi; tidak ada sesi autentikasi atau transaksi.</p></div></section><section class="card"><div class="card-body"><h2>Cakupan & pengembangan</h2><p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p><p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata, peta, rich text editor, dan upload server belum diintegrasikan. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p><a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a></div></section></div></div></main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div><div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body"><label class="visually-hidden" for="globalSearch">Cari halaman</label><input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off"><div id="searchResults" class="search-results mt-3"></div></div></div></div></div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><form id="projectForm"><div class="modal-body"><p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p><label class="form-label" for="projectName">Nama proyek</label><input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required maxlength="70"><label class="form-label" for="projectCategory">Kategori</label><select id="projectCategory" name="category" class="form-select mb-3"><option>Website</option><option>Branding</option><option>Mobile app</option><option>Marketing</option></select><label class="form-label" for="projectDue">Tenggat</label><input id="projectDue" name="due" class="form-control" type="date" required></div><div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Buat proyek</button></div></form></div></div></div>
-    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div id="toastMessage" class="toast-body"></div><button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button></div></div></div><script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script></body></html>
+}</pre>
+            </div>
+          </section>
+          <section class="card">
+            <div class="card-body">
+              <h2>Menambah halaman</h2>
+              <ol class="small ps-3">
+                <li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li>
+                <li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li>
+                <li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li>
+                <li>Hubungkan form dan data ke backend pilihanmu.</li>
+              </ol>
+              <div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section class="card mb-4 bg-yellow">
+            <div class="card-body">
+              <h2>Isi starter ini</h2>
+              <ul class="small ps-3 mb-0">
+                <li>Dashboard, widget grafik &amp; data</li>
+                <li>Chat, portfolio, blog &amp; mailbox demo</li>
+                <li>16 halaman komponen Bootstrap</li>
+                <li>Form dan validasi</li>
+                <li>Tabel: cari, filter, urutkan, CSV</li>
+                <li>Kanban proyek &amp; kalender</li>
+                <li>Profil dan preferensi</li>
+                <li>Login, register, reset password</li>
+                <li>Invoice, pricing, blank, 404</li>
+              </ul>
+            </div>
+          </section>
+          <section class="card mb-4">
+            <div class="card-body">
+              <h2>Interaksi &amp; data</h2>
+              <p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p>
+              <p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode. Login/register hanya simulasi; tidak ada sesi autentikasi atau transaksi.</p>
+            </div>
+          </section>
+          <section class="card">
+            <div class="card-body">
+              <h2>Cakupan &amp; pengembangan</h2>
+              <p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p>
+              <p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata, peta, rich text editor, dan upload server belum diintegrasikan. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p>
+              <a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,5 +1,326 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>Alert — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/theme.css"></head><body data-page="alert"><a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
-    <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li><li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li><li class="breadcrumb-item active" aria-current="page">Alert</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"/></svg><span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1"><div class="page-heading"><div><h1>Alert</h1><p>Pesan kontekstual, ikon, judul, dan dismissible alerts.</p></div><div class="page-heading-actions"><a class="btn" href="components.html"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"/></svg> Semua komponen</a></div></div><div class="demo-grid component-demos"><section class="card component-demo"><div class="card-body"><h2>Default</h2><p class="small text-muted mb-4">Delapan warna kontekstual Bootstrap.</p><div class="component-preview"><div class="alert alert-primary" role="alert">Ini pesan <strong>primary</strong> untuk workspace kamu.</div><div class="alert alert-secondary" role="alert">Ini pesan <strong>secondary</strong> untuk workspace kamu.</div><div class="alert alert-success" role="alert">Ini pesan <strong>success</strong> untuk workspace kamu.</div><div class="alert alert-danger" role="alert">Ini pesan <strong>danger</strong> untuk workspace kamu.</div><div class="alert alert-warning" role="alert">Ini pesan <strong>warning</strong> untuk workspace kamu.</div><div class="alert alert-info" role="alert">Ini pesan <strong>info</strong> untuk workspace kamu.</div><div class="alert alert-light" role="alert">Ini pesan <strong>light</strong> untuk workspace kamu.</div><div class="alert alert-dark" role="alert">Ini pesan <strong>dark</strong> untuk workspace kamu.</div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-primary&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;primary&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-secondary&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;secondary&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;success&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;danger&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;warning&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-info&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;info&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-light&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;light&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;&lt;div class=&quot;alert alert-dark&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;dark&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;</code></pre></details></div></section><section class="card component-demo"><div class="card-body"><h2>Dengan ikon</h2><p class="small text-muted mb-4">Ikon SVG lokal membantu memperjelas jenis pesan.</p><div class="component-preview"><div class="alert alert-success d-flex align-items-center gap-3" role="alert"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Perubahan berhasil disimpan.</span></div><div class="alert alert-warning d-flex align-items-center gap-3" role="alert"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-8z"/></svg><span>Masih ada tugas yang belum selesai.</span></div><div class="alert alert-danger d-flex align-items-center gap-3" role="alert"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg><span>Proyek gagal diperbarui. Coba lagi.</span></div><div class="alert alert-info d-flex align-items-center gap-3" role="alert"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ada pesan baru untuk tim kamu.</span></div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-success d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;m4 12 5 5L20 6&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Perubahan berhasil disimpan.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;alert alert-warning d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;m13 2-9 12h7l-1 8 10-13h-8z&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Masih ada tugas yang belum selesai.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;alert alert-danger d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;m6 6 12 12M6 18 18 6&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Proyek gagal diperbarui. Coba lagi.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;alert alert-info d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;rect x=&quot;3&quot; y=&quot;5&quot; width=&quot;18&quot; height=&quot;14&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;m3 6 9 7 9-7&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Ada pesan baru untuk tim kamu.&lt;/span&gt;&lt;/div&gt;</code></pre></details></div></section><section class="card component-demo"><div class="card-body"><h2>Judul & tautan</h2><p class="small text-muted mb-4">Pesan panjang dengan heading, divider, dan tautan.</p><div class="component-preview"><div class="alert alert-success" role="alert"><h3 class="alert-heading">Semua siap untuk diluncurkan!</h3><p>Seluruh komponen sudah diperiksa oleh tim.</p><hr><p class="mb-0 small">Lanjutkan ke <a class="alert-link" href="projects.html">halaman proyek</a> untuk melihat progresnya.</p></div></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;&lt;h3 class=&quot;alert-heading&quot;&gt;Semua siap untuk diluncurkan!&lt;/h3&gt;&lt;p&gt;Seluruh komponen sudah diperiksa oleh tim.&lt;/p&gt;&lt;hr&gt;&lt;p class=&quot;mb-0 small&quot;&gt;Lanjutkan ke &lt;a class=&quot;alert-link&quot; href=&quot;projects.html&quot;&gt;halaman proyek&lt;/a&gt; untuk melihat progresnya.&lt;/p&gt;&lt;/div&gt;</code></pre></details></div></section><section class="card component-demo"><div class="card-body"><h2>Dismissible</h2><p class="small text-muted mb-4">Tutup pesan dengan tombol di sisi kanan.</p><div class="component-preview"><div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Simpan idemu.</strong> Ada perubahan yang belum disimpan.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup contoh alert"></button></div><p class="small text-muted mb-0">Muat ulang halaman untuk menampilkan pesan ini kembali.</p></div><details class="demo-source"><summary>Lihat markup</summary><pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;&lt;strong&gt;Simpan idemu.&lt;/strong&gt; Ada perubahan yang belum disimpan.&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Tutup contoh alert&quot;&gt;&lt;/button&gt;&lt;/div&gt;&lt;p class=&quot;small text-muted mb-0&quot;&gt;Muat ulang halaman untuk menampilkan pesan ini kembali.&lt;/p&gt;</code></pre></details></div></section></div></main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div><div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body"><label class="visually-hidden" for="globalSearch">Cari halaman</label><input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off"><div id="searchResults" class="search-results mt-3"></div></div></div></div></div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><form id="projectForm"><div class="modal-body"><p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p><label class="form-label" for="projectName">Nama proyek</label><input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required maxlength="70"><label class="form-label" for="projectCategory">Kategori</label><select id="projectCategory" name="category" class="form-select mb-3"><option>Website</option><option>Branding</option><option>Mobile app</option><option>Marketing</option></select><label class="form-label" for="projectDue">Tenggat</label><input id="projectDue" name="due" class="form-control" type="date" required></div><div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Buat proyek</button></div></form></div></div></div>
-    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true"><div class="d-flex"><div id="toastMessage" class="toast-body"></div><button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button></div></div></div><script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script></body></html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Alert — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body data-page="alert">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Alert</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Alert</h1>
+          <p>Pesan kontekstual, ikon, judul, dan dismissible alerts.</p>
+        </div>
+        <div class="page-heading-actions">
+          <a class="btn" href="components.html">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"></path>
+            </svg>
+            Semua komponen
+          </a>
+        </div>
+      </div>
+      <div class="demo-grid component-demos">
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Default</h2>
+            <p class="small text-muted mb-4">Delapan warna kontekstual Bootstrap.</p>
+            <div class="component-preview">
+              <div class="alert alert-primary" role="alert">
+                Ini pesan
+                <strong>primary</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-secondary" role="alert">
+                Ini pesan
+                <strong>secondary</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-success" role="alert">
+                Ini pesan
+                <strong>success</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-danger" role="alert">
+                Ini pesan
+                <strong>danger</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-warning" role="alert">
+                Ini pesan
+                <strong>warning</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-info" role="alert">
+                Ini pesan
+                <strong>info</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-light" role="alert">
+                Ini pesan
+                <strong>light</strong>
+                untuk workspace kamu.
+              </div>
+              <div class="alert alert-dark" role="alert">
+                Ini pesan
+                <strong>dark</strong>
+                untuk workspace kamu.
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-primary&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;primary&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-secondary&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;secondary&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;success&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;danger&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;warning&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-info&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;info&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-light&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;light&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;
+&lt;div class=&quot;alert alert-dark&quot; role=&quot;alert&quot;&gt;Ini pesan &lt;strong&gt;dark&lt;/strong&gt; untuk workspace kamu.&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Dengan ikon</h2>
+            <p class="small text-muted mb-4">Ikon SVG lokal membantu memperjelas jenis pesan.</p>
+            <div class="component-preview">
+              <div class="alert alert-success d-flex align-items-center gap-3" role="alert">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <path d="m4 12 5 5L20 6"></path>
+                </svg>
+                <span>Perubahan berhasil disimpan.</span>
+              </div>
+              <div class="alert alert-warning d-flex align-items-center gap-3" role="alert">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <path d="m13 2-9 12h7l-1 8 10-13h-8z"></path>
+                </svg>
+                <span>Masih ada tugas yang belum selesai.</span>
+              </div>
+              <div class="alert alert-danger d-flex align-items-center gap-3" role="alert">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <path d="m6 6 12 12M6 18 18 6"></path>
+                </svg>
+                <span>Proyek gagal diperbarui. Coba lagi.</span>
+              </div>
+              <div class="alert alert-info d-flex align-items-center gap-3" role="alert">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m3 6 9 7 9-7"></path>
+                </svg>
+                <span>Ada pesan baru untuk tim kamu.</span>
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-success d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;
+&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;m4 12 5 5L20 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;span&gt;Perubahan berhasil disimpan.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;alert alert-warning d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;
+&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;m13 2-9 12h7l-1 8 10-13h-8z&quot;/&gt;
+&lt;/svg&gt;
+&lt;span&gt;Masih ada tugas yang belum selesai.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;alert alert-danger d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;
+&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;m6 6 12 12M6 18 18 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;span&gt;Proyek gagal diperbarui. Coba lagi.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;alert alert-info d-flex align-items-center gap-3&quot; role=&quot;alert&quot;&gt;
+&lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;rect x=&quot;3&quot; y=&quot;5&quot; width=&quot;18&quot; height=&quot;14&quot; rx=&quot;2&quot;/&gt;
+&lt;path d=&quot;m3 6 9 7 9-7&quot;/&gt;
+&lt;/svg&gt;
+&lt;span&gt;Ada pesan baru untuk tim kamu.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Judul &amp; tautan</h2>
+            <p class="small text-muted mb-4">Pesan panjang dengan heading, divider, dan tautan.</p>
+            <div class="component-preview">
+              <div class="alert alert-success" role="alert">
+                <h3 class="alert-heading">Semua siap untuk diluncurkan!</h3>
+                <p>Seluruh komponen sudah diperiksa oleh tim.</p>
+                <hr>
+                <p class="mb-0 small">Lanjutkan ke <a class="alert-link" href="projects.html">halaman proyek</a> untuk melihat progresnya.</p>
+              </div>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;
+&lt;h3 class=&quot;alert-heading&quot;&gt;Semua siap untuk diluncurkan!&lt;/h3&gt;
+&lt;p&gt;Seluruh komponen sudah diperiksa oleh tim.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p class=&quot;mb-0 small&quot;&gt;Lanjutkan ke &lt;a class=&quot;alert-link&quot; href=&quot;projects.html&quot;&gt;halaman proyek&lt;/a&gt; untuk melihat progresnya.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+        <section class="card component-demo">
+          <div class="card-body">
+            <h2>Dismissible</h2>
+            <p class="small text-muted mb-4">Tutup pesan dengan tombol di sisi kanan.</p>
+            <div class="component-preview">
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Simpan idemu.</strong>
+                Ada perubahan yang belum disimpan.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup contoh alert"></button>
+              </div>
+              <p class="small text-muted mb-0">Muat ulang halaman untuk menampilkan pesan ini kembali.</p>
+            </div>
+            <details class="demo-source">
+              <summary>Lihat markup</summary>
+              <pre class="code mt-3 mb-0"><code>&lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+&lt;strong&gt;Simpan idemu.&lt;/strong&gt; Ada perubahan yang belum disimpan.&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Tutup contoh alert&quot;&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;p class=&quot;small text-muted mb-0&quot;&gt;Muat ulang halaman untuk menampilkan pesan ini kembali.&lt;/p&gt;</code></pre>
+            </details>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -18,9 +18,13 @@ from __future__ import annotations
 
 import re
 import sys
+from html import escape as escape_attr
 from pathlib import Path
 
-from lxml import html, etree
+try:
+    from lxml import html, etree
+except ModuleNotFoundError as exc:
+    raise SystemExit('Build memerlukan lxml. Jalankan: python3 -m pip install -r requirements-build.txt') from exc
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -30,6 +34,11 @@ VOID_TAGS = {
 INLINE_CONTENT_TAGS = {
     "title", "h1", "h2", "h3", "h4", "h5", "h6", "p",
     "li", "dt", "dd", "figcaption", "summary",
+}
+
+PHRASING_TAGS = {
+    "a", "abbr", "b", "br", "code", "del", "em", "i", "img", "ins",
+    "kbd", "mark", "small", "span", "strong", "sub", "sup", "time",
 }
 
 RAW_TEXT_PARENTS = {"pre", "script", "style", "textarea"}
@@ -43,7 +52,7 @@ def _attrs_of(el: html.HtmlElement) -> str:
         if value is None:
             parts.append(f" {name}")
         else:
-            parts.append(f' {name}="{value}"')
+            parts.append(f' {name}="{escape_attr(value, quote=True)}"')
     return "".join(parts)
 
 
@@ -74,6 +83,11 @@ def _is_only_text_inline(el: html.HtmlElement) -> bool:
         if isinstance(child.tag, str):
             return False
     return True
+
+
+def _has_phrasing_children(el: html.HtmlElement) -> bool:
+    return all(isinstance(child.tag, str) and child.tag in PHRASING_TAGS
+               for child in el)
 
 
 # -------- raw text extraction --------
@@ -134,7 +148,7 @@ def _render_inline(el: html.HtmlElement, depth: int, source_pos: int = 0, source
     child_indent = INDENT * (depth + 1)
     out = f"<{tag}{attrs}>\n"
     if el.text and el.text.strip():
-        out += child_indent + " ".join(el.text.split()) + "\n"
+        out += child_indent + escape_attr(" ".join(el.text.split()), quote=False) + "\n"
 
     cur_pos = source_pos
     for child in el:
@@ -147,7 +161,7 @@ def _render_inline(el: html.HtmlElement, depth: int, source_pos: int = 0, source
             out += child_indent + _render_raw(child, depth + 1, cur_pos, source)
             cur_pos = _advance_pos(source, cur_pos, child)
             if child.tail and child.tail.strip():
-                out += child_indent + " ".join(child.tail.split()) + "\n"
+                out += child_indent + escape_attr(" ".join(child.tail.split()), quote=False) + "\n"
             continue
 
         if _is_void(child.tag) or _is_empty_element(child) or _has_only_text(child):
@@ -158,7 +172,7 @@ def _render_inline(el: html.HtmlElement, depth: int, source_pos: int = 0, source
             out += rendered
 
         if child.tail and child.tail.strip():
-            out += child_indent + " ".join(child.tail.split()) + "\n"
+            out += child_indent + escape_attr(" ".join(child.tail.split()), quote=False) + "\n"
 
     out += indent + f"</{tag}>"
     return out, cur_pos
@@ -204,26 +218,13 @@ def _render_raw(el: html.HtmlElement, depth: int, source_pos: int, source: str) 
     else:
         raw_content = ""
 
-    out = f"{indent}<{tag}{attrs}>\n"
-    if raw_content:
-        lines = raw_content.split("\n")
-        for i, line in enumerate(lines):
-            if i < len(lines) - 1:
-                if line.strip() == "":
-                    out += "\n"
-                else:
-                    out += indent + INDENT + line + "\n"
-            else:
-                if line:
-                    out += indent + INDENT + line + "\n"
-    out += f"{indent}</{tag}>\n"
-    return out
+    return f"{indent}<{tag}{attrs}>{raw_content}</{tag}>\n"
 
 
 def _render_inline_text_content(el: html.HtmlElement, depth: int) -> str:
     parts: list[str] = []
     if el.text:
-        parts.append(el.text)
+        parts.append(escape_attr(el.text, quote=False))
     for child in el:
         if child.tag is etree.Comment:
             parts.append(f"<!--{child.text}-->")
@@ -231,7 +232,7 @@ def _render_inline_text_content(el: html.HtmlElement, depth: int) -> str:
             rendered, _ = _render_inline(child, depth)
             parts.append(rendered)
         if child.tail:
-            parts.append(child.tail)
+            parts.append(escape_attr(child.tail, quote=False))
     return "".join(parts)
 
 
@@ -240,7 +241,7 @@ def _render_block(el: html.HtmlElement, depth: int, source_pos: int = 0, source:
     attrs = _attrs_of(el)
     indent = INDENT * depth
 
-    if _is_inline_content(tag) and _is_only_text_inline(el):
+    if _is_inline_content(tag) and _has_phrasing_children(el):
         rendered, source_pos = _render_inline(el, depth, source_pos, source)
         return indent + rendered + "\n", source_pos
 
@@ -248,9 +249,8 @@ def _render_block(el: html.HtmlElement, depth: int, source_pos: int = 0, source:
     child_depth = depth + 1
     child_indent = INDENT * child_depth
 
-    if el.text:
-        if el.text.strip() or _is_inline_content(tag):
-            out += child_indent + " ".join(el.text.split()) + "\n"
+    if el.text and el.text.strip():
+        out += child_indent + escape_attr(" ".join(el.text.split()), quote=False) + "\n"
 
     cur_pos = source_pos
     for child in el:
@@ -263,7 +263,7 @@ def _render_block(el: html.HtmlElement, depth: int, source_pos: int = 0, source:
             cur_pos = _advance_pos(source, cur_pos, child)
             if child.tail:
                 if child.tail.strip():
-                    out += child_indent + " ".join(child.tail.split()) + "\n"
+                    out += child_indent + escape_attr(" ".join(child.tail.split()), quote=False) + "\n"
             continue
 
         ctag = child.tag
@@ -282,7 +282,7 @@ def _render_block(el: html.HtmlElement, depth: int, source_pos: int = 0, source:
 
         if child.tail:
             if child.tail.strip():
-                out += child_indent + " ".join(child.tail.split()) + "\n"
+                out += child_indent + escape_attr(" ".join(child.tail.split()), quote=False) + "\n"
 
     out += f"{indent}</{tag}>\n"
     return out, cur_pos

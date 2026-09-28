@@ -23,7 +23,7 @@ ARTICLES = [
 
 
 def data_script(id_, data):
-    return f'<script type="application/json" id="{id_}">{json.dumps(data,ensure_ascii=False).replace("<", "\\u003c")}</script>'
+    return f'<script type="application/json" id="{id_}">\n{json.dumps(data,ensure_ascii=False,indent=2).replace("<", "\\u003c")}\n</script>'
 
 
 def section(title, subtitle, body, cls=''):
