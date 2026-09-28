@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Form &amp; validasi — BRUTAL.</title>
+  <title>Semua form — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
 </head>
 <body data-page="forms">
   <a class="skip-link" href="#main">Lewati ke konten</a>
@@ -23,7 +24,7 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Form &amp; validasi</li>
+            <li class="breadcrumb-item active" aria-current="page">Semua form</li>
           </ol>
         </nav>
       </div>
@@ -67,123 +68,56 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Form yang enak diisi.</h1>
-          <p>Input yang jelas, validasi yang membantu. Semua dengan Bootstrap native.</p>
+          <h1>Form untuk setiap alur.</h1>
+          <p>Mulai dari input sederhana hingga wizard bertahap. Pilih contoh yang ingin kamu eksplorasi.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
       <div class="row g-4">
-        <div class="col-lg-7">
-          <section class="card ">
+        <div class="col-md-6 col-xl-4">
+          <a class="card form-index-card h-100 text-decoration-none text-dark" href="basic-form.html">
             <div class="card-body">
-              <h2>Kenalan dulu, yuk.</h2>
-              <form id="demoForm" class="needs-validation" novalidate="">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label" for="firstName">Nama depan</label>
-                    <input id="firstName" name="firstName" class="form-control" placeholder="Alex" required="">
-                    <div class="invalid-feedback">Isi nama depan kamu.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="lastName">Nama belakang</label>
-                    <input id="lastName" class="form-control" name="lastName" placeholder="Darma" required="">
-                    <div class="invalid-feedback">Isi nama belakang kamu.</div>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label" for="demoEmail">Alamat email</label>
-                    <input id="demoEmail" type="email" name="email" class="form-control" placeholder="alex@studio.id" required="">
-                    <div class="invalid-feedback">Gunakan alamat email yang valid.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="role">Peran</label>
-                    <select class="form-select" id="role" required="">
-                      <option value="">Pilih peran…</option>
-                      <option>Designer</option>
-                      <option>Developer</option>
-                      <option>Project manager</option>
-                    </select>
-                    <div class="invalid-feedback">Pilih salah satu peran.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="startDate">Mulai bergabung</label>
-                    <input class="form-control" type="date" id="startDate" required="">
-                    <div class="invalid-feedback">Tentukan tanggal mulai.</div>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label" for="bio">Sedikit tentang kamu</label>
-                    <textarea class="form-control" id="bio" rows="3" placeholder="Ide, keahlian, atau hal yang kamu sukai…" maxlength="300"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="consent" required="">
-                      <label class="form-check-label small" for="consent">Saya paham ini adalah form demonstrasi.</label>
-                      <div class="invalid-feedback">Centang persetujuan untuk melanjutkan.</div>
-                    </div>
-                  </div>
-                  <div class="col-12 d-flex gap-3">
-                    <button class="btn btn-primary" type="submit">Simpan data demo</button>
-                    <button class="btn" type="reset">Reset</button>
-                  </div>
-                </div>
-                <p id="formResult" class="small mt-3 mb-0" role="status"></p>
-              </form>
+              <span class="badge bg-yellow mb-3">Form dasar</span>
+              <h2 class="fs-4">Form dasar →</h2>
+              <p class="mb-0 text-muted">Input, pilihan, upload lokal, dan validasi Bootstrap.</p>
             </div>
-          </section>
+          </a>
         </div>
-        <div class="col-lg-5 d-grid gap-4">
-          <section class="card ">
+        <div class="col-md-6 col-xl-4">
+          <a class="card form-index-card h-100 text-decoration-none text-dark" href="forms-advanced-form.html">
             <div class="card-body">
-              <h2>Input variations</h2>
-              <label for="website" class="form-label">Input group</label>
-              <div class="input-group mb-3">
-                <span class="input-group-text">https://</span>
-                <input id="website" class="form-control" placeholder="studio.id">
-              </div>
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingEmail" placeholder="Email">
-                <label for="floatingEmail">Floating label</label>
-              </div>
-              <label for="disabledInput" class="form-label">Disabled</label>
-              <input id="disabledInput" class="form-control" placeholder="Tidak dapat diedit" disabled="disabled">
-              <label for="readonlyInput" class="form-label mt-3">Read only</label>
-              <input id="readonlyInput" class="form-control" value="BRUTAL-2026" readonly="readonly">
+              <span class="badge bg-purple mb-3">Advanced form</span>
+              <h2 class="fs-4">Advanced form →</h2>
+              <p class="mb-0 text-muted">Layout dua kolom, helper, tooltip, dan Select2.</p>
             </div>
-          </section>
-          <section class="card ">
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <a class="card form-index-card h-100 text-decoration-none text-dark" href="forms-editor.html">
             <div class="card-body">
-              <h2>Pilihan &amp; kontrol</h2>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="checkDemo" checked="checked">
-                <label class="form-check-label" for="checkDemo">Terima pembaruan produk</label>
-              </div>
-              <div class="form-check form-switch mb-4">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchDemo" checked="checked">
-                <label class="form-check-label" for="switchDemo">Notifikasi desktop</label>
-              </div>
-              <fieldset>
-                <legend class="form-label">Prioritas proyek</legend>
-                <div class="demo-row">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" id="normal" name="priority" checked="checked">
-                    <label class="form-check-label" for="normal">Normal</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" id="high" name="priority">
-                    <label class="form-check-label" for="high">Tinggi</label>
-                  </div>
-                </div>
-              </fieldset>
-              <label for="budget" class="form-label">
-                Budget demo:
-                <output id="budgetOutput">50</output>
-                juta
-              </label>
-              <input class="form-range" type="range" min="10" max="100" value="50" id="budget">
-              <label class="form-label mt-3" for="fileUpload">Lampiran (preview nama file)</label>
-              <input class="form-control" id="fileUpload" type="file" multiple="multiple">
-              <p class="small text-muted mt-2" id="fileNames" aria-live="polite">File tidak diunggah ke server.</p>
+              <span class="badge bg-green mb-3">Rich text editor</span>
+              <h2 class="fs-4">Rich text editor →</h2>
+              <p class="mb-0 text-muted">Editor Quill dengan toolbar lengkap dan dua tema.</p>
             </div>
-          </section>
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <a class="card form-index-card h-100 text-decoration-none text-dark" href="forms-validation.html">
+            <div class="card-body">
+              <span class="badge bg-orange mb-3">Validasi form</span>
+              <h2 class="fs-4">Validasi form →</h2>
+              <p class="mb-0 text-muted">Aturan HTML5 dan pesan error per field.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <a class="card form-index-card h-100 text-decoration-none text-dark" href="form-wizard.html">
+            <div class="card-body">
+              <span class="badge bg-blue mb-3">Form wizard</span>
+              <h2 class="fs-4">Form wizard →</h2>
+              <p class="mb-0 text-muted">Empat langkah dengan pemeriksaan sebelum lanjut.</p>
+            </div>
+          </a>
         </div>
       </div>
     </main>

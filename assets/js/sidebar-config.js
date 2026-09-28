@@ -52,7 +52,14 @@ window.BRUTAL_SIDEBAR = [
       {"page":"tabs","label":"Tabs"},
       {"page":"pricing","label":"Pricing"}
     ]},
-    {"page":"forms","label":"Form & validasi","icon":"form"},
+    {"id":"formsMenu","label":"Form & Validasi","icon":"form","children":[
+      {"page":"forms","label":"Semua form"},
+      {"page":"basic-form","label":"Form Dasar"},
+      {"page":"forms-advanced-form","label":"Advanced Form"},
+      {"page":"forms-editor","label":"Editor"},
+      {"page":"forms-validation","label":"Validation"},
+      {"page":"form-wizard","label":"Form Wizard"}
+    ]},
     {"page":"tables","label":"Tabel data","icon":"table"},
     {"page":"charts","label":"Grafik & widget","icon":"chart"}
   ]},

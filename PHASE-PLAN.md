@@ -395,37 +395,43 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 > **Tujuan**: Memperkaya showcase form yang saat ini hanya `forms.html`.
 
 ## 3.1 Form Dasar (Refactor)
-- [ ] **Opsi A**: Pindahkan konten `forms.html` ke `basic-form.html` (sesuai Otika), ubah `forms.html` jadi landing/overview.
-- [ ] **Opsi B**: Pertahankan `forms.html` sebagai showcase utama + buat halaman baru khusus (lebih hemat).
-- [ ] Putuskan di awal phase.
+- [x] **Opsi A**: Pindahkan konten `forms.html` ke `basic-form.html` (sesuai Otika), ubah `forms.html` jadi landing/overview.
+- [ ] **Opsi B**: Pertahankan `forms.html` sebagai showcase utama + buat halaman baru khusus (lebih hemat). (Tidak dipilih.)
+- [x] Putuskan di awal phase; Opsi A sudah dicatat pada Phase 0.
 
 ## 3.2 `forms-advanced-form.html`
-- [ ] Form dengan layout kompleks: 2 kolom, field group, helper text, tooltip.
-- [ ] Select2 / Choices.js (jika dipakai Otika) untuk dropdown dengan pencarian.
-- [ ] Library: **Select2** atau **Choices.js** sesuai Otika.
+- [x] Form dengan layout kompleks: 2 kolom, field group, helper text, tooltip.
+- [x] Select2 untuk dropdown tunggal dengan pencarian dan pilihan jamak.
+- [x] Library: **Select2** lokal.
 
 ## 3.3 `forms-editor.html`
-- [ ] Install `assets/bundles/quill/quill.min.js` (WYSIWYG).
-- [ ] Editor full toolbar (header, bold, italic, list, link, image, code).
-- [ ] Demo beberapa skin toolbar.
-- [ ] Library: **Quill**.
+- [x] Install `assets/bundles/quill/quill.min.js` (WYSIWYG).
+- [x] Editor full toolbar (header, bold, italic, list, link, image, code).
+- [x] Demo tema Snow dan Bubble.
+- [x] Library: **Quill** lokal.
 
 ## 3.4 `forms-validation.html`
-- [ ] Form dengan validasi HTML5 native (required, pattern, min/max).
-- [ ] Validasi via Bootstrap class (`is-valid`, `is-invalid`).
-- [ ] Pesan error kustom per field.
-- [ ] Library: **tanpa** (atau `bs-custom-file-input` jika perlu).
+- [x] Form dengan validasi HTML5 native (required, pattern, min/max).
+- [x] Validasi via Bootstrap class (`is-valid`, `is-invalid`).
+- [x] Pesan error kustom per field.
+- [x] Library: **tanpa**.
 
 ## 3.5 `form-wizard.html`
-- [ ] Install `assets/bundles/jquery-steps/jquery.steps.min.js` (atau SmartWizard).
-- [ ] Wizard 3–4 langkah: Personal Info → Account → Confirmation → Done.
-- [ ] Validasi antar step.
-- [ ] Library: **jQuery Steps** atau **SmartWizard** sesuai Otika.
+- [x] Install `assets/bundles/jquery-steps/jquery.steps.min.js`.
+- [x] Wizard 4 langkah: Personal Info → Account → Confirmation → Done.
+- [x] Validasi antar step.
+- [x] Library: **jQuery Steps** lokal.
 
 ## 🚦 Keluar Phase 3 jika:
 - ✅ Form dasar dipisah/dipertahankan sesuai keputusan.
-- ✅ 4 file form baru aktif.
+- ✅ 5 file form baru aktif (form dasar hasil refactor + 4 demo lanjutan).
 - ✅ Library Quill, Select2, jQuery Steps terinstal dan jalan di demo.
+
+### Hasil Phase 3 — 28 September 2026
+
+- Opsi A selesai: `forms.html` menjadi overview, showcase lama tetap aktif di `basic-form.html`, dan empat demo lanjutan tersedia pada dropdown **Form & Validasi**.
+- Select2, Quill, dan jQuery Steps dipin di npm lalu disalin sebagai bundle lokal; CSS/JS tiap plugin dimuat hanya pada halaman yang memakainya.
+- `npm run build` menghasilkan 53 HTML rapi dengan pemeriksaan kesetaraan semantik. `npm test` **29 passed**, termasuk alur form dan regresi seluruh halaman pada desktop/mobile.
 
 ---
 
@@ -727,7 +733,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 0 | Fondasi & Sidebar | 3 JS sidebar + panduan bundles + tes sidebar | 32 HTML (termasuk rename 404), generator, app.js, CSS, dokumentasi | ✅ Selesai — 12 tes lulus |
 | 1 | Workspace Inti | 8 (widget-chart, widget-data, chat, portfolio, blog, email-inbox, email-compose, email-read) | sidebar, generator, CSS/JS lokal, dokumentasi | ✅ Selesai — 19 tes lulus |
 | 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 24 tes lulus |
-| 3 | Forms Lanjutan | 4 (+refactor forms.html) | 1 | ⬜ |
+| 3 | Forms Lanjutan | 5 (basic-form + 4 lanjutan) | forms.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 29 tes lulus |
 | 4 | Tables Lanjutan | 4 (+refactor tables.html) | 1 | ⬜ |
 | 5 | Charts | 5 (+refactor charts.html) | 1 | ⬜ |
 | 6 | Icons | 5 | 0 | ⬜ |

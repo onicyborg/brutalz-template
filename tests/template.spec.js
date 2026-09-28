@@ -63,7 +63,7 @@ test('Bootstrap tabs, modal, dropdown and form validation respond correctly', as
   await page.getByRole('button', {name:'Buka modal'}).click();
   await expect(page.locator('#projectModal')).toBeVisible();
   await page.locator('#projectModal').getByRole('button', {name:'Batal'}).click();
-  await page.goto('/forms.html');
+  await page.goto('/basic-form.html');
   await page.getByRole('button', {name:'Simpan data demo'}).click();
   await expect(page.locator('#formResult')).toContainText('Periksa kembali');
   await page.getByLabel('Nama depan').fill('Alex');

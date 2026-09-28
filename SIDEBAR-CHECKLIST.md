@@ -14,19 +14,21 @@
 
 > **Audit Phase 2 — 28 September 2026:** delapan halaman Komponen Lanjutan telah ditambahkan. Kini terdapat **48 file HTML aktual**: 45 entri target dan 3 halaman pendukung; 41 entri target masih menunggu phase berikutnya.
 
+> **Audit Phase 3 — 28 September 2026:** showcase form dasar dipindah ke `basic-form.html`, `forms.html` menjadi overview, dan empat halaman form lanjutan ditambahkan. Kini terdapat **53 file HTML aktual**: 49 entri target dan 4 halaman pendukung; 37 entri target masih menunggu phase berikutnya.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 45 |
-| ❌ Entri target belum tersedia | 41 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 49 |
+| ❌ Entri target belum tersedia | 37 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 3 halaman pendukung | 48 |
+| File HTML aktual, termasuk 4 halaman pendukung | 53 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **48 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **53 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
 
 ---
 
@@ -105,11 +107,11 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ### Forms
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 37 | Basic Form | `basic-form.html` | `forms.html` | ✅ Tersedia; dipindah ke `basic-form.html` pada Phase 3 |
-| 38 | Advanced Form | `forms-advanced-form.html` | — | ❌ Belum |
-| 39 | Editor (WYSIWYG) | `forms-editor.html` | — | ❌ Belum |
-| 40 | Validation | `forms-validation.html` | — | ❌ Belum |
-| 41 | Form Wizard | `form-wizard.html` | — | ❌ Belum |
+| 37 | Basic Form | `basic-form.html` | `basic-form.html` | ✅ Phase 3 |
+| 38 | Advanced Form | `forms-advanced-form.html` | `forms-advanced-form.html` | ✅ Phase 3 |
+| 39 | Editor (WYSIWYG) | `forms-editor.html` | `forms-editor.html` | ✅ Phase 3 |
+| 40 | Validation | `forms-validation.html` | `forms-validation.html` | ✅ Phase 3 |
+| 41 | Form Wizard | `form-wizard.html` | `form-wizard.html` | ✅ Phase 3 |
 
 ### Tables
 | # | Item | File Otika | File BRUTAL. | Status |
@@ -238,21 +240,20 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ✅ avatar.html             ✅ card.html              ✅ modal.html
 ✅ sweet-alert.html        ✅ toastr.html            ✅ empty-state.html
 ✅ multiple-upload.html    ✅ tabs.html
+✅ basic-form.html         ✅ forms-advanced-form.html
+✅ forms-editor.html       ✅ forms-validation.html
+✅ form-wizard.html
 ```
 
-**Total: 48 file HTML aktual; 45 masuk pemetaan target dan 3 halaman pendukung.** Baris reset password tetap belum tersedia.
+**Total: 53 file HTML aktual; 49 masuk pemetaan target dan 4 halaman pendukung.** `forms.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (41 entri target tersisa)
+## ❌ Yang Perlu Dibuat (37 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
 
-### 🟡 Prioritas Sedang (form & tabel)
-- [ ] `forms-advanced-form.html` — Form lanjutan
-- [ ] `forms-editor.html` — WYSIWYG editor
-- [ ] `forms-validation.html` — Validasi form
-- [ ] `form-wizard.html` — Multi-step form
+### 🟡 Prioritas Sedang (tabel)
 - [ ] `advance-table.html` — Tabel lanjutan
 - [ ] `datatables.html` — Tabel interaktif (DataTables.js)
 - [ ] `export-table.html` — Tabel exportable
@@ -305,7 +306,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 | Item | Keputusan | Waktu pelaksanaan |
 | --- | --- | --- |
 | `404.html` → `errors-404.html` | Rename; seluruh tautan aplikasi dan generator memakai nama baru | ✅ Selesai Phase 0; tidak menyisakan alias |
-| `forms.html` | Pindah showcase dasar ke `basic-form.html`, jadikan `forms.html` overview, tambah 4 halaman lanjutan | Diputuskan; implementasi pada Phase 3 (Opsi A) |
+| `forms.html` | Pindah showcase dasar ke `basic-form.html`, jadikan `forms.html` overview, tambah 4 halaman lanjutan | ✅ Selesai Phase 3 (Opsi A) |
 | `tables.html` | Pindah showcase ke `basic-table.html`, jadikan `tables.html` overview, tambah 4 halaman lanjutan | Diputuskan; implementasi pada Phase 4 |
 | `charts.html` | Pindah showcase ke `chart-chartjs.html`, jadikan `charts.html` overview, tambah demo per library | Diputuskan; implementasi pada Phase 5. Grafik saat ini masih SVG, belum Chart.js |
 
@@ -337,6 +338,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 - [x] Modal Bootstrap, notifikasi, daftar kosong, tab, serta pratinjau file memiliki interaksi demo. Dropzone tidak mengirim file ke server.
 - [x] Generator tetap menghasilkan HTML berindentasi dan memeriksa struktur/konten sebelum menulis.
 - [x] `npm run build` menghasilkan 48 halaman; **24 tes browser lulus**, termasuk demo Phase 2 dan regresi desktop/mobile seluruh template.
+
+### Hasil Phase 3 — Forms
+
+- [x] `forms.html` menjadi overview; `basic-form.html` berisi showcase form lama tanpa kehilangan interaksi.
+- [x] Empat demo lanjutan tersedia pada dropdown Form & Validasi: Advanced Form (Select2), Editor (Quill Snow/Bubble), Validation (HTML5 + Bootstrap), dan Form Wizard (jQuery Steps).
+- [x] Bundle plugin dipin dan dimuat lokal per halaman. Semua submit hanya menampilkan umpan balik di browser.
+- [x] `npm run build` menghasilkan 53 halaman; **29 tes browser lulus**, termasuk demo Phase 3 dan regresi desktop/mobile seluruh template.
 
 ---
 
@@ -372,12 +380,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 │   ├── Multiple Upload        → multiple-upload.html ✅
 │   ├── Tab                    → tabs.html          ✅
 │   └── Pricing                → pricing.html       ✅
-├── Form & Validasi            → forms.html         ✅ (pemisahan Phase 3)
-│   ├── Form dasar             → (merge ke forms.html)
-│   ├── Form lanjutan          → forms-advanced-form.html ❌
-│   ├── Editor                 → forms-editor.html  ❌
-│   ├── Validasi               → forms-validation.html ❌
-│   └── Form Wizard            → form-wizard.html   ❌
+├── Form & Validasi            → (dropdown aktif)
+│   ├── Semua form             → forms.html         ✅
+│   ├── Form dasar             → basic-form.html    ✅
+│   ├── Form lanjutan          → forms-advanced-form.html ✅
+│   ├── Editor                 → forms-editor.html  ✅
+│   ├── Validasi               → forms-validation.html ✅
+│   └── Form Wizard            → form-wizard.html   ✅
 ├── Tabel Data                 → tables.html        ✅ (pemisahan Phase 4)
 │   ├── Tabel dasar            → (merge ke tables.html)
 │   ├── Tabel lanjutan         → advance-table.html ❌
@@ -442,9 +451,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 48 (45 target + 3 halaman pendukung)
-Sudah selesai: 45/86 (52.3%)
-Belum selesai: 41/86 (47.7%)
+Total file HTML aktual: 53 (49 target + 4 halaman pendukung)
+Sudah selesai: 49/86 (57.0%)
+Belum selesai: 37/86 (43.0%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -455,7 +464,7 @@ Belum selesai: 41/86 (47.7%)
 - [x] **Email**: 3/3
 - [x] **Basic Components**: 16/16 ✅ **100%**
 - [x] **Advanced Components**: 9/9 (termasuk Pricing)
-- [ ] **Forms**: 1/5 (dasar di forms.html; migrasi pada Phase 3)
+- [x] **Forms**: 5/5 (overview di forms.html)
 - [ ] **Tables**: 1/5 (dasar di tables.html; migrasi pada Phase 4)
 - [ ] **Charts**: 1/6 showcase dasar SVG; integrasi library pada Phase 5
 - [ ] **Icons**: 0/5
@@ -475,9 +484,8 @@ Belum selesai: 41/86 (47.7%)
 
 1. **Keputusan struktur selesai pada Phase 0**: pecah Form/Tabel/Chart pada Phase 3/4/5 sesuai tabel keputusan.
 2. **Lanjutkan grup sidebar baru**: Widgets, Apps, Email, dan Advanced Components selesai; Icons, Media, Maps, Errors, Posts menyusul.
-3. **Phase 1–2 selesai**: Workspace Inti dan seluruh Advanced Components sudah aktif.
-4. **Lanjut Phase 3**: Forms lanjutan dan refactor sesuai keputusan Phase 0.
-5. **Lalu Tables detail**: pecah sesuai keputusan Phase 0.
+3. **Phase 1–3 selesai**: Workspace Inti, Advanced Components, dan Forms sudah aktif.
+4. **Lanjut Phase 4**: pecah Tables sesuai keputusan Phase 0.
 6. **Charts & Icons**: tergantung library mana yang akan di-include.
 7. **Maps & Galeri**: optional, butuh API key (Google Maps) / library tambahan.
 8. **Error pages**: cepat dibuat, tidak butuh library.

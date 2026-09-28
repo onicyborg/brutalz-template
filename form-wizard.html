@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Dokumentasi — BRUTAL.</title>
+  <title>Form Wizard — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
 </head>
-<body data-page="docs">
+<body data-page="form-wizard">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -23,7 +24,8 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Dokumentasi</li>
+            <li class="breadcrumb-item">Form &amp; Validasi</li>
+            <li class="breadcrumb-item active" aria-current="page">Form Wizard</li>
           </ol>
         </nav>
       </div>
@@ -67,117 +69,90 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Mulai dari sini. Buat jadi milikmu.</h1>
-          <p>Panduan singkat membangun dengan BRUTAL. dan Bootstrap 5.3.8.</p>
+          <h1>Satu langkah setiap waktu.</h1>
+          <p>Isi data diri, tentukan akun demo, lalu tinjau sebelum selesai.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
       <div class="row g-4">
-        <div class="col-lg-8">
-          <section class="card mb-4">
-            <div class="card-body">
-              <span class="badge bg-green mb-3">LOCAL FIRST · NO BUILD REQUIRED</span>
-              <h2 class="fs-4">Hello, builder.</h2>
-              <p>BRUTAL. adalah template admin HTML statis dengan tema Neubrutalism. Grid, utilities, dan interaksi dasar memakai Bootstrap asli. Lapisan tema memberi garis tegas, pastel, dan bayangan solid.</p>
-              <div class="code">npm run dev
-# Buka http://localhost:4173
-# Atau buka index.html langsung di browser.</div>
-              <p class="small text-muted mt-3 mb-0">Python 3 diperlukan untuk server lokal dan generator. Tidak ada dependensi runtime CDN; jQuery lokal dimuat hanya pada halaman demo tertentu.</p>
-            </div>
-          </section>
-          <section class="card mb-4">
-            <div class="card-body">
-              <h2>Struktur proyek</h2>
-              <pre class="code mb-0">index.html                  Dashboard
-components.html             Indeks 16 halaman komponen
-alert.html / buttons.html   Contoh komponen terpisah
-forms.html                  Overview form (5 demo)
-basic-form.html              Form dasar interaktif
-tables.html                 Tabel interaktif
-assets/css/theme.css        Token, override Bootstrap, layout
-assets/js/app.js            Interaksi demo & localStorage
-assets/img/favicon.svg      Identitas lokal
-bootstrap-5.3.8/dist/        Bootstrap vendor asli
-scripts/build.py            Generator halaman & shell
-assets/js/sidebar-config.js Satu konfigurasi navigasi
-assets/js/sidebar.js        Renderer & drawer bersama
-blank.html                  Titik awal halaman baru</pre>
-            </div>
-          </section>
-          <section class="card mb-4" id="components">
-            <div class="card-body">
-              <h2>Bootstrap dulu, tema setelahnya.</h2>
-              <p class="small">Urutan stylesheet penting. Semua kelas Bootstrap tetap tersedia.</p>
-              <pre class="code">&lt;link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="assets/css/theme.css"&gt;
-&lt;button class="btn btn-primary"&gt;Mulai membangun&lt;/button&gt;
-&lt;script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;div id="sidebar-root"&gt;&lt;/div&gt;
-&lt;script src="assets/js/sidebar-config.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar-icons.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;</pre>
-              <p class="small mb-0">Gunakan <code>.bg-purple</code>, <code>.bg-yellow</code>, <code>.bg-green</code>, <code>.bg-orange</code>, atau <code>.bg-blue</code> untuk warna pastel. Grid menggunakan <code>.row</code> dan <code>.col-*</code>.</p>
-            </div>
-          </section>
-          <section class="card mb-4">
-            <div class="card-body">
-              <h2>Ganti warna, pertahankan karakter.</h2>
-              <p class="small">Edit token di awal <code>assets/css/theme.css</code>. Source Bootstrap vendor tetap utuh sehingga lebih mudah diperbarui.</p>
-              <pre class="code">:root {
-  --neo-purple: #c4a8f5;
-  --neo-yellow: #f9de6e;
-  --neo-ink: #232420;
-  --neo-paper: #f5f4ef;
-  --neo-shadow: 4px 4px 0 var(--neo-ink);
-}</pre>
-            </div>
-          </section>
+        <div class="col-xl-9">
           <section class="card">
             <div class="card-body">
-              <h2>Menambah halaman</h2>
-              <ol class="small ps-3">
-                <li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li>
-                <li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li>
-                <li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li>
-                <li>Hubungkan form dan data ke backend pilihanmu.</li>
-              </ol>
-              <div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div>
+              <h2>Mulai registrasi demo</h2>
+              <p class="small text-muted">Data hanya digunakan untuk ringkasan di halaman ini.</p>
+              <div id="formWizard" class="form-wizard">
+                <h3>Personal Info</h3>
+                <section>
+                  <h4>Siapa kamu?</h4>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="wizardName">Nama lengkap</label>
+                      <input class="form-control" id="wizardName" required="" minlength="3" autocomplete="name">
+                      <div class="invalid-feedback">Isi nama minimal 3 karakter.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="wizardPhone">Nomor telepon</label>
+                      <input class="form-control" id="wizardPhone" type="tel" required="" pattern="[0-9+ ]{8,18}" placeholder="+62 812 3456 7890" autocomplete="tel">
+                      <div class="invalid-feedback">Isi 8–18 karakter angka, spasi, atau +.</div>
+                    </div>
+                  </div>
+                </section>
+                <h3>Account</h3>
+                <section>
+                  <h4>Akun demo</h4>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="wizardEmail">Email akun</label>
+                      <input class="form-control" id="wizardEmail" type="email" required="" autocomplete="email">
+                      <div class="invalid-feedback">Masukkan email yang valid.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="wizardRole">Peran</label>
+                      <select class="form-select" id="wizardRole" required="">
+                        <option value="">Pilih peran…</option>
+                        <option>Designer</option>
+                        <option>Developer</option>
+                        <option>Project manager</option>
+                      </select>
+                      <div class="invalid-feedback">Pilih peran.</div>
+                    </div>
+                  </div>
+                </section>
+                <h3>Confirmation</h3>
+                <section>
+                  <h4>Periksa kembali</h4>
+                  <dl class="row form-review">
+                    <dt class="col-sm-4">Nama</dt>
+                    <dd class="col-sm-8" id="reviewName">—</dd>
+                    <dt class="col-sm-4">Telepon</dt>
+                    <dd class="col-sm-8" id="reviewPhone">—</dd>
+                    <dt class="col-sm-4">Email</dt>
+                    <dd class="col-sm-8" id="reviewEmail">—</dd>
+                    <dt class="col-sm-4">Peran</dt>
+                    <dd class="col-sm-8" id="reviewRole">—</dd>
+                  </dl>
+                  <div class="form-check">
+                    <input class="form-check-input" id="wizardAgree" type="checkbox" required="">
+                    <label class="form-check-label" for="wizardAgree">Data contoh di atas sudah benar.</label>
+                    <div class="invalid-feedback">Centang konfirmasi sebelum lanjut.</div>
+                  </div>
+                </section>
+                <h3>Done</h3>
+                <section>
+                  <div class="text-center py-4">
+                    <span class="badge bg-green mb-3">SELESAI</span>
+                    <h4>Semua langkah terisi!</h4>
+                    <p class="mb-0">Ini hanya demo; tidak ada akun dibuat atau data dikirim.</p>
+                    <button class="btn mt-4" id="wizardRestart" type="button">Ulangi demo</button>
+                  </div>
+                </section>
+              </div>
+              <p id="wizardStatus" class="small mt-3 mb-0" role="status"></p>
             </div>
           </section>
         </div>
-        <div class="col-lg-4">
-          <section class="card mb-4 bg-yellow">
-            <div class="card-body">
-              <h2>Isi starter ini</h2>
-              <ul class="small ps-3 mb-0">
-                <li>Dashboard, widget grafik &amp; data</li>
-                <li>Chat, portfolio, blog &amp; mailbox demo</li>
-                <li>16 halaman komponen Bootstrap</li>
-                <li>Form dan validasi</li>
-                <li>Tabel: cari, filter, urutkan, CSV</li>
-                <li>Kanban proyek &amp; kalender</li>
-                <li>Profil dan preferensi</li>
-                <li>Login, register, reset password</li>
-                <li>Invoice, pricing, blank, 404</li>
-              </ul>
-            </div>
-          </section>
-          <section class="card mb-4">
-            <div class="card-body">
-              <h2>Interaksi &amp; data</h2>
-              <p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p>
-              <p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode. Login/register hanya simulasi; tidak ada sesi autentikasi atau transaksi.</p>
-            </div>
-          </section>
-          <section class="card">
-            <div class="card-body">
-              <h2>Cakupan &amp; pengembangan</h2>
-              <p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p>
-              <p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata, peta, dan upload server belum diintegrasikan. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p>
-              <a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a>
-            </div>
-          </section>
+        <div class="col-xl-3">
+          <div class="alert alert-warning small">Tombol lanjut memeriksa kolom pada langkah aktif sebelum membuka langkah berikutnya.</div>
         </div>
       </div>
     </main>
@@ -255,5 +230,8 @@ blank.html                  Titik awal halaman baru</pre>
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/jquery-steps/jquery.steps.min.js"></script>
+  <script src="assets/js/forms.js"></script>
 </body>
 </html>
