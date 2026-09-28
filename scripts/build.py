@@ -5,6 +5,7 @@ from html import escape
 import json
 from component_pages import CATALOG, overview, build_pages, write_flags
 from workspace_pages import WORKSPACE_PAGES, build_workspace_pages, write_workspace_assets
+from advanced_pages import ADVANCED_PAGES, build_advanced_pages
 from format_html import format_html, verify_semantic
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -74,7 +75,7 @@ def shell(key, content):
     component_crumb = '<li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>' if key in {item[0] for item in CATALOG} else ''
     for section in NAV:
         for item in section['items']:
-            if 'children' in item and key in WORKSPACE_PAGES and any(child['page'] == key for child in item['children']):
+            if 'children' in item and key in (*WORKSPACE_PAGES, *ADVANCED_PAGES, 'pricing') and any(child['page'] == key for child in item['children']):
                 component_crumb = f'<li class="breadcrumb-item">{escape(item["label"])}</li>'
     return f'''<a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
     <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">{icon('menu')}</button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li>{component_crumb}<li class="breadcrumb-item active" aria-current="page">{escape(TITLES[key])}</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">{icon('search')}<span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">{icon('bell')}<span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan {icon('arrow')}</a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1">{content}</main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div>{common_ui()}'''
@@ -83,8 +84,22 @@ def page(key,content,standalone=False):
     body = ('<a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div><button type="button" id="sidebarToggle" class="btn icon-btn standalone-toggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">'+icon('menu')+'</button>'+content+common_ui()) if standalone else shell(key,content)
     workspace_style = '<link rel="stylesheet" href="assets/css/workspace.css">' if key in WORKSPACE_PAGES else ''
     workspace_script = '<script src="assets/js/workspace.js"></script>' if key in WORKSPACE_PAGES else ''
+    advanced_style = '<link rel="stylesheet" href="assets/css/advanced.css">' if key in ADVANCED_PAGES else ''
+    vendor_css = {
+        'sweet-alert': 'sweetalert/sweetalert2.min.css',
+        'toastr': 'toastr/toastr.min.css',
+        'multiple-upload': 'dropzone/dropzone.min.css',
+    }
+    vendor_js = {
+        'sweet-alert': ['sweetalert/sweetalert2.all.min.js'],
+        'toastr': ['jquery/jquery.min.js', 'toastr/toastr.min.js'],
+        'multiple-upload': ['dropzone/dropzone.min.js'],
+    }
+    vendor_style = f'<link rel="stylesheet" href="assets/bundles/{vendor_css[key]}">' if key in vendor_css else ''
+    vendor_scripts = ''.join(f'<script src="assets/bundles/{path}"></script>' for path in vendor_js.get(key, []))
+    advanced_script = '<script src="assets/js/advanced.js"></script>' if key in ADVANCED_PAGES else ''
     return f'''<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/theme.css">{workspace_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}</body></html>'''
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}{vendor_scripts}{advanced_script}</body></html>'''
 
 def new_project_button():
     return f'<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">{icon("plus")} Proyek baru</button>'
@@ -198,6 +213,7 @@ def main():
     }
     pages.update(build_pages(heading, icon))
     pages.update(build_workspace_pages(heading, icon, stats))
+    pages.update(build_advanced_pages(heading, icon))
     write_workspace_assets(ROOT)
     (ROOT/'assets/js/sidebar-icons.js').write_text('// Generated from ICONS in scripts/build.py.\nwindow.BRUTAL_ICONS = '+json.dumps(ICONS)+';\n',encoding='utf-8')
     write_flags(ROOT)

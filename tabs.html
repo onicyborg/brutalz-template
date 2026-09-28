@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Tabs — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/advanced.css">
+</head>
+<body data-page="tabs">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Komponen Lanjutan</li>
+            <li class="breadcrumb-item active" aria-current="page">Tabs</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Konten yang punya tempat.</h1>
+          <p>Variasi Bootstrap nav-tabs dan nav-pills dalam satu halaman.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Basic atas</h2>
+                  <p>Pola default untuk konten berlapis.</p>
+                </div>
+              </div>
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsTop">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tabsTop-tab-0" data-bs-toggle="tab" data-bs-target="#tabsTop-pane-0" type="button" role="tab" aria-controls="tabsTop-pane-0" aria-selected="true">Ringkasan</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsTop-tab-1" data-bs-toggle="tab" data-bs-target="#tabsTop-pane-1" type="button" role="tab" aria-controls="tabsTop-pane-1" aria-selected="false">Aktivitas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsTop-tab-2" data-bs-toggle="tab" data-bs-target="#tabsTop-pane-2" type="button" role="tab" aria-controls="tabsTop-pane-2" aria-selected="false">Catatan</button>
+                </li>
+              </ul>
+              <div class="tab-content advanced-tab-content">
+                <div class="tab-pane fade show active" id="tabsTop-pane-0" role="tabpanel" aria-labelledby="tabsTop-tab-0" tabindex="0">
+                  <h3>Ringkasan</h3>
+                  <p class="mb-0">Panel ringkasan dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsTop-pane-1" role="tabpanel" aria-labelledby="tabsTop-tab-1" tabindex="0">
+                  <h3>Aktivitas</h3>
+                  <p class="mb-0">Panel aktivitas dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsTop-pane-2" role="tabpanel" aria-labelledby="tabsTop-tab-2" tabindex="0">
+                  <h3>Catatan</h3>
+                  <p class="mb-0">Panel catatan dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Tab bawah</h2>
+                  <p>Navigasi berada setelah panel.</p>
+                </div>
+              </div>
+              <div class="tab-content advanced-tab-content">
+                <div class="tab-pane fade show active" id="tabsBottom-pane-0" role="tabpanel" aria-labelledby="tabsBottom-tab-0" tabindex="0">
+                  <h3>Info</h3>
+                  <p class="mb-0">Panel info dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsBottom-pane-1" role="tabpanel" aria-labelledby="tabsBottom-tab-1" tabindex="0">
+                  <h3>Detail</h3>
+                  <p class="mb-0">Panel detail dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+              </div>
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsBottom">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tabsBottom-tab-0" data-bs-toggle="tab" data-bs-target="#tabsBottom-pane-0" type="button" role="tab" aria-controls="tabsBottom-pane-0" aria-selected="true">Info</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsBottom-tab-1" data-bs-toggle="tab" data-bs-target="#tabsBottom-pane-1" type="button" role="tab" aria-controls="tabsBottom-pane-1" aria-selected="false">Detail</button>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Tab kiri</h2>
+                  <p>Navigasi vertikal di kiri panel.</p>
+                </div>
+              </div>
+              <div class="advanced-vertical-tabs">
+                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsLeft">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tabsLeft-tab-0" data-bs-toggle="tab" data-bs-target="#tabsLeft-pane-0" type="button" role="tab" aria-controls="tabsLeft-pane-0" aria-selected="true">Proyek</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tabsLeft-tab-1" data-bs-toggle="tab" data-bs-target="#tabsLeft-pane-1" type="button" role="tab" aria-controls="tabsLeft-pane-1" aria-selected="false">Tim</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tabsLeft-tab-2" data-bs-toggle="tab" data-bs-target="#tabsLeft-pane-2" type="button" role="tab" aria-controls="tabsLeft-pane-2" aria-selected="false">File</button>
+                  </li>
+                </ul>
+                <div class="tab-content advanced-tab-content">
+                  <div class="tab-pane fade show active" id="tabsLeft-pane-0" role="tabpanel" aria-labelledby="tabsLeft-tab-0" tabindex="0">
+                    <h3>Proyek</h3>
+                    <p class="mb-0">Panel proyek dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                  </div>
+                  <div class="tab-pane fade" id="tabsLeft-pane-1" role="tabpanel" aria-labelledby="tabsLeft-tab-1" tabindex="0">
+                    <h3>Tim</h3>
+                    <p class="mb-0">Panel tim dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                  </div>
+                  <div class="tab-pane fade" id="tabsLeft-pane-2" role="tabpanel" aria-labelledby="tabsLeft-tab-2" tabindex="0">
+                    <h3>File</h3>
+                    <p class="mb-0">Panel file dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Tab kanan</h2>
+                  <p>Navigasi vertikal di kanan panel.</p>
+                </div>
+              </div>
+              <div class="advanced-vertical-tabs reverse">
+                <div class="tab-content advanced-tab-content">
+                  <div class="tab-pane fade show active" id="tabsRight-pane-0" role="tabpanel" aria-labelledby="tabsRight-tab-0" tabindex="0">
+                    <h3>Desain</h3>
+                    <p class="mb-0">Panel desain dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                  </div>
+                  <div class="tab-pane fade" id="tabsRight-pane-1" role="tabpanel" aria-labelledby="tabsRight-tab-1" tabindex="0">
+                    <h3>Riset</h3>
+                    <p class="mb-0">Panel riset dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                  </div>
+                </div>
+                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsRight">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tabsRight-tab-0" data-bs-toggle="tab" data-bs-target="#tabsRight-pane-0" type="button" role="tab" aria-controls="tabsRight-pane-0" aria-selected="true">Desain</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tabsRight-tab-1" data-bs-toggle="tab" data-bs-target="#tabsRight-pane-1" type="button" role="tab" aria-controls="tabsRight-pane-1" aria-selected="false">Riset</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Tab dengan ikon</h2>
+                  <p>SVG lokal membantu pengenalan cepat.</p>
+                </div>
+              </div>
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsIcon">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tabsIcon-tab-0" data-bs-toggle="tab" data-bs-target="#tabsIcon-pane-0" type="button" role="tab" aria-controls="tabsIcon-pane-0" aria-selected="true">
+                    <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                      <path d="m13 2-9 12h7l-1 8 10-13h-8z"></path>
+                    </svg>
+                    Inspirasi
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsIcon-tab-1" data-bs-toggle="tab" data-bs-target="#tabsIcon-pane-1" type="button" role="tab" aria-controls="tabsIcon-pane-1" aria-selected="false">
+                    <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                      <circle cx="9" cy="8" r="3"></circle>
+                      <path d="M3 21v-3a6 6 0 0 1 12 0v3m0-16a3 3 0 0 1 0 6m3 4a5 5 0 0 1 3 4v2"></path>
+                    </svg>
+                    Kolaborasi
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content advanced-tab-content">
+                <div class="tab-pane fade show active" id="tabsIcon-pane-0" role="tabpanel" aria-labelledby="tabsIcon-tab-0" tabindex="0">
+                  <h3>Inspirasi</h3>
+                  <p class="mb-0">Panel inspirasi dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsIcon-pane-1" role="tabpanel" aria-labelledby="tabsIcon-tab-1" tabindex="0">
+                  <h3>Kolaborasi</h3>
+                  <p class="mb-0">Panel kolaborasi dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Pills</h2>
+                  <p>Alternatif ringkas tanpa garis tab.</p>
+                </div>
+              </div>
+              <ul class="nav nav-pills" role="tablist" aria-label="Tab tabsPills">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tabsPills-tab-0" data-bs-toggle="tab" data-bs-target="#tabsPills-pane-0" type="button" role="tab" aria-controls="tabsPills-pane-0" aria-selected="true">Hari ini</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsPills-tab-1" data-bs-toggle="tab" data-bs-target="#tabsPills-pane-1" type="button" role="tab" aria-controls="tabsPills-pane-1" aria-selected="false">Minggu ini</button>
+                </li>
+              </ul>
+              <div class="tab-content advanced-tab-content">
+                <div class="tab-pane fade show active" id="tabsPills-pane-0" role="tabpanel" aria-labelledby="tabsPills-tab-0" tabindex="0">
+                  <h3>Hari ini</h3>
+                  <p class="mb-0">Panel hari ini dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsPills-pane-1" role="tabpanel" aria-labelledby="tabsPills-tab-1" tabindex="0">
+                  <h3>Minggu ini</h3>
+                  <p class="mb-0">Panel minggu ini dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Justified</h2>
+                  <p>Tautan membagi ruang secara merata.</p>
+                </div>
+              </div>
+              <ul class="nav nav-tabs nav-justified" role="tablist" aria-label="Tab tabsJustified">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tabsJustified-tab-0" data-bs-toggle="tab" data-bs-target="#tabsJustified-pane-0" type="button" role="tab" aria-controls="tabsJustified-pane-0" aria-selected="true">Semua</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsJustified-tab-1" data-bs-toggle="tab" data-bs-target="#tabsJustified-pane-1" type="button" role="tab" aria-controls="tabsJustified-pane-1" aria-selected="false">Berjalan</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tabsJustified-tab-2" data-bs-toggle="tab" data-bs-target="#tabsJustified-pane-2" type="button" role="tab" aria-controls="tabsJustified-pane-2" aria-selected="false">Selesai</button>
+                </li>
+              </ul>
+              <div class="tab-content advanced-tab-content">
+                <div class="tab-pane fade show active" id="tabsJustified-pane-0" role="tabpanel" aria-labelledby="tabsJustified-tab-0" tabindex="0">
+                  <h3>Semua</h3>
+                  <p class="mb-0">Panel semua dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsJustified-pane-1" role="tabpanel" aria-labelledby="tabsJustified-tab-1" tabindex="0">
+                  <h3>Berjalan</h3>
+                  <p class="mb-0">Panel berjalan dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+                <div class="tab-pane fade" id="tabsJustified-pane-2" role="tabpanel" aria-labelledby="tabsJustified-tab-2" tabindex="0">
+                  <h3>Selesai</h3>
+                  <p class="mb-0">Panel selesai dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/advanced.js"></script>
+</body>
+</html>

@@ -29,6 +29,9 @@ Tidak perlu `npm install` untuk melihat template. Instalasi npm hanya diperlukan
 | `chat.html` | Percakapan demo lokal, pencarian kontak dan pesan |
 | `portfolio.html`, `blog.html` | Galeri karya dengan filter; artikel, pencarian, detail dan pagination |
 | `email-inbox.html`, `email-compose.html`, `email-read.html` | Kotak surat demo, folder, baca pesan, balas/forward, draft dan kirim lokal |
+| `avatar.html`, `card.html`, `modal.html`, `tabs.html` | Variasi komponen lanjutan dengan Bootstrap 5 dan tema BRUTAL. |
+| `sweet-alert.html`, `toastr.html` | Dialog dan notifikasi demo dengan bundle lokal |
+| `empty-state.html`, `multiple-upload.html` | Empty state SVG dan pratinjau file Dropzone tanpa upload server |
 | `profile.html` | Edit profil, preferensi tampilan ringkas, reset data demo |
 | `auth-login.html` | Antarmuka login demo |
 | `auth-register.html` | Antarmuka register demo |
@@ -44,20 +47,24 @@ Tidak perlu `npm install` untuk melihat template. Instalasi npm hanya diperlukan
 ```text
 assets/css/theme.css       Token, override komponen Bootstrap, layout responsif
 assets/css/workspace.css   Style halaman Phase 1 (dimuat hanya di 8 halaman terkait)
+assets/css/advanced.css    Style delapan halaman Komponen Lanjutan Phase 2
 assets/js/app.js           Interaksi demo dan penyimpanan lokal
 assets/js/workspace.js     Interaksi chat, portfolio, blog, widget, dan email lokal
+assets/js/advanced.js      Interaksi modal, notifikasi, empty state, dan pratinjau file
 assets/js/sidebar-config.js Sumber tunggal menu sidebar dan pencarian
 assets/js/sidebar.js       Renderer, collapse, drawer, dan fokus keyboard
 assets/js/sidebar-icons.js SVG lokal, dihasilkan dari ICONS di generator
-assets/bundles/            Lokasi library eksternal untuk phase berikutnya
+assets/bundles/            Bundle lokal SweetAlert2, Toastr/jQuery, dan Dropzone
 assets/img/favicon.svg    Logo SVG lokal
 assets/img/workspace/     Ilustrasi SVG karya dan artikel lokal
 bootstrap-5.3.8/           Source Bootstrap asli dari pengguna (tidak diubah)
 scripts/build.py          Generator HTML dengan shell navbar/sidebar bersama
 scripts/format_html.py    Formatter HTML dengan pemeriksaan struktur dan konten
 scripts/workspace_pages.py Konten, data dan ilustrasi delapan halaman Phase 1
+scripts/advanced_pages.py Konten delapan halaman Komponen Lanjutan Phase 2
 tests/template.spec.js    Pengujian alur pengguna dengan Playwright
 tests/workspace.spec.js   Pengujian interaksi Phase 1
+tests/advanced.spec.js    Pengujian interaksi dan bundle Phase 2
 ```
 
 Ubah token `--neo-*` di `assets/css/theme.css` untuk mengganti warna, shadow, dan border. File ini harus dimuat **setelah** Bootstrap CSS. Komponen tetap menggunakan kelas Bootstrap seperti `.btn`, `.card`, `.form-control`, `.modal`, `.row`, dan `.col-md-*`.
@@ -69,13 +76,13 @@ python3 -m pip install -r requirements-build.txt
 npm run build
 ```
 
-**Build menimpa 40 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
+**Build menimpa 48 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
 
 ## Fondasi sidebar — Phase 0
 
 `sidebar-config.js` berisi array `{ group, items }`. Item halaman memakai `{ page, label, icon }`; item grup memakai `{ id, label, icon, children }`. Nilai `page` sama dengan `data-page` dan nama HTML tanpa ekstensi. Gunakan ID grup yang unik. Array harus valid JSON karena generator juga membacanya untuk judul halaman.
 
-Semua 40 halaman memakai `<div id="sidebar-root"></div>`. Urutan script: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js` → `workspace.js` (hanya halaman Phase 1). Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
+Semua 48 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; halaman Phase 2 menambah `advanced.js` dan hanya memuat bundle yang diperlukan. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
 
 Sidebar membuka grup halaman aktif secara otomatis. Di mobile, drawer mendukung backdrop, Escape, focus trap, dan pengembalian fokus. Halaman autentikasi/error menggunakan drawer yang sama melalui tombol menu pada semua ukuran layar agar layout standalone tetap nyaman.
 
@@ -87,6 +94,7 @@ Keputusan pemisahan form, tabel, dan grafik dicatat di `SIDEBAR-CHECKLIST.md` un
 
 - Proyek, checklist, agenda, profil, mode ringkas, chat (`brutal.chat`), dan email (`brutal.mail`) memakai localStorage. Data hanya di browser/origin yang sama. Jika storage diblokir, chat tetap berjalan dalam memori dengan notifikasi; email demo tidak akan berpindah halaman saat simpan gagal.
 - Tombol Kirim email hanya menambahkan pesan ke folder Terkirim di browser; tidak ada layanan email, penerima sungguhan, atau backend. Toolbar Bold/Italic/Underline pada compose adalah contoh visual, belum mengubah teks.
+- Dialog SweetAlert2 dan notifikasi Toastr adalah demo lokal. Dropzone menampilkan thumbnail dan progres pembacaan file di browser; antrean upload dimatikan, sehingga file tidak dikirim atau disimpan di server.
 - Statistik dan angka chart adalah **data ilustratif**, bukan agregasi proyek demo. Dropdown grafik menukar dataset contoh.
 - Form, login, register, reset password, dan pilihan paket merupakan demonstrasi frontend. Tidak ada akun, sesi autentikasi, email, pembayaran, atau upload server. Password tidak disimpan.
 - CSV mengikuti filter tabel, mengutip nilai dan menetralkan prefix formula spreadsheet pada input pengguna.
@@ -99,7 +107,7 @@ Referensi lokal yang dianalisis: `/mnt/C80A6A9E0A6A88F0/Templete Web/otika.namik
 
 Otika menyediakan admin shell, dashboard, widget, UI dasar/advanced, forms, tables, chart plugins, apps, auth, dan utility pages, dengan fondasi Bootstrap 4 dan jQuery. BRUTAL. mengambil **cakupan dan pola navigasi** sebagai acuan; markup, CSS tema, ikon, dan interaksinya dibuat ulang untuk Bootstrap 5.3.8. Tidak menyalin atau memuat aset Otika.
 
-Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE. Versi ini belum mencakup seluruh plugin Otika: pengiriman chat/email nyata, maps, rich text editor, carousel/gallery lanjutan, multi-upload server, atau banyak chart engine. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
+Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE; delapan halaman Phase 2 berada di dropdown Komponen Lanjutan. Versi ini belum mencakup seluruh plugin Otika: pengiriman chat/email nyata, maps, rich text editor, carousel/gallery lanjutan, upload server, atau banyak chart engine. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
 
 ## Verifikasi
 
@@ -108,6 +116,6 @@ npm install
 npm test
 ```
 
-Tes menggunakan Chrome lokal di `/usr/bin/google-chrome`. Override dengan `CHROME_PATH=/path/to/chrome npm test`. Playwright hanya dependency development. Sebanyak 19 tes mencakup 40 halaman pada desktop/mobile, aset dan error JavaScript, active state, konsistensi sidebar, perubahan config tanpa rebuild, akses `file://`, keyboard drawer, alur proyek/tabel/form/kalender/profil/auth, serta chat, portfolio, blog, email, penyimpanan lokal dan reset data Phase 1.
+Tes menggunakan Chrome lokal di `/usr/bin/google-chrome`. Override dengan `CHROME_PATH=/path/to/chrome npm test`. Playwright hanya dependency development. Sebanyak 24 tes mencakup 48 halaman pada desktop/mobile, aset dan error JavaScript, sidebar, akses `file://`, interaksi workspace Phase 1, serta modal, notifikasi, tab, empty state, dan pratinjau file lokal Phase 2.
 
 Bootstrap memiliki lisensi MIT; lisensi aslinya tetap ada di `bootstrap-5.3.8/LICENSE` dan `assets/BOOTSTRAP-LICENSE`.

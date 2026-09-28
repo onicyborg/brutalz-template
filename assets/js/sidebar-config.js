@@ -41,6 +41,17 @@ window.BRUTAL_SIDEBAR = [
       {"page":"flags","label":"Flag"},
       {"page":"typography","label":"Typography"}
     ]},
+    {"id":"advancedComponentsMenu","label":"Komponen Lanjutan","icon":"bolt","children":[
+      {"page":"avatar","label":"Avatar"},
+      {"page":"card","label":"Card"},
+      {"page":"modal","label":"Modal"},
+      {"page":"sweet-alert","label":"Sweet Alert"},
+      {"page":"toastr","label":"Toastr"},
+      {"page":"empty-state","label":"Empty State"},
+      {"page":"multiple-upload","label":"Multiple Upload"},
+      {"page":"tabs","label":"Tabs"},
+      {"page":"pricing","label":"Pricing"}
+    ]},
     {"page":"forms","label":"Form & validasi","icon":"form"},
     {"page":"tables","label":"Tabel data","icon":"table"},
     {"page":"charts","label":"Grafik & widget","icon":"chart"}
@@ -48,7 +59,6 @@ window.BRUTAL_SIDEBAR = [
   {"group":"HALAMAN","items":[
     {"page":"profile","label":"Profil & pengaturan","icon":"user"},
     {"page":"invoice","label":"Invoice","icon":"file"},
-    {"page":"pricing","label":"Paket harga","icon":"bolt"},
     {"id":"authMenu","label":"Autentikasi","icon":"lock","children":[
       {"page":"auth-login","label":"Login"},
       {"page":"auth-register","label":"Daftar"},

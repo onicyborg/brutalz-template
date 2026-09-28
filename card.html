@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Pricing — BRUTAL.</title>
+  <title>Card — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/advanced.css">
 </head>
-<body data-page="pricing">
+<body data-page="card">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -24,7 +25,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
             <li class="breadcrumb-item">Komponen Lanjutan</li>
-            <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+            <li class="breadcrumb-item active" aria-current="page">Card</li>
           </ol>
         </nav>
       </div>
@@ -68,152 +69,147 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Ide besar. Pilihan sederhana.</h1>
-          <p>Contoh halaman harga untuk produk digital atau layananmu.</p>
+          <h1>Kartu untuk setiap cerita.</h1>
+          <p>Variasi card Bootstrap dengan garis tegas dan bayangan solid.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
-      <div class="text-center my-5">
-        <span class="badge bg-yellow mb-3">BUILT FOR YOUR NEXT BIG THING</span>
-        <h2 class="display-6 fw-bold">Ada ruang untuk setiap ambisi.</h2>
-        <p class="text-muted">Mulai kecil. Berkembang dengan caramu.</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="card h-100">
+            <div class="card-header">
+              <h2 class="mb-0">Kartu dengan header</h2>
+            </div>
+            <div class="card-body">
+              <p>Struktur sederhana untuk konten yang butuh konteks.</p>
+              <p class="mb-0 text-muted">Gunakan header dan footer hanya ketika membantu pembaca menemukan informasi.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="small">Diperbarui hari ini</span>
+              <a href="docs.html" class="fw-bold">Pelajari ↗</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Kartu dengan ikon</h2>
+                  <p>Ikon SVG lokal selaras dengan konten.</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-start gap-3">
+                <span class="project-icon bg-purple">
+                  <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                    <path d="m13 2-9 12h7l-1 8 10-13h-8z"></path>
+                  </svg>
+                </span>
+                <div>
+                  <h3>Ide minggu ini</h3>
+                  <p class="mb-0">Gunakan satu kartu untuk menghubungkan ikon, judul, dan tindakan yang jelas.</p>
+                </div>
+              </div>
+              <a class="btn btn-sm mt-4" href="projects.html">Lihat proyek ↗</a>
+            </div>
+          </section>
+        </div>
+        <div class="col-12">
+          <section class="card ">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Warna aksen</h2>
+                  <p>Empat token tema yang sudah tersedia.</p>
+                </div>
+              </div>
+              <div class="advanced-color-grid">
+                <article class="card advanced-color-card bg-purple">
+                  <div class="card-body">
+                    <span class="eyebrow">PURPLE</span>
+                    <h3 class="mt-3">Eksplorasi</h3>
+                    <p class="mb-0">Ruang untuk mencoba arah baru.</p>
+                  </div>
+                </article>
+                <article class="card advanced-color-card bg-green">
+                  <div class="card-body">
+                    <span class="eyebrow">GREEN</span>
+                    <h3 class="mt-3">Kolaborasi</h3>
+                    <p class="mb-0">Ide tumbuh bersama tim.</p>
+                  </div>
+                </article>
+                <article class="card advanced-color-card bg-yellow">
+                  <div class="card-body">
+                    <span class="eyebrow">YELLOW</span>
+                    <h3 class="mt-3">Momentum</h3>
+                    <p class="mb-0">Langkah kecil tetap berarti.</p>
+                  </div>
+                </article>
+                <article class="card advanced-color-card bg-orange">
+                  <div class="card-body">
+                    <span class="eyebrow">ORANGE</span>
+                    <h3 class="mt-3">Peluncuran</h3>
+                    <p class="mb-0">Siap diperlihatkan ke dunia.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-7">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Stat card</h2>
+                  <p>Statistik dapat memakai kelas .stat-card yang sama seperti dashboard.</p>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="card stat-card bg-purple h-100">
+                    <div class="card-body">
+                      <span class="stat-label">Proyek aktif</span>
+                      <div class="stat-value">24</div>
+                      <span class="small">↗ 4 dari bulan lalu</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card stat-card bg-green h-100">
+                    <div class="card-body">
+                      <span class="stat-label">Kolaborator</span>
+                      <div class="stat-value">12</div>
+                      <span class="small">Tim kreatif demo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-5">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Kartu bergambar</h2>
+                  <p>Ilustrasi SVG lokal dengan overlay yang tetap terbaca.</p>
+                </div>
+              </div>
+              <article class="card advanced-image-card">
+                <img src="assets/img/workspace/studio.svg" alt="Ilustrasi geometris identitas Studio North" width="720" height="480">
+                <div class="advanced-image-overlay">
+                  <span class="badge bg-yellow">FEATURED WORK</span>
+                  <h3>Studio North</h3>
+                  <p>Identitas digital yang berani tampil.</p>
+                  <a href="portfolio.html" class="btn btn-sm btn-dark">Lihat portfolio ↗</a>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="pricing-grid">
-        <section class="card ">
-          <div class="card-body ">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Starter</h2>
-            </div>
-            <p class="small mt-2 mb-0">Untuk ide yang baru mulai.</p>
-            <div class="price">
-              Rp0
-              <small> / selamanya</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                1 workspace
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                3 proyek aktif
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Komponen dasar
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan komunitas
-              </li>
-            </ul>
-            <button class="btn btn-primary w-100" data-toast="Paket Starter dipilih. Ini contoh UI; tidak ada transaksi.">
-              Mulai sederhana
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-        <section class="card pricing-featured">
-          <div class="card-body bg-purple">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Studio</h2>
-              <span class="badge bg-yellow">FAVORIT</span>
-            </div>
-            <p class="small mt-2 mb-0">Untuk tim dengan ide besar.</p>
-            <div class="price">
-              Rp149
-              <small> ribu / bulan</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                5 workspace
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Proyek tak terbatas
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Semua komponen
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan prioritas
-              </li>
-            </ul>
-            <button class="btn btn-dark w-100" data-toast="Paket Studio dipilih. Ini contoh UI; tidak ada transaksi.">
-              Pilih Studio
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-        <section class="card ">
-          <div class="card-body ">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Collective</h2>
-            </div>
-            <p class="small mt-2 mb-0">Untuk kolaborasi tanpa batas.</p>
-            <div class="price">
-              Rp399
-              <small> ribu / bulan</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Workspace tak terbatas
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Manajemen anggota
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Laporan lanjutan
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan khusus
-              </li>
-            </ul>
-            <button class="btn btn-primary w-100" data-toast="Paket Collective dipilih. Ini contoh UI; tidak ada transaksi.">
-              Pilih Collective
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-      </div>
-      <p class="text-center text-muted small mt-4">Paket dan harga ilustratif. Tombol mendemonstrasikan UI tanpa memproses pembayaran.</p>
     </main>
     <footer class="app-footer">
       <span>
@@ -289,5 +285,6 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/advanced.js"></script>
 </body>
 </html>

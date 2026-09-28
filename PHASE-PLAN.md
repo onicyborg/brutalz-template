@@ -55,7 +55,7 @@ assets/bundles/
 └── gmaps/             # GMaps.js (google maps wrapper)
 ```
 
-Versi library yang dipakai mengikuti versi Otika (lihat `otika.namikulo.com/assets/bundles/`).
+Jika library yang sama tersedia di Otika, versinya dapat menjadi acuan (lihat `otika.namikulo.com/assets/bundles/`). Untuk library yang berbeda, pakai versi resmi yang dipin, simpan lokal, dan catat sumber serta lisensinya.
 
 ---
 
@@ -326,60 +326,67 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 > **Tujuan**: Showcase komponen lanjutan Otika yang belum ada di BRUTAL.
 
 ## 2.1 Avatar (`avatar.html`)
-- [ ] Avatar bulat dengan ukuran (xs/sm/md/lg/xl).
-- [ ] Avatar dengan status dot (online/offline/away).
-- [ ] Avatar group / stack.
-- [ ] Avatar placeholder inisial (seperti di sidebar existing).
-- [ ] Library: **tanpa**.
+- [x] Avatar bulat dengan ukuran (xs/sm/md/lg/xl).
+- [x] Avatar dengan status dot (online/offline/away).
+- [x] Avatar group / stack.
+- [x] Avatar placeholder inisial (seperti di sidebar existing).
+- [x] Library: **tanpa**.
 
 ## 2.2 Card (`card.html`)
-- [ ] Card basic, dengan header/footer.
-- [ ] Card dengan warna aksen (purple, green, yellow, orange).
-- [ ] Card dengan ikon + judul + body.
-- [ ] Card statistik (kombinasi stat-card).
-- [ ] Card dengan image overlay.
-- [ ] Library: **tanpa**.
+- [x] Card basic, dengan header/footer.
+- [x] Card dengan warna aksen (purple, green, yellow, orange).
+- [x] Card dengan ikon + judul + body.
+- [x] Card statistik (kombinasi stat-card).
+- [x] Card dengan image overlay.
+- [x] Library: **tanpa**.
 
 ## 2.3 Modal (`modal.html`)
-- [ ] Demo modal basic (size sm/md/lg/xl/full).
-- [ ] Modal scrollable, centered, fullscreen.
-- [ ] Modal dengan form di dalam.
-- [ ] Modal konfirmasi (delete).
-- [ ] Library: **Bootstrap 5 modal** (sudah di bundle).
+- [x] Demo modal basic (size sm/md/lg/xl/full).
+- [x] Modal scrollable, centered, fullscreen.
+- [x] Modal dengan form di dalam.
+- [x] Modal konfirmasi (delete).
+- [x] Library: **Bootstrap 5 modal** (sudah di bundle).
 
 ## 2.4 Sweet Alert (`sweet-alert.html`)
-- [ ] Install `assets/bundles/sweetalert/sweetalert2.min.js` + CSS.
-- [ ] Demo: success, error, warning, info, confirm, custom HTML, toast.
-- [ ] Tombol trigger masing-masing demo.
-- [ ] Library: **SweetAlert2** (versi Otika).
+- [x] Install `assets/bundles/sweetalert/sweetalert2.all.min.js` + CSS.
+- [x] Demo: success, error, warning, info, confirm, custom HTML, toast.
+- [x] Tombol trigger masing-masing demo.
+- [x] Library: **SweetAlert2 11.26.25** dari npm resmi, lokal dan terpisah per halaman.
 
 ## 2.5 Toastr (`toastr.html`)
-- [ ] Install `assets/bundles/toastr/toastr.min.js` + CSS.
-- [ ] Demo: success, info, warning, error.
-- [ ] Posisi toast (top-right, bottom-left, dll).
-- [ ] Library: **Toastr** (versi Otika).
+- [x] Install `assets/bundles/toastr/toastr.min.js` + CSS.
+- [x] Demo: success, info, warning, error.
+- [x] Posisi toast (top-right, bottom-left, dll).
+- [x] Library: **Toastr 2.1.4** dari npm resmi; jQuery lokal dimuat hanya di halaman ini.
 
 ## 2.6 Empty State (`empty-state.html`)
-- [ ] Empty state dengan ilustrasi SVG sederhana.
-- [ ] Empty state dengan CTA button.
-- [ ] Empty state dengan list kosong di dalam card.
-- [ ] Library: **tanpa**.
+- [x] Empty state dengan ilustrasi SVG sederhana.
+- [x] Empty state dengan CTA button.
+- [x] Empty state dengan list kosong di dalam card.
+- [x] Library: **tanpa**.
 
 ## 2.7 Multiple Upload (`multiple-upload.html`)
-- [ ] Install `assets/bundles/dropzone/dropzone.min.js` (atau library upload Otika).
-- [ ] Area drop file dengan preview thumbnail.
-- [ ] Indikator progress per file.
-- [ ] Library: **Dropzone.js** (atau sesuai library Otika).
+- [x] Install `assets/bundles/dropzone/dropzone.min.js` + CSS.
+- [x] Area drop file dengan preview thumbnail.
+- [x] Indikator progres pembacaan lokal per file.
+- [x] Library: **Dropzone 5.9.3**; antrean tidak diproses dan tidak ada upload server.
 
 ## 2.8 Tab (`tabs.html`)
-- [ ] Tab basic (atas), tab bawah, tab kiri/kanan (vertikal).
-- [ ] Tab dengan ikon.
-- [ ] Tab pill, tab justified.
-- [ ] Library: **Bootstrap 5 nav-tabs** (sudah built-in).
+- [x] Tab basic (atas), tab bawah, tab kiri/kanan (vertikal).
+- [x] Tab dengan ikon.
+- [x] Tab pill, tab justified.
+- [x] Library: **Bootstrap 5 nav-tabs** (sudah built-in).
 
 ## 🚦 Keluar Phase 2 jika:
 - ✅ 8 file baru selesai, style konsisten neobrutalism.
 - ✅ Library eksternal (SweetAlert, Toastr, Dropzone) terinstal di `assets/bundles/` dan termuat di halaman demo.
+
+### Hasil Phase 2 — 28 September 2026
+
+- Delapan halaman baru tersedia di dropdown **BUILDING BLOCKS > Komponen Lanjutan**, bersama Pricing yang sudah ada. Total menjadi 48 halaman HTML.
+- SweetAlert2, Toastr beserta jQuery, dan Dropzone disimpan lokal dari paket npm resmi dengan versi dan lisensi tercatat di `assets/bundles/README.md`. Otika memakai SweetAlert lama dan iziToast; pilihan paket mengikuti nama library yang diminta pada phase ini.
+- Upload adalah demo pratinjau dan progres pembacaan lokal; `autoProcessQueue` dimatikan sehingga tidak ada permintaan upload. Form modal dan notifikasi juga tidak mengirim data ke server.
+- `npm run build` menghasilkan 48 HTML berformat rapi; `npm test` **24 passed**, mencakup demo Phase 2 serta regresi semua halaman pada desktop/mobile. Screenshot desktop/mobile Phase 2 ditinjau.
 
 ---
 
@@ -719,7 +726,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | --- | --- | --- | --- | --- |
 | 0 | Fondasi & Sidebar | 3 JS sidebar + panduan bundles + tes sidebar | 32 HTML (termasuk rename 404), generator, app.js, CSS, dokumentasi | ✅ Selesai — 12 tes lulus |
 | 1 | Workspace Inti | 8 (widget-chart, widget-data, chat, portfolio, blog, email-inbox, email-compose, email-read) | sidebar, generator, CSS/JS lokal, dokumentasi | ✅ Selesai — 19 tes lulus |
-| 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | 0 | ⬜ |
+| 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 24 tes lulus |
 | 3 | Forms Lanjutan | 4 (+refactor forms.html) | 1 | ⬜ |
 | 4 | Tables Lanjutan | 4 (+refactor tables.html) | 1 | ⬜ |
 | 5 | Charts | 5 (+refactor charts.html) | 1 | ⬜ |

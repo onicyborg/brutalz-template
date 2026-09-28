@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Pricing — BRUTAL.</title>
+  <title>Multiple Upload — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/dropzone/dropzone.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/advanced.css">
 </head>
-<body data-page="pricing">
+<body data-page="multiple-upload">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -24,7 +26,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
             <li class="breadcrumb-item">Komponen Lanjutan</li>
-            <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+            <li class="breadcrumb-item active" aria-current="page">Multiple Upload</li>
           </ol>
         </nav>
       </div>
@@ -68,152 +70,54 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Ide besar. Pilihan sederhana.</h1>
-          <p>Contoh halaman harga untuk produk digital atau layananmu.</p>
+          <h1>File siap ditinjau.</h1>
+          <p>Area Dropzone untuk melihat file dan progres pembacaan lokal.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
-      <div class="text-center my-5">
-        <span class="badge bg-yellow mb-3">BUILT FOR YOUR NEXT BIG THING</span>
-        <h2 class="display-6 fw-bold">Ada ruang untuk setiap ambisi.</h2>
-        <p class="text-muted">Mulai kecil. Berkembang dengan caramu.</p>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <section class="card ">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Tarik, lepas, atau pilih file</h2>
+                  <p>Maksimal 5 file gambar atau PDF, masing-masing 5 MB.</p>
+                </div>
+              </div>
+              <div id="uploadDropzone" class="dropzone advanced-dropzone" aria-label="Area pilih file">
+                <div class="dz-message">
+                  <span class="upload-symbol" aria-hidden="true">↥</span>
+                  <strong>Letakkan file di sini</strong>
+                  <span>atau klik untuk memilih dari perangkat</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mt-4">
+                <p id="uploadSummary" class="small mb-0" role="status">Belum ada file dipilih.</p>
+                <button id="uploadClear" type="button" class="btn btn-sm" disabled="disabled">Hapus semua</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section class="card h-100">
+            <div class="card-body">
+              <div class="panel-heading">
+                <div>
+                  <h2>Demo lokal</h2>
+                  <p>File hanya dibaca dalam browser.</p>
+                </div>
+              </div>
+              <ul class="small ps-3 mb-4">
+                <li>Gambar mendapat pratinjau thumbnail.</li>
+                <li>Setiap file punya indikator progres pembacaan.</li>
+                <li>File dapat dihapus satu per satu atau sekaligus.</li>
+              </ul>
+              <div class="alert alert-info mb-0 small">Tidak ada upload ke server. Tidak ada file yang disimpan setelah halaman ditutup.</div>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="pricing-grid">
-        <section class="card ">
-          <div class="card-body ">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Starter</h2>
-            </div>
-            <p class="small mt-2 mb-0">Untuk ide yang baru mulai.</p>
-            <div class="price">
-              Rp0
-              <small> / selamanya</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                1 workspace
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                3 proyek aktif
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Komponen dasar
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan komunitas
-              </li>
-            </ul>
-            <button class="btn btn-primary w-100" data-toast="Paket Starter dipilih. Ini contoh UI; tidak ada transaksi.">
-              Mulai sederhana
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-        <section class="card pricing-featured">
-          <div class="card-body bg-purple">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Studio</h2>
-              <span class="badge bg-yellow">FAVORIT</span>
-            </div>
-            <p class="small mt-2 mb-0">Untuk tim dengan ide besar.</p>
-            <div class="price">
-              Rp149
-              <small> ribu / bulan</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                5 workspace
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Proyek tak terbatas
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Semua komponen
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan prioritas
-              </li>
-            </ul>
-            <button class="btn btn-dark w-100" data-toast="Paket Studio dipilih. Ini contoh UI; tidak ada transaksi.">
-              Pilih Studio
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-        <section class="card ">
-          <div class="card-body ">
-            <div class="d-flex align-items-center justify-content-between">
-              <h2 class="fs-4 mb-0">Collective</h2>
-            </div>
-            <p class="small mt-2 mb-0">Untuk kolaborasi tanpa batas.</p>
-            <div class="price">
-              Rp399
-              <small> ribu / bulan</small>
-            </div>
-            <ul class="feature-list">
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Workspace tak terbatas
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Manajemen anggota
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Laporan lanjutan
-              </li>
-              <li>
-                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                  <path d="m4 12 5 5L20 6"></path>
-                </svg>
-                Dukungan khusus
-              </li>
-            </ul>
-            <button class="btn btn-primary w-100" data-toast="Paket Collective dipilih. Ini contoh UI; tidak ada transaksi.">
-              Pilih Collective
-              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-                <path d="M4 12h16m-6-6 6 6-6 6"></path>
-              </svg>
-            </button>
-          </div>
-        </section>
-      </div>
-      <p class="text-center text-muted small mt-4">Paket dan harga ilustratif. Tombol mendemonstrasikan UI tanpa memproses pembayaran.</p>
     </main>
     <footer class="app-footer">
       <span>
@@ -289,5 +193,7 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/dropzone/dropzone.min.js"></script>
+  <script src="assets/js/advanced.js"></script>
 </body>
 </html>
