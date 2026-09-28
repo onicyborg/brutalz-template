@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Buat Post — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/quill/quill.snow.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/special.css">
+</head>
+<body data-page="create-post">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Post</li>
+            <li class="breadcrumb-item active" aria-current="page">Buat Post</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Tulis sesuatu yang layak dibaca.</h1>
+          <p>Buat artikel contoh dengan Quill, lalu lihat hasilnya di daftar post.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-xl-8">
+          <section class="card">
+            <div class="card-body">
+              <form id="createPostForm" novalidate="">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="postTitle">Judul post</label>
+                    <input class="form-control" id="postTitle" required="" minlength="5" maxlength="100" placeholder="Contoh: Ide besar dimulai dari halaman kosong">
+                    <div class="invalid-feedback">Isi judul minimal 5 karakter.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="postCategory">Kategori</label>
+                    <select class="form-select" id="postCategory" required="">
+                      <option value="">Pilih kategori</option>
+                      <option>Desain</option>
+                      <option>Produk</option>
+                      <option>Studio</option>
+                      <option>Inspirasi</option>
+                    </select>
+                    <div class="invalid-feedback">Pilih kategori.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="postTags">Tags</label>
+                    <input class="form-control" id="postTags" maxlength="100" placeholder="desain, ide, proses">
+                    <div class="form-text">Pisahkan dengan koma; maksimal 5 tag.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="postCover">Cover image</label>
+                    <input class="form-control" id="postCover" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+                    <div class="form-text">PNG, JPG, WebP, atau GIF; maksimal 500 KB. Gambar tersimpan lokal untuk demo.</div>
+                    <p id="postCoverStatus" class="small mt-2" role="status"></p>
+                    <img id="postCoverPreview" class="post-cover-preview" alt="Pratinjau cover" hidden="">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" id="postEditorLabel">Isi post</label>
+                    <div id="postEditor" class="post-editor">
+                      <p>Mulai ceritamu di sini…</p>
+                    </div>
+                    <p id="postEditorError" class="small text-danger mt-2" role="status"></p>
+                  </div>
+                </div>
+                <div class="form-check form-switch mt-4">
+                  <input class="form-check-input" id="postPublished" type="checkbox" checked="checked">
+                  <label class="form-check-label" for="postPublished">Publikasikan sekarang</label>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                  <button class="btn btn-primary" type="submit">Simpan post ↗</button>
+                  <a class="btn" href="posts.html">Lihat daftar post</a>
+                </div>
+                <p id="createPostStatus" class="small mt-3" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-4">
+          <section class="card bg-yellow">
+            <div class="card-body">
+              <span class="badge bg-white mb-3">EDITORIAL DESK</span>
+              <h2>Konten yang terasa hidup.</h2>
+              <p>Gunakan judul yang jelas, satu ide utama, dan cover yang mendukung cerita.</p>
+              <p class="small mb-0">Post disimpan di browser ini saja. Tombol publikasi mengubah status demo; tidak ada situs atau feed publik yang diperbarui.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/quill/quill.min.js"></script>
+  <script src="assets/js/special.js"></script>
+</body>
+</html>

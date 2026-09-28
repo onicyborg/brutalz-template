@@ -12,6 +12,7 @@ from chart_pages import CHART_PAGES, build_chart_pages
 from icon_pages import ICON_PAGES, build_icon_pages, write_feather_data
 from media_pages import MEDIA_PAGES, build_media_pages
 from map_pages import MAP_PAGES, build_map_pages
+from special_pages import SPECIAL_PAGES, ERROR_PAGES, build_special_pages, error_page
 from format_html import format_html, verify_semantic
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -48,6 +49,7 @@ ICONS = {
     'heart': '<path d="M12 21 3 12C-2 4 8-2 12 6c4-8 14-2 9 6z"/>',
     'close': '<path d="m6 6 12 12M6 18 18 6"/>',
     'eye': '<path d="M2 12c5-9 15-9 20 0-5 9-15 9-20 0z"/><circle cx="12" cy="12" r="3"/>',
+    'chevrons-down': '<path d="m6 6 6 6 6-6M6 12l6 6 6-6"/>',
 }
 def icon(name):
     return f'<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">{ICONS.get(name, ICONS["grid"])}</svg>'
@@ -62,6 +64,7 @@ def nav_pages(items):
 TITLES = {item['page']:item['label'] for section in NAV for item in nav_pages(section['items'])}
 TITLES.update({'components':'Komponen UI', 'errors-404':'Halaman tidak ditemukan'})
 TITLES.update({'widget-chart':'Widget Grafik','widget-data':'Widget Data'})
+TITLES.update({'errors-403':'Akses ditolak','errors-404':'Halaman tidak ditemukan','errors-500':'Kesalahan server','errors-503':'Layanan dalam perawatan'})
 
 def art():
     return '<div class="hero-art" aria-hidden="true"><div class="hero-grid"></div><div class="art-window"><div class="art-title"><i></i><i></i><i></i></div><div class="art-bars"><i></i><i></i><i></i><i></i></div></div><div class="art-star">✦</div><div class="art-sticker">Make it bold. ↗</div></div>'
@@ -81,7 +84,7 @@ def shell(key, content):
     component_crumb = '<li class="breadcrumb-item"><a href="components.html">Komponen UI</a></li>' if key in {item[0] for item in CATALOG} else ''
     for section in NAV:
         for item in section['items']:
-            if 'children' in item and key in (*WORKSPACE_PAGES, *ADVANCED_PAGES, *FORM_PAGES, *TABLE_PAGES, *CHART_PAGES, *ICON_PAGES, *MEDIA_PAGES, *MAP_PAGES, 'pricing') and any(child['page'] == key for child in item['children']):
+            if 'children' in item and key in (*WORKSPACE_PAGES, *ADVANCED_PAGES, *FORM_PAGES, *TABLE_PAGES, *CHART_PAGES, *ICON_PAGES, *MEDIA_PAGES, *MAP_PAGES, *SPECIAL_PAGES, 'pricing') and any(child.get('page') == key for child in item['children']):
                 component_crumb = f'<li class="breadcrumb-item">{escape(item["label"])}</li>'
     return f'''<a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div>
     <div class="app-wrap"><header class="topbar"><div class="d-flex align-items-center gap-3"><button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">{icon('menu')}</button><nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Workspace</a></li>{component_crumb}<li class="breadcrumb-item active" aria-current="page">{escape(TITLES[key])}</li></ol></nav></div><div class="topbar-actions"><button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">{icon('search')}<span>Cari sesuatu…</span><kbd>Ctrl K</kbd></button><span class="top-divider"></span><div class="dropdown"><button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">{icon('bell')}<span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end" style="width:275px"><h2 class="fs-6 px-2 pt-2">Kabar workspace</h2><p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p><a class="dropdown-item" href="docs.html">Baca panduan {icon('arrow')}</a></div></div><div class="dropdown"><button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="profile.html">Profil & pengaturan</a><a class="dropdown-item" href="auth-login.html">Lihat halaman login</a></div></div></div></header><main class="main-content" id="main" tabindex="-1">{content}</main><footer class="app-footer"><span>© 2026 BRUTAL. <span class="ms-1">Built different. Built with Bootstrap.</span></span><div><span class="me-3">Demo workspace</span><a href="docs.html">Dokumentasi ↗</a></div></footer></div>{common_ui()}'''
@@ -97,12 +100,14 @@ def page(key,content,standalone=False):
     icon_style = '<link rel="stylesheet" href="assets/css/icons.css">' if key in ICON_PAGES else ''
     media_style = '<link rel="stylesheet" href="assets/css/media.css">' if key in MEDIA_PAGES else ''
     map_style = '<link rel="stylesheet" href="assets/css/maps.css">' if key in MAP_PAGES else ''
+    special_style = '<link rel="stylesheet" href="assets/css/special.css">' if key in (*SPECIAL_PAGES, *ERROR_PAGES) else ''
     vendor_css = {
         'sweet-alert': 'sweetalert/sweetalert2.min.css',
         'toastr': 'toastr/toastr.min.css',
         'multiple-upload': 'dropzone/dropzone.min.css',
         'forms-advanced-form': 'select2/select2.min.css',
         'forms-editor': 'quill/quill.snow.css',
+        'create-post': 'quill/quill.snow.css',
         'chart-morris': 'morris/morris.css',
         'icon-font-awesome': 'fontawesome/css/all.min.css',
         'icon-material': 'material-icons/material-icons.css',
@@ -116,6 +121,7 @@ def page(key,content,standalone=False):
         'multiple-upload': ['dropzone/dropzone.min.js'],
         'forms-advanced-form': ['jquery/jquery.min.js', 'select2/select2.min.js'],
         'forms-editor': ['quill/quill.min.js'],
+        'create-post': ['quill/quill.min.js'],
         'form-wizard': ['jquery/jquery.min.js', 'jquery-steps/jquery.steps.min.js'],
         'chart-chartjs': ['chartjs/chart.umd.min.js'],
         'chart-apexchart': ['apexcharts/apexcharts.min.js'],
@@ -154,11 +160,12 @@ def page(key,content,standalone=False):
     icon_script += '<script src="assets/js/icons.js"></script>' if key in ICON_PAGES else ''
     media_script = '<script src="assets/js/media.js"></script>' if key in ('light-gallery', 'owl-carousel') else ''
     map_script = '<script src="assets/js/maps.js"></script>' if key in MAP_PAGES else ''
+    special_script = '<script src="assets/js/special.js"></script>' if key in (*SPECIAL_PAGES, *ERROR_PAGES) else ''
     if key == 'vector-map':
         vendor_scripts += '<script src="assets/bundles/jsvectormap/jsvectormap.min.js"></script><script src="assets/bundles/jsvectormap/world.js"></script>'
     bubble_style = '<link rel="stylesheet" href="assets/bundles/quill/quill.bubble.css">' if key == 'forms-editor' else ''
     return f'''<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}{table_style}{chart_style}{icon_style}{media_style}{map_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}{vendor_scripts}{advanced_script}{form_script}{table_script}{chart_script}{icon_script}{media_script}{map_script}</body></html>'''
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}{table_style}{chart_style}{icon_style}{media_style}{map_style}{special_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{workspace_script}{vendor_scripts}{advanced_script}{form_script}{table_script}{chart_script}{icon_script}{media_script}{map_script}{special_script}</body></html>'''
 
 def new_project_button():
     return f'<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">{icon("plus")} Proyek baru</button>'
@@ -272,7 +279,7 @@ blank.html                  Titik awal halaman baru</pre></div></section><sectio
   --neo-ink: #232420;
   --neo-paper: #f5f4ef;
   --neo-shadow: 4px 4px 0 var(--neo-ink);
-}</pre></div></section><section class="card"><div class="card-body"><h2>Menambah halaman</h2><ol class="small ps-3"><li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li><li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li><li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li><li>Hubungkan form dan data ke backend pilihanmu.</li></ol><div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div></div></section></div><div class="col-lg-4"><section class="card mb-4 bg-yellow"><div class="card-body"><h2>Isi starter ini</h2><ul class="small ps-3 mb-0"><li>Dashboard, widget grafik & data</li><li>Chat, portfolio, blog & mailbox demo</li><li>16 halaman komponen Bootstrap</li><li>Form dan validasi</li><li>Tabel: cari, filter, urutkan, CSV</li><li>Enam library grafik lokal</li><li>Lima koleksi ikon lokal</li><li>Galeri, slider & timeline</li><li>Delapan demo Google Maps & peta vektor dunia</li><li>Kanban proyek & kalender</li><li>Profil dan preferensi</li><li>Login, register, reset password</li><li>Invoice, pricing, blank, 404</li></ul></div></section><section class="card mb-4"><div class="card-body"><h2>Interaksi & data</h2><p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p><p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode; enam halaman library grafik memakai data ilustratif. Login/register hanya simulasi; tidak ada sesi autentikasi atau transaksi.</p></div></section><section class="card"><div class="card-body"><h2>Cakupan & pengembangan</h2><p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p><p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata dan upload server belum diintegrasikan. Google Maps memerlukan API key browser dan billing; peta vektor berjalan lokal tanpa key. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p><a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a></div></section></div></div>'''
+}</pre></div></section><section class="card"><div class="card-body"><h2>Menambah halaman</h2><ol class="small ps-3"><li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li><li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li><li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li><li>Hubungkan form dan data ke backend pilihanmu.</li></ol><div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div></div></section></div><div class="col-lg-4"><section class="card mb-4 bg-yellow"><div class="card-body"><h2>Isi starter ini</h2><ul class="small ps-3 mb-0"><li>Dashboard, widget grafik & data</li><li>Chat, portfolio, blog & mailbox demo</li><li>16 halaman komponen Bootstrap</li><li>Form dan validasi</li><li>Tabel: cari, filter, urutkan, CSV</li><li>Enam library grafik lokal</li><li>Lima koleksi ikon lokal</li><li>Galeri, slider & timeline</li><li>Delapan demo Google Maps & peta vektor dunia</li><li>Subscribe, post, kontak, empat halaman error, dan menu bertingkat</li><li>Kanban proyek & kalender</li><li>Profil dan preferensi</li><li>Login, register, reset password</li><li>Invoice, pricing, blank, 404</li></ul></div></section><section class="card mb-4"><div class="card-body"><h2>Interaksi & data</h2><p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p><p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode; enam halaman library grafik memakai data ilustratif. Login/register, subscribe, post, dan kontak adalah demo lokal; tidak ada sesi autentikasi, transaksi, pengiriman newsletter, atau pesan kontak.</p></div></section><section class="card"><div class="card-body"><h2>Cakupan & pengembangan</h2><p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p><p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata dan upload server belum diintegrasikan. Post dan subscribe disimpan hanya di browser; kontak menampilkan pratinjau tanpa mengirim pesan. Google Maps memerlukan API key browser dan billing; peta vektor berjalan lokal tanpa key. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p><a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a></div></section></div></div>'''
 
 def main():
     pages = {
@@ -289,6 +296,7 @@ def main():
     pages.update(build_icon_pages(heading))
     pages.update(build_media_pages(heading))
     pages.update(build_map_pages(heading))
+    pages.update(build_special_pages(heading))
     write_workspace_assets(ROOT)
     write_feather_data(ROOT)
     (ROOT/'assets/js/sidebar-icons.js').write_text('// Generated from ICONS in scripts/build.py.\nwindow.BRUTAL_ICONS = '+json.dumps(ICONS)+';\n',encoding='utf-8')
@@ -302,12 +310,12 @@ def main():
         (ROOT/f'{key}.html').write_text(formatted,encoding='utf-8')
 
     for key,content in pages.items():
-        write_page(key, content)
+        write_page(key, content, key == 'subscribe')
     for key in ['auth-login','auth-register','auth-forgot-password']:
         write_page(key, auth(key), True)
-    error = '<main class="min-vh-100 d-flex align-items-center justify-content-center p-4 text-center" id="main"><div><span class="badge bg-yellow mb-4">A LITTLE LOST, STILL BOLD.</span><div class="error-code">404</div><h1 class="mt-4">Oops. Ide ini belum ada.</h1><p class="text-muted mb-4">Halaman yang kamu cari mungkin sudah pindah.<br>Yuk, kembali ke tempat semua ide dimulai.</p><a class="btn btn-primary" href="index.html">Kembali ke dashboard '+icon('arrow')+'</a></div></main>'
-    write_page('errors-404', error, True)
-    print(f'Built {len(pages)+4} static pages.')
+    for code in ('403', '404', '500', '503'):
+        write_page(f'errors-{code}', error_page(code), True)
+    print(f'Built {len(pages)+7} static pages.')
 
 if __name__ == '__main__':
     main()

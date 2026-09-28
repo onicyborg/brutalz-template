@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Halaman tidak ditemukan — BRUTAL.</title>
+  <title>Subscribe — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/special.css">
 </head>
-<body data-page="errors-404" class="standalone-page">
+<body data-page="subscribe" class="standalone-page">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <button type="button" id="sidebarToggle" class="btn icon-btn standalone-toggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
@@ -18,32 +18,51 @@
       <path d="M3 6h18M3 12h18M3 18h18"></path>
     </svg>
   </button>
-  <main id="main" class="special-error">
-    <a class="brand" href="index.html">
-      <span class="brand-mark bg-yellow">b.</span>
-      BRUTAL.
-    </a>
-    <div class="special-error-content">
-      <svg class="error-art" viewbox="0 0 260 190" role="img" aria-label="Ilustrasi halaman 404" xmlns="http://www.w3.org/2000/svg">
-        <rect x="40" y="23" width="180" height="145" rx="9" fill="#232420"></rect>
-        <rect x="26" y="10" width="180" height="145" rx="9" fill="#fffefb" stroke="#232420" stroke-width="5"></rect>
-        <path d="M27 48h179" stroke="#232420" stroke-width="5"></path>
-        <circle cx="49" cy="29" r="6" fill="#ffc7ad" stroke="#232420" stroke-width="3"></circle>
-        <circle cx="70" cy="29" r="6" fill="#f9de6e" stroke="#232420" stroke-width="3"></circle>
-        <path d="M88 83h54m-54 24h79" stroke="#232420" stroke-width="7" stroke-linecap="round"></path>
-        <path d="m157 101 36 36m0-36-36 36" stroke="#7951ae" stroke-width="10" stroke-linecap="round"></path>
-        <path d="M230 27v36m-18-18h36" stroke="#232420" stroke-width="6" stroke-linecap="round"></path>
-      </svg>
-      <span class="badge bg-yellow">ERROR 404</span>
-      <div class="error-code">404</div>
-      <h1>Halaman tidak ditemukan.</h1>
-      <p>Tautan yang kamu cari mungkin sudah pindah. Yuk, kembali ke awal.</p>
-      <div class="special-error-actions">
-        <a class="btn btn-primary" href="index.html">Kembali ke dashboard ↗</a>
-        <button class="btn" type="button" onclick="history.back()">Halaman sebelumnya</button>
+  <main class="special-subscribe" id="main">
+    <header class="special-top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark bg-yellow">b.</span>
+        BRUTAL.
+      </a>
+      <a class="btn btn-sm" href="index.html">Lihat dashboard ↗</a>
+    </header>
+    <div class="special-subscribe-grid">
+      <section class="subscribe-copy">
+        <span class="eyebrow">NOTES FROM THE BOLD SIDE</span>
+        <h1>Ide bagus datang ke inbox.</h1>
+        <p>Cerita singkat tentang desain, produk, dan keberanian mencoba hal baru. Buat ruang untuk inspirasi berikutnya.</p>
+        <form id="subscribeForm" class="subscribe-form">
+          <label class="form-label" for="subscribeEmail">Alamat email</label>
+          <div class="subscribe-input-row">
+            <input class="form-control" id="subscribeEmail" type="email" autocomplete="email" placeholder="kamu@studio.id" required="" maxlength="120">
+            <button class="btn btn-dark" type="submit">Ikut daftar ↗</button>
+          </div>
+          <p id="subscribeStatus" class="small mt-3" role="status" aria-live="polite"></p>
+        </form>
+        <p class="small text-muted">Demo lokal: tidak ada newsletter atau email yang dikirim. Alamat contoh hanya disimpan di browser ini.</p>
+      </section>
+      <div class="subscribe-art" aria-hidden="true">
+        <svg viewbox="0 0 520 460" xmlns="http://www.w3.org/2000/svg">
+          <rect x="70" y="55" width="355" height="320" rx="18" fill="#232420"></rect>
+          <rect x="55" y="40" width="355" height="320" rx="18" fill="#fffefb" stroke="#232420" stroke-width="6"></rect>
+          <rect x="80" y="66" width="304" height="62" rx="8" fill="#c4a8f5" stroke="#232420" stroke-width="5"></rect>
+          <circle cx="110" cy="97" r="10" fill="#f9de6e" stroke="#232420" stroke-width="4"></circle>
+          <path d="M140 96h197" stroke="#232420" stroke-width="7" stroke-linecap="round"></path>
+          <path d="M88 190l145 93 144-93" fill="none" stroke="#232420" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M86 190h292v120H86z" fill="#f9de6e" stroke="#232420" stroke-width="6"></path>
+          <path d="M88 191l145 93 145-93" fill="#c7e8cc" stroke="#232420" stroke-width="6" stroke-linejoin="round"></path>
+          <path d="M88 310l102-83m188 83-102-83" stroke="#232420" stroke-width="6"></path>
+          <path d="M423 197l19 17-19 17-19-17zM26 252l16 14-16 14-16-14z" fill="#ffc7ad" stroke="#232420" stroke-width="5"></path>
+          <path d="M433 52v48m-24-24h48" stroke="#232420" stroke-width="7" stroke-linecap="round"></path>
+        </svg>
+        <span class="subscribe-sticker">
+          GOOD IDEAS
+          <br>
+          INSIDE ↗
+        </span>
       </div>
     </div>
-    <p class="small text-muted">© 2026 BRUTAL. · Halaman status demonstrasi.</p>
+    <footer class="special-bottom">© 2026 BRUTAL. · Built different.</footer>
   </main>
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

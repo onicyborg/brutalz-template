@@ -112,13 +112,29 @@ window.BRUTAL_SIDEBAR = [
   {"group":"HALAMAN","items":[
     {"page":"profile","label":"Profil & pengaturan","icon":"user"},
     {"page":"invoice","label":"Invoice","icon":"file"},
+    {"page":"contact","label":"Kontak","icon":"mail"},
+    {"id":"postsMenu","label":"Post","icon":"file","children":[
+      {"page":"create-post","label":"Buat Post"},
+      {"page":"posts","label":"Daftar Post"}
+    ]},
     {"id":"authMenu","label":"Autentikasi","icon":"lock","children":[
       {"page":"auth-login","label":"Login"},
       {"page":"auth-register","label":"Daftar"},
-      {"page":"auth-forgot-password","label":"Lupa Password"}
+      {"page":"auth-forgot-password","label":"Lupa Password"},
+      {"page":"subscribe","label":"Subscribe"}
     ]},
     {"id":"errorsMenu","label":"Errors","icon":"file","children":[
-      {"page":"errors-404","label":"404"}
+      {"page":"errors-403","label":"403"},
+      {"page":"errors-404","label":"404"},
+      {"page":"errors-500","label":"500"},
+      {"page":"errors-503","label":"503"}
+    ]},
+    {"id":"multilevelMenu","label":"Multilevel","icon":"chevrons-down","children":[
+      {"id":"multilevelOne","label":"Level 1","children":[
+        {"id":"multilevelTwo","label":"Level 2","children":[
+          {"page":"multilevel","label":"Level 3"}
+        ]}
+      ]}
     ]}
   ]},
   {"group":"MULAI MEMBANGUN","items":[

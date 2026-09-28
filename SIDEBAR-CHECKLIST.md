@@ -26,13 +26,15 @@
 
 > **Audit Phase 8 — 28 September 2026:** sembilan halaman Maps aktif: delapan Google Maps dengan key yang dimasukkan di browser, dan satu peta dunia jsVectorMap lokal. Kini terdapat **83 file HTML aktual**: 77 entri target dan 6 halaman pendukung; 9 entri target masih menunggu phase berikutnya.
 
+> **Audit Phase 9 — 28 September 2026:** delapan halaman baru aktif: subscribe, tiga error, create-post, posts, contact, dan tujuan menu multilevel. Kini terdapat **91 file HTML aktual**: 85 entri target dan 6 halaman pendukung; hanya `auth-reset-password.html` yang belum tersedia.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 77 |
-| ❌ Entri target belum tersedia | 9 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 85 |
+| ❌ Entri target belum tersedia | 1 |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 83 |
+| File HTML aktual, termasuk 6 halaman pendukung | 91 |
 
 ---
 
@@ -204,29 +206,29 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 | 73 | Register | `auth-register.html` | `auth-register.html` | ✅ Ada |
 | 74 | Forgot Password | `auth-forgot-password.html` | `auth-forgot-password.html` | ✅ Ada |
 | 75 | Reset Password | `auth-reset-password.html` | — | ❌ Belum; audit Phase 0 mengoreksi status lama |
-| 76 | Subscribe | `subscribe.html` | — | ❌ Belum |
+| 76 | Subscribe | `subscribe.html` | `subscribe.html` | ✅ Phase 9 |
 
 ### Errors
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 77 | 403 | `errors-403.html` | — | ❌ Belum |
+| 77 | 403 | `errors-403.html` | `errors-403.html` | ✅ Phase 9 |
 | 78 | 404 | `errors-404.html` | `errors-404.html` | ✅ Rename selesai pada Phase 0 |
-| 79 | 500 | `errors-500.html` | — | ❌ Belum |
-| 80 | 503 | `errors-503.html` | — | ❌ Belum |
+| 79 | 500 | `errors-500.html` | `errors-500.html` | ✅ Phase 9 |
+| 80 | 503 | `errors-503.html` | `errors-503.html` | ✅ Phase 9 |
 
 ### Other Pages
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 81 | Create Post | `create-post.html` | — | ❌ Belum |
-| 82 | Posts | `posts.html` | — | ❌ Belum |
+| 81 | Create Post | `create-post.html` | `create-post.html` | ✅ Phase 9 |
+| 82 | Posts | `posts.html` | `posts.html` | ✅ Phase 9 |
 | 83 | Profile | `profile.html` | `profile.html` | ✅ Ada |
-| 84 | Contact | `contact.html` | — | ❌ Belum |
+| 84 | Contact | `contact.html` | `contact.html` | ✅ Phase 9 |
 | 85 | Invoice | `invoice.html` | `invoice.html` | ✅ Ada |
 
 ### Multilevel
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 86 | Multilevel (nested menu demo) | inline di `index.html` | — | ❌ Belum (demo nested dropdown) |
+| 86 | Multilevel (nested menu demo) | inline di `index.html` | `multilevel.html` | ✅ Phase 9; tiga tingkat |
 
 ---
 
@@ -267,38 +269,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 ✅ timeline.html
 ```
 
-**Total: 83 file HTML aktual; 77 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 91 file HTML aktual; 85 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (9 entri target tersisa)
+## ❌ Yang Perlu Dibuat (1 entri target tersisa)
 
-### 🔴 Prioritas Tinggi (inti dashboard)
-
-### 🟢 Prioritas Rendah (visual & library)
-
-### ✅ Maps (Phase 8 selesai; Google Maps butuh API key)
-- [x] `gmaps-simple.html` — Google Maps simple
-- [x] `gmaps-marker.html` — Google Maps marker
-- [x] `gmaps-multiple-marker.html` — Multiple markers
-- [x] `gmaps-route.html` — Direction route
-- [x] `gmaps-advanced-route.html` — Advanced route
-- [x] `gmaps-draggable-marker.html` — Draggable marker
-- [x] `gmaps-geocoding.html` — Geocoding search
-- [x] `gmaps-geolocation.html` — User geolocation
-- [x] `vector-map.html` — Vector map (jvectormap)
-
-### 🟤 Halaman khusus
-- [ ] `subscribe.html` — Subscribe page
-- [ ] `errors-403.html` — Error 403
-- [x] `errors-404.html` — Error 404 (rename selesai pada Phase 0)
-- [ ] `auth-reset-password.html` — Form reset password; belum tersedia saat audit
-- [ ] `errors-500.html` — Error 500
-- [ ] `errors-503.html` — Error 503
-- [ ] `create-post.html` — Buat post
-- [ ] `posts.html` — Daftar post
-- [ ] `contact.html` — Halaman kontak
-- [ ] **Nested multilevel menu demo** — Submenu 3-level di sidebar
+- [ ] `auth-reset-password.html` — Form reset password; belum tersedia saat audit Phase 9.
 
 ---
 
@@ -374,6 +351,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 - [x] GLightbox MIT menggantikan LightGallery untuk demo lightbox; Owl Carousel dimuat lokal bersama jQuery hanya pada halaman demo terkait.
 - [x] Bootstrap Carousel memiliki hero, grup kartu, dan caption; Owl menyediakan mode dasar, autoplay dengan jeda, dan navigasi thumbnail. Timeline memiliki alur vertikal, zigzag, dan lampiran gambar.
 - [x] `npm run build` menghasilkan 74 halaman; **49 tes browser lulus**, termasuk interaksi media dan regresi desktop/mobile.
+
+### Hasil Phase 9 — Halaman Khusus & Errors
+
+- [x] Subscribe, 403/500/503, create-post, posts, contact, dan `multilevel.html` tersedia; halaman 404 yang sudah ada diperbarui.
+- [x] Post dan subscribe menyimpan data demo di browser; form kontak hanya memberi pratinjau. Quill yang sudah dibundel dipakai ulang.
+- [x] Tiga tingkat menu sidebar membuka induk halaman aktif dan mendukung keyboard.
+- [x] `npm run build` menghasilkan 91 halaman; **57 tes browser lulus**, termasuk regresi desktop/mobile.
 
 ---
 
@@ -454,22 +438,22 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 📄 HALAMAN
 ├── Profil                     → profile.html       ✅
 ├── Invoice                    → invoice.html       ✅
-├── Kontak                     → contact.html       ❌
+├── Kontak                     → contact.html       ✅
 ├── Post                       → (group baru)
-│   ├── Buat Post              → create-post.html   ❌
-│   └── Daftar Post            → posts.html         ❌
+│   ├── Buat Post              → create-post.html   ✅
+│   └── Daftar Post            → posts.html         ✅
 ├── Autentikasi                → (dropdown bersama) ✅
 │   ├── Login                  → auth-login.html    ✅
 │   ├── Daftar                 → auth-register.html ✅
 │   ├── Lupa Password          → auth-forgot-password.html ✅
 │   ├── Reset Password         → auth-reset-password.html ❌
-│   └── Subscribe              → subscribe.html     ❌
+│   └── Subscribe              → subscribe.html     ✅
 ├── Errors                     → (group baru)
-│   ├── 403                    → errors-403.html    ❌
+│   ├── 403                    → errors-403.html    ✅
 │   ├── 404                    → errors-404.html    ✅
-│   ├── 500                    → errors-500.html    ❌
-│   └── 503                    → errors-503.html    ❌
-└── Multilevel                 → (nested dropdown demo) ❌
+│   ├── 500                    → errors-500.html    ✅
+│   └── 503                    → errors-503.html    ✅
+└── Multilevel                 → multilevel.html (3 tingkat) ✅
 
 🚀 MULAI MEMBANGUN
 ├── Halaman Kosong             → blank.html         ✅
@@ -482,9 +466,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **5 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 83 (77 target + 6 halaman pendukung)
-Sudah selesai: 77/86 (89.5%)
-Belum selesai: 9/86 (10.5%)
+Total file HTML aktual: 91 (85 target + 6 halaman pendukung)
+Sudah selesai: 85/86 (98.8%)
+Belum selesai: 1/86 (1.2%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -504,18 +488,18 @@ Belum selesai: 9/86 (10.5%)
 - [x] **Timeline**: 1/1
 - [x] **Google Maps**: 8/8
 - [x] **Vector Map**: 1/1
-- [ ] **Auth**: 3/5 (Reset Password dan Subscribe belum)
-- [ ] **Errors**: 1/4 (404 via `errors-404.html`)
-- [x] **Other Pages**: 2/5 (Profile, Invoice)
-- [ ] **Nested multilevel demo**: 0/1
+- [ ] **Auth**: 4/5 (Reset Password belum)
+- [x] **Errors**: 4/4
+- [x] **Other Pages**: 5/5 (Profile, Invoice, Contact, Create Post, Posts)
+- [x] **Nested multilevel demo**: 1/1
 
 ---
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Phase 0–8 selesai**: seluruh halaman Maps aktif; Google Maps meminta API key browser.
-2. **Lanjut Phase 9 — Halaman Khusus & Errors** sesuai `PHASE-PLAN.md`.
+1. **Phase 0–9 selesai**: seluruh halaman khusus dan error Phase 9 aktif.
+2. **Lanjut Phase 10 — Polish & QA** sesuai `PHASE-PLAN.md`; periksa juga apakah reset password perlu dibuat untuk menutup satu entri target yang tersisa.
 
 ---
 
-> 📌 **Setelah Phase 8**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Setelah Phase 9**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

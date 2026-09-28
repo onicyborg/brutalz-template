@@ -101,6 +101,8 @@ button,a,input,select,textarea { -webkit-tap-highlight-color: transparent; }
 .submenu-chevron { margin-left:auto; font-size:20px; line-height:1; transition:transform .2s; }
 .sidebar-group-toggle[aria-expanded="true"] .submenu-chevron { transform:rotate(180deg); }
 .sidebar-submenu { list-style:none; padding:6px 0 8px 24px; margin:8px 0 8px 22px; border-left:2px solid #d0d1c7; }
+.sidebar-submenu .sidebar-group-toggle { padding:7px 9px; font-size:12px; }
+.sidebar-submenu .sidebar-submenu { margin:3px 0 3px 9px; padding:4px 0 4px 10px; }
 .sidebar-sub-link { display:block; padding:7px 10px; margin:2px 0; border:1.5px solid transparent; border-radius:5px; text-decoration:none; font-size:12px; color:var(--neo-muted); }
 .sidebar-sub-link:hover { color:var(--neo-ink); background:#e2e2d8; }
 .sidebar-sub-link.active { color:var(--neo-ink); font-weight:700; background:var(--neo-purple); border-color:var(--neo-ink); box-shadow:2px 2px 0; }

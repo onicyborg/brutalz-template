@@ -56,10 +56,14 @@ Tidak perlu `npm install` untuk melihat template. Instalasi npm hanya diperlukan
 | `auth-login.html` | Antarmuka login demo |
 | `auth-register.html` | Antarmuka register demo |
 | `auth-forgot-password.html` | Simulasi permintaan reset password |
+| `subscribe.html` | Landing page newsletter dengan ilustrasi SVG dan pendaftaran demo lokal |
+| `create-post.html`, `posts.html` | Editor Quill, cover, draft/publikasi lokal, pencarian dan filter post |
+| `contact.html` | Form kontak dan informasi studio contoh dalam dua kolom |
+| `multilevel.html` | Halaman tujuan demo menu sidebar tiga tingkat |
 | `invoice.html` | Invoice contoh dengan stylesheet cetak/PDF |
 | `pricing.html` | Contoh paket harga |
 | `blank.html` | Starting point halaman baru |
-| `errors-404.html` | Halaman error; konfigurasi server diperlukan untuk routing error aktual |
+| `errors-403.html`, `errors-404.html`, `errors-500.html`, `errors-503.html` | Halaman status dengan ilustrasi SVG; konfigurasi server diperlukan untuk routing error aktual |
 | `docs.html` | Dokumentasi penggunaan dan kustomisasi di browser |
 
 ## Struktur dan kustomisasi
@@ -74,6 +78,7 @@ assets/css/charts.css      Style halaman Charts Phase 5
 assets/css/icons.css       Style lima halaman Icons Phase 6
 assets/css/media.css       Style lima halaman Media Phase 7
 assets/css/maps.css        Style sembilan halaman Maps Phase 8
+assets/css/special.css     Style halaman khusus, post, kontak, dan error Phase 9
 assets/js/app.js           Interaksi demo dan penyimpanan lokal
 assets/js/workspace.js     Interaksi chat, portfolio, blog, widget, dan email lokal
 assets/js/advanced.js      Interaksi modal, notifikasi, empty state, dan pratinjau file
@@ -84,6 +89,7 @@ assets/js/icons.js         Pencarian dan salin kode ikon
 assets/js/feather-data.js  Data SVG Feather resmi, dihasilkan generator
 assets/js/media.js         Inisialisasi lightbox dan Owl Carousel
 assets/js/maps.js          Google Maps, Routes, geocoding, geolocation, dan jsVectorMap
+assets/js/special.js       Subscribe, post, kontak, dan tombol error Phase 9
 assets/js/sidebar-config.js Sumber tunggal menu sidebar dan pencarian
 assets/js/sidebar.js       Renderer, collapse, drawer, dan fokus keyboard
 assets/js/sidebar-icons.js SVG lokal, dihasilkan dari ICONS di generator
@@ -101,6 +107,7 @@ scripts/chart_pages.py    Konten overview dan enam halaman Charts Phase 5
 scripts/icon_pages.py     Konten lima halaman Icons Phase 6
 scripts/media_pages.py    Konten lima halaman Media Phase 7
 scripts/map_pages.py      Konten sembilan halaman Maps Phase 8
+scripts/special_pages.py  Konten halaman khusus dan error Phase 9
 tests/template.spec.js    Pengujian alur pengguna dengan Playwright
 tests/workspace.spec.js   Pengujian interaksi Phase 1
 tests/advanced.spec.js    Pengujian interaksi dan bundle Phase 2
@@ -110,6 +117,7 @@ tests/charts.spec.js      Pengujian keenam library grafik Phase 5
 tests/icons.spec.js       Pengujian aset, pencarian, dan salin kode ikon Phase 6
 tests/media.spec.js       Pengujian lightbox, carousel, dan timeline Phase 7
 tests/maps.spec.js        Pengujian placeholder, peta vektor, dan interaksi Maps Phase 8
+tests/special.spec.js     Pengujian subscribe, post, kontak, error, dan menu bertingkat
 ```
 
 Ubah token `--neo-*` di `assets/css/theme.css` untuk mengganti warna, shadow, dan border. File ini harus dimuat **setelah** Bootstrap CSS. Komponen tetap menggunakan kelas Bootstrap seperti `.btn`, `.card`, `.form-control`, `.modal`, `.row`, dan `.col-md-*`.
@@ -121,15 +129,15 @@ python3 -m pip install -r requirements-build.txt
 npm run build
 ```
 
-**Build menimpa 83 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
+**Build menimpa 91 file HTML hasil generate.** Generator otomatis memberi indentasi dan baris yang mudah dibaca pada semua halaman, termasuk contoh markup serta data JSON, lalu memeriksa struktur dan kontennya sebelum menulis file. Simpan perubahan permanen di generator, atau gunakan file HTML baru dengan nama berbeda. Build tidak menimpa konfigurasi menu. Dependensi `lxml` hanya diperlukan saat build; halaman statis tetap dapat dibuka tanpa instalasi Python package.
 
 ## Fondasi sidebar — Phase 0
 
 `sidebar-config.js` berisi array `{ group, items }`. Item halaman memakai `{ page, label, icon }`; item grup memakai `{ id, label, icon, children }`. Nilai `page` sama dengan `data-page` dan nama HTML tanpa ekstensi. Gunakan ID grup yang unik. Array harus valid JSON karena generator juga membacanya untuk judul halaman.
 
-Semua 83 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; halaman Phase 7 yang memerlukan plugin menambah `media.js`; dan halaman Phase 8 menambah `maps.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
+Semua 91 halaman memakai `<div id="sidebar-root"></div>`. Urutan script dasar: Bootstrap bundle → `sidebar-config.js` → `sidebar-icons.js` → `sidebar.js` → `app.js`. Halaman Phase 1 menambah `workspace.js`; Phase 2 `advanced.js`; Phase 3 `forms.js`; Phase 4 `tables.js`; Phase 5 `charts.js`; Phase 6 `icons.js`; halaman Phase 7 yang memerlukan plugin menambah `media.js`; halaman Phase 8 menambah `maps.js`; dan halaman Phase 9 menambah `special.js`. Bundle lain hanya dimuat pada halaman demo yang memerlukannya. Menambah atau mengganti item menu langsung mengubah sidebar dan pencarian pada semua halaman tanpa build ulang. Rebuild diperlukan jika judul/breadcrumb HTML juga berubah.
 
-Sidebar membuka grup halaman aktif secara otomatis. Di mobile, drawer mendukung backdrop, Escape, focus trap, dan pengembalian fokus. Halaman autentikasi/error menggunakan drawer yang sama melalui tombol menu pada semua ukuran layar agar layout standalone tetap nyaman.
+Sidebar membuka grup halaman aktif secara otomatis. Di mobile, drawer mendukung backdrop, Escape, focus trap, dan pengembalian fokus. Halaman autentikasi, subscribe, dan error menggunakan drawer yang sama melalui tombol menu pada semua ukuran layar agar layout standalone tetap nyaman.
 
 Topbar/footer aplikasi tetap inline dari generator. Utilitas tersedia: `.stat-card`, `.timeline` (berisi `.timeline-item`), `.map-card` (dengan `.map-viewport`), `.gallery-grid`, dan `.code-block`. Token tema yang berlaku adalah `--neo-*`; tidak ada framework CSS tambahan.
 
@@ -138,6 +146,7 @@ Keputusan pemisahan form, tabel, dan grafik di `SIDEBAR-CHECKLIST.md` sudah dite
 ## Data dan integrasi backend
 
 - Proyek, checklist, agenda, profil, mode ringkas, chat (`brutal.chat`), dan email (`brutal.mail`) memakai localStorage. Data hanya di browser/origin yang sama. Jika storage diblokir, chat tetap berjalan dalam memori dengan notifikasi; email demo tidak akan berpindah halaman saat simpan gagal.
+- Subscribe menyimpan alamat contoh pada `brutal.subscribers`; form kontak hanya menampilkan pratinjau dan tidak mengirim pesan. Post disimpan di `brutal.posts` dengan cover gambar maksimal 500 KB; Quill dipakai untuk menulis, tetapi isi disimpan dan ditampilkan sebagai teks. Status terbit/draft hanya simulasi.
 - Tombol Kirim email hanya menambahkan pesan ke folder Terkirim di browser; tidak ada layanan email, penerima sungguhan, atau backend. Toolbar Bold/Italic/Underline pada compose adalah contoh visual, belum mengubah teks.
 - Dialog SweetAlert2 dan notifikasi Toastr adalah demo lokal. Dropzone menampilkan thumbnail dan progres pembacaan file di browser; antrean upload dimatikan, sehingga file tidak dikirim atau disimpan di server.
 - Statistik dan angka chart adalah **data ilustratif**, bukan agregasi proyek demo. Dropdown grafik menukar dataset contoh.
@@ -160,7 +169,7 @@ Referensi lokal yang dianalisis: `/mnt/C80A6A9E0A6A88F0/Templete Web/otika.namik
 
 Otika menyediakan admin shell, dashboard, widget, UI dasar/advanced, forms, tables, chart plugins, apps, auth, dan utility pages, dengan fondasi Bootstrap 4 dan jQuery. BRUTAL. mengambil **cakupan dan pola navigasi** sebagai acuan; markup, CSS tema, ikon, dan interaksinya dibuat ulang untuk Bootstrap 5.3.8. Tidak menyalin atau memuat aset Otika.
 
-Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE; delapan halaman Phase 2 berada di dropdown Komponen Lanjutan. Lima demo form berada di dropdown Form & Validasi; lima demo tabel berada di dropdown Tabel Data; enam library grafik berada di dropdown Grafik & Widget; lima koleksi ikon berada di dropdown Ikon. Grup Media menyediakan dua galeri, dua carousel, dan timeline. Grup Maps menyediakan delapan demo Google Maps dan peta vektor dunia. Versi ini belum mencakup pengiriman chat/email nyata atau upload server. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
+Komponen inti memiliki 16 halaman terpisah di bawah dropdown Komponen UI. Delapan halaman Widgets, Apps, dan Email berada di dropdown WORKSPACE; delapan halaman Phase 2 berada di dropdown Komponen Lanjutan. Lima demo form berada di dropdown Form & Validasi; lima demo tabel berada di dropdown Tabel Data; enam library grafik berada di dropdown Grafik & Widget; lima koleksi ikon berada di dropdown Ikon. Grup Media menyediakan dua galeri, dua carousel, dan timeline. Grup Maps menyediakan delapan demo Google Maps dan peta vektor dunia. Grup Halaman berisi subscribe, empat error, kontak, post, dan demo menu tiga tingkat. Versi ini belum mencakup pengiriman chat/email nyata atau upload server. Tambahkan dependency saat kebutuhan konkret muncul; pin versi dan muat hanya pada halaman yang memakainya.
 
 ## Verifikasi
 
