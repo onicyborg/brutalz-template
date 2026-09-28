@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Chart.js — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/charts.css">
+</head>
+<body data-page="chart-chartjs">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Grafik &amp; Widget</li>
+            <li class="breadcrumb-item active" aria-current="page">Chart.js</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Chart.js, dengan gaya sendiri.</h1>
+          <p>Enam jenis grafik interaktif dan showcase SVG yang sudah ada.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <div class="stats-grid">
+        <section class="card stat-card bg-purple">
+          <div class="stat-top">
+            <span class="stat-label">Total pendapatan</span>
+            <span class="stat-icon">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M3 7V4h15v3M3 7h18v14H3zm12 5h6v5h-6z"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">Rp48,5 jt</div>
+          <div class="stat-meta">
+            <strong>↗ +18,6%</strong>
+            <span>bulan ini</span>
+          </div>
+        </section>
+        <section class="card stat-card bg-green">
+          <div class="stat-top">
+            <span class="stat-label">Proyek aktif</span>
+            <span class="stat-icon">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M3 7V4h6l3 3h9v13H3z"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">24</div>
+          <div class="stat-meta">
+            <strong>↗ +4 proyek</strong>
+            <span>bulan ini</span>
+          </div>
+        </section>
+        <section class="card stat-card bg-orange">
+          <div class="stat-top">
+            <span class="stat-label">Total pelanggan</span>
+            <span class="stat-icon">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <circle cx="9" cy="8" r="3"></circle>
+                <path d="M3 21v-3a6 6 0 0 1 12 0v3m0-16a3 3 0 0 1 0 6m3 4a5 5 0 0 1 3 4v2"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">1.284</div>
+          <div class="stat-meta">
+            <strong>↗ +12,8%</strong>
+            <span>bulan ini</span>
+          </div>
+        </section>
+        <section class="card stat-card bg-yellow">
+          <div class="stat-top">
+            <span class="stat-label">Tingkat konversi</span>
+            <span class="stat-icon">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="m3 17 6-6 4 4 8-10m-6 0h6v6"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">4,82%</div>
+          <div class="stat-meta">
+            <strong>↗ +2,1%</strong>
+            <span>bulan ini</span>
+          </div>
+        </section>
+      </div>
+      <div class="dashboard-grid mt-4">
+        <section class="card">
+          <div class="card-body">
+            <div class="panel-heading">
+              <div>
+                <h2>Arus pendapatan</h2>
+                <p>Sedikit progres, setiap hari.</p>
+              </div>
+              <select class="form-select form-select-sm w-auto" id="chartPeriod" aria-label="Periode grafik">
+                <option value="current">6 bulan terakhir</option>
+                <option value="previous">6 bulan sebelumnya</option>
+              </select>
+            </div>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <div>
+                <span class="chart-summary" id="chartTotal">Rp78.000.000</span>
+                <span class="badge bg-green" id="chartGrowth">↗ 23,8%</span>
+              </div>
+              <div class="chart-legend">
+                <span>
+                  <i class="legend-dot bg-purple"></i>
+                  Pendapatan
+                </span>
+                <span>
+                  <i class="legend-dot bg-green"></i>
+                  Target
+                </span>
+              </div>
+            </div>
+            <svg class="revenue-chart" viewbox="0 0 580 240" role="img" aria-labelledby="revenueChartTitle">
+              <title id="revenueChartTitle">Pendapatan contoh April–September: 8, 11, 9, 16, 14, 20 juta rupiah. Target: 5, 8, 7, 11, 9, 14 juta.</title>
+              <line x1="40" y1="30" x2="560" y2="30" class="chart-grid"></line>
+              <text x="0" y="34" class="chart-label">20 jt</text>
+              <line x1="40" y1="78" x2="560" y2="78" class="chart-grid"></line>
+              <text x="0" y="82" class="chart-label">15 jt</text>
+              <line x1="40" y1="126" x2="560" y2="126" class="chart-grid"></line>
+              <text x="0" y="130" class="chart-label">10 jt</text>
+              <line x1="40" y1="174" x2="560" y2="174" class="chart-grid"></line>
+              <text x="0" y="178" class="chart-label">5 jt</text>
+              <path id="chartArea" d="M40 145 144 116 248 134 352 68 456 87 560 30V205H40Z" fill="#c4a8f555"></path>
+              <path id="chartTarget" d="M40 174 144 145 248 155 352 116 456 135 560 87" fill="none" stroke="#9ebba3" stroke-width="2.5" stroke-dasharray="5 5"></path>
+              <path id="chartLine" d="M40 145 144 116 248 134 352 68 456 87 560 30" fill="none" stroke="#232420" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <g id="chartDots">
+                <circle cx="40" cy="145" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+                <circle cx="144" cy="116" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+                <circle cx="248" cy="134" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+                <circle cx="352" cy="68" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+                <circle cx="456" cy="87" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+                <circle cx="560" cy="30" r="4" fill="#c4a8f5" stroke="#232420" stroke-width="2"></circle>
+              </g>
+              <text x="40" y="227" text-anchor="middle" class="chart-label">Apr</text>
+              <text x="144" y="227" text-anchor="middle" class="chart-label">Mei</text>
+              <text x="248" y="227" text-anchor="middle" class="chart-label">Jun</text>
+              <text x="352" y="227" text-anchor="middle" class="chart-label">Jul</text>
+              <text x="456" y="227" text-anchor="middle" class="chart-label">Agu</text>
+              <text x="560" y="227" text-anchor="middle" class="chart-label">Sep</text>
+            </svg>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-body">
+            <div class="panel-heading">
+              <div>
+                <h2>Dari mana mereka datang?</h2>
+                <p>Sumber kunjungan bulan ini</p>
+              </div>
+            </div>
+            <div class="donut" role="img" aria-label="Kunjungan: organik 48 persen, langsung 32 persen, referral 20 persen">
+              <div class="donut-hole">
+                <strong>8.542</strong>
+                <small>Total pengunjung</small>
+              </div>
+            </div>
+            <div class="source-row">
+              <i class="legend-dot bg-purple"></i>
+              Pencarian organik
+              <strong>48%</strong>
+            </div>
+            <div class="source-row">
+              <i class="legend-dot bg-green"></i>
+              Kunjungan langsung
+              <strong>32%</strong>
+            </div>
+            <div class="source-row">
+              <i class="legend-dot bg-yellow"></i>
+              Referral &amp; sosial
+              <strong>20%</strong>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="card mt-4 mb-4">
+        <div class="card-body">
+          <h2>Aktivitas workspace</h2>
+          <div class="mt-4">
+            <div class="timeline-item">
+              <h3>Website studio masuk tahap review</h3>
+              <p class="small text-muted mb-0">Hari ini, 09.30 · oleh Alex Darma</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Brand identity diselesaikan</h3>
+              <p class="small text-muted mb-0">Kemarin, 16.45 · oleh Nina Sari</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Proyek baru ditambahkan</h3>
+              <p class="small text-muted mb-0">25 September, 10.00 · oleh Rio Kurnia</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="row g-4">
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Line chart</h2>
+              <p class="small text-muted">Tren pendapatan selama enam bulan.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsLine" role="img" aria-label="Line chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Bar chart</h2>
+              <p class="small text-muted">Perbandingan progres per kanal.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsBar" role="img" aria-label="Bar chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Doughnut chart</h2>
+              <p class="small text-muted">Komposisi sumber kunjungan.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsDoughnut" role="img" aria-label="Doughnut chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Pie chart</h2>
+              <p class="small text-muted">Pembagian status proyek.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsPie" role="img" aria-label="Pie chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Radar chart</h2>
+              <p class="small text-muted">Profil keterampilan tim kreatif.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsRadar" role="img" aria-label="Radar chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6">
+          <section class="card h-100">
+            <div class="card-body">
+              <h2>Mixed chart</h2>
+              <p class="small text-muted">Pendapatan dan target dalam satu bidang.</p>
+              <div class="chart-demo-wrap">
+                <canvas id="chartjsMixed" role="img" aria-label="Mixed chart: data ilustratif"></canvas>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/chartjs/chart.umd.min.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>

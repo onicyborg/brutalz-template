@@ -18,19 +18,21 @@
 
 > **Audit Phase 4 — 28 September 2026:** showcase tabel proyek dipindah ke `basic-table.html`, `tables.html` menjadi overview, dan empat halaman tabel lanjutan ditambahkan. Kini terdapat **58 file HTML aktual**: 53 entri target dan 5 halaman pendukung; 33 entri target masih menunggu phase berikutnya.
 
+> **Audit Phase 5 — 28 September 2026:** showcase SVG dan statistik dipindah ke `chart-chartjs.html`, `charts.html` menjadi overview, dan enam library grafik aktif. Kini terdapat **64 file HTML aktual**: 58 entri target dan 6 halaman pendukung; 28 entri target masih menunggu phase berikutnya.
+
 | Status | Jumlah |
 | --- | --- |
-| ✅ Entri target dengan halaman tersedia | 53 |
-| ❌ Entri target belum tersedia | 33 (termasuk demo multilevel) |
+| ✅ Entri target dengan halaman tersedia | 58 |
+| ❌ Entri target belum tersedia | 28 (termasuk demo multilevel) |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 5 halaman pendukung | 58 |
+| File HTML aktual, termasuk 6 halaman pendukung | 64 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **58 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup utama** dan **64 tautan halaman** dari `assets/js/sidebar-config.js`. Grup/halaman phase berikutnya baru ditautkan setelah tersedia.
 
 ---
 
@@ -48,7 +50,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 | 3 | Chart Widgets | `widget-chart.html` | `widget-chart.html` | ✅ Phase 1 |
 | 4 | Data Widgets | `widget-data.html` | `widget-data.html` | ✅ Phase 1 |
 
-> **Catatan**: Dropdown Widgets sudah tersedia. Showcase grafik `charts.html` tetap terpisah sampai Phase 5.
+> **Catatan**: Dropdown Widgets tetap terpisah dari enam showcase library pada dropdown Grafik & Widget.
 
 ### Apps
 | # | Item | File Otika | File BRUTAL. | Status |
@@ -127,12 +129,12 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ### Charts
 | # | Item | File Otika | File BRUTAL. | Status |
 | --- | --- | --- | --- | --- |
-| 47 | amChart | `chart-amchart.html` | — | ❌ Belum |
-| 48 | apexchart | `chart-apexchart.html` | — | ❌ Belum |
-| 49 | eChart | `chart-echart.html` | — | ❌ Belum |
-| 50 | Chartjs | `chart-chartjs.html` | `charts.html` | ✅ Showcase grafik dasar tersedia (SVG); migrasi dan integrasi Chart.js pada Phase 5 |
-| 51 | Sparkline | `chart-sparkline.html` | — | ❌ Belum |
-| 52 | Morris | `chart-morris.html` | — | ❌ Belum |
+| 47 | amChart | `chart-amchart.html` | `chart-amchart.html` | ✅ Phase 5 |
+| 48 | apexchart | `chart-apexchart.html` | `chart-apexchart.html` | ✅ Phase 5 |
+| 49 | eChart | `chart-echart.html` | `chart-echart.html` | ✅ Phase 5 |
+| 50 | Chartjs | `chart-chartjs.html` | `chart-chartjs.html` | ✅ Phase 5; SVG lama tetap tersedia |
+| 51 | Sparkline | `chart-sparkline.html` | `chart-sparkline.html` | ✅ Phase 5 |
+| 52 | Morris | `chart-morris.html` | `chart-morris.html` | ✅ Phase 5 |
 
 ### Icons
 | # | Item | File Otika | File BRUTAL. | Status |
@@ -248,22 +250,20 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 ✅ basic-table.html        ✅ advance-table.html
 ✅ datatables.html         ✅ export-table.html
 ✅ editable-table.html
+✅ chart-chartjs.html      ✅ chart-apexchart.html
+✅ chart-amchart.html      ✅ chart-echart.html
+✅ chart-sparkline.html    ✅ chart-morris.html
 ```
 
-**Total: 58 file HTML aktual; 53 masuk pemetaan target dan 5 halaman pendukung.** `forms.html` dan `tables.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
+**Total: 64 file HTML aktual; 58 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung. Baris reset password tetap belum tersedia.
 
 ---
 
-## ❌ Yang Perlu Dibuat (33 entri target tersisa)
+## ❌ Yang Perlu Dibuat (28 entri target tersisa)
 
 ### 🔴 Prioritas Tinggi (inti dashboard)
 
 ### 🟢 Prioritas Rendah (visual & library)
-- [ ] `chart-amchart.html` — amCharts library
-- [ ] `chart-apexchart.html` — ApexCharts library
-- [ ] `chart-echart.html` — ECharts library
-- [ ] `chart-sparkline.html` — Sparkline charts
-- [ ] `chart-morris.html` — Morris.js charts
 - [ ] `icon-font-awesome.html` — Font Awesome showcase
 - [ ] `icon-material.html` — Material Icons
 - [ ] `icon-ionicons.html` — Ionicons
@@ -307,7 +307,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 | `404.html` → `errors-404.html` | Rename; seluruh tautan aplikasi dan generator memakai nama baru | ✅ Selesai Phase 0; tidak menyisakan alias |
 | `forms.html` | Pindah showcase dasar ke `basic-form.html`, jadikan `forms.html` overview, tambah 4 halaman lanjutan | ✅ Selesai Phase 3 (Opsi A) |
 | `tables.html` | Pindah showcase ke `basic-table.html`, jadikan `tables.html` overview, tambah 4 halaman lanjutan | ✅ Selesai Phase 4 |
-| `charts.html` | Pindah showcase ke `chart-chartjs.html`, jadikan `charts.html` overview, tambah demo per library | Diputuskan; implementasi pada Phase 5. Grafik saat ini masih SVG, belum Chart.js |
+| `charts.html` | Pindah showcase ke `chart-chartjs.html`, jadikan `charts.html` overview, tambah demo per library | ✅ Selesai Phase 5; showcase SVG lama dan enam demo Chart.js tersedia |
 
 ### Hasil fondasi Phase 0
 
@@ -351,6 +351,13 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 - [x] Empat demo lanjutan tersedia di dropdown Tabel Data: sorting/variasi Bootstrap, DataTables, ekspor, dan editor sel.
 - [x] DataTables, Buttons, JSZip, dan pdfMake disimpan lokal. Editor sel menggunakan JavaScript vanilla dengan validasi dan penyimpanan demo terpisah di localStorage.
 - [x] `npm run build` menghasilkan 58 halaman; **34 tes browser lulus**, termasuk unduhan Excel/CSV/PDF, print, dan regresi desktop/mobile.
+
+### Hasil Phase 5 — Charts
+
+- [x] `charts.html` menjadi overview; statistik, SVG, donut, dan timeline lama pindah ke `chart-chartjs.html` bersama enam demo Chart.js.
+- [x] Enam library grafik tersedia di dropdown Grafik & Widget: Chart.js, ApexCharts, amCharts 4, Apache ECharts, Sparkline, dan Morris.js.
+- [x] Semua bundle dimuat lokal per halaman dengan warna tema; amCharts mempertahankan branding, ApexCharts dipin pada rilis MIT, dan Morris.js memakai patch keamanan upstream.
+- [x] `npm run build` menghasilkan 64 halaman; **41 tes browser lulus**, termasuk rendering grafik dan regresi desktop/mobile.
 
 ---
 
@@ -400,13 +407,14 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 │   ├── Datatable              → datatables.html    ✅
 │   ├── Export Tabel           → export-table.html  ✅
 │   └── Tabel Editable         → editable-table.html ✅
-├── Grafik & Widget            → charts.html        ✅ (pemisahan Phase 5)
-│   ├── Chart.js               → (merge)
-│   ├── amChart                → chart-amchart.html ❌
-│   ├── apexchart              → chart-apexchart.html ❌
-│   ├── eChart                 → chart-echart.html  ❌
-│   ├── Sparkline              → chart-sparkline.html ❌
-│   └── Morris                 → chart-morris.html  ❌
+├── Grafik & Widget            → (dropdown aktif)
+│   ├── Semua grafik           → charts.html        ✅
+│   ├── Chart.js               → chart-chartjs.html ✅
+│   ├── amChart                → chart-amchart.html ✅
+│   ├── apexchart              → chart-apexchart.html ✅
+│   ├── eChart                 → chart-echart.html  ✅
+│   ├── Sparkline              → chart-sparkline.html ✅
+│   └── Morris                 → chart-morris.html  ✅
 └── Ikon                       → (group baru)
     ├── Font Awesome           → icon-font-awesome.html ❌
     ├── Material Design        → icon-material.html ❌
@@ -458,9 +466,9 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **4 grup u
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 58 (53 target + 5 halaman pendukung)
-Sudah selesai: 53/86 (61.6%)
-Belum selesai: 33/86 (38.4%)
+Total file HTML aktual: 64 (58 target + 6 halaman pendukung)
+Sudah selesai: 58/86 (67.4%)
+Belum selesai: 28/86 (32.6%)
 ```
 
 ### Checklist Ringkasan per Kategori
@@ -473,7 +481,7 @@ Belum selesai: 33/86 (38.4%)
 - [x] **Advanced Components**: 9/9 (termasuk Pricing)
 - [x] **Forms**: 5/5 (overview di forms.html)
 - [x] **Tables**: 5/5 (overview di tables.html)
-- [ ] **Charts**: 1/6 showcase dasar SVG; integrasi library pada Phase 5
+- [x] **Charts**: 6/6 (overview di `charts.html`)
 - [ ] **Icons**: 0/5
 - [ ] **Gallery**: 0/2
 - [ ] **Sliders**: 0/2
@@ -489,14 +497,10 @@ Belum selesai: 33/86 (38.4%)
 
 ## 🛠️ Langkah Selanjutnya yang Disarankan
 
-1. **Keputusan struktur selesai pada Phase 0**: pecah Form/Tabel/Chart pada Phase 3/4/5 sesuai tabel keputusan.
-2. **Lanjutkan grup sidebar baru**: Widgets, Apps, Email, dan Advanced Components selesai; Icons, Media, Maps, Errors, Posts menyusul.
-3. **Phase 1–4 selesai**: Workspace Inti, Advanced Components, Forms, dan Tables sudah aktif.
-4. **Lanjut Phase 5**: pecah Charts sesuai keputusan Phase 0.
-5. **Charts & Icons**: tergantung library mana yang akan di-include.
-6. **Maps & Galeri**: optional, butuh API key (Google Maps) / library tambahan.
-7. **Error pages**: cepat dibuat, tidak butuh library.
+1. **Phase 0–5 selesai**: keputusan struktur dan halaman Workspace, Komponen Lanjutan, Forms, Tables, serta Charts sudah diterapkan.
+2. **Lanjut Phase 6 — Icons**: siapkan lima halaman ikon dan dropdown sesuai `PHASE-PLAN.md`.
+3. **Fase berikutnya**: Media, Maps, Errors, dan Posts mengikuti urutan rencana; Google Maps membutuhkan API key.
 
 ---
 
-> 📌 **Setelah Phase 2**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.
+> 📌 **Setelah Phase 5**: Tambahkan halaman baru phase berikutnya ke `assets/js/sidebar-config.js` setelah tersedia. Sidebar dan pencarian seluruh halaman otomatis diperbarui. Jangan menambahkan sidebar inline per-file. Struktur akhir di atas masih mencakup target phase mendatang.

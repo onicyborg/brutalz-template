@@ -480,42 +480,49 @@ Setelah seluruh phase selesai, struktur `sidebar` akan menjadi (konsisten di set
 
 # 🟪 PHASE 5 — Charts (Per Library)
 
-> **Tujuan**: Memperkaya showcase chart. Saat ini hanya `charts.html` (1 chart SVG inline). Target: 6 library.
+> **Tujuan**: Memperkaya showcase chart yang sebelumnya hanya `charts.html` (1 chart SVG inline). Target: 6 library.
 
 ## 5.0 Refactor `charts.html`
-- [ ] Pindahkan konten chart existing ke `chart-chartjs.html`.
-- [ ] `charts.html` jadi overview (daftar library + ringkasan).
+- [x] Pindahkan konten chart existing ke `chart-chartjs.html`.
+- [x] `charts.html` jadi overview (daftar library + ringkasan).
 
 ## 5.1 `chart-chartjs.html`
-- [ ] Library: **Chart.js** (versi Otika).
-- [ ] Demo: Line, Bar, Doughnut, Pie, Radar, Mixed.
-- [ ] Styling chart color pakai palet neobrutalism.
+- [x] Library: **Chart.js** lokal.
+- [x] Demo: Line, Bar, Doughnut, Pie, Radar, Mixed.
+- [x] Styling chart color pakai palet neobrutalism.
 
 ## 5.2 `chart-apexchart.html`
-- [ ] Library: **ApexCharts** (sudah dipakai Otika di dashboard).
-- [ ] Demo: Line area, Column, Pie, Radial Bar, Heatmap.
-- [ ] Styling color neobrutalism.
+- [x] Library: **ApexCharts** 3.54.1 (rilis MIT), dimuat lokal.
+- [x] Demo: Line area, Column, Pie, Radial Bar, Heatmap.
+- [x] Styling color neobrutalism.
 
 ## 5.3 `chart-amchart.html`
-- [ ] Library: **amCharts 4** atau **5** (sesuai Otika).
-- [ ] Demo: Bar, Pie, Line, Map (kalau ringan).
+- [x] Library: **amCharts 4** sesuai Otika, dengan branding bawaan tetap terlihat.
+- [x] Demo: Bar, Pie, Line. Map opsional ditunda agar tidak memuat geodata besar.
 
 ## 5.4 `chart-echart.html`
-- [ ] Library: **Apache ECharts**.
-- [ ] Demo: Line, Bar, Pie, Scatter, Candlestick (opsional).
+- [x] Library: **Apache ECharts** lokal.
+- [x] Demo: Line, Bar, Pie, Scatter, Candlestick.
 
 ## 5.5 `chart-sparkline.html`
-- [ ] Library: **Sparkline** (jquery.sparkline atau vanilla).
-- [ ] Demo: sparkline di dalam card stat (line, bar, tristate, pie).
+- [x] Library: **jQuery Sparkline** lokal.
+- [x] Demo: sparkline di dalam card stat (line, bar, tristate, pie).
 
 ## 5.6 `chart-morris.html`
-- [ ] Library: **Morris.js** (membutuhkan jQuery + Raphael).
-- [ ] Demo: Line, Area, Bar, Donut.
+- [x] Library: **Morris.js** 0.5.1 dari commit upstream yang memperbaiki XSS label, beserta jQuery + Raphael lokal.
+- [x] Demo: Line, Area, Bar, Donut.
 
 ## 🚦 Keluar Phase 5 jika:
 - ✅ 6 file chart library aktif.
 - ✅ Semua library terinstal di `assets/bundles/`.
 - ✅ Color palette konsisten neobrutalism.
+
+### Hasil Phase 5 — 28 September 2026
+
+- `charts.html` menjadi overview; statistik, SVG chart, donut, dan timeline lama pindah ke `chart-chartjs.html` bersama enam demo Chart.js. Dashboard tetap memakai SVG lokal.
+- Enam halaman library tersedia di dropdown **Grafik & Widget**. Setiap bundle dipin/dicatat dan hanya dimuat pada halaman terkait.
+- amCharts mempertahankan branding sesuai lisensi gratisnya. ApexCharts memakai versi MIT 3.54.1; Morris memakai commit upstream 0.5.1 yang memuat perbaikan XSS tooltip.
+- `npm run build` menghasilkan 64 HTML rapi; `npm test` **41 passed**, termasuk grafik dan regresi desktop/mobile.
 
 ---
 
@@ -742,7 +749,7 @@ Update checklist di bawah setiap phase selesai. Hubungkan dengan `SIDEBAR-CHECKL
 | 2 | Building Blocks Lanjutan | 8 (avatar, card, modal, sweet-alert, toastr, empty-state, multiple-upload, tabs) | sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 24 tes lulus |
 | 3 | Forms Lanjutan | 5 (basic-form + 4 lanjutan) | forms.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 29 tes lulus |
 | 4 | Tables Lanjutan | 5 (basic-table + 4 lanjutan) | tables.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 34 tes lulus |
-| 5 | Charts | 5 (+refactor charts.html) | 1 | ⬜ |
+| 5 | Charts | 6 (Chart.js + 5 library lain) | charts.html, sidebar, generator, CSS/JS, bundle lokal, dokumentasi | ✅ Selesai — 41 tes lulus |
 | 6 | Icons | 5 | 0 | ⬜ |
 | 7 | Media | 5 | 0 | ⬜ |
 | 8 | Maps | 9 | 0 | ⬜ |

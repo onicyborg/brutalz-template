@@ -1,0 +1,17 @@
+/* Phase 5 chart showcases. Vendor bundles are loaded only on matching pages. */
+.chart-index-card { transition: transform .15s ease, box-shadow .15s ease; }
+.chart-index-card:hover,
+.chart-index-card:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neo-ink); }
+.chart-demo-wrap { height: 270px; min-width: 0; position: relative; }
+.chart-demo-wrap canvas,
+.chart-demo { display: block; width: 100%; height: 100%; min-width: 0; }
+.chart-demo-wrap .apexcharts-canvas { max-width: 100%; }
+.chart-spark-value { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 850; line-height: 1.1; margin-bottom: 1rem; }
+.sparkline-wrap { min-height: 80px; display: flex; align-items: center; }
+.sparkline-wrap canvas { max-width: 100%; }
+.morris-hover { z-index: 5; }
+
+@media (max-width: 575.98px) {
+  .chart-demo-wrap { height: 240px; }
+  .chart-demo-wrap .amcharts-chart-div { max-width: 100%; }
+}

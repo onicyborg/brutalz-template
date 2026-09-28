@@ -9,15 +9,22 @@
     "test": "playwright test"
   },
   "devDependencies": {
+    "@amcharts/amcharts4": "4.10.40",
     "@playwright/test": "1.58.2",
+    "apexcharts": "3.54.1",
+    "chart.js": "4.5.1",
     "datatables.net-bs5": "2.3.8",
     "datatables.net-buttons-bs5": "3.2.6",
     "dropzone": "5.9.3",
+    "echarts": "6.1.0",
     "jquery": "3.7.1",
+    "jquery-sparkline": "2.4.0",
     "jquery-steps": "1.1.0",
     "jszip": "3.10.2",
+    "morris.js": "https://codeload.github.com/morrisjs/morris.js/tar.gz/14530d0733801d5bef1264cf3d062ecace7e326b",
     "pdfmake": "0.2.23",
     "quill": "2.0.3",
+    "raphael": "2.3.0",
     "select2": "4.0.13",
     "sweetalert2": "11.26.25",
     "toastr": "2.1.4"

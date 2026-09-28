@@ -68,7 +68,15 @@ window.BRUTAL_SIDEBAR = [
       {"page":"export-table","label":"Export Table"},
       {"page":"editable-table","label":"Editable Table"}
     ]},
-    {"page":"charts","label":"Grafik & widget","icon":"chart"}
+    {"id":"chartsMenu","label":"Grafik & Widget","icon":"chart","children":[
+      {"page":"charts","label":"Semua grafik"},
+      {"page":"chart-chartjs","label":"Chart.js"},
+      {"page":"chart-apexchart","label":"ApexCharts"},
+      {"page":"chart-amchart","label":"amCharts 4"},
+      {"page":"chart-echart","label":"Apache ECharts"},
+      {"page":"chart-sparkline","label":"Sparkline"},
+      {"page":"chart-morris","label":"Morris.js"}
+    ]}
   ]},
   {"group":"HALAMAN","items":[
     {"page":"profile","label":"Profil & pengaturan","icon":"user"},

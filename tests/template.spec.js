@@ -87,7 +87,7 @@ test('calendar event persists in the chosen month and chart changes period', asy
   await page.getByRole('button', {name:'Launch uji'}).click();
   await expect(page.locator('#toastMessage')).toContainText('Launch uji');
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('brutal.events')).some(e => e.name==='Launch uji'))).toBeTruthy();
-  await page.goto('/charts.html');
+  await page.goto('/chart-chartjs.html');
   await page.getByLabel('Periode grafik').selectOption('previous');
   await expect(page.locator('#chartTotal')).toHaveText('Rp63.000.000');
   await expect(page.locator('#revenueChartTitle')).toContainText('Okt–Mar');

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
-  <title>Semua grafik — BRUTAL.</title>
+  <title>Apache ECharts — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/charts.css">
 </head>
-<body data-page="charts">
+<body data-page="chart-echart">
   <a class="skip-link" href="#main">Lewati ke konten</a>
   <div id="sidebar-root"></div>
   <div class="app-wrap">
@@ -24,7 +24,8 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Semua grafik</li>
+            <li class="breadcrumb-item">Grafik &amp; Widget</li>
+            <li class="breadcrumb-item active" aria-current="page">Apache ECharts</li>
           </ol>
         </nav>
       </div>
@@ -68,68 +69,68 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Setiap angka punya cerita.</h1>
-          <p>Enam pilihan pustaka grafik dengan data contoh dan warna BRUTAL.</p>
+          <h1>Apache ECharts, banyak kemungkinan.</h1>
+          <p>Lima cara melihat data, dari tren sederhana hingga candlestick.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
       <div class="row g-4">
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-chartjs.html">
+        <div class="col-xl-6">
+          <section class="card h-100">
             <div class="card-body">
-              <span class="badge bg-yellow mb-3">Chart.js</span>
-              <h2 class="fs-4">Chart.js →</h2>
-              <p class="text-muted mb-0">Line, bar, doughnut, pie, radar, dan mixed chart.</p>
+              <h2>Line chart</h2>
+              <p class="small text-muted">Tren pendapatan dan target.</p>
+              <div class="chart-demo-wrap">
+                <div id="echLine" class="chart-demo" role="img" aria-label="Line chart: data ilustratif"></div>
+              </div>
             </div>
-          </a>
+          </section>
         </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-apexchart.html">
+        <div class="col-xl-6">
+          <section class="card h-100">
             <div class="card-body">
-              <span class="badge bg-purple mb-3">ApexCharts</span>
-              <h2 class="fs-4">ApexCharts →</h2>
-              <p class="text-muted mb-0">Area, column, pie, radial, dan heatmap.</p>
+              <h2>Bar chart</h2>
+              <p class="small text-muted">Jumlah proyek per kategori.</p>
+              <div class="chart-demo-wrap">
+                <div id="echBar" class="chart-demo" role="img" aria-label="Bar chart: data ilustratif"></div>
+              </div>
             </div>
-          </a>
+          </section>
         </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-amchart.html">
+        <div class="col-xl-6">
+          <section class="card h-100">
             <div class="card-body">
-              <span class="badge bg-green mb-3">amCharts 4</span>
-              <h2 class="fs-4">amCharts 4 →</h2>
-              <p class="text-muted mb-0">Bar, pie, dan line chart dengan branding bawaan.</p>
+              <h2>Pie chart</h2>
+              <p class="small text-muted">Sumber pengunjung.</p>
+              <div class="chart-demo-wrap">
+                <div id="echPie" class="chart-demo" role="img" aria-label="Pie chart: data ilustratif"></div>
+              </div>
             </div>
-          </a>
+          </section>
         </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-echart.html">
+        <div class="col-xl-6">
+          <section class="card h-100">
             <div class="card-body">
-              <span class="badge bg-orange mb-3">Apache ECharts</span>
-              <h2 class="fs-4">Apache ECharts →</h2>
-              <p class="text-muted mb-0">Line, bar, pie, scatter, dan candlestick.</p>
+              <h2>Scatter chart</h2>
+              <p class="small text-muted">Hubungan waktu dan hasil.</p>
+              <div class="chart-demo-wrap">
+                <div id="echScatter" class="chart-demo" role="img" aria-label="Scatter chart: data ilustratif"></div>
+              </div>
             </div>
-          </a>
+          </section>
         </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-sparkline.html">
+        <div class="col-xl-6">
+          <section class="card h-100">
             <div class="card-body">
-              <span class="badge bg-blue mb-3">Sparkline</span>
-              <h2 class="fs-4">Sparkline →</h2>
-              <p class="text-muted mb-0">Grafik kecil untuk ringkasan statistik.</p>
+              <h2>Candlestick</h2>
+              <p class="small text-muted">Ilustrasi rentang nilai harian.</p>
+              <div class="chart-demo-wrap">
+                <div id="echCandle" class="chart-demo" role="img" aria-label="Candlestick: data ilustratif"></div>
+              </div>
             </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4">
-          <a class="card chart-index-card h-100 text-decoration-none text-dark" href="chart-morris.html">
-            <div class="card-body">
-              <span class="badge bg-purple mb-3">Morris.js</span>
-              <h2 class="fs-4">Morris.js →</h2>
-              <p class="text-muted mb-0">Line, area, bar, dan donut berbasis SVG.</p>
-            </div>
-          </a>
+          </section>
         </div>
       </div>
-      <p class="small text-muted mt-4">Semua angka pada showcase ini adalah data ilustratif; halaman bekerja tanpa API atau CDN.</p>
     </main>
     <footer class="app-footer">
       <span>
@@ -205,5 +206,7 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/echarts/echarts.min.js"></script>
+  <script src="assets/js/charts.js"></script>
 </body>
 </html>
