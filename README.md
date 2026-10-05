@@ -4,6 +4,16 @@ Template admin HTML statis berbahasa Indonesia, berbasis **Bootstrap 5.3.8** den
 
 **Panduan lengkap:** buka [docs.html](docs.html) melalui server lokal. Panduan tersebut mencakup setup, struktur, kustomisasi, komponen, navigasi, data lokal, integrasi backend, deployment, dan troubleshooting, dengan direktori semua halaman dan versi library.
 
+## Panduan untuk AI agent
+
+Skill lengkap tersedia di [`.agents/skills/brutal-template/SKILL.md`](.agents/skills/brutal-template/SKILL.md). Isinya mencakup konteks source template, aturan desain, dependency, penggunaan HTML tanpa framework, lifecycle React/Vue/SSR, dan integrasi Laravel Blade (layout, aset public/Vite, route, form, validasi, serta data backend).
+
+Minta agent membaca file tersebut sebelum mengimplementasikan template. Contoh:
+
+> Baca `.agents/skills/brutal-template/SKILL.md`. Gunakan template BRUTAL. dari [path template] untuk membuat dashboard dan daftar proyek pada [path aplikasi] menggunakan Laravel Blade. Ikuti route, autentikasi, dan asset pipeline aplikasi yang sudah ada.
+
+Untuk memakai skill di repository lain, salin **seluruh folder `brutal-template` termasuk `references/`** ke lokasi skill yang didukung agent, atau berikan path `SKILL.md` secara eksplisit. Sertakan akses ke aset/repository template; folder skill hanya berisi panduan Markdown. Sesuaikan framework dan scope pada instruksi di atas.
+
 ## Setup dari repository
 
 ### 1. Persyaratan
