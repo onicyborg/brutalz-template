@@ -36,7 +36,7 @@ Otika memakai SweetAlert lama dan iziToast. Phase 2 memakai SweetAlert2 dan
 Toastr seperti yang tertulis di `PHASE-PLAN.md`; keduanya dipisahkan per halaman.
 Dropzone dipakai sebagai pratinjau lokal dengan `autoProcessQueue: false`.
 Tidak ada file yang dikirim ke server. Bootstrap tetap berada di
-`bootstrap-5.3.8/` dan source vendor tidak dimodifikasi.
+`bootstrap-5.3.8/`; hanya CSS/JS runtime, source map, dan lisensinya dipertahankan. File runtime vendor tidak dimodifikasi.
 
 Phase 3 memakai CSS lokal sendiri untuk wizard, Select2, dan editor agar selaras
 dengan tema. Editor hanya menampilkan preview teks; form lanjutan dan wizard
@@ -71,3 +71,5 @@ galeri masonry, dan timeline memakai CSS/JavaScript template tanpa plugin baru.
 Phase 8 memakai jsVectorMap lokal untuk peta dunia. Google Maps dimuat hanya setelah pengunjung memasukkan API key browser; Google Maps JavaScript API tidak dibundel.
 
 Component fixes menambahkan Flatpickr 4.6.13 (MIT, https://github.com/flatpickr/flatpickr). Distribusi JS/CSS, locale `id.js`, dan `LICENSE.md` berada di `flatpickr/`. Versi dikunci di package.json; file vendor tidak dimodifikasi. Kontrol global memakai `assets/js/controls.js` dan `assets/css/controls.css`.
+
+Animated Icons memakai player lokal `@lordicon/element` 3.0.0 (MIT) dengan enam aset contoh Lordicon dan atribusi pada halaman. Sumber, versi, dan lisensi aset dicatat di `lordicon/README.md`.

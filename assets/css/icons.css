@@ -1,10 +1,14 @@
 /* Phase 6 icon showcases. The icon fonts themselves are loaded per page. */
-.icon-guide { background: var(--neo-paper); }
-.icon-section { min-width: 0; }
+.icon-guide {
+  background: var(--neo-paper);
+}
+.icon-section {
+  min-width: 0;
+}
 .icon-card {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.75rem;
   min-width: 0;
   padding: 1rem;
   border: 2px solid var(--neo-ink);
@@ -20,16 +24,107 @@
   color: var(--neo-ink);
   font-size: 2rem;
 }
-.icon-item:nth-child(4n + 2) .icon-preview { background: var(--neo-purple); }
-.icon-item:nth-child(4n + 3) .icon-preview { background: var(--neo-green); }
-.icon-item:nth-child(4n + 4) .icon-preview { background: var(--neo-orange); }
-.icon-preview img { width: 36px; height: 36px; }
-.icon-preview .material-icons { font-size: 2.25rem; }
-.icon-card-meta { display: flex; align-items: start; justify-content: space-between; gap: .5rem; }
-.icon-card h3 { min-width: 0; margin: 0; font-size: .95rem; font-weight: 800; overflow-wrap: anywhere; }
-.icon-card code { display: block; min-width: 0; padding: .45rem .55rem; border-radius: 0; background: #f4f4f0; color: var(--neo-ink); font-size: .7rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.icon-copy { flex: 0 0 auto; padding: .25rem .45rem; font-size: .7rem; white-space: nowrap; }
+.icon-item:nth-child(4n + 2) .icon-preview {
+  background: var(--neo-purple);
+}
+.icon-item:nth-child(4n + 3) .icon-preview {
+  background: var(--neo-green);
+}
+.icon-item:nth-child(4n + 4) .icon-preview {
+  background: var(--neo-orange);
+}
+.icon-preview img {
+  width: 36px;
+  height: 36px;
+}
+.icon-preview .material-icons {
+  font-size: 2.25rem;
+}
+.icon-card-meta {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.icon-card h3 {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+.icon-card code {
+  display: block;
+  min-width: 0;
+  padding: 0.45rem 0.55rem;
+  border-radius: 0;
+  background: #f4f4f0;
+  color: var(--neo-ink);
+  font-size: 0.7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.icon-copy {
+  flex: 0 0 auto;
+  padding: 0.25rem 0.45rem;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
 @media (max-width: 575.98px) {
-  .icon-card { padding: .75rem; }
-  .icon-card-meta { flex-direction: column; }
+  .icon-card {
+    padding: 0.75rem;
+  }
+  .icon-card-meta {
+    flex-direction: column;
+  }
+}
+
+/* Animated icon gallery: the player animates the artwork inside each preview. */
+.animated-icon-target {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+}
+.animated-icon-target:focus-visible {
+  outline: 3px solid var(--neo-ink);
+  outline-offset: 4px;
+}
+.animated-icon-target lord-icon,
+#animatedEventIcon {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+}
+.animated-icon-target lord-icon {
+  pointer-events: none;
+}
+.animated-icon-card .animated-hint {
+  min-height: 2.8em;
+}
+.animated-code {
+  max-width: 100%;
+  padding: 0.85rem;
+  border: 1px solid var(--neo-ink);
+  background: #f4f4f0;
+  color: var(--neo-ink);
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.animated-icon-card .animated-code {
+  flex: 1;
+}
+.animated-code code,
+.animated-icon-card .animated-code code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+  white-space: pre-wrap;
+  overflow: visible;
+  text-overflow: clip;
 }

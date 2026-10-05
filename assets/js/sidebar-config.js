@@ -82,7 +82,8 @@ window.BRUTAL_SIDEBAR = [
       {"page":"icon-material","label":"Material Icons"},
       {"page":"icon-ionicons","label":"Ionicons"},
       {"page":"icon-feather","label":"Feather Icons"},
-      {"page":"icon-weather-icon","label":"Weather Icons"}
+      {"page":"icon-weather-icon","label":"Weather Icons"},
+      {"page":"icon-animated","label":"Animated Icons"}
     ]}
   ]},
   {"group":"MEDIA","items":[

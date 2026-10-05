@@ -10,10 +10,11 @@ from form_pages import FORM_PAGES, build_form_pages
 from table_pages import TABLE_PAGES, build_table_pages
 from chart_pages import CHART_PAGES, build_chart_pages
 from icon_pages import ICON_PAGES, build_icon_pages, write_feather_data
+from animated_icon_pages import write_animated_data
 from media_pages import MEDIA_PAGES, build_media_pages
 from map_pages import MAP_PAGES, build_map_pages
 from special_pages import SPECIAL_PAGES, ERROR_PAGES, build_special_pages, error_page
-from docs_page import docs_appendix
+from documentation_page import documentation
 from format_html import format_html, verify_semantic
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -96,12 +97,15 @@ def shell(key, content):
 def page(key,content,standalone=False):
     body = ('<a class="skip-link" href="#main">Lewati ke konten</a><div id="sidebar-root"></div><button type="button" id="sidebarToggle" class="btn icon-btn standalone-toggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">'+icon('menu')+'</button>'+content+common_ui()) if standalone else shell(key,content)
     workspace_style = '<link rel="stylesheet" href="assets/css/workspace.css">' if key in WORKSPACE_PAGES else ''
+    project_script = '<script src="assets/js/kanban.js"></script>' if key == 'projects' else ''
     workspace_script = '<script src="assets/js/workspace.js"></script>' if key in WORKSPACE_PAGES else ''
     advanced_style = '<link rel="stylesheet" href="assets/css/advanced.css">' if key in ADVANCED_PAGES else ''
     form_style = '<link rel="stylesheet" href="assets/css/forms.css">' if key in FORM_PAGES or key == 'forms' else ''
     table_style = '<link rel="stylesheet" href="assets/css/tables.css">' if key in TABLE_PAGES or key == 'tables' else ''
     chart_style = '<link rel="stylesheet" href="assets/css/charts.css">' if key in CHART_PAGES or key == 'charts' else ''
     icon_style = '<link rel="stylesheet" href="assets/css/icons.css">' if key in ICON_PAGES else ''
+    if key == 'docs':
+        icon_style += '<link rel="stylesheet" href="assets/css/docs.css">'
     media_style = '<link rel="stylesheet" href="assets/css/media.css">' if key in MEDIA_PAGES else ''
     map_style = '<link rel="stylesheet" href="assets/css/maps.css">' if key in MAP_PAGES else ''
     special_style = '<link rel="stylesheet" href="assets/css/special.css">' if key in (*SPECIAL_PAGES, *ERROR_PAGES) else ''
@@ -161,6 +165,8 @@ def page(key,content,standalone=False):
     chart_script = '<script src="assets/js/charts.js"></script>' if key in CHART_PAGES else ''
     icon_script = ('<script src="assets/js/feather-data.js"></script>' if key == 'icon-feather' else '')
     icon_script += '<script src="assets/js/icons.js"></script>' if key in ICON_PAGES else ''
+    if key == 'icon-animated':
+        icon_script += '<script src="assets/bundles/lordicon/lordicon.js"></script><script src="assets/js/animated-icon-data.js"></script><script src="assets/js/animated-icons.js"></script>'
     media_script = '<script src="assets/js/media.js"></script>' if key in ('light-gallery', 'owl-carousel') else ''
     map_script = '<script src="assets/js/maps.js"></script>' if key in MAP_PAGES else ''
     special_script = '<script src="assets/js/special.js"></script>' if key in (*SPECIAL_PAGES, *ERROR_PAGES) else ''
@@ -172,7 +178,7 @@ def page(key,content,standalone=False):
     controls_vendor = '<script src="assets/bundles/jquery/jquery.min.js"></script><script src="assets/bundles/select2/select2.min.js"></script><script src="assets/bundles/flatpickr/flatpickr.min.js"></script><script src="assets/bundles/flatpickr/id.js"></script>'
     bubble_style = '<link rel="stylesheet" href="assets/bundles/quill/quill.bubble.css">' if key == 'forms-editor' else ''
     return f'''<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}{controls_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}{table_style}{chart_style}{icon_style}{media_style}{map_style}{special_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{controls_vendor}{workspace_script}{vendor_scripts}{advanced_script}{form_script}{table_script}{chart_script}{icon_script}{media_script}{map_script}{special_script}<script src="assets/js/controls.js"></script></body></html>'''
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan."><title>{escape(TITLES[key])} — BRUTAL.</title><link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">{vendor_style}{bubble_style}{controls_style}<link rel="stylesheet" href="assets/css/theme.css">{workspace_style}{advanced_style}{form_style}{table_style}{chart_style}{icon_style}{media_style}{map_style}{special_style}</head><body data-page="{key}"{' class="standalone-page"' if standalone else ''}>{body}<script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/sidebar-config.js"></script><script src="assets/js/sidebar-icons.js"></script><script src="assets/js/sidebar.js"></script><script src="assets/js/app.js"></script>{controls_vendor}{workspace_script}{vendor_scripts}{advanced_script}{form_script}{table_script}{chart_script}{icon_script}{media_script}{map_script}{special_script}<script src="assets/js/controls.js"></script>{project_script}</body></html>'''
 
 def new_project_button():
     return f'<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">{icon("plus")} Proyek baru</button>'
@@ -212,7 +218,19 @@ def basic_form():
     return heading('Form yang enak diisi.','Input yang jelas, validasi yang membantu. Bootstrap dengan kontrol bertema Neubrutalism.')+f'<div class="row g-4"><div class="col-lg-7">{card("Kenalan dulu, yuk.",form)}</div><div class="col-lg-5 d-grid gap-4">{card("Input variations",inputs)}{card("Pilihan & kontrol",choices)}</div></div>'
 
 def projects():
-    return heading('Dari ide ke selesai.','Pindahkan status pekerjaan dan jaga semuanya tetap bergerak.',new_project_button())+'<div class="alert alert-info small">'+icon('folder')+' Workspace demo disimpan di browser ini. Ubah status lewat pilihan di setiap kartu.</div><div class="kanban-board" id="kanbanBoard"></div>'
+    return heading('Dari ide ke selesai.','Satu ruang untuk ide, progres, dan hasil kerja tim.',new_project_button()) + f'''
+    <section class="kanban-workspace" aria-label="Papan proyek">
+      <div class="kanban-toolbar">
+        <div class="d-flex align-items-center gap-2">{icon('layers')}<strong>Project canvas</strong></div>
+        <span class="small text-muted">Tersimpan di browser ini</span>
+      </div>
+      <p class="kanban-instructions" id="kanbanHelp">Tarik kartu ke kolom tujuan atau ke atas/bawah untuk mengatur urutan. Di layar sentuh, tekan-tahan kartu untuk menyeret; geser biasa untuk menggulir.</p>
+      <p class="visually-hidden" id="kanbanKeyboardHelp">Fokuskan kartu: Enter atau Spasi untuk mengambil, panah kiri/kanan untuk memilih kolom, panah atas/bawah untuk mengatur urutan, Enter atau Spasi untuk meletakkan, Escape untuk membatalkan.</p>
+      <div class="kanban-canvas" id="kanbanCanvas" tabindex="0" role="region" aria-label="Canvas proyek, dapat digulir" aria-describedby="kanbanHelp">
+        <div class="kanban-board" id="kanbanBoard"></div>
+      </div>
+      <p class="kanban-feedback" id="kanbanFeedback" role="status" aria-live="polite">Siap untuk langkah berikutnya.</p>
+    </section>'''
 
 def calendar():
     return heading('Beri ruang untuk rencana.','Jadwal yang jelas untuk hari yang lebih tenang.','<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#eventModal">'+icon('plus')+' Agenda baru</button>')+f'''<section class="card"><div class="card-body"><div class="d-flex justify-content-between align-items-center gap-2"><h2 class="mb-0" id="calendarTitle"></h2><div class="d-flex gap-2"><button class="btn btn-sm" id="prevMonth" aria-label="Bulan sebelumnya">{icon("arrow-left")}</button><button class="btn btn-sm" id="todayMonth">Hari ini</button><button class="btn btn-sm" id="nextMonth" aria-label="Bulan berikutnya">{icon("arrow")}</button></div></div></div><div class="calendar-grid" id="calendarGrid"></div></section><div class="d-flex gap-4 mt-4 small"><span><i class="legend-dot bg-purple"></i>Agenda workspace</span><span class="text-muted">Klik agenda untuk melihat detail.</span></div><div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title" id="eventTitle">Rencanakan sesuatu.</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><form id="eventForm"><div class="modal-body"><label for="eventName" class="form-label">Nama agenda</label><input id="eventName" name="name" class="form-control mb-3" maxlength="60" required><label for="eventDate" class="form-label">Tanggal</label><input type="date" id="eventDate" name="date" class="form-control mb-3" required><label for="eventTime" class="form-label">Waktu</label><input type="time" id="eventTime" name="time" class="form-control" required value="09:00"></div><div class="modal-footer"><button class="btn btn-primary">Simpan agenda</button></div></form></div></div></div>'''
@@ -257,46 +275,7 @@ def auth(key):
     return f'<div class="auth-layout"><section class="auth-art"><a class="brand" href="index.html"><span class="brand-mark bg-yellow">b.</span>BRUTAL.</a><div><span class="eyebrow">YOUR NEXT BIG THING STARTS HERE.</span><div class="auth-display mt-3">Stay curious.<br>Build bold.</div>{art()}</div><p class="small mb-0">Sedikit keberanian. Banyak kemungkinan. © 2026 BRUTAL.</p></section><main class="auth-content" id="main"><div class="auth-form"><a class="text-dark small text-decoration-none" href="index.html">{icon("arrow-left")} Kembali ke dashboard</a><span class="badge bg-yellow d-table mt-5 mb-3">LET’S MAKE THINGS HAPPEN</span><h1>{title}</h1><p class="text-muted mb-4">{sub}</p><form id="authForm">{inputs}<button class="btn btn-primary w-100 mt-4" type="submit">{cta} {icon("arrow")}</button><p id="authResult" class="small mt-3" role="status"></p></form>{bottom}<p class="auth-note">Demo antarmuka. Tidak ada autentikasi server, pembuatan akun, atau email yang dikirim. Gunakan data contoh; password tidak disimpan.</p><p class="auth-mobile-footer">© 2026 BRUTAL.</p></div></main></div>'
 
 def docs():
-    return heading('Mulai dari sini. Buat jadi milikmu.','Panduan singkat membangun dengan BRUTAL. dan Bootstrap 5.3.8.')+'''<div class="row g-4"><div class="col-lg-8"><section class="card mb-4"><div class="card-body"><span class="badge bg-green mb-3">LOCAL FIRST · NO BUILD REQUIRED</span><h2 class="fs-4">Hello, builder.</h2><p>BRUTAL. adalah template admin HTML statis dengan tema Neubrutalism. Grid, utilities, dan interaksi dasar memakai Bootstrap asli. Lapisan tema memberi garis tegas, pastel, dan bayangan solid.</p><div class="code">npm run dev
-# Buka http://localhost:4173
-# Atau buka index.html langsung di browser.</div><p class="small text-muted mt-3 mb-0">Python 3 diperlukan untuk server lokal dan generator. Tidak ada dependensi runtime CDN; jQuery lokal dimuat hanya pada halaman demo tertentu.</p></div></section><section class="card mb-4"><div class="card-body"><h2>Struktur proyek</h2><pre class="code mb-0">index.html                  Dashboard
-components.html             Indeks 16 halaman komponen
-alert.html / buttons.html   Contoh komponen terpisah
-forms.html                  Overview form (5 demo)
-basic-form.html              Form dasar interaktif
-tables.html                 Overview tabel (5 demo)
-basic-table.html             Tabel proyek interaktif
-charts.html                 Overview grafik (6 library)
-chart-chartjs.html          Chart.js dan showcase SVG sebelumnya
-icon-feather.html           Koleksi SVG Feather dan salin kode
-light-gallery.html          Lightbox ilustrasi SVG lokal
-carousel.html               Demo Bootstrap Carousel
-assets/css/theme.css        Token, override Bootstrap, layout
-assets/css/charts.css       Tata letak showcase grafik
-assets/css/icons.css        Tata letak showcase ikon
-assets/css/media.css        Tata letak galeri, slider, timeline
-assets/js/app.js            Interaksi demo & localStorage
-assets/js/charts.js         Inisialisasi library grafik
-assets/img/favicon.svg      Identitas lokal
-bootstrap-5.3.8/dist/        Bootstrap vendor asli
-scripts/build.py            Generator halaman & shell
-assets/js/sidebar-config.js Satu konfigurasi navigasi
-assets/js/sidebar.js        Renderer & drawer bersama
-blank.html                  Titik awal halaman baru</pre></div></section><section class="card mb-4" id="components"><div class="card-body"><h2>Bootstrap dulu, tema setelahnya.</h2><p class="small">Urutan stylesheet penting. Semua kelas Bootstrap tetap tersedia.</p><pre class="code">&lt;link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="assets/css/theme.css"&gt;
-&lt;button class="btn btn-primary"&gt;Mulai membangun&lt;/button&gt;
-&lt;script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;div id="sidebar-root"&gt;&lt;/div&gt;
-&lt;script src="assets/js/sidebar-config.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar-icons.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;</pre><p class="small mb-0">Gunakan <code>.bg-purple</code>, <code>.bg-yellow</code>, <code>.bg-green</code>, <code>.bg-orange</code>, atau <code>.bg-blue</code> untuk warna pastel. Grid menggunakan <code>.row</code> dan <code>.col-*</code>.</p></div></section><section class="card mb-4"><div class="card-body"><h2>Ganti warna, pertahankan karakter.</h2><p class="small">Edit token di awal <code>assets/css/theme.css</code>. Source Bootstrap vendor tetap utuh sehingga lebih mudah diperbarui.</p><pre class="code">:root {
-  --neo-purple: #c4a8f5;
-  --neo-yellow: #f9de6e;
-  --neo-ink: #232420;
-  --neo-paper: #f5f4ef;
-  --neo-shadow: 4px 4px 0 var(--neo-ink);
-}</pre></div></section><section class="card"><div class="card-body"><h2>Menambah halaman</h2><ol class="small ps-3"><li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li><li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li><li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li><li>Hubungkan form dan data ke backend pilihanmu.</li></ol><div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div></div></section></div><div class="col-lg-4"><section class="card mb-4 bg-yellow"><div class="card-body"><h2>Isi starter ini</h2><ul class="small ps-3 mb-0"><li>Dashboard, widget grafik & data</li><li>Chat, portfolio, blog & mailbox demo</li><li>16 halaman komponen Bootstrap</li><li>Form dan validasi</li><li>Tabel: cari, filter, urutkan, CSV</li><li>Enam library grafik lokal</li><li>Lima koleksi ikon lokal</li><li>Galeri, slider & timeline</li><li>Delapan demo Google Maps & peta vektor dunia</li><li>Subscribe, post, kontak, empat halaman error, dan menu bertingkat</li><li>Kanban proyek & kalender</li><li>Profil dan preferensi</li><li>Login, register, reset password</li><li>Invoice, pricing, blank, 404</li></ul></div></section><section class="card mb-4"><div class="card-body"><h2>Interaksi & data</h2><p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p><p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode; enam halaman library grafik memakai data ilustratif. Login/register, subscribe, post, dan kontak adalah demo lokal; tidak ada sesi autentikasi, transaksi, pengiriman newsletter, atau pesan kontak.</p></div></section><section class="card"><div class="card-body"><h2>Cakupan & pengembangan</h2><p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p><p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata dan upload server belum diintegrasikan. Post dan subscribe disimpan hanya di browser; kontak menampilkan pratinjau tanpa mengirim pesan. Google Maps memerlukan API key browser dan billing; peta vektor berjalan lokal tanpa key. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p><a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a></div></section></div></div>''' + docs_appendix(NAV)
+    return documentation(heading, NAV)
 
 def main():
     pages = {
@@ -316,6 +295,7 @@ def main():
     pages.update(build_special_pages(heading))
     write_workspace_assets(ROOT)
     write_feather_data(ROOT)
+    write_animated_data(ROOT)
     (ROOT/'assets/js/sidebar-icons.js').write_text('// Generated from ICONS in scripts/build.py.\nwindow.BRUTAL_ICONS = '+json.dumps(ICONS)+';\n',encoding='utf-8')
     write_flags(ROOT)
     def write_page(key, content, standalone=False):

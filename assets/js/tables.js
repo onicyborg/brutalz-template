@@ -41,7 +41,7 @@
   };
   if ($('#dataTableDemo')) {
     new DataTable('#dataTableDemo', {
-      pageLength: 5, order: [[0, 'asc']], language: labels,
+      pageLength: 10, order: [[0, 'asc']], language: labels,
       layout: { topStart: 'pageLength', topEnd: 'search', bottomStart: 'info', bottomEnd: 'paging' },
     });
   }

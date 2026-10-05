@@ -82,19 +82,79 @@
   $('#tablePagination')?.addEventListener('click', e => {const btn=e.target.closest('[data-table-page]');if(btn && !btn.disabled){tablePage=Number(btn.dataset.tablePage);renderTable();$('#tablePagination [aria-current="page"]')?.focus();}});
   $('#exportTable')?.addEventListener('click', () => {downloadCSV('brutal-proyek.csv',[['Nama proyek','Kategori','Status','Tenggat'],...filteredProjects().map(p=>[p.name,p.category,p.status,p.due])]);toast('Data sesuai filter telah diekspor.');});
   $('#exportDashboard')?.addEventListener('click', () => {downloadCSV('brutal-ringkasan-demo.csv',[['Metrik demo','Nilai'],['Pendapatan bulanan',48500000],['Proyek aktif',24],['Pelanggan',1284],['Konversi','4.82%']]);toast('Ringkasan dashboard demo diekspor.');});
+  function kanbanProjects(status) {
+    return projects.filter(project => project.status === status)
+      .map((project, index) => ({ project, order: Number.isFinite(project.boardOrder) ? project.boardOrder : index }))
+      .sort((left, right) => left.order - right.order)
+      .map(item => item.project);
+  }
   function renderKanban() {
-    const board = $('#kanbanBoard'); if (!board) return;
-    const columns = [['Rencana',['Rencana'],'blue'],['Dalam pengerjaan',['Berjalan','Review'],'purple'],['Selesai',['Selesai'],'green']];
-    board.innerHTML = columns.map(([title,states,color]) => {
-      const items = projects.filter(p => states.includes(p.status));
-      return `<section class="kanban-column"><div class="kanban-heading"><h2 class="mb-0 fs-6">${title}</h2><span class="badge bg-${color}">${items.length}</span></div>${items.map(p => `<article class="card kanban-card"><div class="card-body"><span class="badge bg-${colors[p.status]}">${p.status}</span><h3>${esc(p.name)}</h3><p>${esc(p.category)} · ${dateLabel(p.due)}</p><div class="d-flex justify-content-between align-items-center">${team(p.team)}<span class="small text-muted">↗</span></div><label class="visually-hidden" for="status-${esc(p.id)}">Status ${esc(p.name)}</label><select class="form-select" id="status-${esc(p.id)}" data-project-status="${esc(p.id)}">${statuses.map(s => `<option ${s===p.status?'selected':''}>${s}</option>`).join('')}</select></div></article>`).join('') || '<p class="small text-muted p-3">Belum ada proyek di sini.</p>'}</section>`;
+    const board = $('#kanbanBoard');
+    if (!board) return;
+    // Close while the original ancestors still exist, so Select2 can detach its scroll listeners.
+    board.querySelectorAll('select').forEach(field => {
+      if (window.jQuery?.(field).data('select2')) window.jQuery(field).select2('close');
+    });
+    board.innerHTML = statuses.map((status, index) => {
+      const items = kanbanProjects(status);
+      const cards = items.map(project => `
+        <article class="card kanban-card" data-project-id="${esc(project.id)}" tabindex="0" role="group" aria-label="Proyek ${esc(project.name)}" aria-describedby="kanbanKeyboardHelp">
+          <div class="card-body">
+            <div class="kanban-card-top">
+              <span class="badge bg-${colors[status]}">${status}</span>
+
+            </div>
+            <h3>${esc(project.name)}</h3>
+            <p>${esc(project.category)} · ${dateLabel(project.due)}</p>
+            <div class="kanban-assignees">${team(project.team)}<span class="small text-muted">Tim proyek</span></div>
+            <div class="kanban-status-control">
+              <label class="visually-hidden" for="status-${esc(project.id)}">Status ${esc(project.name)}</label>
+              <select class="form-select form-select-sm" id="status-${esc(project.id)}" data-project-status="${esc(project.id)}">
+                ${statuses.map(value => `<option ${value === status ? 'selected' : ''}>${value}</option>`).join('')}
+              </select>
+            </div>
+          </div>
+        </article>`).join('');
+      return `<section class="kanban-column" data-kanban-status="${status}" aria-labelledby="kanban-title-${index}">
+        <div class="kanban-heading"><h2 class="mb-0 fs-6" id="kanban-title-${index}"><span class="kanban-status-dot bg-${colors[status]}"></span>${status}</h2><span class="badge bg-${colors[status]}" aria-label="${items.length} proyek">${items.length}</span></div>
+        <div class="kanban-card-list">${cards || '<p class="kanban-empty">Belum ada proyek.<br>Letakkan kartu di sini.</p>'}</div>
+      </section>`;
     }).join('');
   }
-  $('#kanbanBoard')?.addEventListener('change', e => {
-    const select=e.target.closest('[data-project-status]');if(!select)return;
-    const p=projects.find(p=>p.id===select.dataset.projectStatus);if(!p)return;
-    p.status=select.value;write('projects',projects);renderKanban();toast(`Status ${p.name} diubah ke ${p.status}.`);
-    const moved = $$('[data-project-status]').find(el => el.dataset.projectStatus === p.id); moved?.focus();
+  function moveProject(id, status, fromDrag = false, beforeId = null) {
+    const project = projects.find(item => item.id === id);
+    if (!project || !statuses.includes(status) || (!fromDrag && project.status === status)) return;
+    const previousStatus = project.status;
+    const original = kanbanProjects(status);
+    const destination = original.filter(item => item.id !== id);
+    const beforeIndex = destination.findIndex(item => item.id === beforeId);
+    destination.splice(beforeIndex < 0 ? destination.length : beforeIndex, 0, project);
+    if (previousStatus === status && original.every((item, index) => item.id === destination[index].id)) {
+      $('#kanbanFeedback').textContent = `${project.name} tetap pada posisi semula.`;
+      return;
+    }
+    kanbanProjects(previousStatus).filter(item => item.id !== id)
+      .forEach((item, index) => { item.boardOrder = index; });
+    project.status = status;
+    destination.forEach((item, index) => { item.boardOrder = index; });
+    write('projects', projects);
+    const canvas = $('#kanbanCanvas');
+    const scroll = { top: canvas.scrollTop, left: canvas.scrollLeft };
+    renderKanban();
+    canvas.scrollTo(scroll);
+    const position = destination.indexOf(project) + 1;
+    const message = `${project.name} ditempatkan di ${status}, urutan ${position}.`;
+    $('#kanbanFeedback').textContent = message;
+    toast(message);
+    const moved = $$('[data-project-id]').find(card => card.dataset.projectId === id);
+    (fromDrag ? moved : moved?.querySelector('select'))?.focus({ preventScroll: true });
+  }
+  $('#kanbanBoard')?.addEventListener('change', event => {
+    const select = event.target.closest('[data-project-status]');
+    if (select) moveProject(select.dataset.projectStatus, select.value);
+  });
+  $('#kanbanBoard')?.addEventListener('kanban:move', event => {
+    moveProject(event.detail.id, event.detail.status, true, event.detail.beforeId);
   });
   $('#projectForm')?.addEventListener('submit', e => {
     e.preventDefault(); const data=new FormData(e.target); const name=data.get('name').trim();

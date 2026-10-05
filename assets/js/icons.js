@@ -1,4 +1,4 @@
-/* Search and copy controls shared by the five local icon showcases. */
+/* Search and copy controls shared by the local icon showcases. */
 (() => {
   const search = document.getElementById('iconSearch');
   if (!search) return;

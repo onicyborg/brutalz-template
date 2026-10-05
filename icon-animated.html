@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRUTAL. — Template admin Neubrutalism berbasis Bootstrap 5.3.8. Komponen, form, tabel, dan halaman siap dikembangkan.">
+  <title>Animated Icons — BRUTAL.</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body data-page="icon-animated">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div id="sidebar-root"></div>
+  <div class="app-wrap">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn icon-btn mobile-toggle" id="sidebarToggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Workspace</a></li>
+            <li class="breadcrumb-item">Ikon</li>
+            <li class="breadcrumb-item active" aria-current="page">Animated Icons</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="topbar-actions">
+        <button class="search-trigger" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Cari halaman">
+          <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+            <circle cx="10" cy="10" r="6"></circle>
+            <path d="m15 15 6 6"></path>
+          </svg>
+          <span>Cari sesuatu…</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <span class="top-divider"></span>
+        <div class="dropdown">
+          <button class="btn icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifikasi">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M9 21h6"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" style="width:275px">
+            <h2 class="fs-6 px-2 pt-2">Kabar workspace</h2>
+            <p class="small px-2 mb-2">Selamat datang! Jelajahi komponen dan mulai proyek pertamamu.</p>
+            <a class="dropdown-item" href="docs.html">
+              Baca panduan
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M4 12h16m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar bg-purple" data-bs-toggle="dropdown" aria-label="AD — Menu akun" aria-expanded="false">AD</button>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="profile.html">Profil &amp; pengaturan</a>
+            <a class="dropdown-item" href="auth-login.html">Lihat halaman login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Ikon dengan cerita kecil.</h1>
+          <p>Animasi pada detail ikon: coba hover, klik, atau putar otomatis.</p>
+        </div>
+        <div class="page-heading-actions"></div>
+      </div>
+      <section class="card icon-guide mb-4">
+        <div class="card-body">
+          <span class="badge bg-purple mb-3">LORDICON · ANIMATED ICONS</span>
+          <p class="mb-0">Enam ikon interaktif dengan garis tegas dan warna khas BRUTAL. Pilih pemicu dan kecepatan, lalu salin kode sesuai pengaturanmu.</p>
+        </div>
+      </section>
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-7">
+          <label class="form-label fw-bold" for="iconSearch">Cari ikon di halaman ini</label>
+          <input id="iconSearch" class="form-control" type="search" autocomplete="off" placeholder="Contoh: home, cloud, calendar…">
+        </div>
+        <div class="col-md-5">
+          <p class="small text-muted mb-0" id="iconCount" role="status"></p>
+        </div>
+      </div>
+      <p id="iconEmpty" class="alert alert-warning d-none">Tidak ada ikon yang cocok. Coba kata lain.</p>
+      <section class="card mb-4" aria-label="Pengaturan animasi">
+        <div class="card-body">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-5">
+              <label class="form-label fw-bold" for="animatedTrigger">Pemicu animasi</label>
+              <select id="animatedTrigger" class="form-select">
+                <option value="default">Variasi demo</option>
+                <option value="hover">Hover / fokus</option>
+                <option value="click">Klik / sentuh</option>
+                <option value="loop(1800)">Otomatis berulang</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold" for="animatedSpeed">Kecepatan</label>
+              <select id="animatedSpeed" class="form-select">
+                <option value="0.5">0,5×</option>
+                <option value="1" selected="selected">1× Normal</option>
+                <option value="1.5">1,5×</option>
+                <option value="2">2×</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-dark w-100" id="animatedPause" aria-pressed="false">Jeda semua animasi</button>
+            </div>
+          </div>
+          <p class="small text-muted mt-3 mb-0" id="animatedStatus" role="status">Pilih pemicu, lalu coba ikon di bawah. Tombol ikon juga mendukung Enter dan Space.</p>
+        </div>
+      </section>
+      <section class="icon-section">
+        <div class="row g-4">
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="coins">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Coins">
+                <lord-icon data-icon="coins" data-default-trigger="loop(1800)" state="loop-spin" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Coins</h3>
+                <span class="badge bg-yellow animated-mode">Otomatis</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Coins&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/coins.json&quot;
+    trigger=&quot;loop(1800)&quot; target=&quot;.animated-icon-target&quot; state=&quot;loop-spin&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Coins&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/coins.json&quot;
+    trigger=&quot;loop(1800)&quot; target=&quot;.animated-icon-target&quot; state=&quot;loop-spin&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Coins">Salin kode</button>
+            </article>
+          </div>
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="download">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Download">
+                <lord-icon data-icon="download" data-default-trigger="click" state="hover-pinch" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Download</h3>
+                <span class="badge bg-yellow animated-mode">Click</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Download&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/download.json&quot;
+    trigger=&quot;click&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-pinch&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Download&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/download.json&quot;
+    trigger=&quot;click&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-pinch&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Download">Salin kode</button>
+            </article>
+          </div>
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="lock">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Lock">
+                <lord-icon data-icon="lock" data-default-trigger="hover" state="hover-locked" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Lock</h3>
+                <span class="badge bg-yellow animated-mode">Hover</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Lock&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/lock.json&quot;
+    trigger=&quot;hover&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-locked&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Lock&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/lock.json&quot;
+    trigger=&quot;hover&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-locked&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Lock">Salin kode</button>
+            </article>
+          </div>
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="unlock">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Unlock">
+                <lord-icon data-icon="lock-alt" data-default-trigger="click" state="hover-unlocked" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Unlock</h3>
+                <span class="badge bg-yellow animated-mode">Click</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Unlock&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/lock-alt.json&quot;
+    trigger=&quot;click&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-unlocked&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Unlock&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/lock-alt.json&quot;
+    trigger=&quot;click&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-unlocked&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Unlock">Salin kode</button>
+            </article>
+          </div>
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="puzzle">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Puzzle">
+                <lord-icon data-icon="puzzle" data-default-trigger="hover" state="hover-detach" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Puzzle</h3>
+                <span class="badge bg-yellow animated-mode">Hover</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Puzzle&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/puzzle.json&quot;
+    trigger=&quot;hover&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-detach&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Puzzle&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/puzzle.json&quot;
+    trigger=&quot;hover&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-detach&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Puzzle">Salin kode</button>
+            </article>
+          </div>
+          <div class="col-sm-6 col-xl-4 icon-item" data-icon-name="trash">
+            <article class="icon-card h-100 animated-icon-card">
+              <button type="button" class="icon-preview animated-icon-target" aria-label="Putar animasi Trash">
+                <lord-icon data-icon="trash" data-default-trigger="loop(1800)" state="hover-trash-empty" colors="primary:#232420,secondary:#a78bfa" target=".animated-icon-target" aria-hidden="true"></lord-icon>
+              </button>
+              <div class="icon-card-meta">
+                <h3>Trash</h3>
+                <span class="badge bg-yellow animated-mode">Otomatis</span>
+              </div>
+              <p class="small text-muted mb-0 animated-hint">Hover, fokuskan, atau tekan ikon untuk mencoba.</p>
+              <pre class="animated-code mb-0"><code>&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Trash&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/trash.json&quot;
+    trigger=&quot;loop(1800)&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-trash-empty&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <button type="button" class="btn btn-sm icon-copy align-self-start" data-copy="&lt;button type=&quot;button&quot; class=&quot;animated-icon-target&quot; aria-label=&quot;Trash&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/trash.json&quot;
+    trigger=&quot;loop(1800)&quot; target=&quot;.animated-icon-target&quot; state=&quot;hover-trash-empty&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot; style=&quot;width:80px;height:80px&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;" aria-label="Salin kode Trash">Salin kode</button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="card mt-4">
+        <div class="card-body">
+          <h2 class="fs-4">Pakai di halamanmu</h2>
+          <p>Muat player satu kali, lalu tempel kode dari kartu. Path aset mengikuti root template. Jalankan melalui server lokal (<code>npm run dev</code>) agar file JSON pada snippet dapat dimuat.</p>
+          <pre class="animated-code"><code>&lt;script src="assets/bundles/lordicon/lordicon.js"&gt;&lt;/script&gt;</code></pre>
+          <p>Untuk memicu animasi dari aksi aplikasi, panggil <code>play()</code>. Contoh di bawah memakai event klik tombol.</p>
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <lord-icon id="animatedEventIcon" data-icon="download" state="hover-pinch" colors="primary:#232420,secondary:#a78bfa" aria-hidden="true"></lord-icon>
+            <button type="button" class="btn btn-dark" id="animatedEventButton">Simulasikan unduhan</button>
+            <span class="small text-muted" id="animatedEventStatus" role="status">Siap dicoba.</span>
+          </div>
+          <pre class="animated-code mb-3"><code>const icon = document.querySelector('lord-icon');
+// Panggil saat aksi aplikasi selesai.
+icon.play({ from: 'start' });</code></pre>
+          <p class="small text-muted mb-0">Player dan aset contoh disimpan lokal. Preferensi reduced motion dihormati secara otomatis.
+      Ikon oleh <a href="https://lordicon.com/">Lordicon</a> · <a href="https://lordicon.com/docs/web">Dokumentasi</a>.</p>
+        </div>
+      </section>
+      <p id="iconCopyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="app-footer">
+      <span>
+        © 2026 BRUTAL.
+        <span class="ms-1">Built different. Built with Bootstrap.</span>
+      </span>
+      <div>
+        <span class="me-3">Demo workspace</span>
+        <a href="docs.html">Dokumentasi ↗</a>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="searchTitle">Cari di BRUTAL.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <label class="visually-hidden" for="globalSearch">Cari halaman</label>
+          <input id="globalSearch" type="search" class="form-control" placeholder="Cari komponen, form, halaman…" autocomplete="off">
+          <div id="searchResults" class="search-results mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="projectTitle">Ide besar dimulai di sini.</h2>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <form id="projectForm">
+          <div class="modal-body">
+            <p class="text-muted small">Tambahkan proyek ke workspace demo kamu.</p>
+            <label class="form-label" for="projectName">Nama proyek</label>
+            <input class="form-control mb-3" id="projectName" name="name" placeholder="Contoh: Website studio" required="" maxlength="70">
+            <label class="form-label" for="projectCategory">Kategori</label>
+            <select id="projectCategory" name="category" class="form-select mb-3">
+              <option>Website</option>
+              <option>Branding</option>
+              <option>Mobile app</option>
+              <option>Marketing</option>
+            </select>
+            <label class="form-label" for="projectDue">Tenggat</label>
+            <input id="projectDue" name="due" class="form-control" type="date" required="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+              Buat proyek
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastMessage" class="toast-body"></div>
+        <button class="btn-close me-3 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar-config.js"></script>
+  <script src="assets/js/sidebar-icons.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/bundles/lordicon/lordicon.js"></script>
+  <script src="assets/js/animated-icon-data.js"></script>
+  <script src="assets/js/animated-icons.js"></script>
+  <script src="assets/js/controls.js"></script>
+</body>
+</html>

@@ -3,10 +3,11 @@
 from html import escape
 from pathlib import Path
 import json
+from animated_icon_pages import animated_icons
 
 ICON_PAGES = (
     'icon-font-awesome', 'icon-material', 'icon-ionicons',
-    'icon-feather', 'icon-weather-icon',
+    'icon-feather', 'icon-weather-icon', 'icon-animated',
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -153,4 +154,4 @@ def build_icon_pages(heading):
     weather = scaffold(heading, 'Prakiraan dengan karakter.', 'Weather Icons: koleksi cuaca berbasis font lokal.',
                        'WEATHER ICONS', 'Gunakan kelas <code>wi</code> dan <code>wi-*</code> bersama. Font dan CSS tersedia di bundle lokal.', weather_body)
 
-    return dict(zip(ICON_PAGES, (fa, material, ion, feather, weather)))
+    return dict(zip(ICON_PAGES, (fa, material, ion, feather, weather, animated_icons(heading, scaffold))))

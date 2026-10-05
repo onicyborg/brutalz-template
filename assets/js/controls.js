@@ -40,7 +40,11 @@
         "aria-describedby",
         field.getAttribute("aria-describedby"),
       );
-    field.addEventListener("focus", () => selection.focus());
+    field.addEventListener("focus", () =>
+      selection.focus({
+        preventScroll: Boolean(field.closest(".kanban-canvas")),
+      }),
+    );
     for (const labelElement of field.labels) {
       labelElement.addEventListener("click", (event) => {
         event.preventDefault();
@@ -60,6 +64,12 @@
         field.dispatchEvent(new Event("change", { bubbles: true }));
     });
     $(field).on("select2:open.neo", () => {
+      const canvas = field.closest(".kanban-canvas");
+      if (canvas) {
+        // Select2's body-attached dropdown normally pins scrollTop on ancestors.
+        // The canvas closes its dropdown on scroll instead, so it must stay scrollable.
+        $(canvas).off(`scroll.select2.${$(field).data("select2").id}`);
+      }
       const search = $(field)
         .data("select2")
         .$dropdown[0].querySelector(".select2-search__field");
@@ -68,7 +78,10 @@
         search.placeholder = "Ketik untuk mencari…";
       }
     });
-    if (restoreFocus) selection.focus();
+    if (restoreFocus)
+      selection.focus({
+        preventScroll: Boolean(field.closest(".kanban-canvas")),
+      });
   }
 
   function enhanceDate(field) {

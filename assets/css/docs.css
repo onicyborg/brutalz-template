@@ -1,0 +1,50 @@
+/* Full guide: readable code, responsive contents, and anchored sections. */
+.docs-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.docs-toc {
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  padding: 0 6px 6px 0;
+}
+.docs-toc li + li { margin-top: .65rem; }
+.docs-toc a { color: var(--neo-ink); font-size: .85rem; }
+.docs-content { min-width: 0; }
+.docs-content .card { margin-bottom: 1.5rem; }
+.docs-content section[id] { scroll-margin-top: 100px; }
+.docs-content h2 { font-size: 1.35rem; margin-bottom: 1rem; }
+.docs-content h3 { margin: 1.25rem 0 .75rem; }
+.docs-content li + li { margin-top: .45rem; }
+.docs-content td, .docs-content th { vertical-align: top; }
+.docs-content code { overflow-wrap: anywhere; }
+.docs-code {
+  padding: 1rem;
+  border: 2px solid var(--neo-ink);
+  border-radius: .5rem;
+  background: var(--neo-paper);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: .8rem;
+  line-height: 1.7;
+}
+.docs-code code { color: var(--neo-ink); }
+@media (max-width: 1199.98px) {
+  .docs-layout { grid-template-columns: minmax(0, 1fr); }
+  .docs-toc { position: static; max-height: none; }
+  .docs-toc ol { columns: 2; column-gap: 1.5rem; }
+  .docs-toc li { break-inside: avoid; }
+}
+@media (max-width: 575.98px) {
+  .docs-toc ol { columns: 1; }
+}
+@media print {
+  .docs-layout { display: block; }
+  .docs-toc { display: none; }
+  .docs-content .card { box-shadow: none; }
+  .docs-code { white-space: pre-wrap; }
+}

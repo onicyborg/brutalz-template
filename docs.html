@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
   <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
 </head>
 <body data-page="docs">
   <a class="skip-link" href="#main">Lewati ke konten</a>
@@ -70,498 +71,815 @@
     <main class="main-content" id="main" tabindex="-1">
       <div class="page-heading">
         <div>
-          <h1>Mulai dari sini. Buat jadi milikmu.</h1>
-          <p>Panduan singkat membangun dengan BRUTAL. dan Bootstrap 5.3.8.</p>
+          <h1>Panduan lengkap BRUTAL.</h1>
+          <p>Setup, penggunaan komponen, kustomisasi, integrasi, dan deployment dalam satu halaman.</p>
         </div>
         <div class="page-heading-actions"></div>
       </div>
-      <div class="row g-4">
-        <div class="col-lg-8">
-          <section class="card mb-4">
+      <div class="docs-layout">
+        <aside class="docs-toc">
+          <nav class="card" aria-label="Daftar isi dokumentasi">
             <div class="card-body">
-              <span class="badge bg-green mb-3">LOCAL FIRST · NO BUILD REQUIRED</span>
-              <h2 class="fs-4">Hello, builder.</h2>
-              <p>BRUTAL. adalah template admin HTML statis dengan tema Neubrutalism. Grid, utilities, dan interaksi dasar memakai Bootstrap asli. Lapisan tema memberi garis tegas, pastel, dan bayangan solid.</p>
-              <div class="code">npm run dev
-# Buka http://localhost:4173
-# Atau buka index.html langsung di browser.</div>
-              <p class="small text-muted mt-3 mb-0">Python 3 diperlukan untuk server lokal dan generator. Tidak ada dependensi runtime CDN; jQuery lokal dimuat hanya pada halaman demo tertentu.</p>
+              <h2 class="fs-5">Daftar isi</h2>
+              <ol class="list-unstyled mb-0">
+                <li><a href="#overview">1. Mengenal BRUTAL.</a></li>
+                <li><a href="#setup">2. Clone dan jalankan di lokal</a></li>
+                <li><a href="#build">3. Setup pengembangan dan build HTML</a></li>
+                <li><a href="#structure">4. Struktur dan sumber perubahan</a></li>
+                <li><a href="#theme">5. Mengubah tema dan identitas</a></li>
+                <li><a href="#navigation">6. Sidebar, pencarian, dan halaman baru</a></li>
+                <li><a href="#components">7. Urutan aset dan penggunaan komponen</a></li>
+                <li><a href="#forms-guide">8. Form, editor, dan validasi</a></li>
+                <li><a href="#workspace-guide">9. Proyek canvas dan workspace</a></li>
+                <li><a href="#tables-charts">10. Tabel, ekspor, dan grafik</a></li>
+                <li><a href="#icons-media">11. Ikon, animasi, dan media</a></li>
+                <li><a href="#maps-guide">12. Google Maps dan peta vektor</a></li>
+                <li><a href="#storage">13. Data lokal dan reset demo</a></li>
+                <li><a href="#backend">14. Menghubungkan backend</a></li>
+                <li><a href="#deployment">15. Deploy dan pemeliharaan</a></li>
+                <li><a href="#troubleshooting">16. Pemecahan masalah</a></li>
+                <li><a href="#page-directory">Direktori seluruh halaman</a></li>
+                <li><a href="#library-directory">Library dan versi</a></li>
+                <li><a href="#enhanced-controls">Referensi kontrol form</a></li>
+                <li><a href="#contributing">Alur kontribusi</a></li>
+              </ol>
+            </div>
+          </nav>
+        </aside>
+        <div class="docs-content">
+          <section id="overview" class="card docs-section">
+            <div class="card-body">
+              <h2>1. Mengenal BRUTAL.</h2>
+              <p>BRUTAL. adalah template admin HTML statis berbahasa Indonesia dengan Bootstrap 5.3.8 dan tema Neubrutalism: garis hitam, warna pastel, serta bayangan solid. Semua halaman hasil build dan bundle browser tersedia di repository. Preview tidak membutuhkan instalasi npm atau kompilasi Sass.</p>
+              <p>Template mencakup workspace, komponen UI, form, tabel, grafik, enam koleksi ikon, media, peta, autentikasi demo, dan halaman utilitas. Gunakan direktori halaman di bagian bawah untuk menemukan contoh yang dibutuhkan.</p>
+              <div class="alert alert-info mb-0">Interaksi akun, chat, email, unggahan, kontak, dan publikasi adalah demo frontend. Template tidak menyediakan backend, database, sesi login, atau pengiriman pesan nyata. Google Maps adalah integrasi eksternal opsional.</div>
             </div>
           </section>
-          <section class="card mb-4">
+          <section id="setup" class="card docs-section">
             <div class="card-body">
-              <h2>Struktur proyek</h2>
-              <pre class="code mb-0">index.html                  Dashboard
-components.html             Indeks 16 halaman komponen
-alert.html / buttons.html   Contoh komponen terpisah
-forms.html                  Overview form (5 demo)
-basic-form.html              Form dasar interaktif
-tables.html                 Overview tabel (5 demo)
-basic-table.html             Tabel proyek interaktif
-charts.html                 Overview grafik (6 library)
-chart-chartjs.html          Chart.js dan showcase SVG sebelumnya
-icon-feather.html           Koleksi SVG Feather dan salin kode
-light-gallery.html          Lightbox ilustrasi SVG lokal
-carousel.html               Demo Bootstrap Carousel
-assets/css/theme.css        Token, override Bootstrap, layout
-assets/css/charts.css       Tata letak showcase grafik
-assets/css/icons.css        Tata letak showcase ikon
-assets/css/media.css        Tata letak galeri, slider, timeline
-assets/js/app.js            Interaksi demo & localStorage
-assets/js/charts.js         Inisialisasi library grafik
-assets/img/favicon.svg      Identitas lokal
-bootstrap-5.3.8/dist/        Bootstrap vendor asli
-scripts/build.py            Generator halaman & shell
-assets/js/sidebar-config.js Satu konfigurasi navigasi
-assets/js/sidebar.js        Renderer & drawer bersama
-blank.html                  Titik awal halaman baru</pre>
+              <h2>2. Clone dan jalankan di lokal</h2>
+              <p>Siapkan Git dan Python 3.10 atau lebih baru. Node.js 22+ dengan npm diperlukan jika memakai perintah npm, memperbarui paket vendor, atau menjalankan suite Playwright; keduanya tidak diperlukan untuk preview lewat Python langsung.</p>
+              <h3>Preview paling sederhana</h3>
+              <pre class="docs-code"><code>git clone https://github.com/onicyborg/brutalz-template.git
+cd brutalz-template
+python3 -m http.server 4173 --bind 127.0.0.1</code></pre>
+              <p>Buka <a href="http://127.0.0.1:4173/">http://127.0.0.1:4173/</a> untuk dashboard atau <a href="http://127.0.0.1:4173/docs.html">/docs.html</a> untuk panduan ini. Hentikan server dengan Ctrl+C. Pada Windows, gunakan <code>py -m http.server 4173 --bind 127.0.0.1</code> bila perintah <code>python3</code> tidak tersedia.</p>
+              <h3>Perintah npm</h3>
+              <pre class="docs-code"><code>npm run dev
+# Menjalankan server Python yang sama; npm ci tidak diperlukan untuk preview.</code></pre>
+              <p><code>npm run dev</code> menggunakan perintah <code>python3</code>. Jika nama executable Python di sistemmu berbeda, pakai perintah Python langsung di atas.</p>
+              <p class="mb-0">Membuka <code>index.html</code> lewat <code>file://</code> cukup untuk sebagian besar demo, tetapi HTTP lokal dianjurkan agar origin penyimpanan konsisten, clipboard bekerja, dan snippet yang memuat JSON dapat digunakan. <code>localhost</code> dan <code>127.0.0.1</code> memiliki penyimpanan browser yang berbeda.</p>
             </div>
           </section>
-          <section class="card mb-4" id="components">
+          <section id="build" class="card docs-section">
             <div class="card-body">
-              <h2>Bootstrap dulu, tema setelahnya.</h2>
-              <p class="small">Urutan stylesheet penting. Semua kelas Bootstrap tetap tersedia.</p>
-              <pre class="code">&lt;link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="assets/css/theme.css"&gt;
-&lt;button class="btn btn-primary"&gt;Mulai membangun&lt;/button&gt;
-&lt;script src="bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;div id="sidebar-root"&gt;&lt;/div&gt;
-&lt;script src="assets/js/sidebar-config.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar-icons.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/sidebar.js"&gt;&lt;/script&gt;
-&lt;script src="assets/js/app.js"&gt;&lt;/script&gt;</pre>
-              <p class="small mb-0">Gunakan <code>.bg-purple</code>, <code>.bg-yellow</code>, <code>.bg-green</code>, <code>.bg-orange</code>, atau <code>.bg-blue</code> untuk warna pastel. Grid menggunakan <code>.row</code> dan <code>.col-*</code>.</p>
+              <h2>3. Setup pengembangan dan build HTML</h2>
+              <p>HTML dibuat oleh generator Python dengan lxml. Buat virtual environment supaya dependensi build terpisah dari Python sistem. Jalankan perintah dari root repository.</p>
+              <h3>Linux / macOS</h3>
+              <pre class="docs-code"><code>python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-build.txt
+python scripts/build.py</code></pre>
+              <h3>Windows PowerShell</h3>
+              <pre class="docs-code"><code>py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-build.txt
+.\.venv\Scripts\python.exe scripts/build.py</code></pre>
+              <p>Alternatif di environment yang menyediakan <code>python3</code>: <code>npm run build</code>. Tidak ada watcher otomatis: jalankan build setiap kali generator berubah, lalu refresh browser. Perubahan CSS/JS cukup diikuti refresh.</p>
+              <h3>Dependensi development JavaScript</h3>
+              <pre class="docs-code"><code>npm ci
+# Menginstal versi persis dari package-lock.json.
+# Hanya diperlukan untuk pengujian browser atau pekerjaan vendor.</code></pre>
+              <p>Build menghasilkan 93 halaman dengan indentasi dan pemeriksaan bahwa format tidak mengubah makna HTML. Generator juga memperbarui aset demo seperti ikon sidebar, Feather, data animasi, flag, dan ilustrasi workspace.</p>
+              <div class="alert alert-warning mb-0">
+                Edit konten permanen di
+                <code>scripts/</code>
+                . Perubahan langsung pada HTML yang dikelola generator akan tertimpa saat build berikutnya. Build tidak menyalin ulang bundle dari
+                <code>node_modules</code>
+                dan tidak mengompilasi Bootstrap.
+              </div>
             </div>
           </section>
-          <section class="card mb-4">
+          <section id="structure" class="card docs-section">
             <div class="card-body">
-              <h2>Ganti warna, pertahankan karakter.</h2>
-              <p class="small">Edit token di awal <code>assets/css/theme.css</code>. Source Bootstrap vendor tetap utuh sehingga lebih mudah diperbarui.</p>
-              <pre class="code">:root {
-  --neo-purple: #c4a8f5;
-  --neo-yellow: #f9de6e;
+              <h2>4. Struktur dan sumber perubahan</h2>
+              <pre class="docs-code"><code>*.html                        Halaman siap dibuka / deploy
+assets/css/theme.css          Token tema, shell, override Bootstrap
+assets/css/controls.css       Select2 dan Flatpickr bersama
+assets/css/docs.css           Tampilan dokumentasi ini
+assets/css/*.css              Style khusus modul
+assets/js/sidebar-config.js   Konfigurasi sidebar dan pencarian
+assets/js/sidebar.js          Renderer sidebar dan drawer
+assets/js/app.js              Workspace, proyek, kalender, profil
+assets/js/controls.js         Peningkatan select dan input tanggal
+assets/js/kanban.js           Drag/drop pointer, sentuh, keyboard
+assets/js/*.js                Interaksi modul lainnya
+assets/bundles/               Distribusi vendor dan lisensi
+assets/img/                   Ilustrasi, flags, favicon SVG
+assets/files/                 Contoh lampiran lokal
+bootstrap-5.3.8/              CSS/JS Bootstrap, source map, lisensi
+scripts/build.py              Shell, pemetaan halaman, pipeline build
+scripts/*_pages.py            Konten masing-masing kelompok halaman
+scripts/documentation_page.py Sumber panduan ini
+scripts/docs_page.py          Direktori halaman dan daftar library
+scripts/format_html.py        Formatter HTML dan pemeriksaan semantik
+tests/                       Suite pengujian development
+requirements-build.txt        Dependensi build Python
+package.json / package-lock.json Dependensi dan perintah npm</code></pre>
+              <p class="mb-0"><code>PHASE-PLAN.md</code> dan <code>SIDEBAR-CHECKLIST.md</code> menyimpan riwayat cakupan/pengembangan. Keduanya tidak diperlukan di hosting. Folder <code>node_modules</code>, <code>.venv</code>, cache, screenshot referensi, dan laporan tes tidak masuk Git.</p>
+            </div>
+          </section>
+          <section id="theme" class="card docs-section">
+            <div class="card-body">
+              <h2>5. Mengubah tema dan identitas</h2>
+              <p>Token ada di bagian awal <code>assets/css/theme.css</code>. Ubah lapisan tema ini; file vendor Bootstrap tetap asli. Warna utility <code>bg-purple</code>, <code>bg-yellow</code>, <code>bg-green</code>, <code>bg-orange</code>, dan <code>bg-blue</code> tersedia untuk kartu, badge, serta panel.</p>
+              <pre class="docs-code"><code>:root {
   --neo-ink: #232420;
   --neo-paper: #f5f4ef;
+  --neo-surface: #fffefb;
+  --neo-purple: #c4a8f5;
+  --neo-yellow: #f9de6e;
+  --neo-border: 2px solid var(--neo-ink);
   --neo-shadow: 4px 4px 0 var(--neo-ink);
-}</pre>
+}</code></pre>
+              <p>Untuk tombol Bootstrap, perhatikan variabel komponen <code>--bs-btn-*</code> di aturan <code>.btn</code> dan variannya. Mengubah <code>--bs-primary</code> saja tidak otomatis mengganti semua warna tombol yang sudah ditentukan oleh CSS.</p>
+              <p>Identitas BRUTAL., topbar, footer, judul dokumen, dan modal bersama dibuat oleh <code>scripts/build.py</code>. Ikon identitas berada di <code>assets/img/favicon.svg</code>. Struktur sidebar dibangun di <code>assets/js/sidebar.js</code>; cari teks brand di kedua sumber saat menggantinya.</p>
+              <p class="mb-0">Gunakan grid Bootstrap <code>.row</code>, <code>.col-md-*</code>, dan utility spacing. Jaga focus ring, label, kontras, serta dukungan <code>prefers-reduced-motion</code>. Progress berwarna harus memakai <code>background-color</code> agar pola striped tetap tampil.</p>
             </div>
           </section>
-          <section class="card">
+          <section id="navigation" class="card docs-section">
             <div class="card-body">
-              <h2>Menambah halaman</h2>
-              <ol class="small ps-3">
-                <li class="mb-2">Salin <code>blank.html</code> ke nama halamanmu.</li>
-                <li class="mb-2">Ubah judul, breadcrumb, <code>data-page</code>, dan isi elemen <code>&lt;main&gt;</code>. Daftarkan halaman di <code>assets/js/sidebar-config.js</code>; sidebar dan pencarian otomatis mengikuti konfigurasi ini.</li>
-                <li class="mb-2">Untuk perubahan topbar/footer dan konten hasil generate, edit <code>scripts/build.py</code>, lalu jalankan <code>npm run build</code>.</li>
-                <li>Hubungkan form dan data ke backend pilihanmu.</li>
+              <h2>6. Sidebar, pencarian, dan halaman baru</h2>
+              <p><code>assets/js/sidebar-config.js</code> adalah sumber navigasi dan pencarian halaman. Nilai <code>page</code> sama dengan nama file tanpa ekstensi. Dropdown memakai <code>id</code> unik dan array <code>children</code>; menu bertingkat memakai bentuk yang sama.</p>
+              <pre class="docs-code"><code>{&quot;id&quot;:&quot;reportsMenu&quot;,&quot;label&quot;:&quot;Laporan&quot;,&quot;icon&quot;:&quot;chart&quot;,&quot;children&quot;:[
+  {&quot;page&quot;:&quot;sales-report&quot;,&quot;label&quot;:&quot;Laporan penjualan&quot;}
+]}</code></pre>
+              <p>Simpan array konfigurasi sebagai JSON valid karena generator juga membacanya: gunakan kutip ganda dan hindari trailing comma. Nama ikon dropdown harus tersedia di kamus <code>ICONS</code> pada <code>scripts/build.py</code>.</p>
+              <ol>
+                <li>Tambahkan entri <code>sales-report</code> pada grup navigasi yang sesuai.</li>
+                <li>Buat fungsi konten di modul Python atau tambahkan pemetaan di <code>main()</code> pada <code>scripts/build.py</code>, misalnya contoh di bawah.</li>
+                <li>Tambahkan style/JavaScript khusus bila diperlukan dan muat bersyarat berdasarkan key halaman di fungsi <code>page()</code>.</li>
+                <li>Jalankan build. Generator mengisi title, <code>data-page</code>, shell, dan direktori dokumentasi.</li>
               </ol>
-              <div class="alert alert-warning small mb-0">Generator menimpa HTML hasil generate. Simpan perubahan permanen di generator, atau gunakan salinan HTML dengan nama baru.</div>
+              <pre class="docs-code"><code># Tambahkan ke dictionary pages di main() sebelum loop write_page.
+&#x27;sales-report&#x27;: heading(&#x27;Laporan penjualan&#x27;, &#x27;Ringkasan periode ini.&#x27;)
+    + card(&#x27;Pendapatan&#x27;, &#x27;&lt;p&gt;Isi laporan di sini.&lt;/p&gt;&#x27;),</code></pre>
+              <p class="mb-0">Untuk prototipe manual, salin <code>blank.html</code> dengan nama baru lalu ubah title, <code>body[data-page]</code>, dan kontennya. Daftarkan di sidebar agar dapat dicari. Generator tidak memperbarui salinan manual tersebut; pindahkan kontennya ke generator bila ingin shell tetap konsisten.</p>
             </div>
           </section>
-        </div>
-        <div class="col-lg-4">
-          <section class="card mb-4 bg-yellow">
+          <section id="components" class="card docs-section">
             <div class="card-body">
-              <h2>Isi starter ini</h2>
-              <ul class="small ps-3 mb-0">
-                <li>Dashboard, widget grafik &amp; data</li>
-                <li>Chat, portfolio, blog &amp; mailbox demo</li>
-                <li>16 halaman komponen Bootstrap</li>
-                <li>Form dan validasi</li>
-                <li>Tabel: cari, filter, urutkan, CSV</li>
-                <li>Enam library grafik lokal</li>
-                <li>Lima koleksi ikon lokal</li>
-                <li>Galeri, slider &amp; timeline</li>
-                <li>Delapan demo Google Maps &amp; peta vektor dunia</li>
-                <li>Subscribe, post, kontak, empat halaman error, dan menu bertingkat</li>
-                <li>Kanban proyek &amp; kalender</li>
-                <li>Profil dan preferensi</li>
-                <li>Login, register, reset password</li>
-                <li>Invoice, pricing, blank, 404</li>
+              <h2>7. Urutan aset dan penggunaan komponen</h2>
+              <p>Halaman generated menjadi referensi urutan aset lengkap. Secara umum: CSS vendor → CSS kontrol bersama → tema → CSS modul. JavaScript Bootstrap dan shell dimuat lebih dulu, lalu vendor lokal, inisialisasi modul, dan kontrol bersama. Jangan memuat jQuery atau Bootstrap dua kali.</p>
+              <pre class="docs-code"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap-5.3.8/dist/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/theme.css&quot;&gt;
+
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Simpan perubahan&lt;/button&gt;
+&lt;div class=&quot;card mt-4&quot;&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;span class=&quot;badge bg-green&quot;&gt;Aktif&lt;/span&gt;
+    &lt;h2 class=&quot;mt-3&quot;&gt;Judul panel&lt;/h2&gt;
+    &lt;p class=&quot;mb-0&quot;&gt;Konten panel.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+              <p>Contoh minimal di atas hanya menunjukkan Bootstrap dan tema. Untuk shell, modal, tooltip, popover, atau kontrol form lengkap, mulai dari halaman generated dan pertahankan dependency yang digunakannya.</p>
+              <p class="mb-0">Salin markup komponen dari halaman demonya. Ganti ID agar unik, lalu sesuaikan <code>for</code>, <code>aria-controls</code>, <code>aria-labelledby</code>, dan <code>data-bs-target</code> yang merujuknya. Gunakan tombol untuk aksi dan tautan untuk navigasi.</p>
+            </div>
+          </section>
+          <section id="forms-guide" class="card docs-section">
+            <div class="card-body">
+              <h2>8. Form, editor, dan validasi</h2>
+              <p>Semua <code>.form-select</code> ditingkatkan menjadi Select2 oleh <code>assets/js/controls.js</code>; input date/time/datetime-local memakai Flatpickr. Markup native, atribut <code>name</code>, label, required, min/max, serta reset tetap menjadi sumber nilai.</p>
+              <pre class="docs-code"><code>&lt;label for=&quot;projectStatus&quot; class=&quot;form-label&quot;&gt;Status&lt;/label&gt;
+&lt;select id=&quot;projectStatus&quot; name=&quot;status&quot; class=&quot;form-select&quot; required&gt;
+  &lt;option value=&quot;Rencana&quot;&gt;Rencana&lt;/option&gt;
+  &lt;option value=&quot;Berjalan&quot;&gt;Berjalan&lt;/option&gt;
+&lt;/select&gt;
+&lt;label for=&quot;dueDate&quot; class=&quot;form-label mt-3&quot;&gt;Tenggat&lt;/label&gt;
+&lt;input id=&quot;dueDate&quot; name=&quot;due&quot; type=&quot;date&quot; class=&quot;form-control&quot; required&gt;</code></pre>
+              <pre class="docs-code"><code>const field = document.querySelector(&#x27;#projectStatus&#x27;);
+field.value = &#x27;Berjalan&#x27;;
+field.dispatchEvent(new Event(&#x27;change&#x27;, { bubbles: true }));</code></pre>
+              <p>Tambahkan <code>data-native</code> untuk mempertahankan kontrol browser. Untuk mengganti tanggal setelah picker terpasang, gunakan <code>field._flatpickr.setDate('2026-10-05', true)</code>. Detail kontrol dan keyboard tersedia pada bagian Kontrol form di bawah.</p>
+              <p>Validasi demo memakai constraint HTML dan kelas Bootstrap. Saat menghubungkan backend, gunakan <code>form.checkValidity()</code>, tangani respons error per field, dan validasi ulang di server. Quill tersedia pada Editor dan Create Post; ambil Delta atau HTML sesuai kebutuhan API, dan sanitasi konten yang akan dirender. Wizard memvalidasi langkah sebelum pindah.</p>
+              <p class="mb-0">Dropzone hanya menampilkan antrean/pratinjau lokal. Mengaktifkan upload memerlukan endpoint server dan handler keberhasilan/kegagalan. Jangan menganggap file preview sudah tersimpan permanen.</p>
+            </div>
+          </section>
+          <section id="workspace-guide" class="card docs-section">
+            <div class="card-body">
+              <h2>9. Proyek canvas dan workspace</h2>
+              <p><a href="projects.html">Projects</a> memiliki kolom Rencana, Berjalan, Review, dan Selesai. Tambah proyek lewat modal, ubah status melalui dropdown, atau seret kartu ke kolom tujuan. Posisi di dalam kolom juga dapat diurutkan atas/bawah.</p>
+              <ul>
+                <li>Mouse: seret area kartu. Kontrol dropdown tetap dapat diklik secara normal.</li>
+                <li>Sentuh: geser canvas untuk scroll; tekan-tahan kartu untuk mulai drag.</li>
+                <li>Keyboard: fokuskan kartu, Enter/Space untuk mengambil, panah kiri/kanan mengganti kolom, atas/bawah mengatur urutan, Enter/Space untuk meletakkan, Escape untuk membatalkan.</li>
               </ul>
+              <p>Status dan <code>boardOrder</code> disimpan bersama proyek. <code>assets/js/kanban.js</code> menangani interaksi drag dan event <code>kanban:move</code>; <code>assets/js/app.js</code> mengubah data lalu merender ulang. Jika mengganti renderer, tutup Select2 sebelum membuang field agar listener scroll dibersihkan.</p>
+              <p class="mb-0">Kalender menyimpan agenda lokal. Chat dan mailbox menyimulasikan percakapan, draft, balas, serta kirim di browser. Blog dan portfolio memakai data contoh/filter; Create Post dan Posts menyediakan draft/publikasi lokal. Statistik dashboard dan chart adalah ilustrasi, bukan agregasi otomatis proyek.</p>
             </div>
           </section>
-          <section class="card mb-4">
+          <section id="tables-charts" class="card docs-section">
             <div class="card-body">
-              <h2>Interaksi &amp; data</h2>
-              <p class="small">Proyek, tugas, agenda, profil, dan preferensi disimpan dengan prefix <code>brutal.</code> di localStorage. Data hanya berada di browser, dan berbeda antar origin.</p>
-              <p class="small mb-0">Angka statistik adalah ilustrasi tetap. Grafik SVG mendukung pergantian periode; enam halaman library grafik memakai data ilustratif. Login/register, subscribe, post, dan kontak adalah demo lokal; tidak ada sesi autentikasi, transaksi, pengiriman newsletter, atau pesan kontak.</p>
+              <h2>10. Tabel, ekspor, dan grafik</h2>
+              <p><a href="basic-table.html">Tabel Dasar</a> terhubung ke proyek workspace dan menyediakan pencarian, filter, pengurutan, pagination, serta CSV. <a href="datatables.html">DataTables</a> memakai data demo sendiri dengan default 10 baris agar cocok dengan pilihan jumlah entri.</p>
+              <pre class="docs-code"><code>// assets/js/tables.js — konfigurasi DataTables
+new DataTable(&#x27;#dataTableDemo&#x27;, {
+  pageLength: 10,
+  order: [[0, &#x27;asc&#x27;]],
+  layout: {
+    topStart: &#x27;pageLength&#x27;, topEnd: &#x27;search&#x27;,
+    bottomStart: &#x27;info&#x27;, bottomEnd: &#x27;paging&#x27;
+  }
+});</code></pre>
+              <p>Jangan inisialisasi tabel yang sama dua kali. Ketika memuat data API, gunakan API instance DataTables untuk mengubah baris. Export Table memuat Buttons, JSZip, dan pdfMake untuk Excel, CSV, PDF, serta cetak; Editable Table menyimpan edit pada key terpisah.</p>
+              <p>Chart.js, ApexCharts, amCharts 4, ECharts, Sparkline, dan Morris diinisialisasi dalam <code>assets/js/charts.js</code>. Masing-masing halaman memuat vendor yang diperlukan. Ganti dataset dan label pada blok halaman yang sesuai; hancurkan instance lama jika membuat ulang chart pada elemen yang sama.</p>
+              <p class="mb-0">Ukuran tombol pagination diatur terpusat melalui <code>--neo-page-size</code> dan <code>--neo-page-icon-size</code> di <code>theme.css</code>. Gunakan <code>.pagination-sm</code> atau <code>.pagination-lg</code> agar panah dan nomor tetap seukuran.</p>
             </div>
           </section>
-          <section class="card">
+          <section id="icons-media" class="card docs-section">
             <div class="card-body">
-              <h2>Cakupan &amp; pengembangan</h2>
-              <p class="small">Terinspirasi cakupan admin Otika, disusun ulang untuk Bootstrap 5. Starter ini bukan salinan satu per satu seluruh plugin Otika.</p>
-              <p class="small">Chat dan email tersedia sebagai simulasi lokal. Pengiriman nyata dan upload server belum diintegrasikan. Post dan subscribe disimpan hanya di browser; kontak menampilkan pratinjau tanpa mengirim pesan. Google Maps memerlukan API key browser dan billing; peta vektor berjalan lokal tanpa key. Tambahkan library hanya ketika fitur tersebut diperlukan; pin versi dan muat per halaman.</p>
-              <a class="btn btn-sm" href="errors-404.html">Preview halaman 404 ↗</a>
+              <h2>11. Ikon, animasi, dan media</h2>
+              <p>Menu Icons berisi Font Awesome, Material Icons, Ionicons, Feather, Weather Icons, dan Animated Icons. Galeri mendukung pencarian serta salin kode. Feather menyalin SVG lengkap; koleksi font membutuhkan CSS dan font bundle terkait.</p>
+              <p><a href="icon-animated.html">Animated Icons</a> memakai Lordicon lokal dengan enam aset animasi internal. Pilih hover/fokus, klik/sentuh, otomatis berulang, atau pemicu JavaScript. Kontrol kecepatan mengubah snippet, dan jeda global menghentikan animasi demo. Animasi di luar viewport/tab tersembunyi dihentikan, serta reduced motion dihormati.</p>
+              <pre class="docs-code"><code>&lt;script src=&quot;assets/bundles/lordicon/lordicon.js&quot;&gt;&lt;/script&gt;
+&lt;button type=&quot;button&quot; class=&quot;download-action&quot; aria-label=&quot;Unduh&quot;&gt;
+  &lt;lord-icon src=&quot;assets/bundles/lordicon/icons/download.json&quot;
+    trigger=&quot;hover&quot; target=&quot;.download-action&quot; state=&quot;hover-pinch&quot;
+    colors=&quot;primary:#232420,secondary:#a78bfa&quot;
+    style=&quot;width:80px;height:80px&quot; aria-hidden=&quot;true&quot;&gt;&lt;/lord-icon&gt;
+&lt;/button&gt;</code></pre>
+              <p>Player cukup dimuat satu kali. Untuk event aplikasi, panggil <code>icon.play({ from: 'start' })</code>. Snippet memuat JSON melalui HTTP; galeri bawaan memakai data embedded hasil build agar juga mendukung <code>file://</code>. Tambahkan aset baru ke <code>scripts/animated_icon_pages.py</code> dan simpan sumber/lisensinya di bundle.</p>
+              <p class="mb-0">Media memakai GLightbox, Bootstrap Carousel, Owl Carousel, dan ilustrasi SVG lokal. Ganti gambar dengan aset milikmu, pertahankan alt text, ukuran/aspect ratio, serta label navigasi. Kredit dan lisensi tiap library tersedia pada daftar bundle; atribusi Lordicon dan branding amCharts tetap dipertahankan.</p>
             </div>
           </section>
+          <section id="maps-guide" class="card docs-section">
+            <div class="card-body">
+              <h2>12. Google Maps dan peta vektor</h2>
+              <p>Delapan halaman <code>gmaps-*.html</code> menampilkan panel koneksi. Masukkan key browser milikmu pada panel tersebut; kode template tidak memuat key tetap. Pengaturan key dan pesan kegagalan ditangani oleh <code>assets/js/maps.js</code>.</p>
+              <p>Siapkan proyek Google Cloud dengan billing dan layanan untuk fitur yang digunakan: Maps JavaScript API, Routes API untuk demo rute, serta Geocoding API untuk pencarian alamat. Batasi key ke origin/domain dan API yang digunakan. Tanpa key, template tetap menampilkan placeholder.</p>
+              <p>Key tersimpan di <code>brutal.mapsApiKey</code>. Gunakan tombol hapus key di halaman Maps untuk menghapusnya. Geolocation memerlukan izin browser dan secure context seperti HTTPS atau localhost. Advanced Route memisahkan mode waypoint dan alternatif rute.</p>
+              <p class="mb-0"><a href="vector-map.html">Vector Map</a> menggunakan jsVectorMap dan data dunia lokal; tidak memerlukan key maupun koneksi Google. Error peta tidak memengaruhi modul lain.</p>
+            </div>
+          </section>
+          <section id="storage" class="card docs-section">
+            <div class="card-body">
+              <h2>13. Data lokal dan reset demo</h2>
+              <p>Data demo disimpan di localStorage, berbeda untuk setiap origin dan profil browser. Browser privat, kuota penuh, atau storage yang diblokir dapat membuat data tidak bertahan. Refresh tidak menghapus data yang telah disimpan.</p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Key</th>
+                      <th>Isi / reset</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <code>brutal.projects</code>
+                        ,
+                        <code>brutal.tasks</code>
+                        ,
+                        <code>brutal.events</code>
+                      </td>
+                      <td>Proyek, checklist, agenda; reset dari Profil.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>brutal.profile</code>
+                        ,
+                        <code>brutal.compact</code>
+                      </td>
+                      <td>Profil dan preferensi tampilan; reset dari Profil.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>brutal.chat</code>
+                        ,
+                        <code>brutal.mail</code>
+                      </td>
+                      <td>Percakapan dan mailbox; reset dari Profil.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>brutal.editableTable</code>
+                      </td>
+                      <td>Edit tabel; gunakan reset di Editable Table.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>brutal.posts</code>
+                        ,
+                        <code>brutal.subscribers</code>
+                      </td>
+                      <td>Post dan pendaftaran demo; hapus key terkait lewat DevTools untuk reset.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>brutal.mapsApiKey</code>
+                      </td>
+                      <td>Key Maps; hapus melalui panel Maps.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mb-0">Tombol reset di Profil tidak menghapus semua key template. Sebelum reset, simpan data yang masih dibutuhkan. Untuk reset spesifik di DevTools → Application/Storage → Local Storage, hapus key yang bersangkutan, lalu refresh. Jangan memakai <code>localStorage.clear()</code> jika origin dipakai aplikasi lain.</p>
+            </div>
+          </section>
+          <section id="backend" class="card docs-section">
+            <div class="card-body">
+              <h2>14. Menghubungkan backend</h2>
+              <p>Ganti sumber data dan handler demo pada modul terkait: <code>app.js</code> untuk workspace, <code>workspace.js</code> untuk chat/email, <code>special.js</code> untuk post/subscribe/kontak, <code>tables.js</code> untuk tabel. Pisahkan layanan API dari renderer agar komponen dapat dipakai ulang.</p>
+              <pre class="docs-code"><code>// Contoh pola integrasi, bukan endpoint yang disediakan template.
+async function loadProjects() {
+  const response = await fetch(&#x27;/api/projects&#x27;, {
+    credentials: &#x27;same-origin&#x27;,
+    headers: { Accept: &#x27;application/json&#x27; }
+  });
+  if (!response.ok) throw new Error(&#x27;Proyek belum dapat dimuat.&#x27;);
+  return response.json();
+}</code></pre>
+              <p class="mb-0">Tentukan kontrak data, state loading/empty/error, dan cara retry. Simpan perubahan hanya setelah respons berhasil atau sediakan rollback untuk pembaruan optimistis. Server harus menangani autentikasi, otorisasi, validasi, sanitasi konten, dan penyimpanan permanen. Login demo saat ini tidak melindungi halaman.</p>
+            </div>
+          </section>
+          <section id="deployment" class="card docs-section">
+            <div class="card-body">
+              <h2>15. Deploy dan pemeliharaan</h2>
+              <p>Untuk hosting statis, salin seluruh file <code>*.html</code>, folder <code>assets/</code>, serta <code>bootstrap-5.3.8/</code>. Pertahankan struktur relatif agar URL CSS, JavaScript, font, gambar, dan navigasi tetap benar. Tidak dibutuhkan Node atau Python di server produksi.</p>
+              <p><code>scripts/</code>, <code>tests/</code>, <code>node_modules/</code>, <code>.venv/</code>, catatan fase, dan laporan tes tidak perlu dideploy. File <code>errors-*.html</code> hanyalah halaman tampilan; konfigurasikan hosting untuk menggunakannya sebagai respons error dengan status HTTP yang benar.</p>
+              <p>Saat memperbarui vendor, pin versi paket, salin distribusi yang diperlukan ke <code>assets/bundles/</code>, sertakan lisensi, dan perbarui dokumentasi. <code>npm ci</code> maupun build HTML tidak memperbarui bundle browser secara otomatis.</p>
+              <h3>Verifikasi opsional saat pengembangan</h3>
+              <pre class="docs-code"><code>npm ci
+npm test
+# Linux: bila lokasi Chrome berbeda
+CHROME_PATH=/path/to/chrome npm test</code></pre>
+              <p class="mb-0">Suite Playwright memakai Chrome lokal di <code>/usr/bin/google-chrome</code> secara default; ubah <code>CHROME_PATH</code> sesuai OS (PowerShell: <code>$env:CHROME_PATH = 'C:\Program Files\Google\Chrome\Application\chrome.exe'</code>). Periksa juga desktop/mobile, keyboard, form, pagination, dan fitur yang baru diubah. Hasil tes lama tidak menjamin perubahan baru sudah diverifikasi.</p>
+            </div>
+          </section>
+          <section id="troubleshooting" class="card docs-section">
+            <div class="card-body">
+              <h2>16. Pemecahan masalah</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Gejala</th>
+                      <th>Langkah pemeriksaan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Halaman tanpa style / aset 404</td>
+                      <td>Jalankan server dari root repository; pastikan folder Bootstrap dan assets ikut disalin. Periksa Network di DevTools.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>python3</code>
+                        tidak ditemukan
+                      </td>
+                      <td>
+                        Gunakan
+                        <code>python</code>
+                        atau
+                        <code>py</code>
+                        yang tersedia. Jalankan server/build langsung dengan executable tersebut.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>No module named lxml</code>
+                      </td>
+                      <td>Instal requirements menggunakan Python yang sama dengan build di virtual environment.</td>
+                    </tr>
+                    <tr>
+                      <td>Port 4173 sudah dipakai</td>
+                      <td>
+                        Hentikan server lama atau jalankan
+                        <code>python3 -m http.server 4174 --bind 127.0.0.1</code>
+                        , lalu buka port baru. Origin dan data lokal ikut berubah.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Perubahan HTML hilang</td>
+                      <td>Edit sumber di scripts, bukan hanya hasil generated; jalankan build lagi.</td>
+                    </tr>
+                    <tr>
+                      <td>Perubahan CSS/JS belum terlihat</td>
+                      <td>Hard refresh atau nonaktifkan cache saat DevTools terbuka. Pastikan file yang diedit memang dimuat halaman.</td>
+                    </tr>
+                    <tr>
+                      <td>Dropdown jumlah baris kosong</td>
+                      <td>
+                        Pastikan
+                        <code>pageLength</code>
+                        ada dalam pilihan length menu. DataTables bawaan memakai 10.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Canvas proyek sulit digulir</td>
+                      <td>Periksa penutupan Select2 sebelum re-render dan handler kanban. Di sentuh, swipe singkat untuk scroll, tekan-tahan untuk drag.</td>
+                    </tr>
+                    <tr>
+                      <td>Ikon animasi statis</td>
+                      <td>Periksa reduced motion, tombol jeda, pemicu, visibilitas ikon, dan error player. Snippet JSON perlu HTTP lokal.</td>
+                    </tr>
+                    <tr>
+                      <td>Data berbeda / tidak tersimpan</td>
+                      <td>Pastikan origin dan profil browser sama; cek izin serta kuota localStorage.</td>
+                    </tr>
+                    <tr>
+                      <td>Peta gagal tampil</td>
+                      <td>Baca status pada panel Maps, periksa key, origin yang diizinkan, layanan API, billing, dan koneksi.</td>
+                    </tr>
+                    <tr>
+                      <td>Playwright tidak menemukan browser</td>
+                      <td>
+                        Instal Chrome atau arahkan
+                        <code>CHROME_PATH</code>
+                        ke executable browser Chromium yang tersedia.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section id="page-directory" class="card mt-4">
+            <div class="card-body">
+              <h2>Direktori seluruh 93 halaman</h2>
+              <p class="small text-muted">Daftar ini dihasilkan dari konfigurasi sidebar yang sama dengan navigasi dan pencarian.</p>
+              <section class="mb-4">
+                <h3 class="fs-5">WORKSPACE</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="index.html">Dashboard</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="projects.html">Proyek</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="calendar.html">Kalender</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="widget-chart.html">Widgets › Chart Widgets</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="widget-data.html">Widgets › Data Widgets</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chat.html">Apps › Chat</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="portfolio.html">Apps › Portfolio</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="blog.html">Apps › Blog</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="email-inbox.html">Email › Inbox</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="email-compose.html">Email › Compose</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="email-read.html">Email › Baca Email</a></li>
+                </ul>
+              </section>
+              <section class="mb-4">
+                <h3 class="fs-5">BUILDING BLOCKS</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="components.html">Komponen UI › Semua komponen</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="alert.html">Komponen UI › Alert</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="badge.html">Komponen UI › Badge</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="breadcrumb.html">Komponen UI › Breadcrumb</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="buttons.html">Komponen UI › Buttons</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="collapse.html">Komponen UI › Collapse</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="dropdown.html">Komponen UI › Dropdown</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="checkbox-and-radio.html">Komponen UI › Checkbox &amp; Radios</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="list-group.html">Komponen UI › List Group</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="media-object.html">Komponen UI › Media Object</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="navbar.html">Komponen UI › Navbar</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="pagination.html">Komponen UI › Pagination</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="popover.html">Komponen UI › Popover</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="progress.html">Komponen UI › Progress</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="tooltip.html">Komponen UI › Tooltip</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="flags.html">Komponen UI › Flag</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="typography.html">Komponen UI › Typography</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="avatar.html">Komponen Lanjutan › Avatar</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="card.html">Komponen Lanjutan › Card</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="modal.html">Komponen Lanjutan › Modal</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="sweet-alert.html">Komponen Lanjutan › Sweet Alert</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="toastr.html">Komponen Lanjutan › Toastr</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="empty-state.html">Komponen Lanjutan › Empty State</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="multiple-upload.html">Komponen Lanjutan › Multiple Upload</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="tabs.html">Komponen Lanjutan › Tabs</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="pricing.html">Komponen Lanjutan › Pricing</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="forms.html">Form &amp; Validasi › Semua form</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="basic-form.html">Form &amp; Validasi › Form Dasar</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-advanced-form.html">Form &amp; Validasi › Advanced Form</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-editor.html">Form &amp; Validasi › Editor</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-validation.html">Form &amp; Validasi › Validation</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="form-wizard.html">Form &amp; Validasi › Form Wizard</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="tables.html">Tabel Data › Semua tabel</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="basic-table.html">Tabel Data › Tabel Dasar</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="advance-table.html">Tabel Data › Advanced Table</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="datatables.html">Tabel Data › DataTables</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="export-table.html">Tabel Data › Export Table</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="editable-table.html">Tabel Data › Editable Table</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="charts.html">Grafik &amp; Widget › Semua grafik</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-chartjs.html">Grafik &amp; Widget › Chart.js</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-apexchart.html">Grafik &amp; Widget › ApexCharts</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-amchart.html">Grafik &amp; Widget › amCharts 4</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-echart.html">Grafik &amp; Widget › Apache ECharts</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-sparkline.html">Grafik &amp; Widget › Sparkline</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-morris.html">Grafik &amp; Widget › Morris.js</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-font-awesome.html">Ikon › Font Awesome</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-material.html">Ikon › Material Icons</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-ionicons.html">Ikon › Ionicons</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-feather.html">Ikon › Feather Icons</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-weather-icon.html">Ikon › Weather Icons</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-animated.html">Ikon › Animated Icons</a></li>
+                </ul>
+              </section>
+              <section class="mb-4">
+                <h3 class="fs-5">MEDIA</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="light-gallery.html">Galeri › Light Gallery</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gallery1.html">Galeri › Gallery 2</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="carousel.html">Slider › Bootstrap Carousel</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="owl-carousel.html">Slider › Owl Carousel</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="timeline.html">Timeline</a></li>
+                </ul>
+              </section>
+              <section class="mb-4">
+                <h3 class="fs-5">MAPS</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-simple.html">Google Maps › Simple</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-marker.html">Google Maps › Marker</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-multiple-marker.html">Google Maps › Multiple Marker</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-route.html">Google Maps › Route</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-advanced-route.html">Google Maps › Advanced Route</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-draggable-marker.html">Google Maps › Draggable Marker</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-geocoding.html">Google Maps › Geocoding</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-geolocation.html">Google Maps › Geolocation</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="vector-map.html">Vector Map</a></li>
+                </ul>
+              </section>
+              <section class="mb-4">
+                <h3 class="fs-5">HALAMAN</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="profile.html">Profil &amp; pengaturan</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="invoice.html">Invoice</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="contact.html">Kontak</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="create-post.html">Post › Buat Post</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="posts.html">Post › Daftar Post</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-login.html">Autentikasi › Login</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-register.html">Autentikasi › Daftar</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-forgot-password.html">Autentikasi › Lupa Password</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-reset-password.html">Autentikasi › Reset Password</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="subscribe.html">Autentikasi › Subscribe</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-403.html">Errors › 403</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-404.html">Errors › 404</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-500.html">Errors › 500</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-503.html">Errors › 503</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="multilevel.html">Multilevel › Level 1 › Level 2 › Level 3</a></li>
+                </ul>
+              </section>
+              <section class="mb-4">
+                <h3 class="fs-5">MULAI MEMBANGUN</h3>
+                <ul class="row list-unstyled small mb-0">
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="blank.html">Halaman kosong</a></li>
+                  <li class="col-sm-6 col-xl-4 mb-2"><a href="docs.html">Dokumentasi</a></li>
+                </ul>
+              </section>
+            </div>
+          </section>
+          <section id="library-directory" class="card mt-4">
+            <div class="card-body">
+              <h2>Library dan versi</h2>
+              <p class="small">Bootstrap 5.3.8 adalah fondasi CSS/JavaScript. Bundle berikut disimpan lokal dan hanya dimuat pada halaman yang memerlukannya. Google Maps JavaScript API dimuat dari Google setelah key dimasukkan di browser; peta vektor tidak membutuhkan key. Rincian lisensi dan sumber ada di <code>assets/bundles/README.md</code>.</p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Library</th>
+                      <th scope="col">Versi</th>
+                      <th scope="col">Contoh pemakaian</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">SweetAlert2</th>
+                      <td>
+                        <code>11.26.25</code>
+                      </td>
+                      <td>sweet-alert</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Toastr</th>
+                      <td>
+                        <code>2.1.4</code>
+                      </td>
+                      <td>toastr</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">jQuery</th>
+                      <td>
+                        <code>3.7.1</code>
+                      </td>
+                      <td>Semua halaman: kontrol form bersama; plugin tambahan per modul</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dropzone</th>
+                      <td>
+                        <code>5.9.3</code>
+                      </td>
+                      <td>multiple-upload</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Select2</th>
+                      <td>
+                        <code>4.0.13</code>
+                      </td>
+                      <td>Semua form-select, termasuk modal proyek</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Flatpickr</th>
+                      <td>
+                        <code>4.6.13</code>
+                      </td>
+                      <td>Tanggal/waktu di form dan modal</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Quill</th>
+                      <td>
+                        <code>2.0.3</code>
+                      </td>
+                      <td>forms-editor, create-post</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">jQuery Steps</th>
+                      <td>
+                        <code>1.1.0</code>
+                      </td>
+                      <td>form-wizard</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DataTables Bootstrap 5</th>
+                      <td>
+                        <code>2.3.8</code>
+                      </td>
+                      <td>datatables, export-table</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DataTables Buttons</th>
+                      <td>
+                        <code>3.2.6</code>
+                      </td>
+                      <td>export-table</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">JSZip</th>
+                      <td>
+                        <code>3.10.2</code>
+                      </td>
+                      <td>export-table</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">pdfMake</th>
+                      <td>
+                        <code>0.2.23</code>
+                      </td>
+                      <td>export-table</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Chart.js</th>
+                      <td>
+                        <code>4.5.1</code>
+                      </td>
+                      <td>chart-chartjs</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ApexCharts</th>
+                      <td>
+                        <code>3.54.1</code>
+                      </td>
+                      <td>chart-apexchart</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">amCharts 4</th>
+                      <td>
+                        <code>4.10.40</code>
+                      </td>
+                      <td>chart-amchart</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Apache ECharts</th>
+                      <td>
+                        <code>6.1.0</code>
+                      </td>
+                      <td>chart-echart</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">jQuery Sparkline</th>
+                      <td>
+                        <code>2.4.0</code>
+                      </td>
+                      <td>chart-sparkline</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Morris.js</th>
+                      <td>
+                        <code>0.5.1 (commit 14530d0)</code>
+                      </td>
+                      <td>chart-morris</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Raphael</th>
+                      <td>
+                        <code>2.3.0</code>
+                      </td>
+                      <td>chart-morris</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Font Awesome Free</th>
+                      <td>
+                        <code>6.7.2</code>
+                      </td>
+                      <td>icon-font-awesome</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Material Icons</th>
+                      <td>
+                        <code>5.3.0</code>
+                      </td>
+                      <td>icon-material</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Ionicons</th>
+                      <td>
+                        <code>7.4.0</code>
+                      </td>
+                      <td>icon-ionicons</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Feather Icons</th>
+                      <td>
+                        <code>4.29.2</code>
+                      </td>
+                      <td>icon-feather</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Weather Icons</th>
+                      <td>
+                        <code>2.0.12</code>
+                      </td>
+                      <td>icon-weather-icon</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Lordicon Animated Icons</th>
+                      <td>
+                        <code>3.0.0</code>
+                      </td>
+                      <td>icon-animated</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GLightbox</th>
+                      <td>
+                        <code>3.3.1</code>
+                      </td>
+                      <td>light-gallery</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Owl Carousel</th>
+                      <td>
+                        <code>2.3.4</code>
+                      </td>
+                      <td>owl-carousel</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">jsVectorMap</th>
+                      <td>
+                        <code>1.7.0</code>
+                      </td>
+                      <td>vector-map</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section id="enhanced-controls" class="card mt-4">
+            <div class="card-body">
+              <h2>Kontrol form dan tema komponen</h2>
+              <p>Dropdown <code>.form-select</code> memakai Select2 lokal; kalender tanggal/waktu memakai Flatpickr dengan bahasa Indonesia. Keduanya mempertahankan field asli, nama, nilai, label, validasi, dan reset. Modal proyek tersedia di setiap halaman sehingga bundle kontrol dimuat bersama shell.</p>
+              <ul class="small">
+                <li>Style bersama berada di <code>assets/css/controls.css</code>, inisialisasi di <code>assets/js/controls.js</code>. Popup Select2 mengikuti lebar trigger; jangan menerapkan <code>width:100% !important</code> pada semua <code>.select2-container</code>.</li>
+                <li>Select mendukung pencarian, multiple, optgroup, disabled, ukuran Bootstrap, serta field dinamis. Setelah mengubah nilai select lewat kode, kirim event <code>change</code> agar tampilan dan handler ikut diperbarui. Gunakan <code>change.select2</code> bila hanya menyinkronkan tampilan tanpa menjalankan logika form.</li>
+                <li>Date memakai nilai <code>YYYY-MM-DD</code>, time <code>HH:MM</code>, datetime-local <code>YYYY-MM-DDTHH:MM</code>. Input dapat diketik langsung; rentang min/max dan validasi tanggal tetap diperiksa. Panah bawah membuka picker, panah menavigasi tanggal, Enter memilih, Escape menutup. Tombol Hari ini/Sekarang dan Bersihkan tersedia.</li>
+                <li>Atribut <code>data-native</code> mempertahankan kontrol browser. Input readonly/disabled tidak membuka kalender. Jenis month/week belum dipakai pada halaman template dan tetap native bila ditambahkan; panel native mengikuti OS/browser sehingga tidak dapat diberi tema penuh.</li>
+                <li>Tanpa JavaScript/plugin, markup select dan input tanggal asli tetap tersedia. Popup di modal dipasang di dalam modal agar fokus keyboard tetap terjaga.</li>
+                <li>Tinggi progress memakai <code>--bs-progress-height</code>; warna memakai <code>background-color</code> agar pola garis tidak terhapus. Transisi menggunakan <code>--neo-transition</code> dan mengikuti <code>prefers-reduced-motion</code>.</li>
+              </ul>
+              <p class="small mb-0">Referensi: <a href="https://select2.org/troubleshooting/common-problems">Select2 dalam modal</a> dan <a href="https://flatpickr.js.org/options/">opsi Flatpickr</a>.</p>
+            </div>
+          </section>
+          <section id="contributing" class="card mt-4">
+            <div class="card-body">
+              <h2>Menambah halaman dengan rapi</h2>
+              <ol class="small">
+                <li>Gunakan nama file <code>lowercase-kebab-case.html</code> dan nilai <code>data-page</code> yang sama tanpa ekstensi.</li>
+                <li>Tambahkan halaman ke <code>assets/js/sidebar-config.js</code>. Gunakan <code>id</code> unik untuk setiap dropdown; sidebar dan pencarian membaca konfigurasi ini.</li>
+                <li>Tulis konten permanen di modul <code>scripts/*_pages.py</code> atau <code>scripts/build.py</code>. Generator akan menimpa HTML hasil build.</li>
+                <li>Tempatkan style di <code>assets/css/</code>, interaksi di <code>assets/js/</code>, dan vendor berlisensi di <code>assets/bundles/</code>. Muat bundle hanya pada halaman terkait.</li>
+                <li>Jalankan <code>npm run build</code>. Periksa desktop, mobile, keyboard, dan tautan sebelum commit; suite <code>npm test</code> tersedia sebagai verifikasi tambahan.</li>
+              </ol>
+              <p class="small mb-0">Template statis dapat dibuka langsung lewat <code>index.html</code> atau server <code>npm run dev</code>. Aset SVG asli tersimpan di <code>assets/img/</code>; sumber dan lisensi vendor dirinci di README proyek serta folder bundle.</p>
+            </div>
+          </section>
+          <p class="mt-4"><a href="#main">Kembali ke atas ↑</a></p>
         </div>
       </div>
-      <section id="page-directory" class="card mt-4">
-        <div class="card-body">
-          <h2>Direktori seluruh 92 halaman</h2>
-          <p class="small text-muted">Daftar ini dihasilkan dari konfigurasi sidebar yang sama dengan navigasi dan pencarian.</p>
-          <section class="mb-4">
-            <h3 class="fs-5">WORKSPACE</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="index.html">Dashboard</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="projects.html">Proyek</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="calendar.html">Kalender</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="widget-chart.html">Widgets › Chart Widgets</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="widget-data.html">Widgets › Data Widgets</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chat.html">Apps › Chat</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="portfolio.html">Apps › Portfolio</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="blog.html">Apps › Blog</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="email-inbox.html">Email › Inbox</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="email-compose.html">Email › Compose</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="email-read.html">Email › Baca Email</a></li>
-            </ul>
-          </section>
-          <section class="mb-4">
-            <h3 class="fs-5">BUILDING BLOCKS</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="components.html">Komponen UI › Semua komponen</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="alert.html">Komponen UI › Alert</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="badge.html">Komponen UI › Badge</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="breadcrumb.html">Komponen UI › Breadcrumb</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="buttons.html">Komponen UI › Buttons</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="collapse.html">Komponen UI › Collapse</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="dropdown.html">Komponen UI › Dropdown</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="checkbox-and-radio.html">Komponen UI › Checkbox &amp; Radios</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="list-group.html">Komponen UI › List Group</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="media-object.html">Komponen UI › Media Object</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="navbar.html">Komponen UI › Navbar</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="pagination.html">Komponen UI › Pagination</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="popover.html">Komponen UI › Popover</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="progress.html">Komponen UI › Progress</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="tooltip.html">Komponen UI › Tooltip</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="flags.html">Komponen UI › Flag</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="typography.html">Komponen UI › Typography</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="avatar.html">Komponen Lanjutan › Avatar</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="card.html">Komponen Lanjutan › Card</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="modal.html">Komponen Lanjutan › Modal</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="sweet-alert.html">Komponen Lanjutan › Sweet Alert</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="toastr.html">Komponen Lanjutan › Toastr</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="empty-state.html">Komponen Lanjutan › Empty State</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="multiple-upload.html">Komponen Lanjutan › Multiple Upload</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="tabs.html">Komponen Lanjutan › Tabs</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="pricing.html">Komponen Lanjutan › Pricing</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="forms.html">Form &amp; Validasi › Semua form</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="basic-form.html">Form &amp; Validasi › Form Dasar</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-advanced-form.html">Form &amp; Validasi › Advanced Form</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-editor.html">Form &amp; Validasi › Editor</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="forms-validation.html">Form &amp; Validasi › Validation</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="form-wizard.html">Form &amp; Validasi › Form Wizard</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="tables.html">Tabel Data › Semua tabel</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="basic-table.html">Tabel Data › Tabel Dasar</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="advance-table.html">Tabel Data › Advanced Table</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="datatables.html">Tabel Data › DataTables</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="export-table.html">Tabel Data › Export Table</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="editable-table.html">Tabel Data › Editable Table</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="charts.html">Grafik &amp; Widget › Semua grafik</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-chartjs.html">Grafik &amp; Widget › Chart.js</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-apexchart.html">Grafik &amp; Widget › ApexCharts</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-amchart.html">Grafik &amp; Widget › amCharts 4</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-echart.html">Grafik &amp; Widget › Apache ECharts</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-sparkline.html">Grafik &amp; Widget › Sparkline</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="chart-morris.html">Grafik &amp; Widget › Morris.js</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-font-awesome.html">Ikon › Font Awesome</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-material.html">Ikon › Material Icons</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-ionicons.html">Ikon › Ionicons</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-feather.html">Ikon › Feather Icons</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="icon-weather-icon.html">Ikon › Weather Icons</a></li>
-            </ul>
-          </section>
-          <section class="mb-4">
-            <h3 class="fs-5">MEDIA</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="light-gallery.html">Galeri › Light Gallery</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gallery1.html">Galeri › Gallery 2</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="carousel.html">Slider › Bootstrap Carousel</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="owl-carousel.html">Slider › Owl Carousel</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="timeline.html">Timeline</a></li>
-            </ul>
-          </section>
-          <section class="mb-4">
-            <h3 class="fs-5">MAPS</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-simple.html">Google Maps › Simple</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-marker.html">Google Maps › Marker</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-multiple-marker.html">Google Maps › Multiple Marker</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-route.html">Google Maps › Route</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-advanced-route.html">Google Maps › Advanced Route</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-draggable-marker.html">Google Maps › Draggable Marker</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-geocoding.html">Google Maps › Geocoding</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="gmaps-geolocation.html">Google Maps › Geolocation</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="vector-map.html">Vector Map</a></li>
-            </ul>
-          </section>
-          <section class="mb-4">
-            <h3 class="fs-5">HALAMAN</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="profile.html">Profil &amp; pengaturan</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="invoice.html">Invoice</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="contact.html">Kontak</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="create-post.html">Post › Buat Post</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="posts.html">Post › Daftar Post</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-login.html">Autentikasi › Login</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-register.html">Autentikasi › Daftar</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-forgot-password.html">Autentikasi › Lupa Password</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="auth-reset-password.html">Autentikasi › Reset Password</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="subscribe.html">Autentikasi › Subscribe</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-403.html">Errors › 403</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-404.html">Errors › 404</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-500.html">Errors › 500</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="errors-503.html">Errors › 503</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="multilevel.html">Multilevel › Level 1 › Level 2 › Level 3</a></li>
-            </ul>
-          </section>
-          <section class="mb-4">
-            <h3 class="fs-5">MULAI MEMBANGUN</h3>
-            <ul class="row list-unstyled small mb-0">
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="blank.html">Halaman kosong</a></li>
-              <li class="col-sm-6 col-xl-4 mb-2"><a href="docs.html">Dokumentasi</a></li>
-            </ul>
-          </section>
-        </div>
-      </section>
-      <section id="library-directory" class="card mt-4">
-        <div class="card-body">
-          <h2>Library dan versi</h2>
-          <p class="small">Bootstrap 5.3.8 adalah fondasi CSS/JavaScript. Bundle berikut disimpan lokal dan hanya dimuat pada halaman yang memerlukannya. Google Maps JavaScript API dimuat dari Google setelah key dimasukkan di browser; peta vektor tidak membutuhkan key. Rincian lisensi dan sumber ada di <code>assets/bundles/README.md</code>.</p>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Library</th>
-                  <th scope="col">Versi</th>
-                  <th scope="col">Contoh pemakaian</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">SweetAlert2</th>
-                  <td>
-                    <code>11.26.25</code>
-                  </td>
-                  <td>sweet-alert</td>
-                </tr>
-                <tr>
-                  <th scope="row">Toastr</th>
-                  <td>
-                    <code>2.1.4</code>
-                  </td>
-                  <td>toastr</td>
-                </tr>
-                <tr>
-                  <th scope="row">jQuery</th>
-                  <td>
-                    <code>3.7.1</code>
-                  </td>
-                  <td>toastr, Select2, Steps, DataTables, Sparkline, Morris, Owl</td>
-                </tr>
-                <tr>
-                  <th scope="row">Dropzone</th>
-                  <td>
-                    <code>5.9.3</code>
-                  </td>
-                  <td>multiple-upload</td>
-                </tr>
-                <tr>
-                  <th scope="row">Select2</th>
-                  <td>
-                    <code>4.0.13</code>
-                  </td>
-                  <td>Semua form-select, termasuk modal proyek</td>
-                </tr>
-                <tr>
-                  <th scope="row">Flatpickr</th>
-                  <td>
-                    <code>4.6.13</code>
-                  </td>
-                  <td>Tanggal/waktu di form dan modal</td>
-                </tr>
-                <tr>
-                  <th scope="row">Quill</th>
-                  <td>
-                    <code>2.0.3</code>
-                  </td>
-                  <td>forms-editor, create-post</td>
-                </tr>
-                <tr>
-                  <th scope="row">jQuery Steps</th>
-                  <td>
-                    <code>1.1.0</code>
-                  </td>
-                  <td>form-wizard</td>
-                </tr>
-                <tr>
-                  <th scope="row">DataTables Bootstrap 5</th>
-                  <td>
-                    <code>2.3.8</code>
-                  </td>
-                  <td>datatables, export-table</td>
-                </tr>
-                <tr>
-                  <th scope="row">DataTables Buttons</th>
-                  <td>
-                    <code>3.2.6</code>
-                  </td>
-                  <td>export-table</td>
-                </tr>
-                <tr>
-                  <th scope="row">JSZip</th>
-                  <td>
-                    <code>3.10.2</code>
-                  </td>
-                  <td>export-table</td>
-                </tr>
-                <tr>
-                  <th scope="row">pdfMake</th>
-                  <td>
-                    <code>0.2.23</code>
-                  </td>
-                  <td>export-table</td>
-                </tr>
-                <tr>
-                  <th scope="row">Chart.js</th>
-                  <td>
-                    <code>4.5.1</code>
-                  </td>
-                  <td>chart-chartjs</td>
-                </tr>
-                <tr>
-                  <th scope="row">ApexCharts</th>
-                  <td>
-                    <code>3.54.1</code>
-                  </td>
-                  <td>chart-apexchart</td>
-                </tr>
-                <tr>
-                  <th scope="row">amCharts 4</th>
-                  <td>
-                    <code>4.10.40</code>
-                  </td>
-                  <td>chart-amchart</td>
-                </tr>
-                <tr>
-                  <th scope="row">Apache ECharts</th>
-                  <td>
-                    <code>6.1.0</code>
-                  </td>
-                  <td>chart-echart</td>
-                </tr>
-                <tr>
-                  <th scope="row">jQuery Sparkline</th>
-                  <td>
-                    <code>2.4.0</code>
-                  </td>
-                  <td>chart-sparkline</td>
-                </tr>
-                <tr>
-                  <th scope="row">Morris.js</th>
-                  <td>
-                    <code>0.5.1 (commit 14530d0)</code>
-                  </td>
-                  <td>chart-morris</td>
-                </tr>
-                <tr>
-                  <th scope="row">Raphael</th>
-                  <td>
-                    <code>2.3.0</code>
-                  </td>
-                  <td>chart-morris</td>
-                </tr>
-                <tr>
-                  <th scope="row">Font Awesome Free</th>
-                  <td>
-                    <code>6.7.2</code>
-                  </td>
-                  <td>icon-font-awesome</td>
-                </tr>
-                <tr>
-                  <th scope="row">Material Icons</th>
-                  <td>
-                    <code>5.3.0</code>
-                  </td>
-                  <td>icon-material</td>
-                </tr>
-                <tr>
-                  <th scope="row">Ionicons</th>
-                  <td>
-                    <code>7.4.0</code>
-                  </td>
-                  <td>icon-ionicons</td>
-                </tr>
-                <tr>
-                  <th scope="row">Feather Icons</th>
-                  <td>
-                    <code>4.29.2</code>
-                  </td>
-                  <td>icon-feather</td>
-                </tr>
-                <tr>
-                  <th scope="row">Weather Icons</th>
-                  <td>
-                    <code>2.0.12</code>
-                  </td>
-                  <td>icon-weather-icon</td>
-                </tr>
-                <tr>
-                  <th scope="row">GLightbox</th>
-                  <td>
-                    <code>3.3.1</code>
-                  </td>
-                  <td>light-gallery</td>
-                </tr>
-                <tr>
-                  <th scope="row">Owl Carousel</th>
-                  <td>
-                    <code>2.3.4</code>
-                  </td>
-                  <td>owl-carousel</td>
-                </tr>
-                <tr>
-                  <th scope="row">jsVectorMap</th>
-                  <td>
-                    <code>1.7.0</code>
-                  </td>
-                  <td>vector-map</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section id="enhanced-controls" class="card mt-4">
-        <div class="card-body">
-          <h2>Kontrol form dan tema komponen</h2>
-          <p>Dropdown <code>.form-select</code> memakai Select2 lokal; kalender tanggal/waktu memakai Flatpickr dengan bahasa Indonesia. Keduanya mempertahankan field asli, nama, nilai, label, validasi, dan reset. Modal proyek tersedia di setiap halaman sehingga bundle kontrol dimuat bersama shell.</p>
-          <ul class="small">
-            <li>Style bersama berada di <code>assets/css/controls.css</code>, inisialisasi di <code>assets/js/controls.js</code>. Popup Select2 mengikuti lebar trigger; jangan menerapkan <code>width:100% !important</code> pada semua <code>.select2-container</code>.</li>
-            <li>Select mendukung pencarian, multiple, optgroup, disabled, ukuran Bootstrap, serta field dinamis. Setelah mengubah nilai select lewat kode, kirim event <code>change</code> agar tampilan dan handler ikut diperbarui. Gunakan <code>change.select2</code> bila hanya menyinkronkan tampilan tanpa menjalankan logika form.</li>
-            <li>Date memakai nilai <code>YYYY-MM-DD</code>, time <code>HH:MM</code>, datetime-local <code>YYYY-MM-DDTHH:MM</code>. Input dapat diketik langsung; rentang min/max dan validasi tanggal tetap diperiksa. Panah bawah membuka picker, panah menavigasi tanggal, Enter memilih, Escape menutup. Tombol Hari ini/Sekarang dan Bersihkan tersedia.</li>
-            <li>Atribut <code>data-native</code> mempertahankan kontrol browser. Input readonly/disabled tidak membuka kalender. Jenis month/week belum dipakai pada halaman template dan tetap native bila ditambahkan; panel native mengikuti OS/browser sehingga tidak dapat diberi tema penuh.</li>
-            <li>Tanpa JavaScript/plugin, markup select dan input tanggal asli tetap tersedia. Popup di modal dipasang di dalam modal agar fokus keyboard tetap terjaga.</li>
-            <li>Tinggi progress memakai <code>--bs-progress-height</code>; warna memakai <code>background-color</code> agar pola garis tidak terhapus. Transisi menggunakan <code>--neo-transition</code> dan mengikuti <code>prefers-reduced-motion</code>.</li>
-          </ul>
-          <p class="small mb-0">Referensi: <a href="https://select2.org/troubleshooting/common-problems">Select2 dalam modal</a> dan <a href="https://flatpickr.js.org/options/">opsi Flatpickr</a>.</p>
-        </div>
-      </section>
-      <section id="contributing" class="card mt-4">
-        <div class="card-body">
-          <h2>Menambah halaman dengan rapi</h2>
-          <ol class="small">
-            <li>Gunakan nama file <code>lowercase-kebab-case.html</code> dan nilai <code>data-page</code> yang sama tanpa ekstensi.</li>
-            <li>Tambahkan halaman ke <code>assets/js/sidebar-config.js</code>. Gunakan <code>id</code> unik untuk setiap dropdown; sidebar dan pencarian membaca konfigurasi ini.</li>
-            <li>Tulis konten permanen di modul <code>scripts/*_pages.py</code> atau <code>scripts/build.py</code>. Generator akan menimpa HTML hasil build.</li>
-            <li>Tempatkan style di <code>assets/css/</code>, interaksi di <code>assets/js/</code>, dan vendor berlisensi di <code>assets/bundles/</code>. Muat bundle hanya pada halaman terkait.</li>
-            <li>Jalankan <code>npm run build</code> lalu <code>npm test</code>. Periksa desktop, mobile, keyboard, dan tautan sebelum commit.</li>
-          </ol>
-          <p class="small mb-0">Template statis dapat dibuka langsung lewat <code>index.html</code> atau server <code>npm run dev</code>. Aset SVG asli tersimpan di <code>assets/img/</code>; sumber dan lisensi vendor dirinci di README proyek serta folder bundle.</p>
-        </div>
-      </section>
     </main>
     <footer class="app-footer">
       <span>

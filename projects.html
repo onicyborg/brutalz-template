@@ -71,7 +71,7 @@
       <div class="page-heading">
         <div>
           <h1>Dari ide ke selesai.</h1>
-          <p>Pindahkan status pekerjaan dan jaga semuanya tetap bergerak.</p>
+          <p>Satu ruang untuk ide, progres, dan hasil kerja tim.</p>
         </div>
         <div class="page-heading-actions">
           <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#projectModal">
@@ -82,13 +82,23 @@
           </button>
         </div>
       </div>
-      <div class="alert alert-info small">
-        <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
-          <path d="M3 7V4h6l3 3h9v13H3z"></path>
-        </svg>
-        Workspace demo disimpan di browser ini. Ubah status lewat pilihan di setiap kartu.
-      </div>
-      <div class="kanban-board" id="kanbanBoard"></div>
+      <section class="kanban-workspace" aria-label="Papan proyek">
+        <div class="kanban-toolbar">
+          <div class="d-flex align-items-center gap-2">
+            <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+              <path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 16l10 5 10-5"></path>
+            </svg>
+            <strong>Project canvas</strong>
+          </div>
+          <span class="small text-muted">Tersimpan di browser ini</span>
+        </div>
+        <p class="kanban-instructions" id="kanbanHelp">Tarik kartu ke kolom tujuan atau ke atas/bawah untuk mengatur urutan. Di layar sentuh, tekan-tahan kartu untuk menyeret; geser biasa untuk menggulir.</p>
+        <p class="visually-hidden" id="kanbanKeyboardHelp">Fokuskan kartu: Enter atau Spasi untuk mengambil, panah kiri/kanan untuk memilih kolom, panah atas/bawah untuk mengatur urutan, Enter atau Spasi untuk meletakkan, Escape untuk membatalkan.</p>
+        <div class="kanban-canvas" id="kanbanCanvas" tabindex="0" role="region" aria-label="Canvas proyek, dapat digulir" aria-describedby="kanbanHelp">
+          <div class="kanban-board" id="kanbanBoard"></div>
+        </div>
+        <p class="kanban-feedback" id="kanbanFeedback" role="status" aria-live="polite">Siap untuk langkah berikutnya.</p>
+      </section>
     </main>
     <footer class="app-footer">
       <span>
@@ -169,5 +179,6 @@
   <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
   <script src="assets/bundles/flatpickr/id.js"></script>
   <script src="assets/js/controls.js"></script>
+  <script src="assets/js/kanban.js"></script>
 </body>
 </html>

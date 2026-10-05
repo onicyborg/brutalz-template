@@ -36,13 +36,13 @@
 | ❌ Entri target belum tersedia | 0 |
 | 🔁 Keputusan struktur belum diselesaikan | 0 |
 | **Total entri target pada tabel bernomor** | **86** |
-| File HTML aktual, termasuk 6 halaman pendukung | 92 |
+| File HTML aktual, termasuk 6 halaman pendukung dan Animated Icons | 93 |
 
 ---
 
 ## 📊 Struktur Sidebar Otika → Sidebar BRUTAL.
 
-Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **6 grup utama** dan **92 tautan halaman** dari `assets/js/sidebar-config.js`. Seluruh entri target kini tertaut.
+Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **6 grup utama** dan **93 tautan halaman** dari `assets/js/sidebar-config.js`. Seluruh entri target kini tertaut.
 
 ---
 
@@ -154,6 +154,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **6 grup u
 | 55 | Ion Icons | `icon-ionicons.html` | `icon-ionicons.html` | ✅ Phase 6 |
 | 56 | Feather Icons | `icon-feather.html` | `icon-feather.html` | ✅ Phase 6 |
 | 57 | Weather Icon | `icon-weather-icon.html` | `icon-weather-icon.html` | ✅ Phase 6 |
+| Tambahan | Animated Icons | — | `icon-animated.html` | ✅ Pengembangan tambahan |
 
 ---
 
@@ -271,7 +272,7 @@ Tabel berikut memetakan **86 entri target**. Sidebar BRUTAL. memiliki **6 grup u
 ✅ timeline.html
 ```
 
-**Total: 92 file HTML aktual; seluruh 86 masuk pemetaan target dan 6 halaman pendukung.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung.
+**Total: 93 file HTML aktual; seluruh 86 masuk pemetaan target, 6 halaman pendukung, dan Animated Icons.** `forms.html`, `tables.html`, dan `charts.html` adalah overview pendukung.
 
 ---
 
@@ -428,7 +429,8 @@ Tidak ada entri target yang tersisa.
     ├── Material Design        → icon-material.html ✅
     ├── Ion Icons              → icon-ionicons.html ✅
     ├── Feather Icons          → icon-feather.html  ✅
-    └── Weather Icon           → icon-weather-icon.html ✅
+    ├── Weather Icon           → icon-weather-icon.html ✅
+    └── Animated Icons         → icon-animated.html ✅
 
 🖼️ MEDIA
 ├── Galeri                     → (dropdown aktif)
@@ -474,7 +476,7 @@ Tidak ada entri target yang tersisa.
 
 ```
 Total entri target pada tabel: 86 (termasuk demo multilevel)
-Total file HTML aktual: 92 (86 target + 6 halaman pendukung)
+Total file HTML aktual: 93 (86 target + 6 halaman pendukung + Animated Icons)
 Sudah selesai: 86/86 (100%)
 Belum selesai: 0/86 (0%)
 ```
@@ -490,7 +492,7 @@ Belum selesai: 0/86 (0%)
 - [x] **Forms**: 5/5 (overview di forms.html)
 - [x] **Tables**: 5/5 (overview di tables.html)
 - [x] **Charts**: 6/6 (overview di `charts.html`)
-- [x] **Icons**: 5/5
+- [x] **Icons**: 6/6 (termasuk Animated Icons)
 - [x] **Gallery**: 2/2
 - [x] **Sliders**: 2/2
 - [x] **Timeline**: 1/1
@@ -511,3 +513,21 @@ Belum selesai: 0/86 (0%)
 ---
 
 > 📌 **Pengembangan berikutnya**: Daftarkan halaman baru di `assets/js/sidebar-config.js`. Sidebar dan pencarian seluruh halaman otomatis mengikuti konfigurasi; jangan menambahkan sidebar inline per-file.
+
+### Tambahan — Animated Icons
+
+- [x] Submenu **Icons → Animated Icons** aktif: `icon-animated.html`.
+- [x] Enam ikon Lordicon dengan animasi internal, aset dan player lokal.
+- [x] Hover/fokus, klik/sentuh, otomatis berulang, dan contoh trigger JavaScript.
+- [x] Pencarian, salin snippet sesuai pengaturan, kecepatan, dan jeda/lanjutkan.
+- [x] Keyboard, reduced motion, penghentian animasi di luar viewport/tab tersembunyi, dan atribusi Lordicon.
+- Pengujian interaksi diserahkan kepada pengguna untuk pengecekan manual.
+
+### Finalisasi repository dan panduan penggunaan — 5 Oktober 2026
+
+- [x] Paket Bootstrap diringkas menjadi runtime CSS/JS, source map, dan lisensi; sumber upstream yang tidak dipakai dihapus.
+- [x] CSS Weather Icons Wind yang tidak digunakan dan salinan lisensi Bootstrap duplikat dihapus; lisensi asli tetap tersedia.
+- [x] Catatan fixing dan screenshot referensi diarsipkan di luar repository, serta ditambahkan ke gitignore.
+- [x] `docs.html` menjadi panduan lengkap satu halaman dengan daftar isi, setup lintas OS, kustomisasi, contoh kode, integrasi, deployment, dan troubleshooting.
+- [x] README menjelaskan clone, preview tanpa npm install, virtual environment Python, build, dan dependensi development opsional.
+- [x] Runtime, generator, source data, lisensi, dan suite development dipertahankan; tidak ada tes browser dijalankan pada finalisasi ini.

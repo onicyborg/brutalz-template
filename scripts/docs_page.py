@@ -34,7 +34,7 @@ def docs_appendix(nav):
     bundles = [
         ('SweetAlert2', 'sweetalert2', 'sweet-alert'),
         ('Toastr', 'toastr', 'toastr'),
-        ('jQuery', 'jquery', 'toastr, Select2, Steps, DataTables, Sparkline, Morris, Owl'),
+        ('jQuery', 'jquery', 'Semua halaman: kontrol form bersama; plugin tambahan per modul'),
         ('Dropzone', 'dropzone', 'multiple-upload'),
         ('Select2', 'select2', 'Semua form-select, termasuk modal proyek'),
         ('Flatpickr', 'flatpickr', 'Tanggal/waktu di form dan modal'),
@@ -56,6 +56,7 @@ def docs_appendix(nav):
         ('Ionicons', 'ionicons', 'icon-ionicons'),
         ('Feather Icons', 'feather-icons', 'icon-feather'),
         ('Weather Icons', 'weather-icons', 'icon-weather-icon'),
+        ('Lordicon Animated Icons', '@lordicon/element', 'icon-animated'),
         ('GLightbox', 'glightbox', 'light-gallery'),
         ('Owl Carousel', 'owl.carousel', 'owl-carousel'),
         ('jsVectorMap', 'jsvectormap', 'vector-map'),
@@ -101,7 +102,7 @@ def docs_appendix(nav):
         '<li>Tambahkan halaman ke <code>assets/js/sidebar-config.js</code>. Gunakan <code>id</code> unik untuk setiap dropdown; sidebar dan pencarian membaca konfigurasi ini.</li>'
         '<li>Tulis konten permanen di modul <code>scripts/*_pages.py</code> atau <code>scripts/build.py</code>. Generator akan menimpa HTML hasil build.</li>'
         '<li>Tempatkan style di <code>assets/css/</code>, interaksi di <code>assets/js/</code>, dan vendor berlisensi di <code>assets/bundles/</code>. Muat bundle hanya pada halaman terkait.</li>'
-        '<li>Jalankan <code>npm run build</code> lalu <code>npm test</code>. Periksa desktop, mobile, keyboard, dan tautan sebelum commit.</li></ol>'
+        '<li>Jalankan <code>npm run build</code>. Periksa desktop, mobile, keyboard, dan tautan sebelum commit; suite <code>npm test</code> tersedia sebagai verifikasi tambahan.</li></ol>'
         '<p class="small mb-0">Template statis dapat dibuka langsung lewat <code>index.html</code> atau server <code>npm run dev</code>. '
         'Aset SVG asli tersimpan di <code>assets/img/</code>; sumber dan lisensi vendor dirinci di README proyek serta folder bundle.</p>'
         '</div></section>'
