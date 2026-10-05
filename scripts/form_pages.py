@@ -1,4 +1,5 @@
 """Phase 3 form showcase pages. Keep page content separate from the shared shell."""
+from ui_icons import arrow
 
 FORM_PAGES = (
     'basic-form', 'forms-advanced-form', 'forms-editor',
@@ -16,7 +17,7 @@ def build_form_pages(heading, card):
     ]
     overview = heading('Form untuk setiap alur.', 'Mulai dari input sederhana hingga wizard bertahap. Pilih contoh yang ingin kamu eksplorasi.')
     overview += '<div class="row g-4">' + ''.join(
-        f'<div class="col-md-6 col-xl-4"><a class="card form-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{name}</span><h2 class="fs-4">{name} →</h2><p class="mb-0 text-muted">{description}</p></div></a></div>'
+        f'<div class="col-md-6 col-xl-4"><a class="card form-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{name}</span><h2 class="fs-4">{name} {arrow()}</h2><p class="mb-0 text-muted">{description}</p></div></a></div>'
         for slug, name, description, color in overview_items
     ) + '</div>'
 

@@ -7,6 +7,9 @@
   <title>Kalender — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body data-page="calendar">
@@ -84,9 +87,17 @@
           <div class="d-flex justify-content-between align-items-center gap-2">
             <h2 class="mb-0" id="calendarTitle"></h2>
             <div class="d-flex gap-2">
-              <button class="btn btn-sm" id="prevMonth" aria-label="Bulan sebelumnya">←</button>
+              <button class="btn btn-sm" id="prevMonth" aria-label="Bulan sebelumnya">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <path d="M20 12H4m6-6-6 6 6 6"></path>
+                </svg>
+              </button>
               <button class="btn btn-sm" id="todayMonth">Hari ini</button>
-              <button class="btn btn-sm" id="nextMonth" aria-label="Bulan berikutnya">→</button>
+              <button class="btn btn-sm" id="nextMonth" aria-label="Bulan berikutnya">
+                <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
+                  <path d="M4 12h16m-6-6 6 6-6 6"></path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -197,5 +208,10 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
+  <script src="assets/js/controls.js"></script>
 </body>
 </html>

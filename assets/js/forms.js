@@ -7,8 +7,8 @@
     const form = $('#advancedForm');
     const team = $('#advancedTeam');
     const result = $('#advancedResult');
-    window.jQuery(team).select2({ placeholder: 'Cari tim…', width: '100%', allowClear: true });
-    window.jQuery('#advancedSkills').select2({ placeholder: 'Pilih keahlian…', width: '100%' });
+    window.jQuery(team).select2({ placeholder: 'Cari tim…', width: '100%', allowClear: true, language: { noResults: () => 'Tidak ada tim yang cocok.' } });
+    window.jQuery('#advancedSkills').select2({ placeholder: 'Pilih keahlian…', width: '100%', language: { noResults: () => 'Tidak ada keahlian yang cocok.' } });
     document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(element => new bootstrap.Tooltip(element));
     const validateTeam = () => {
       const valid = Boolean(team.value);
@@ -152,6 +152,7 @@
         const field = $(selector);
         if (field.type === 'checkbox') field.checked = false;
         else field.value = '';
+        if (field.tagName === 'SELECT') window.jQuery(field).trigger('change.select2');
         field.classList.remove('is-valid', 'is-invalid');
       });
       wizard.steps('previous');

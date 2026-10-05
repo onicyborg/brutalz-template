@@ -1,4 +1,5 @@
 """Phase 1: local widgets, creative apps, and a simulated email workspace."""
+from ui_icons import arrow
 from html import escape
 import json
 
@@ -108,7 +109,7 @@ def compose(heading, icon):
 
 
 def read_mail(heading, icon):
-    return heading('Ruang untuk percakapan.','Baca detail pesan dan lanjutkan diskusinya.','<a class="btn no-print" href="email-inbox.html">← Kotak masuk</a>')+mail_shell('<div id="mailReadContent" class="card-body mail-reader"></div>',icon)
+    return heading('Ruang untuk percakapan.','Baca detail pesan dan lanjutkan diskusinya.','<a class="btn no-print" href="email-inbox.html">'+arrow("left")+' Kotak masuk</a>')+mail_shell('<div id="mailReadContent" class="card-body mail-reader"></div>',icon)
 
 
 def build_workspace_pages(heading, icon, stats):

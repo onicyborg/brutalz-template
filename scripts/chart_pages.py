@@ -1,4 +1,5 @@
 """Phase 5 chart pages. Demo data is illustrative and local to each page."""
+from ui_icons import arrow
 
 CHART_PAGES = (
     'chart-chartjs', 'chart-apexchart', 'chart-amchart',
@@ -31,7 +32,7 @@ def build_chart_pages(heading, stats, chart_panel, source_panel, card):
     ]
     overview = heading('Setiap angka punya cerita.', 'Enam pilihan pustaka grafik dengan data contoh dan warna BRUTAL.')
     overview += '<div class="row g-4">' + ''.join(
-        f'<div class="col-md-6 col-xl-4"><a class="card chart-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{name}</span><h2 class="fs-4">{name} →</h2><p class="text-muted mb-0">{description}</p></div></a></div>'
+        f'<div class="col-md-6 col-xl-4"><a class="card chart-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{name}</span><h2 class="fs-4">{name} {arrow()}</h2><p class="text-muted mb-0">{description}</p></div></a></div>'
         for slug, name, description, color in overview_items
     ) + '</div><p class="small text-muted mt-4">Semua angka pada showcase ini adalah data ilustratif; halaman bekerja tanpa API atau CDN.</p>'
 

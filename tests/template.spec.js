@@ -1,3 +1,4 @@
+const { choose } = require('./helpers/controls');
 const { test, expect } = require('@playwright/test');
 const pages = require('node:fs').readdirSync(require('node:path').resolve(__dirname,'..')).filter(name=>name.endsWith('.html')).map(name=>name.slice(0,-5));
 
@@ -26,9 +27,9 @@ test('project creation persists, filters, pagination, export and status work tog
   await page.reload();
   await page.getByLabel('Cari proyek').fill('Website uji');
   await expect(page.locator('#projectRows tr')).toHaveCount(1);
-  await page.getByLabel('Filter status').selectOption('Selesai');
+  await choose(page, page.getByLabel('Filter status'), 'Selesai');
   await expect(page.locator('#projectRows')).toContainText('Tidak ada proyek');
-  await page.getByLabel('Filter status').selectOption('');
+  await choose(page, page.getByLabel('Filter status'), '');
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', {name:'CSV'}).click();
   expect((await downloadPromise).suggestedFilename()).toBe('brutal-proyek.csv');
@@ -36,7 +37,7 @@ test('project creation persists, filters, pagination, export and status work tog
   await page.getByRole('button', {name:'Halaman 2',exact:true}).click();
   await expect(page.locator('#tableCount')).toHaveText('6–9 dari 9 proyek');
   await page.goto('/projects.html');
-  await page.getByLabel('Status Website uji <studio>').selectOption('Selesai');
+  await choose(page, page.getByLabel('Status Website uji <studio>'), 'Selesai');
   await expect(page.locator('.kanban-column').last()).toContainText('Website uji <studio>');
 });
 
@@ -69,7 +70,7 @@ test('Bootstrap tabs, modal, dropdown and form validation respond correctly', as
   await page.getByLabel('Nama depan').fill('Alex');
   await page.getByLabel('Nama belakang').fill('Darma');
   await page.getByLabel('Alamat email').fill('demo@example.com');
-  await page.getByLabel('Peran', {exact:true}).selectOption('Developer');
+  await choose(page, page.getByLabel('Peran', {exact:true}), 'Developer');
   await page.getByLabel('Mulai bergabung').fill('2026-09-27');
   await page.getByLabel('Saya paham ini adalah form demonstrasi.').check();
   await page.getByRole('button', {name:'Simpan data demo'}).click();
@@ -88,7 +89,7 @@ test('calendar event persists in the chosen month and chart changes period', asy
   await expect(page.locator('#toastMessage')).toContainText('Launch uji');
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('brutal.events')).some(e => e.name==='Launch uji'))).toBeTruthy();
   await page.goto('/chart-chartjs.html');
-  await page.getByLabel('Periode grafik').selectOption('previous');
+  await choose(page, page.getByLabel('Periode grafik'), 'previous');
   await expect(page.locator('#chartTotal')).toHaveText('Rp63.000.000');
   await expect(page.locator('#revenueChartTitle')).toContainText('Okt–Mar');
 });

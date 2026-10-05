@@ -68,3 +68,30 @@
 #toast-container>div:hover { box-shadow:5px 5px 0 var(--neo-ink); }
 @media(max-width:900px) { .advanced-color-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:575px) { .avatar-gallery { gap:18px 9px; } .avatar-example { min-width:74px; } .advanced-color-grid { grid-template-columns:1fr; } .advanced-vertical-tabs,.advanced-vertical-tabs.reverse { grid-template-columns:1fr; } .advanced-vertical-tabs .nav { flex-direction:row !important; flex-wrap:wrap; } .advanced-vertical-tabs .nav-link { width:auto; } .advanced-empty { padding:8px; } .advanced-dropzone { padding:15px; } }
+
+/* Corners and seams follow the actual position of the tabs. */
+.tab-content--bottom { border-radius: 6px 6px 0 0; }
+.tab-content--bottom + .nav-tabs { border-top: 0; }
+.tab-content--bottom + .nav-tabs .nav-link { border-radius: 0 0 4px 4px; margin-top: -2px; margin-bottom: 0; }
+.tab-content--bottom + .nav-tabs .nav-link.active { border-top-color: var(--neo-yellow); }
+.advanced-vertical-tabs { gap: 0; }
+.advanced-vertical-tabs .nav-tabs { border: 0; flex-wrap: nowrap; align-content: normal; align-items: stretch; }
+.advanced-vertical-tabs .nav-link { border-radius: 4px 0 0 4px; margin: 0 -2px 0 0; position: relative; z-index: 1; }
+.advanced-vertical-tabs .nav-link.active { border-right-color: var(--neo-yellow); }
+.advanced-vertical-tabs .tab-content--left { border-radius: 0 6px 6px 0; }
+.advanced-vertical-tabs .tab-content--right { border-radius: 6px 0 0 6px; }
+.advanced-vertical-tabs.reverse .nav-link { border-radius: 0 4px 4px 0; margin: 0 0 0 -2px; }
+.advanced-vertical-tabs.reverse .nav-link.active { border-left-color: var(--neo-yellow); border-right-color: var(--neo-ink); }
+.nav-pills + .advanced-tab-content { border-radius: 6px; }
+@media (max-width: 575px) {
+  .advanced-vertical-tabs .nav-link { margin: 0 0 -2px; border-radius: 4px 4px 0 0; }
+  .advanced-vertical-tabs .nav-link.active { border-right-color: var(--neo-ink); border-bottom-color: var(--neo-yellow); }
+  .advanced-vertical-tabs .tab-content--left { border-radius: 0 6px 6px 6px; }
+  .advanced-vertical-tabs .tab-content--right { border-radius: 6px 6px 0 0; }
+  .advanced-vertical-tabs.reverse .nav-link { margin: -2px 0 0; border-radius: 0 0 4px 4px; }
+  .advanced-vertical-tabs.reverse .nav-link.active { border-color: var(--neo-ink); border-top-color: var(--neo-yellow); }
+}
+
+@media (min-width: 576px) {
+  .advanced-vertical-tabs .nav-link { width: calc(100% + 2px); white-space: nowrap; }
+}

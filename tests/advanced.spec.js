@@ -1,3 +1,4 @@
+const { choose } = require('./helpers/controls');
 const {test, expect} = require('@playwright/test');
 
 test('advanced pages share the sidebar and expose the expected showcases', async ({page}) => {
@@ -43,7 +44,7 @@ test('SweetAlert2 and Toastr launch from local bundles', async ({page}) => {
   await page.goto('/toastr.html');
   await page.locator('[data-toastr-demo="success"]').click();
   await expect(page.locator('#toast-container .toast-success')).toContainText('Berhasil');
-  await page.locator('#toastrPosition').selectOption('toast-bottom-left');
+  await choose(page, page.locator('#toastrPosition'), 'toast-bottom-left');
   await page.locator('[data-toastr-demo="warning"]').click();
   await expect(page.locator('#toast-container .toast-warning')).toContainText('Peringatan');
   await expect(page.locator('#toast-container')).toHaveClass(/toast-bottom-left/);

@@ -7,6 +7,9 @@
   <title>Pagination — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body data-page="pagination">
@@ -145,7 +148,11 @@
                 <nav aria-label="Contoh pagination iconPages">
                   <ul class="pagination   flex-wrap gap-1">
                     <li class="page-item disabled">
-                      <button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled="disabled">←</button>
+                      <button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled="disabled">
+                        <svg class="icon icon-arrow-sm" aria-hidden="true" viewbox="0 0 24 24">
+                          <path d="M20 12H4m6-6-6 6 6 6"></path>
+                        </svg>
+                      </button>
                     </li>
                     <li class="page-item active">
                       <button class="page-link" type="button" data-demo-page="1" aria-label="Halaman 1" aria-current="page">1</button>
@@ -157,7 +164,11 @@
                       <button class="page-link" type="button" data-demo-page="3" aria-label="Halaman 3">3</button>
                     </li>
                     <li class="page-item">
-                      <button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">→</button>
+                      <button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">
+                        <svg class="icon icon-arrow-sm" aria-hidden="true" viewbox="0 0 24 24">
+                          <path d="M4 12h16m-6-6 6 6-6 6"></path>
+                        </svg>
+                      </button>
                     </li>
                   </ul>
                 </nav>
@@ -170,7 +181,11 @@
 &lt;nav aria-label=&quot;Contoh pagination iconPages&quot;&gt;
 &lt;ul class=&quot;pagination   flex-wrap gap-1&quot;&gt;
 &lt;li class=&quot;page-item disabled&quot;&gt;
-&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;-1&quot; aria-label=&quot;Sebelumnya&quot; disabled&gt;←&lt;/button&gt;
+&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;-1&quot; aria-label=&quot;Sebelumnya&quot; disabled&gt;
+&lt;svg class=&quot;icon icon-arrow-sm&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;M20 12H4m6-6-6 6 6 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
 &lt;/li&gt;
 &lt;li class=&quot;page-item active&quot;&gt;
 &lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-demo-page=&quot;1&quot; aria-label=&quot;Halaman 1&quot; aria-current=page&gt;1&lt;/button&gt;
@@ -182,7 +197,11 @@
 &lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-demo-page=&quot;3&quot; aria-label=&quot;Halaman 3&quot; &gt;3&lt;/button&gt;
 &lt;/li&gt;
 &lt;li class=&quot;page-item&quot;&gt;
-&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;1&quot; aria-label=&quot;Berikutnya&quot;&gt;→&lt;/button&gt;
+&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;1&quot; aria-label=&quot;Berikutnya&quot;&gt;
+&lt;svg class=&quot;icon icon-arrow-sm&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;M4 12h16m-6-6 6 6-6 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/nav&gt;
@@ -223,7 +242,11 @@
                 <nav aria-label="Contoh pagination largePages">
                   <ul class="pagination pagination-lg  flex-wrap gap-1">
                     <li class="page-item disabled">
-                      <button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled="disabled">←</button>
+                      <button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled="disabled">
+                        <svg class="icon icon-arrow-sm" aria-hidden="true" viewbox="0 0 24 24">
+                          <path d="M20 12H4m6-6-6 6 6 6"></path>
+                        </svg>
+                      </button>
                     </li>
                     <li class="page-item active">
                       <button class="page-link" type="button" data-demo-page="1" aria-label="Halaman 1" aria-current="page">1</button>
@@ -235,7 +258,11 @@
                       <button class="page-link" type="button" data-demo-page="3" aria-label="Halaman 3">3</button>
                     </li>
                     <li class="page-item">
-                      <button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">→</button>
+                      <button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">
+                        <svg class="icon icon-arrow-sm" aria-hidden="true" viewbox="0 0 24 24">
+                          <path d="M4 12h16m-6-6 6 6-6 6"></path>
+                        </svg>
+                      </button>
                     </li>
                   </ul>
                 </nav>
@@ -271,7 +298,11 @@
 &lt;nav aria-label=&quot;Contoh pagination largePages&quot;&gt;
 &lt;ul class=&quot;pagination pagination-lg  flex-wrap gap-1&quot;&gt;
 &lt;li class=&quot;page-item disabled&quot;&gt;
-&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;-1&quot; aria-label=&quot;Sebelumnya&quot; disabled&gt;←&lt;/button&gt;
+&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;-1&quot; aria-label=&quot;Sebelumnya&quot; disabled&gt;
+&lt;svg class=&quot;icon icon-arrow-sm&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;M20 12H4m6-6-6 6 6 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
 &lt;/li&gt;
 &lt;li class=&quot;page-item active&quot;&gt;
 &lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-demo-page=&quot;1&quot; aria-label=&quot;Halaman 1&quot; aria-current=page&gt;1&lt;/button&gt;
@@ -283,7 +314,11 @@
 &lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-demo-page=&quot;3&quot; aria-label=&quot;Halaman 3&quot; &gt;3&lt;/button&gt;
 &lt;/li&gt;
 &lt;li class=&quot;page-item&quot;&gt;
-&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;1&quot; aria-label=&quot;Berikutnya&quot;&gt;→&lt;/button&gt;
+&lt;button class=&quot;page-link&quot; type=&quot;button&quot; data-page-step=&quot;1&quot; aria-label=&quot;Berikutnya&quot;&gt;
+&lt;svg class=&quot;icon icon-arrow-sm&quot; aria-hidden=&quot;true&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+&lt;path d=&quot;M4 12h16m-6-6 6 6-6 6&quot;/&gt;
+&lt;/svg&gt;
+&lt;/button&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/nav&gt;
@@ -469,5 +504,10 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
+  <script src="assets/js/controls.js"></script>
 </body>
 </html>

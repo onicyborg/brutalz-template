@@ -1,4 +1,5 @@
 """Phase 9 special pages, publication demos, and error states."""
+from ui_icons import arrow
 
 SPECIAL_PAGES = ('subscribe', 'create-post', 'posts', 'contact', 'multilevel')
 ERROR_PAGES = ('errors-403', 'errors-404', 'errors-500', 'errors-503')
@@ -40,8 +41,8 @@ def contact(heading):
 
 
 def multilevel(heading):
-    return heading('Menu bertingkat, tetap mudah diikuti.', 'Halaman ini berada pada tingkat terdalam menu Multilevel di sidebar.') + '''
-      <section class="card"><div class="card-body"><span class="badge bg-yellow mb-3">LEVEL 3</span><h2>Tiga tingkat. Satu tujuan.</h2><p>Di sidebar, buka <strong>Multilevel → Level 1 → Level 2 → Level 3</strong>. Menu aktif dan semua induknya otomatis terbuka saat halaman ini dipilih.</p><div class="multilevel-path"><span>Multilevel</span><b>›</b><span>Level 1</span><b>›</b><span>Level 2</span><b>›</b><strong>Level 3</strong></div><p class="small text-muted mt-4 mb-0">Gunakan Tab dan Enter untuk membuka atau menutup setiap tingkat dari keyboard.</p></div></section>'''
+    return heading('Menu bertingkat, tetap mudah diikuti.', 'Halaman ini berada pada tingkat terdalam menu Multilevel di sidebar.') + f'''
+      <section class="card"><div class="card-body"><span class="badge bg-yellow mb-3">LEVEL 3</span><h2>Tiga tingkat. Satu tujuan.</h2><p>Di sidebar, buka <strong>Multilevel → Level 1 → Level 2 → Level 3</strong>. Menu aktif dan semua induknya otomatis terbuka saat halaman ini dipilih.</p><div class="multilevel-path"><span>Multilevel</span>{arrow("chevron-right")}<span>Level 1</span>{arrow("chevron-right")}<span>Level 2</span>{arrow("chevron-right")}<strong>Level 3</strong></div><p class="small text-muted mt-4 mb-0">Gunakan Tab dan Enter untuk membuka atau menutup setiap tingkat dari keyboard.</p></div></section>'''
 
 
 def error_page(code):

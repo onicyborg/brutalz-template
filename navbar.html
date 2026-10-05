@@ -7,6 +7,9 @@
   <title>Navbar — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body data-page="navbar">
@@ -202,9 +205,11 @@
               <nav class="navbar demo-navbar bg-green" aria-label="Contoh navbar pencarian">
                 <div class="container-fluid gap-3">
                   <a class="navbar-brand fw-bold" href="index.html">Find your idea.</a>
-                  <form class="d-flex gap-2 navbar-demo-search" role="search">
-                    <input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required="">
-                    <button class="btn btn-dark" type="submit">Cari</button>
+                  <form class="navbar-demo-search" role="search">
+                    <div class="input-group">
+                      <input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required="">
+                      <button class="btn btn-dark" type="submit">Cari</button>
+                    </div>
                   </form>
                 </div>
               </nav>
@@ -215,9 +220,11 @@
               <pre class="code mt-3 mb-0"><code>&lt;nav class=&quot;navbar demo-navbar bg-green&quot; aria-label=&quot;Contoh navbar pencarian&quot;&gt;
 &lt;div class=&quot;container-fluid gap-3&quot;&gt;
 &lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;index.html&quot;&gt;Find your idea.&lt;/a&gt;
-&lt;form class=&quot;d-flex gap-2 navbar-demo-search&quot; role=&quot;search&quot;&gt;
+&lt;form class=&quot;navbar-demo-search&quot; role=&quot;search&quot;&gt;
+&lt;div class=&quot;input-group&quot;&gt;
 &lt;input class=&quot;form-control&quot; type=&quot;search&quot; aria-label=&quot;Cari di navbar contoh&quot; placeholder=&quot;Cari ide…&quot; required&gt;
 &lt;button class=&quot;btn btn-dark&quot; type=&quot;submit&quot;&gt;Cari&lt;/button&gt;
+&lt;/div&gt;
 &lt;/form&gt;
 &lt;/div&gt;
 &lt;/nav&gt;
@@ -329,5 +336,10 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
+  <script src="assets/js/controls.js"></script>
 </body>
 </html>

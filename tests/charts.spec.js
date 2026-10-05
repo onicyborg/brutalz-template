@@ -1,3 +1,4 @@
+const { choose } = require('./helpers/controls');
 const { test, expect } = require('@playwright/test');
 
 test('chart overview links to all six library demos', async ({ page }) => {
@@ -14,7 +15,7 @@ test('Chart.js renders six types alongside the migrated SVG showcase', async ({ 
   await expect(page.locator('.chart-demo-wrap canvas')).toHaveCount(6);
   expect(await page.evaluate(() => ['chartjsLine', 'chartjsBar', 'chartjsDoughnut',
     'chartjsPie', 'chartjsRadar', 'chartjsMixed'].every(id => Chart.getChart(id)?.data.datasets.length))).toBeTruthy();
-  await page.getByLabel('Periode grafik').selectOption('previous');
+  await choose(page, page.getByLabel('Periode grafik'), 'previous');
   await expect(page.locator('#chartTotal')).toHaveText('Rp63.000.000');
   await expect(page.locator('#revenueChartTitle')).toContainText('Okt–Mar');
 });

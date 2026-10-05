@@ -1,5 +1,5 @@
 /* Phase 4 table showcases. Bootstrap and DataTables are the base layers. */
-.table-index-card { transition: transform .15s ease, box-shadow .15s ease; }
+.table-index-card { transition: var(--neo-transition); }
 .table-index-card:hover,
 .table-index-card:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neo-ink); }
 

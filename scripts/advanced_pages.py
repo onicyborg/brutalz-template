@@ -210,12 +210,13 @@ def tab_group(group, labels, classes='nav-tabs', vertical=False, nav_last=False,
         f'''<li class="nav-item" role="presentation"><button class="nav-link{' active' if index == 0 else ''}" id="{group}-tab-{index}" data-bs-toggle="tab" data-bs-target="#{group}-pane-{index}" type="button" role="tab" aria-controls="{group}-pane-{index}" aria-selected="{'true' if index == 0 else 'false'}">{icon('bolt') if show_icons and index == 0 else icon('users') if show_icons and index == 1 else ''}{label}</button></li>'''
         for index, label in enumerate(labels)
     )
-    nav = f'<ul class="nav {classes}{" flex-column" if vertical else ""}" role="tablist" aria-label="Tab {group}">{buttons}</ul>'
+    nav = f'<ul class="nav {classes}{" flex-column" if vertical else ""}" role="tablist" aria-label="Tab {group}" aria-orientation="{"vertical" if vertical else "horizontal"}">{buttons}</ul>'
     panes = ''.join(
         f'<div class="tab-pane fade{" show active" if index == 0 else ""}" id="{group}-pane-{index}" role="tabpanel" aria-labelledby="{group}-tab-{index}" tabindex="0"><h3>{label}</h3><p class="mb-0">Panel {label.lower()} dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p></div>'
         for index, label in enumerate(labels)
     )
-    content = f'<div class="tab-content advanced-tab-content">{panes}</div>'
+    position = "right" if vertical and nav_last else "left" if vertical else "bottom" if nav_last else "top"
+    content = f'<div class="tab-content advanced-tab-content tab-content--{position}">{panes}</div>'
     if vertical:
         return f'<div class="advanced-vertical-tabs{" reverse" if nav_last else ""}">{content + nav if nav_last else nav + content}</div>'
     return content + nav if nav_last else nav + content

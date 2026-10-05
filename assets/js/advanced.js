@@ -5,6 +5,14 @@
   const page = document.body.dataset.page;
   const select = selector => document.querySelector(selector);
 
+  if (page === 'tabs') {
+    const mobile = window.matchMedia('(max-width: 575px)');
+    const syncOrientation = () => document.querySelectorAll('.advanced-vertical-tabs [role="tablist"]')
+      .forEach(nav => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical'));
+    syncOrientation();
+    mobile.addEventListener('change', syncOrientation);
+  }
+
   if (page === 'modal') {
     select('#advancedModalForm').addEventListener('submit', event => {
       event.preventDefault();

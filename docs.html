@@ -7,6 +7,9 @@
   <title>Dokumentasi — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body data-page="docs">
@@ -370,7 +373,14 @@ blank.html                  Titik awal halaman baru</pre>
                   <td>
                     <code>4.0.13</code>
                   </td>
-                  <td>forms-advanced-form</td>
+                  <td>Semua form-select, termasuk modal proyek</td>
+                </tr>
+                <tr>
+                  <th scope="row">Flatpickr</th>
+                  <td>
+                    <code>4.6.13</code>
+                  </td>
+                  <td>Tanggal/waktu di form dan modal</td>
                 </tr>
                 <tr>
                   <th scope="row">Quill</th>
@@ -524,6 +534,21 @@ blank.html                  Titik awal halaman baru</pre>
           </div>
         </div>
       </section>
+      <section id="enhanced-controls" class="card mt-4">
+        <div class="card-body">
+          <h2>Kontrol form dan tema komponen</h2>
+          <p>Dropdown <code>.form-select</code> memakai Select2 lokal; kalender tanggal/waktu memakai Flatpickr dengan bahasa Indonesia. Keduanya mempertahankan field asli, nama, nilai, label, validasi, dan reset. Modal proyek tersedia di setiap halaman sehingga bundle kontrol dimuat bersama shell.</p>
+          <ul class="small">
+            <li>Style bersama berada di <code>assets/css/controls.css</code>, inisialisasi di <code>assets/js/controls.js</code>. Popup Select2 mengikuti lebar trigger; jangan menerapkan <code>width:100% !important</code> pada semua <code>.select2-container</code>.</li>
+            <li>Select mendukung pencarian, multiple, optgroup, disabled, ukuran Bootstrap, serta field dinamis. Setelah mengubah nilai select lewat kode, kirim event <code>change</code> agar tampilan dan handler ikut diperbarui. Gunakan <code>change.select2</code> bila hanya menyinkronkan tampilan tanpa menjalankan logika form.</li>
+            <li>Date memakai nilai <code>YYYY-MM-DD</code>, time <code>HH:MM</code>, datetime-local <code>YYYY-MM-DDTHH:MM</code>. Input dapat diketik langsung; rentang min/max dan validasi tanggal tetap diperiksa. Panah bawah membuka picker, panah menavigasi tanggal, Enter memilih, Escape menutup. Tombol Hari ini/Sekarang dan Bersihkan tersedia.</li>
+            <li>Atribut <code>data-native</code> mempertahankan kontrol browser. Input readonly/disabled tidak membuka kalender. Jenis month/week belum dipakai pada halaman template dan tetap native bila ditambahkan; panel native mengikuti OS/browser sehingga tidak dapat diberi tema penuh.</li>
+            <li>Tanpa JavaScript/plugin, markup select dan input tanggal asli tetap tersedia. Popup di modal dipasang di dalam modal agar fokus keyboard tetap terjaga.</li>
+            <li>Tinggi progress memakai <code>--bs-progress-height</code>; warna memakai <code>background-color</code> agar pola garis tidak terhapus. Transisi menggunakan <code>--neo-transition</code> dan mengikuti <code>prefers-reduced-motion</code>.</li>
+          </ul>
+          <p class="small mb-0">Referensi: <a href="https://select2.org/troubleshooting/common-problems">Select2 dalam modal</a> dan <a href="https://flatpickr.js.org/options/">opsi Flatpickr</a>.</p>
+        </div>
+      </section>
       <section id="contributing" class="card mt-4">
         <div class="card-body">
           <h2>Menambah halaman dengan rapi</h2>
@@ -612,5 +637,10 @@ blank.html                  Titik awal halaman baru</pre>
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
+  <script src="assets/js/controls.js"></script>
 </body>
 </html>

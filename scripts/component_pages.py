@@ -1,4 +1,5 @@
 """Individual Bootstrap component demos and their sidebar catalog."""
+from ui_icons import arrow
 from html import escape
 
 CATALOG = [
@@ -143,13 +144,13 @@ def media_page(icon):
 def navbar_page(icon):
     brand='<nav class="navbar demo-navbar bg-purple" aria-label="Contoh navbar brand"><div class="container-fluid"><a class="navbar-brand fw-bold" href="index.html">BRUTAL.</a><span class="navbar-text small">Creative workspace</span></div></nav>'
     responsive='<nav class="navbar navbar-expand-lg demo-navbar bg-yellow" aria-label="Contoh navbar responsif"><div class="container-fluid"><a class="navbar-brand fw-bold" href="index.html">Studio.</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#demoNavbarMenu" aria-controls="demoNavbarMenu" aria-expanded="false" aria-label="Buka menu contoh navbar"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="demoNavbarMenu"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" href="navbar.html" aria-current="page">Home</a></li><li class="nav-item"><a class="nav-link" href="projects.html">Proyek</a></li><li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lainnya</button>'+menu_markup()+'</li><li class="nav-item"><span class="nav-link disabled" aria-disabled="true">Arsip</span></li></ul></div></div></nav>'
-    form='<nav class="navbar demo-navbar bg-green" aria-label="Contoh navbar pencarian"><div class="container-fluid gap-3"><a class="navbar-brand fw-bold" href="index.html">Find your idea.</a><form class="d-flex gap-2 navbar-demo-search" role="search"><input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required><button class="btn btn-dark" type="submit">Cari</button></form></div></nav><p id="navbarSearchResult" class="small mt-3 mb-0" role="status"></p>'
+    form='<nav class="navbar demo-navbar bg-green" aria-label="Contoh navbar pencarian"><div class="container-fluid gap-3"><a class="navbar-brand fw-bold" href="index.html">Find your idea.</a><form class="navbar-demo-search" role="search"><div class="input-group"><input class="form-control" type="search" aria-label="Cari di navbar contoh" placeholder="Cari ide…" required><button class="btn btn-dark" type="submit">Cari</button></div></form></div></nav><p id="navbarSearchResult" class="small mt-3 mb-0" role="status"></p>'
     text='<nav class="navbar demo-navbar" aria-label="Contoh navbar teks"><div class="container-fluid gap-3"><span class="navbar-text">Masuk sebagai <strong>Alex Darma</strong></span><a class="btn btn-sm btn-primary" href="profile.html">Lihat profil ↗</a></div></nav>'
     return demo('Brand','Identitas dan teks pendamping dalam navbar.',brand,True)+demo('Items & responsive collapse','Menu berubah menjadi toggler pada layar kecil.',responsive,True)+demo('Form pencarian','Form demo memberi feedback tanpa berpindah halaman.',form,True)+demo('Teks & aksi','Navbar juga dapat berisi informasi akun.',text,True)
 
 
 def pagination_markup(id_, size='', align='', arrows=False):
-    return f'<div data-pagination-demo id="{id_}"><nav aria-label="Contoh pagination {id_}"><ul class="pagination {size} {align} flex-wrap gap-1"><li class="page-item disabled"><button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled>{"←" if arrows else "Prev"}</button></li>'+''.join(f'<li class="page-item{" active" if n==1 else ""}"><button class="page-link" type="button" data-demo-page="{n}" aria-label="Halaman {n}" {"aria-current=page" if n==1 else ""}>{n}</button></li>' for n in range(1,4))+f'<li class="page-item"><button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">{"→" if arrows else "Next"}</button></li></ul></nav><p class="small text-muted mb-0" data-page-result aria-live="polite">Halaman 1 · Menampilkan item 1–5 dari 15.</p></div>'
+    return f'<div data-pagination-demo id="{id_}"><nav aria-label="Contoh pagination {id_}"><ul class="pagination {size} {align} flex-wrap gap-1"><li class="page-item disabled"><button class="page-link" type="button" data-page-step="-1" aria-label="Sebelumnya" disabled>{arrow("left") if arrows else "Prev"}</button></li>'+''.join(f'<li class="page-item{" active" if n==1 else ""}"><button class="page-link" type="button" data-demo-page="{n}" aria-label="Halaman {n}" {"aria-current=page" if n==1 else ""}>{n}</button></li>' for n in range(1,4))+f'<li class="page-item"><button class="page-link" type="button" data-page-step="1" aria-label="Berikutnya">{arrow() if arrows else "Next"}</button></li></ul></nav><p class="small text-muted mb-0" data-page-result aria-live="polite">Halaman 1 · Menampilkan item 1–5 dari 15.</p></div>'
 
 
 def pagination_page(icon):
@@ -165,7 +166,7 @@ def popover_page(icon):
 
 
 def progress_bar(value, color='purple', label=False, height=12, extra=''):
-    return f'<div class="progress mb-3" role="progressbar" aria-label="Progres {value} persen" aria-valuenow="{value}" aria-valuemin="0" aria-valuemax="100" style="height:{height}px"><div class="progress-bar bg-{color} {extra}" style="width:{value}%">{str(value)+"%" if label else ""}</div></div>'
+    return f'<div class="progress mb-3" role="progressbar" aria-label="Progres {value} persen" aria-valuenow="{value}" aria-valuemin="0" aria-valuemax="100" style="--bs-progress-height:{height}px"><div class="progress-bar bg-{color} {extra}" style="width:{value}%">{str(value)+"%" if label else ""}</div></div>'
 
 
 def progress_page(icon):
@@ -174,7 +175,7 @@ def progress_page(icon):
     heights=''.join(f'<p class="demo-label">{h}px</p>'+progress_bar(65,height=h) for h in [6,12,24,36])
     colors=''.join(progress_bar(v,c) for v,c in [(20,'purple'),(40,'green'),(60,'yellow'),(80,'orange'),(100,'blue')])
     striped=progress_bar(65,'purple',True,26,'progress-bar-striped')+progress_bar(80,'green',True,26,'progress-bar-striped progress-bar-animated')+button('Jeda animasi','outline-primary','id="progressAnimation" aria-pressed="false"')
-    stacked='<div class="progress-stacked" style="height:26px">'+''.join(f'<div class="progress" role="progressbar" aria-label="{t}" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="100" style="width:{n}%"><div class="progress-bar bg-{c}">{n}%</div></div>' for n,c,t in [(35,'purple','Design'),(25,'green','Development'),(20,'yellow','Review')])+'</div><p class="small mt-3 mb-0">Design 35% · Development 25% · Review 20%</p>'
+    stacked='<div class="progress-stacked" style="--bs-progress-height:26px">'+''.join(f'<div class="progress" role="progressbar" aria-label="{t}" aria-valuenow="{n}" aria-valuemin="0" aria-valuemax="100" style="width:{n}%"><div class="progress-bar bg-{c}">{n}%</div></div>' for n,c,t in [(35,'purple','Design'),(25,'green','Development'),(20,'yellow','Review')])+'</div><p class="small mt-3 mb-0">Design 35% · Development 25% · Review 20%</p>'
     return demo('Simple','Lebar progres dari 0 sampai 100 persen.',basic)+demo('Label','Label dengan tinggi yang cukup agar mudah dibaca.',labels)+demo('Height','Tinggi disesuaikan dengan kebutuhan layout.',heights)+demo('Background','Warna pastel untuk beberapa metrik.',colors)+demo('Striped & animated','Animasi bisa dijeda dan mengikuti preferensi reduced motion.',striped)+demo('Multiple bars','Gabungkan beberapa fase dalam satu track.',stacked)
 
 

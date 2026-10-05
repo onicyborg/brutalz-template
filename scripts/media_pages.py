@@ -1,4 +1,5 @@
 """Phase 7 galleries, sliders, and timeline using local artwork."""
+from ui_icons import arrow
 
 from html import escape
 
@@ -61,9 +62,9 @@ def carousel_item(name, title, category, description, active=False):
 
 def carousel_controls(id_):
     return (f'<button class="carousel-control-prev" type="button" data-bs-target="#{id_}" data-bs-slide="prev" aria-label="Slide sebelumnya">'
-            '<span aria-hidden="true">←</span></button>'
+            f'{arrow("chevron-left")}</button>'
             f'<button class="carousel-control-next" type="button" data-bs-target="#{id_}" data-bs-slide="next" aria-label="Slide berikutnya">'
-            '<span aria-hidden="true">→</span></button>')
+            f'{arrow("chevron-right")}</button>')
 
 
 def bootstrap_carousel(heading):

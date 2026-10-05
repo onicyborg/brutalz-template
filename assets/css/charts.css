@@ -1,5 +1,5 @@
 /* Phase 5 chart showcases. Vendor bundles are loaded only on matching pages. */
-.chart-index-card { transition: transform .15s ease, box-shadow .15s ease; }
+.chart-index-card { transition: var(--neo-transition); }
 .chart-index-card:hover,
 .chart-index-card:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--neo-ink); }
 .chart-demo-wrap { height: 270px; min-width: 0; position: relative; }

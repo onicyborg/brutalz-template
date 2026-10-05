@@ -4,6 +4,7 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const arrowIcon = name => `<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">${window.BRUTAL_ICONS[name]}</svg>`;
   const prefix = 'brutal.';
   const memory = new Map();
   let storageWarningShown = false;
@@ -75,10 +76,10 @@
     const shown = items.slice((tablePage-1)*limit,tablePage*limit);
     tbody.innerHTML = shown.length ? shown.map(p => `<tr><td><div class="table-project"><span class="project-icon bg-${esc(['purple','orange','blue','green','yellow'].includes(p.color) ? p.color : 'purple')}">${esc(p.name.slice(0,1).toUpperCase())}</span><div><div class="table-title">${esc(p.name)}</div><div class="table-sub">${esc(p.category)}</div></div></div></td><td>${team(p.team)}</td><td><span class="badge bg-${colors[p.status]}">${p.status}</span></td><td class="text-nowrap">${dateLabel(p.due)}</td></tr>`).join('') : '<tr><td colspan="4" class="text-center py-5 text-muted">Tidak ada proyek yang cocok. Coba kata kunci atau filter lain.</td></tr>';
     if ($('#tableCount')) $('#tableCount').textContent = items.length ? `${(tablePage-1)*limit+1}–${Math.min(tablePage*limit,items.length)} dari ${items.length} proyek` : '0 proyek';
-    if ($('#tablePagination')) $('#tablePagination').innerHTML = Array.from({length:totalPages},(_,i) => `<li class="page-item ${tablePage === i+1 ? 'active':''}"><button class="page-link" data-table-page="${i+1}" ${tablePage === i+1 ? 'aria-current="page"':''} aria-label="Halaman ${i+1}">${i+1}</button></li>`).join('');
+    if ($('#tablePagination')) $('#tablePagination').innerHTML = `<li class="page-item ${tablePage === 1 ? 'disabled' : ''}"><button type="button" class="page-link" data-table-page="${tablePage-1}" aria-label="Halaman sebelumnya" ${tablePage === 1 ? 'disabled' : ''}>${arrowIcon('arrow-left')}</button></li>` + Array.from({length:totalPages},(_,i) => `<li class="page-item ${tablePage === i+1 ? 'active':''}"><button class="page-link" data-table-page="${i+1}" ${tablePage === i+1 ? 'aria-current="page"':''} aria-label="Halaman ${i+1}">${i+1}</button></li>`).join('') + `<li class="page-item ${tablePage === totalPages ? 'disabled' : ''}"><button type="button" class="page-link" data-table-page="${tablePage+1}" aria-label="Halaman berikutnya" ${tablePage === totalPages ? 'disabled' : ''}>${arrowIcon('arrow')}</button></li>`;
   }
   ['tableSearch','tableStatus','tableSort'].forEach(id => $('#'+id)?.addEventListener(id==='tableSearch' ? 'input':'change', () => {tablePage=1;renderTable();}));
-  $('#tablePagination')?.addEventListener('click', e => {const btn=e.target.closest('[data-table-page]');if(btn){tablePage=Number(btn.dataset.tablePage);renderTable();}});
+  $('#tablePagination')?.addEventListener('click', e => {const btn=e.target.closest('[data-table-page]');if(btn && !btn.disabled){tablePage=Number(btn.dataset.tablePage);renderTable();$('#tablePagination [aria-current="page"]')?.focus();}});
   $('#exportTable')?.addEventListener('click', () => {downloadCSV('brutal-proyek.csv',[['Nama proyek','Kategori','Status','Tenggat'],...filteredProjects().map(p=>[p.name,p.category,p.status,p.due])]);toast('Data sesuai filter telah diekspor.');});
   $('#exportDashboard')?.addEventListener('click', () => {downloadCSV('brutal-ringkasan-demo.csv',[['Metrik demo','Nilai'],['Pendapatan bulanan',48500000],['Proyek aktif',24],['Pelanggan',1284],['Konversi','4.82%']]);toast('Ringkasan dashboard demo diekspor.');});
   function renderKanban() {

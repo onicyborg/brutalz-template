@@ -1,0 +1,346 @@
+/* Shared Select2 and Flatpickr skin. Vendor CSS stays unmodified. */
+/* Never give the body-mounted Select2 popup wrapper a percentage width. */
+select + .select2-container {
+  max-width: 100%;
+  min-width: 0;
+}
+.select2-container {
+  font:
+    14px Arial,
+    Helvetica,
+    sans-serif;
+}
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  min-height: 46px;
+  height: auto;
+  border: var(--neo-border);
+  border-radius: 6px;
+  background: var(--neo-surface);
+  box-shadow: 2px 2px 0 var(--neo-ink);
+}
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  padding: 11px 36px 11px 12px;
+  line-height: 20px;
+  color: var(--neo-ink);
+}
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  height: 42px;
+  right: 8px;
+}
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow
+  b {
+  border-top-color: var(--neo-ink);
+  border-width: 6px 5px 0;
+}
+.select2-container--default.select2-container--open
+  .select2-selection--single
+  .select2-selection__arrow
+  b {
+  border-bottom-color: var(--neo-ink);
+  border-width: 0 5px 6px;
+}
+.select2-container--default .select2-selection__placeholder {
+  color: var(--neo-muted);
+  font-style: italic;
+}
+.select2-container--default .select2-selection__clear {
+  margin-right: 7px;
+  font-size: 20px;
+  color: var(--neo-ink);
+}
+.select2-container--default .select2-selection__clear:hover {
+  color: #aa2533;
+}
+.select2-container--default.select2-container--focus .select2-selection,
+.select2-container--default.select2-container--open .select2-selection {
+  border-color: var(--neo-ink);
+  box-shadow: 3px 3px 0 var(--neo-purple);
+}
+.select2-container--default.select2-container--disabled .select2-selection {
+  opacity: 0.65;
+  background: var(--neo-paper);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__rendered {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  margin: 0;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: 3px 6px;
+  border: 1.5px solid var(--neo-ink);
+  border-radius: 4px;
+  background: var(--neo-purple);
+  color: var(--neo-ink);
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--neo-ink);
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove {
+  flex-shrink: 0;
+  margin-right: 6px;
+  padding: 0 5px 0 0;
+  border-right: 1px solid var(--neo-ink);
+  color: var(--neo-ink);
+}
+.select2-container--default .select2-selection__choice__remove:hover {
+  color: #aa2533;
+}
+.select2-container .select2-search--inline {
+  max-width: 100%;
+  min-width: 0;
+}
+.select2-container .select2-search--inline .select2-search__field {
+  max-width: 100%;
+  min-width: 4ch;
+  margin: 3px 0;
+  line-height: 24px;
+  color: var(--neo-ink);
+}
+.select2-container .select2-search__field:focus-visible {
+  outline: 2px solid var(--neo-purple);
+  outline-offset: 1px;
+}
+.select2-container--open .select2-dropdown {
+  border: 3px solid var(--neo-ink);
+  border-radius: 7px;
+  padding: 6px;
+  box-shadow: 4px 4px 0 var(--neo-ink);
+  background: var(--neo-surface);
+  overflow: hidden;
+}
+.select2-container--open {
+  z-index: 1060;
+}
+.select2-search--dropdown {
+  padding: 7px 7px 11px;
+  margin: -6px -6px 5px;
+  border-bottom: var(--neo-border);
+  background: var(--neo-paper);
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: var(--neo-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+  background: var(--neo-surface);
+  color: var(--neo-ink);
+}
+.select2-search--dropdown .select2-search__field:focus {
+  box-shadow: 3px 3px 0 var(--neo-purple);
+  outline: none;
+}
+.select2-results__option {
+  padding: 8px 10px;
+  overflow-wrap: anywhere;
+}
+.select2-container--default .select2-results__option[aria-selected="true"] {
+  background: var(--neo-yellow);
+  font-weight: 700;
+  box-shadow: inset 3px 0 var(--neo-ink);
+}
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
+  background: var(--neo-purple);
+  color: var(--neo-ink);
+}
+.select2-container--default .select2-results__option[aria-disabled="true"] {
+  color: var(--neo-muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.select2-results__message {
+  color: var(--neo-muted);
+  font-style: italic;
+}
+.select2-container.is-invalid .select2-selection,
+select.is-invalid + .select2-container .select2-selection,
+.was-validated select:invalid + .select2-container .select2-selection {
+  border-color: #b02a37;
+  box-shadow: 3px 3px 0 #f1aeb5;
+}
+select.is-valid + .select2-container .select2-selection,
+.was-validated select:valid + .select2-container .select2-selection {
+  border-color: #146c43;
+}
+select.form-select-sm + .select2-container .select2-selection {
+  min-height: 36px;
+}
+select.form-select-sm + .select2-container .select2-selection__rendered {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12px;
+}
+select.form-select-sm + .select2-container .select2-selection__arrow {
+  height: 32px;
+}
+select.form-select-lg + .select2-container .select2-selection__rendered {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 18px;
+}
+select.form-select-lg + .select2-container .select2-selection__arrow {
+  height: 48px;
+}
+select.mb-3 + .select2-container {
+  margin-bottom: 1rem;
+}
+.input-group > .select2-container {
+  flex: 1 1 auto;
+  width: 1% !important;
+}
+
+.neo-date-input {
+  padding-right: 2.5rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23232420' stroke-width='1.8'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M7 3v4m10-4v4M3 11h18'/%3E%3C/svg%3E");
+  background-position: right 0.8rem center;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+.flatpickr-calendar {
+  width: 308px;
+  max-width: calc(100vw - 16px);
+  border: var(--neo-border);
+  border-radius: 7px;
+  background: var(--neo-surface);
+  color: var(--neo-ink);
+  box-shadow: 4px 4px 0 var(--neo-ink);
+  font:
+    14px Arial,
+    Helvetica,
+    sans-serif;
+}
+.flatpickr-calendar.open {
+  z-index: 1065;
+}
+.flatpickr-calendar::before,
+.flatpickr-calendar::after {
+  display: none;
+}
+.flatpickr-months {
+  padding: 7px 0;
+  border-bottom: var(--neo-border);
+}
+.flatpickr-months .flatpickr-month {
+  height: 36px;
+}
+.flatpickr-current-month {
+  padding-top: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.flatpickr-current-month input.cur-year {
+  font-weight: 800;
+}
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  top: 7px;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  border: var(--neo-border);
+  border-radius: 4px;
+  background: var(--neo-yellow);
+  box-shadow: 2px 2px 0 var(--neo-ink);
+}
+.flatpickr-months .flatpickr-prev-month {
+  left: 7px;
+}
+.flatpickr-months .flatpickr-next-month {
+  right: 7px;
+}
+.flatpickr-months svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+.flatpickr-innerContainer,
+.flatpickr-rContainer,
+.flatpickr-days,
+.dayContainer {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.flatpickr-weekdays {
+  height: 30px;
+  background: var(--neo-paper);
+}
+span.flatpickr-weekday {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--neo-muted);
+  text-transform: uppercase;
+}
+.flatpickr-day {
+  border-radius: 4px;
+  max-width: none;
+  border: 1px solid #e6e4dc;
+  color: var(--neo-ink);
+}
+.flatpickr-day.today {
+  background: var(--neo-yellow);
+  border-color: var(--neo-ink);
+}
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+  background: var(--neo-purple);
+  border-color: var(--neo-ink);
+  color: var(--neo-ink);
+}
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover,
+.flatpickr-day.selected:focus {
+  background: var(--neo-green);
+  border-color: var(--neo-ink);
+  color: var(--neo-ink);
+  box-shadow: inset 0 -3px var(--neo-ink);
+}
+.flatpickr-day.flatpickr-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.flatpickr-time {
+  border-top: var(--neo-border) !important;
+}
+.flatpickr-time input {
+  font-weight: 700;
+  color: var(--neo-ink);
+}
+.flatpickr-time input:focus {
+  background: var(--neo-yellow);
+}
+.neo-calendar-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: var(--neo-border);
+}
+/* Keep the action footer visible in time-only pickers. */
+.flatpickr-calendar.hasTime.noCalendar {
+  height: auto;
+}

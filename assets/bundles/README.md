@@ -8,9 +8,9 @@ halaman statis berjalan tanpa CDN dan tanpa proses build saat runtime.
 | --- | --- | --- | --- |
 | SweetAlert2 | 11.26.25 | `sweet-alert.html` | MIT, https://github.com/sweetalert2/sweetalert2 (`sweetalert/LICENSE`) |
 | Toastr | 2.1.4 | `toastr.html` | MIT, https://github.com/CodeSeven/toastr (lisensi dinyatakan pada README upstream) |
-| jQuery | 3.7.1 | `toastr.html`, `forms-advanced-form.html`, `form-wizard.html`, `datatables.html`, `export-table.html`, `chart-sparkline.html`, `chart-morris.html`, `owl-carousel.html` | MIT, https://github.com/jquery/jquery (`jquery/LICENSE.txt`) |
+| jQuery | 3.7.1 | Semua halaman (Select2 dalam shared modal) dan plugin per halaman | MIT, https://github.com/jquery/jquery (`jquery/LICENSE.txt`) |
 | Dropzone | 5.9.3 | `multiple-upload.html` | MIT, https://github.com/dropzone/dropzone (`dropzone/LICENSE`) |
-| Select2 | 4.0.13 | `forms-advanced-form.html` | MIT, https://github.com/select2/select2 (`select2/LICENSE.md`) |
+| Select2 | 4.0.13 | Semua `.form-select`, termasuk field dinamis dan modal | MIT, https://github.com/select2/select2 (`select2/LICENSE.md`) |
 | Quill | 2.0.3 | `forms-editor.html`, `create-post.html` | BSD-3-Clause, https://github.com/slab/quill (`quill/LICENSE`; bundle juga memuat notice lisensi dependensi) |
 | jQuery Steps | 1.1.0 | `form-wizard.html` | MIT, https://github.com/rstaib/jquery-steps (`jquery-steps/LICENSE.txt`) |
 | DataTables + Bootstrap 5 | 2.3.8 | `datatables.html`, `export-table.html` | MIT, https://github.com/DataTables/DataTablesSrc (`datatables/License.txt`, `datatables/Bootstrap5-License.txt`) |
@@ -69,3 +69,5 @@ rencana dan dimuat bersama jQuery hanya di halaman demonya. Bootstrap Carousel,
 galeri masonry, dan timeline memakai CSS/JavaScript template tanpa plugin baru.
 
 Phase 8 memakai jsVectorMap lokal untuk peta dunia. Google Maps dimuat hanya setelah pengunjung memasukkan API key browser; Google Maps JavaScript API tidak dibundel.
+
+Component fixes menambahkan Flatpickr 4.6.13 (MIT, https://github.com/flatpickr/flatpickr). Distribusi JS/CSS, locale `id.js`, dan `LICENSE.md` berada di `flatpickr/`. Versi dikunci di package.json; file vendor tidak dimodifikasi. Kontrol global memakai `assets/js/controls.js` dan `assets/css/controls.css`.

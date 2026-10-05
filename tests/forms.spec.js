@@ -1,3 +1,4 @@
+const { choose } = require('./helpers/controls');
 const { test, expect } = require('@playwright/test');
 
 test('form overview and sidebar link to every Phase 3 page', async ({ page }) => {
@@ -10,7 +11,7 @@ test('form overview and sidebar link to every Phase 3 page', async ({ page }) =>
 
 test('Select2 searches options and advanced brief validates before summarizing', async ({ page }) => {
   await page.goto('/forms-advanced-form.html');
-  await expect(page.locator('.select2-container')).toHaveCount(2);
+  await expect(page.locator('#advancedForm .select2-container')).toHaveCount(2);
   await page.getByRole('button', { name: 'Lihat ringkasan' }).click();
   await expect(page.locator('#advancedResult')).toContainText('Periksa kolom wajib');
   await page.locator('#advancedName').fill('Portal kreatif');
@@ -67,7 +68,7 @@ test('wizard blocks invalid steps, reviews values, completes and restarts', asyn
   await next.click();
   await expect(page.locator('#wizardEmail')).toBeVisible();
   await page.getByLabel('Email akun').fill('nina@example.com');
-  await page.getByLabel('Peran').selectOption('Designer');
+  await choose(page, page.getByLabel('Peran'), 'Designer');
   await next.click();
   await expect(page.locator('#reviewName')).toHaveText('Nina Sari');
   await expect(page.locator('#reviewEmail')).toHaveText('nina@example.com');

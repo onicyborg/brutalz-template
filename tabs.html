@@ -7,6 +7,9 @@
   <title>Tabs — BRUTAL.</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="bootstrap-5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/controls.css">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/advanced.css">
 </head>
@@ -84,7 +87,7 @@
                   <p>Pola default untuk konten berlapis.</p>
                 </div>
               </div>
-              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsTop">
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsTop" aria-orientation="horizontal">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="tabsTop-tab-0" data-bs-toggle="tab" data-bs-target="#tabsTop-pane-0" type="button" role="tab" aria-controls="tabsTop-pane-0" aria-selected="true">Ringkasan</button>
                 </li>
@@ -95,7 +98,7 @@
                   <button class="nav-link" id="tabsTop-tab-2" data-bs-toggle="tab" data-bs-target="#tabsTop-pane-2" type="button" role="tab" aria-controls="tabsTop-pane-2" aria-selected="false">Catatan</button>
                 </li>
               </ul>
-              <div class="tab-content advanced-tab-content">
+              <div class="tab-content advanced-tab-content tab-content--top">
                 <div class="tab-pane fade show active" id="tabsTop-pane-0" role="tabpanel" aria-labelledby="tabsTop-tab-0" tabindex="0">
                   <h3>Ringkasan</h3>
                   <p class="mb-0">Panel ringkasan dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -121,7 +124,7 @@
                   <p>Navigasi berada setelah panel.</p>
                 </div>
               </div>
-              <div class="tab-content advanced-tab-content">
+              <div class="tab-content advanced-tab-content tab-content--bottom">
                 <div class="tab-pane fade show active" id="tabsBottom-pane-0" role="tabpanel" aria-labelledby="tabsBottom-tab-0" tabindex="0">
                   <h3>Info</h3>
                   <p class="mb-0">Panel info dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -131,7 +134,7 @@
                   <p class="mb-0">Panel detail dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
                 </div>
               </div>
-              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsBottom">
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsBottom" aria-orientation="horizontal">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="tabsBottom-tab-0" data-bs-toggle="tab" data-bs-target="#tabsBottom-pane-0" type="button" role="tab" aria-controls="tabsBottom-pane-0" aria-selected="true">Info</button>
                 </li>
@@ -152,7 +155,7 @@
                 </div>
               </div>
               <div class="advanced-vertical-tabs">
-                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsLeft">
+                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsLeft" aria-orientation="vertical">
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="tabsLeft-tab-0" data-bs-toggle="tab" data-bs-target="#tabsLeft-pane-0" type="button" role="tab" aria-controls="tabsLeft-pane-0" aria-selected="true">Proyek</button>
                   </li>
@@ -163,7 +166,7 @@
                     <button class="nav-link" id="tabsLeft-tab-2" data-bs-toggle="tab" data-bs-target="#tabsLeft-pane-2" type="button" role="tab" aria-controls="tabsLeft-pane-2" aria-selected="false">File</button>
                   </li>
                 </ul>
-                <div class="tab-content advanced-tab-content">
+                <div class="tab-content advanced-tab-content tab-content--left">
                   <div class="tab-pane fade show active" id="tabsLeft-pane-0" role="tabpanel" aria-labelledby="tabsLeft-tab-0" tabindex="0">
                     <h3>Proyek</h3>
                     <p class="mb-0">Panel proyek dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -191,7 +194,7 @@
                 </div>
               </div>
               <div class="advanced-vertical-tabs reverse">
-                <div class="tab-content advanced-tab-content">
+                <div class="tab-content advanced-tab-content tab-content--right">
                   <div class="tab-pane fade show active" id="tabsRight-pane-0" role="tabpanel" aria-labelledby="tabsRight-tab-0" tabindex="0">
                     <h3>Desain</h3>
                     <p class="mb-0">Panel desain dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -201,7 +204,7 @@
                     <p class="mb-0">Panel riset dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
                   </div>
                 </div>
-                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsRight">
+                <ul class="nav nav-tabs flex-column" role="tablist" aria-label="Tab tabsRight" aria-orientation="vertical">
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="tabsRight-tab-0" data-bs-toggle="tab" data-bs-target="#tabsRight-pane-0" type="button" role="tab" aria-controls="tabsRight-pane-0" aria-selected="true">Desain</button>
                   </li>
@@ -222,7 +225,7 @@
                   <p>SVG lokal membantu pengenalan cepat.</p>
                 </div>
               </div>
-              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsIcon">
+              <ul class="nav nav-tabs" role="tablist" aria-label="Tab tabsIcon" aria-orientation="horizontal">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="tabsIcon-tab-0" data-bs-toggle="tab" data-bs-target="#tabsIcon-pane-0" type="button" role="tab" aria-controls="tabsIcon-pane-0" aria-selected="true">
                     <svg class="icon" aria-hidden="true" viewbox="0 0 24 24">
@@ -241,7 +244,7 @@
                   </button>
                 </li>
               </ul>
-              <div class="tab-content advanced-tab-content">
+              <div class="tab-content advanced-tab-content tab-content--top">
                 <div class="tab-pane fade show active" id="tabsIcon-pane-0" role="tabpanel" aria-labelledby="tabsIcon-tab-0" tabindex="0">
                   <h3>Inspirasi</h3>
                   <p class="mb-0">Panel inspirasi dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -263,7 +266,7 @@
                   <p>Alternatif ringkas tanpa garis tab.</p>
                 </div>
               </div>
-              <ul class="nav nav-pills" role="tablist" aria-label="Tab tabsPills">
+              <ul class="nav nav-pills" role="tablist" aria-label="Tab tabsPills" aria-orientation="horizontal">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="tabsPills-tab-0" data-bs-toggle="tab" data-bs-target="#tabsPills-pane-0" type="button" role="tab" aria-controls="tabsPills-pane-0" aria-selected="true">Hari ini</button>
                 </li>
@@ -271,7 +274,7 @@
                   <button class="nav-link" id="tabsPills-tab-1" data-bs-toggle="tab" data-bs-target="#tabsPills-pane-1" type="button" role="tab" aria-controls="tabsPills-pane-1" aria-selected="false">Minggu ini</button>
                 </li>
               </ul>
-              <div class="tab-content advanced-tab-content">
+              <div class="tab-content advanced-tab-content tab-content--top">
                 <div class="tab-pane fade show active" id="tabsPills-pane-0" role="tabpanel" aria-labelledby="tabsPills-tab-0" tabindex="0">
                   <h3>Hari ini</h3>
                   <p class="mb-0">Panel hari ini dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -293,7 +296,7 @@
                   <p>Tautan membagi ruang secara merata.</p>
                 </div>
               </div>
-              <ul class="nav nav-tabs nav-justified" role="tablist" aria-label="Tab tabsJustified">
+              <ul class="nav nav-tabs nav-justified" role="tablist" aria-label="Tab tabsJustified" aria-orientation="horizontal">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="tabsJustified-tab-0" data-bs-toggle="tab" data-bs-target="#tabsJustified-pane-0" type="button" role="tab" aria-controls="tabsJustified-pane-0" aria-selected="true">Semua</button>
                 </li>
@@ -304,7 +307,7 @@
                   <button class="nav-link" id="tabsJustified-tab-2" data-bs-toggle="tab" data-bs-target="#tabsJustified-pane-2" type="button" role="tab" aria-controls="tabsJustified-pane-2" aria-selected="false">Selesai</button>
                 </li>
               </ul>
-              <div class="tab-content advanced-tab-content">
+              <div class="tab-content advanced-tab-content tab-content--top">
                 <div class="tab-pane fade show active" id="tabsJustified-pane-0" role="tabpanel" aria-labelledby="tabsJustified-tab-0" tabindex="0">
                   <h3>Semua</h3>
                   <p class="mb-0">Panel semua dapat dibuka dengan klik atau tombol panah saat fokus berada pada tab.</p>
@@ -397,6 +400,11 @@
   <script src="assets/js/sidebar-icons.js"></script>
   <script src="assets/js/sidebar.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/bundles/jquery/jquery.min.js"></script>
+  <script src="assets/bundles/select2/select2.min.js"></script>
+  <script src="assets/bundles/flatpickr/flatpickr.min.js"></script>
+  <script src="assets/bundles/flatpickr/id.js"></script>
   <script src="assets/js/advanced.js"></script>
+  <script src="assets/js/controls.js"></script>
 </body>
 </html>

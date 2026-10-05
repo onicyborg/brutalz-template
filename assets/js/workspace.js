@@ -4,6 +4,7 @@
   const $=(s,root=document)=>root.querySelector(s);
   const $$=(s,root=document)=>[...root.querySelectorAll(s)];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const arrowIcon = name => `<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">${window.BRUTAL_ICONS[name]}</svg>`;
   const uid=()=>crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const clone=v=>JSON.parse(JSON.stringify(v));
   const text=v=>typeof v==='string';
@@ -43,11 +44,11 @@
       const total=Math.ceil(matches.length/limit);current=Math.min(current,Math.max(total,1));const visible=matches.slice((current-1)*limit,current*limit).map(a=>a.id);
       $$('[data-article-id]').forEach(card=>{card.hidden=!visible.includes(card.dataset.articleId);});
       $('#blogCount').textContent=matches.length?`${matches.length} artikel · Halaman ${current} dari ${total}`:'Tidak ada artikel yang cocok. Coba kata kunci atau kategori lain.';
-      $('#blogPagination').innerHTML=Array.from({length:total},(_,i)=>`<li class="page-item${i+1===current?' active':''}"><button class="page-link" data-blog-page="${i+1}" aria-label="Halaman artikel ${i+1}"${i+1===current?' aria-current="page"':''}>${i+1}</button></li>`).join('');
+      $('#blogPagination').innerHTML=total ? `<li class="page-item ${current === 1 ? 'disabled' : ''}"><button type="button" class="page-link" data-blog-page="${current-1}" aria-label="Artikel sebelumnya" ${current === 1 ? 'disabled' : ''}>${arrowIcon('arrow-left')}</button></li>` + Array.from({length:total},(_,i)=>`<li class="page-item${i+1===current?' active':''}"><button class="page-link" data-blog-page="${i+1}" aria-label="Halaman artikel ${i+1}"${i+1===current?' aria-current="page"':''}>${i+1}</button></li>`).join('') + `<li class="page-item ${current === total ? 'disabled' : ''}"><button type="button" class="page-link" data-blog-page="${current+1}" aria-label="Artikel berikutnya" ${current === total ? 'disabled' : ''}>${arrowIcon('arrow')}</button></li>` : '';
     }
     $('#blogSearch').addEventListener('input',()=>{current=1;render();});
     $$('[data-blog-category]').forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.blogCategory;current=1;$$('[data-blog-category]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn));});render();}));
-    $('#blogPagination').addEventListener('click',e=>{const btn=e.target.closest('[data-blog-page]');if(!btn)return;current=Number(btn.dataset.blogPage);render();$(`[data-blog-page="${current}"]`)?.focus();});
+    $('#blogPagination').addEventListener('click',e=>{const btn=e.target.closest('[data-blog-page]');if(!btn || btn.disabled)return;current=Number(btn.dataset.blogPage);render();$(`[data-blog-page="${current}"]`)?.focus();});
     $$('[data-article-detail]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();const a=articles.find(a=>a.id===link.dataset.articleDetail);if(!a)return;showDetail('articleModal',a.title,`<img class="case-image" src="assets/img/workspace/${esc(a.image)}.svg" alt="Ilustrasi artikel"><p class="small text-muted">${esc(a.author)} · ${esc(a.date)} · ${esc(a.read)}</p><div class="article-body">${a.body.map(p=>`<p>${esc(p)}</p>`).join('')}</div>`,link);}));render();
   }
 

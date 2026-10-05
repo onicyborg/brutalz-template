@@ -110,3 +110,19 @@
 @media (max-width: 420px) {
   .media-gallery-grid { grid-template-columns: 1fr; }
 }
+
+.media-tile { transition: var(--neo-transition); }
+.media-tile:hover,.media-tile:focus-visible { color: var(--neo-ink); transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--neo-ink); }
+.media-tile:focus-visible { outline: 3px solid #7952b3; outline-offset: 4px; }
+.carousel-control-prev .icon,.carousel-control-next .icon,
+.owl-nav .icon { width: 26px; height: 26px; stroke-width: 2.5; }
+.media-panel .owl-theme .owl-nav button.owl-prev,
+.media-panel .owl-theme .owl-nav button.owl-next { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 40px; box-shadow: 3px 3px 0 var(--neo-ink); transition: var(--neo-transition); }
+.media-panel .owl-theme .owl-nav button:not(.disabled):hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--neo-ink); background: var(--neo-purple); }
+.media-panel .owl-theme .owl-nav button:not(.disabled):active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--neo-ink); }
+.media-panel .owl-theme .owl-nav button.disabled { cursor: not-allowed; box-shadow: none; }
+.carousel-control-prev,.carousel-control-next { box-shadow: 3px 3px 0 var(--neo-ink); transition: var(--neo-transition); }
+.carousel-control-prev:hover,.carousel-control-next:hover { box-shadow: 5px 5px 0 var(--neo-ink); }
+@media (prefers-reduced-motion: reduce) {
+  .media-tile:hover,.media-tile:focus-visible { transform: none; }
+}

@@ -1,4 +1,5 @@
 """Phase 4 table showcases. HTML is formatted by the shared generator."""
+from ui_icons import arrow
 
 from html import escape
 
@@ -53,7 +54,7 @@ def build_table_pages(heading, projects_table, new_project_button):
     ]
     overview = heading('Data yang mudah dibaca.', 'Pilih pola tabel sesuai kebutuhan: sederhana, interaktif, ekspor, atau edit langsung.')
     overview += '<div class="row g-4">' + ''.join(
-        f'<div class="col-md-6 col-xl-4"><a class="card table-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{title}</span><h2 class="fs-4">{title} →</h2><p class="text-muted mb-0">{description}</p></div></a></div>'
+        f'<div class="col-md-6 col-xl-4"><a class="card table-index-card h-100 text-decoration-none text-dark" href="{slug}.html"><div class="card-body"><span class="badge {color} mb-3">{title}</span><h2 class="fs-4">{title} {arrow()}</h2><p class="text-muted mb-0">{description}</p></div></a></div>'
         for slug, title, description, color in overview_items
     ) + '</div>'
 
